@@ -16,6 +16,10 @@ Contrasting the CC BY, is the CC0. Briefly, CC0 is a “public domain” license
 
 **Data Embaro**
 
+**How to add a license to your data?**
+
+- Is this just a LICENSE file in the folder? Is there other, additional information needed?
+
 References:
 
 @plos-comp-bio-data: http://journals.plos.org/ploscompbiol/s/licenses-and-copyright
