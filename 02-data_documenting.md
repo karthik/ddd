@@ -1,7 +1,12 @@
 # How to document your dataset
 
-Documenting a dataset is critical to ensuring that others can understand the data and use it appropriately. It is unhelpful to provide only a dataset, with no other information. To some extend, providing too much information can make things difficult to understand the context quickly. There is a continuum, which we refer to as the "Data reusability spectrum (DARES?)". At the bare minimum there should be a README file that describes the data in some way. At the idea, there is the README with some context, plus some machine readable, standardized description of the types of each of the variables in the data.
+Documenting a dataset is critical to ensuring others understand the data and use it appropriately. A dataset with no other information is unhelpful, but by the same token, providing too much information can also make it difficult to understand. There is a continuum, which we refer to as the Data reusability spectrum (DARES). At the bare minimum there should be a README file that describes the data in some way. At the idea, there is the README with some context, plus some machine readable, standardized description of the types of each of the variables in the data.
 
+- Bare minimum (good enough)
+- Ideal
+- Very detailed
+
+Some examples of data documentation are now discussed, and ranked on the DARES.
 
 ## EML
 
