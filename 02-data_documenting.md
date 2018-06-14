@@ -1,30 +1,24 @@
 # How to document your dataset
 
-Documenting a dataset is critical to ensuring others understand the data and use it appropriately. A dataset with no other information is unhelpful, but by the same token, providing too much information can also make it difficult to understand. There is a continuum, which we refer to as the Data reusability spectrum (DARES). At the bare minimum there should be a README file that describes the data in some way. At the idea, there is the README with some context, plus some machine readable, standardized description of the types of each of the variables in the data.
+Documenting a dataset is ensures others understand why the data was collected, how it was used, and how to use it appropriately. A .csv file alone in a folder with no other information is unhelpful. By the same token, providing too much information can make it difficult to understand, and where to start. There is a **da**ta **re**usability **co**ntinuum (DARECO). At one end there is a plain text or perhaps proprietary format file alone in a folder, towards the middle there is an accompanying human readable README file that describes the data and a machine readable format for reading in the data, and at the far end is the complete information to completely reproduce the data, intructions, motivation, manual, and so on.
 
-- Bare minimum (good enough)
-- Ideal
-- Very detailed
+_figure of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
-Some examples of data documentation are now discussed, and ranked on the DARES.
+Researchers and analysts should aim to be at the "good enough" as the new minimum: A README with human context, machine readable statement of variables, and the raw data. Some examples of data documentation are now discussed, and ranked on the CARECO.
 
 ## EML
 
 The Ecological Metadata Language (EML) is stated as ([on their website](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html))
-The EML project is an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline
-EML provides a very highly structured approach to documenting data. This is at one end of the "Data reproducibility spectrum"
+The EML project is an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data. This is at one end of the "Data reproducibility spectrum"
 There is an R interface to this: https://github.com/ropensci/EML
 
 ## Journal "Data papers"
 
-Journals are now adding "data papers", which are papers specifically designed for publishing and sharing data. These provide more information and context around the data, which is crucial to understanding the data structure.
+Journals are now adding "data papers", specifically designed for publishing and sharing data. These provide more information and context around, crucial to understanding the data structure.
 
-Below I have some notes on Elsevier's Data In Brief.
+For example, **Elsevier's Data In Brief** aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data. The aim is to thoroughly describe the data, facilit
 
-**Elsevier's Data In Brief**
-
-> Data in Brief provides a way for researchers to easily share and reuse each other's datasets by publishing data articles that:
-
+quote:
     > - Thoroughly describe your data, facilitating reproducibility.
     > - Make your data, which is often buried in supplementary material, easier to find.
     > - Increase traffic towards associated research articles and data, leading to more citations.
@@ -80,6 +74,10 @@ Whilst this table provides a good standard, it does not provide the same resolut
 - seems to be CC-BY
 - However....upon acceptance of an article, authors will be asked to complete an 'Exclusive License Agreement' (see [more information](https://www.elsevier.com/about/our-business/policies/copyright) on this). Permitted third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses).
 - ...This is an open access journal: all articles will be immediately and permanently free for everyone to read and download. To provide open access, this journal has an open access fee (also known as an article publishing charge APC) which needs to be paid by the authors or on their behalf e.g. by their research funder or institution. Permitted third party (re)use is defined by the following Creative Commons user licenses: CC BY
+
+# What goes in the README
+
+# What goes in the
 
 # Documenting using code books
 
