@@ -16,68 +16,35 @@ There is an R interface to this: https://github.com/ropensci/EML
 
 Journals are now adding "data papers", specifically designed for publishing and sharing data. These provide more information and context around, crucial to understanding the data structure.
 
-For example, **Elsevier's Data In Brief** aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data. The aim is to thoroughly describe the data, facilit
+For example, **Elsevier's Data In Brief** aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data to improve reproducibility, enhance discoverability by taking it out of the supplementary materials, increase traffic and citations to both the research articles and the data, pave the way for collaborations. They welcome data from all research areas.
 
-quote:
-    > - Thoroughly describe your data, facilitating reproducibility.
-    > - Make your data, which is often buried in supplementary material, easier to find.
-    > - Increase traffic towards associated research articles and data, leading to more citations.
-    > - Open up doors for new collaborations.
-    > - Because you never know what data will be useful to someone else, Data in Brief welcomes submissions that describe data from all research areas."
-
-**Here are the sections of a "Data In Brief" article:**
-
-- Title, authors and author affiliations
-- Abstract
-- A completed Specifications Table
-- 3-5 bullet points that explain why the data is valuable to other researchers
-- A direct link to the deposited data (when applicable)
-- A complete description of the experimental design and materials and methods
-- References
+The requirements of Data In Brief are similar to research articles, requiring a title, author list, afiliations, abstract, and references. They also require several clear bullet points explaining why the data is useful to others, a direct link to the data, a complete description of the design, materials, and methods, and a specifications table.
 
 Of particular interest are the sections **Completed specifications table** and **complete description of the experimental design and materials and methods**
 
-The Completed specifications table is listed in bullet form here:
+The Completed specifications table details information on subject area, data type (image, table, text file, graph),the data format (raw, filtered, analysed), how the data was acquired, related articles, data accessibility (it is in a public repo etc), and features of the experimental factors and features, and related research article.
 
-- Subject area
-        - E.g., physics, chemistry, biology, economics, psychology
-- More specific subject area
-        - Describe narrower subject area.
-- Type of data
-                - Table, image (x-ray, microscopy, etc.), text file, graph, figure
-- How data was acquired
-                - Microscope, survey, SEM, NMR, mass spectrometry, etc.; if an instrument was used, please give the model and make.
-- Data format
-                - Raw, filtered, analyzed, etc.
-- Experimental factors
-                - Brief description of any pretreatment of samples
-- Experimental features
-                - Very brief experimental description
-- Data source location
-                - City, country, and/or latitude and longitude (and GPS coordinates) for collected samples/data, if applicable
-- Data accessibility
-                - State if data is with this article or in public repository; if public repository, please explicitly name repository and data identification number, and provide a direct URL to data.
-- Related research article
-                - If your data article is submitted as a companion paper to a research article, please cite your associated research article here; you may reference this as "in press."
-                - If this is a direct submission to Data in Brief, you may cite the most relevant research article here.
+Whilst this is useful, the structure it provides is very flexible, and doesn't tell the researcher/analyst how to actually structure the data and folders. It doesn't tell them how to do it, just provides some good ideas on what they should include.
 
-Whilst this table provides a good standard, it does not provide the same resolution of information as a Data Dictionary.
+It does not solve _PROBLEM STATEMENT_
 
-**Complete description of the experimental design and materials and methods**.
+For example, it does not provide the same resolution of information as a Data Dictionary.
+
+As another example, Elsevier's guidelines on "a complete description of the experimental design and materials and methods", state that:
 
 > Offer a complete description of the experimental design and methods used to acquire the data and, where applicable, to perform the analysis. Include any relevant figures and tables needed to understand the data fully. Please also provide, where applicable, any code files used for base-level analysis or filtering of the data
 
-- This is a good standard, but I can’t help but think that this could be more explicitly expanded.
+- This is a good standard, but it does not provide explicit instructions.
 
 **License for "data in brief"**
 
-- seems to be CC-BY
-- However....upon acceptance of an article, authors will be asked to complete an 'Exclusive License Agreement' (see [more information](https://www.elsevier.com/about/our-business/policies/copyright) on this). Permitted third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses).
-- ...This is an open access journal: all articles will be immediately and permanently free for everyone to read and download. To provide open access, this journal has an open access fee (also known as an article publishing charge APC) which needs to be paid by the authors or on their behalf e.g. by their research funder or institution. Permitted third party (re)use is defined by the following Creative Commons user licenses: CC BY
+It is uncleara what the license for data in brief is, is appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses).
+
+Finally, to provide open access, this journal has an open access fee
 
 # What goes in the README
 
-# What goes in the
+
 
 # Documenting using code books
 
