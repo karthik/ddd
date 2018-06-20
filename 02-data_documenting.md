@@ -4,7 +4,7 @@ Documenting a dataset is ensures others understand why the data was collected, h
 
 _figure of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
-Researchers and analysts should aim to be at the "good enough" as the new minimum: A README with human context, machine readable statement of variables, and the raw data. Some examples of data documentation are now discussed, and ranked on the CARECO.
+Researchers and analysts should aim to be at the "good enough" as the new minimum: A README with human context, machine readable statement of variables, and the raw data. Some examples of data documentation are now discussed, and ranked on the DARECO.
 
 ## EML
 
@@ -38,14 +38,14 @@ As another example, Elsevier's guidelines on "a complete description of the expe
 
 **License for "data in brief"**
 
-It is uncleara what the license for data in brief is, is appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses).
-
-Finally, to provide open access, this journal has an open access fee
+It is uncleara what the license for data in brief is, is appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses). Finally, to provide open access, this journal has an open access fee
 
 # What goes in the README
 
-
+The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
 # Documenting using code books
 
 There are also other formats, such as data dictionaries or code books, which are recommended for use when sharing data @Ellis2017. These "codebooks" are provided in STATA, which provides a "codebook" command. This allows you to describe the data, using a set of commands.
+
+Some examples of "Codebooks" for data include `codemeta` and ...
