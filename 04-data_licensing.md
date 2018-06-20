@@ -23,11 +23,11 @@ The CC0 is a “public domain” license. Data with a CC0 license means the data
 
 ### Copyrighted data
 
-If you are working with data that is already copyrighted, say for example under the CC BY or CC0 notice, then you must give ensure that you follow the appropriate guidelines for giving credit (), if it is needed
+If you are working with data that is already copyrighted, say for example under the CC BY or CC0 notice, then you must give ensure that you follow the appropriate guidelines for giving credit.
 
 ### Data embargo
 
-Data under an embargo means that the data cannot be shared more widely until a specific release time. If you are sharing data under an embargo, then detailed information on the embargo needs to be included. Additionally, a license should be included 
+Data under an embargo means that the data cannot be shared more widely until a specific release time. If you are sharing data under an embargo, then detailed information on the embargo needs to be included in the README, and in separate correspondence with those who receive the data.
 
 ## Adding a license to your data
 
@@ -85,8 +85,7 @@ From the [creative commons wiki](https://wiki.creativecommons.org/wiki/Marking_y
 
 > Is your work a modification of another work? Does your work incorporate elements of several third party materials? Are you adding any warranties, or modifying the existing disclaimer in the CC license? Are you granting additional permissions beyond what the license allows? If your answer is yes to any of these, then you should note that along with the license information about your work. For example, if your work incorporates third party materials, you would note those materials and make sure to attribute each of them correctly. This is also your chance to grant additional permissions. For example, if you license something under CC BY but are okay with people not attributing you in certain cases--this is your chance to specify those cases. You can't change the terms of a CC license, but you can always grant additional permissions or warranties.
 
-I'm still not precisely clear WHERE we put the notice in the data. It seems eaasier for video or audio or an image - a caption can be placed under an image, for example. I  discuss this in the last paragraph
-
+I'm still not precisely clear _where_ we put the notice in the data. It seems eaasier for video or audio or an image - a caption can be placed under an image, for example. I  discuss this in the last paragraph
 
 **need to read over these case studies for CC0 and CC use for data**
 
