@@ -1,24 +1,37 @@
-# Releasing data in R
+# History of data sharing inside R packages
+One of the biggest barriers to data sharing has been the disproportionate
+tradeoff between	the initial investment required to prepare and share data versus perceived benefits of doing so.  Further, the lack of any real progress in data citations or usage tracking makes it even more challenging to measure use.  Comparatively, software usage, even as an imperfect measure, is much easier to track. Anonymous statistics gathered by content distributed network mirrors such as the one maintained by Rstudio Inc. provide a rough measure of usage trends.  
 
-- One should only release data inside a R package if the primary audience is R users. Examples of such cases include those with an interest in the subject matter area, or the data itself for purposes such as teaching or training (Wickham 2016)
+R has also traditionally been the domain of statisticians and most of the early R packages were designed to implement one or more statistical methods. As part of the example suite (both inline documentation and longer form vignettes), such packages have included small datasets to demonstrate interesting use cases for the included functions.  As a result, R has had some form of support for datasets inside R packages since the early days.  In more recent years several authors have used this functionality to publish data only packages primarily as a way to distribute interesting datasets for the purposes of classroom lectures and intensive workshops.  These include well known packages such as `babynames`, `nycflights13`, and `gapminder`.  There are many advantages of distributing data as part of a package. These include:
 
+- Leveraging the software documentation system to document data similar to how functions are documented. Although this is not as comprehensive as most metadata schemas, it provides a lightweight way to add human readable documentation.
+- Once accepted into R’s package manager CRAN, the package is now distributed around the world at ~ 120 mirrors and can easily be installed on any computer with a short line of code. This make the dataset immediately accessible as part of a teaching exercise, real world analysis or related endeavor.
+- The dataset can be easily included as a dependency for any other piece of software that might support examples.
+- The package system allows for an author to include both processed, ready to use derived data and also raw data along with some code to convert them into the final form. This acts as a poor man’s form of provenance for validating the CRUD process that forms a large time commitment of most data scientists efforts.  This allows readers and reviewers to inspect both the data and the munging process to provide additional validation.
+- The datasets can also be deposited into actual data repositories such as Zenodo, Figshare or other institutionally hosted ones so as to ensure a permanent identifier (such as a Digital Object Identifier). This provides an additional layer of redundancy that would ensure the survival of the data if the R language and its packaging system were to go obsolete. 
 
-### Advantages of including data inside R packages
-- Easy to share via CRAN's distributed network
-- documentation comes included
-  
-Disadvantages:
-- This becomes R specific and excludes users from other languages and interfaces
-- Citation and attribution become problematic.  
-
-### Technical advice for R users
-- If the aim of your data sharing is also to encourage users to understand the process of munging (i.e. transforming messy, raw data into clean analyzable data), include the raw data files in `inst/extdata` and provide scripts (or functions) that will transform such data into usable form. The vignette (R's long-form package documentation) would be ideal for walking users through the thought process behind one's data transformation efforts. 
-- If the primary purpose is to provide example datasets for purposes such as illustrating statistical methods, computational methods, or for similar uses, you may place binary data in the `data/` folder of the package structure. The binary format is important because CRAN imposes strict limits on package sizes. The general rule of thumb is that a package cannot exceed 5mb (code, documentation, and data included) (https://cran.r-project.org/web/packages/policies.html). For cases when this size is hard to maintain, CRAN recommends data-only packages that will be rarely updated. We do not recommend this practice for various reasons. For a detailed discussion on this issue, see Anderson and Eddelbuettel (2017)
-- Another R specific solution is to host data using the `drat` package and accessing it via packages of small size. The location of the data is user-controlled and can be published for free on GitHub which has a size limit of 1gb (compared to CRANs 5 mb limit).
-		- This solution is not general purpose since `drat` cannot be listed as an `Imports` or `Depends`.
+There are however limitations to sharing data as a R package. Since the system was designed to distribute small chunks of code, packages cannot be very large. Datasets included in R packages must be under 5 mb, which means that it can only really be used for small datasets. When packing binary data,  many tabular datasets can be heavily compressed. There is a tradeoff between performance and the choice of compression algorithm. This limitation immediately excludes a large proportion of research data, especially large binary files such as rasters, …, and …
+But for a large number of use cases where researchers are only sharing rectangular data, or data that form the basis for figures and tables (which is what journals require) this process would be sufficient.
 
 
-**References:**
+###  Packaging data in R
 
-- Data chapter from Hadley's R Packages book (which I reviewed) http://r-pkgs.had.co.nz/data.html
-- https://journal.r-project.org/archive/2017/RJ-2017-026/RJ-2017-026.pdf
+With helper functions from the `devtools` package, adding data to a package is a one step process.  Authors can include either processed data as binary files, or include raw-data:
+
+1. Put processed data stored as binary data in the `/data/` folder.
+2. Leave the raw data in the `inst/extdata` folder along with some code that will process raw to final versions so a reader could see the process involved.
+
+Hadley Wickham’s `devtools` package makes the process of including data inside an R package incredibly easy. Once a dataset has been loaded into a session, a user can simply run 
+```
+devtools::use_data(dataset_1, dataset_2, ...)
+```
+
+And in the case of raw data:
+
+```
+devtools::use_data_raw(dataset_1, dataset_2, ...)
+```
+
+## Widely used R data packages
+
+TBD. A short discussion on some of the more useful data packages. Split this discussion into ones used for teaching (e.g. nycflights13, and gap minder) and others that are clearly used for research use cases.
