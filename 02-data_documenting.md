@@ -1,6 +1,6 @@
 # How to document your dataset
 
-Documenting a dataset ensures others understand why the data was collected, how it was used, and how to use it appropriately. A `csv` file alone in a folder with no other information is unhelpful. By the same token, providing too much information can make it difficult to understand, and where to start. A useful way to frame this is think of data reusability falling on a continuum, which we the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming.
+Documenting a dataset ensures others understand why the data was collected, how it was used, and how to use it appropriately. A `csv` file alone in a folder with no other information is unhelpful. By the same token, providing too much information can make it difficult to understand, and where to start. A useful way to frame this is think of data reusability falling on a continuum, which we the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming (or labourious).
 
 ![]("figures/fig-cartesian-plane.R")
 
@@ -17,25 +17,37 @@ This forms four quadrants:
 
 A complex dataset that is painstakingly documented but very difficult to read and interpret
 
+Optimizing too early as an example
+
+another example - writing a tome of a book to document the process, but using a technology that is not portable or standard. E.g., you recorded your data using a complex punch card system that is systematically documented; but no one can read punch cards anymore.
+
 **The Spaceship**
 
-"Small shuttle"
+"light aeroplace / glider"
 
 Data with an accompanying human readable README file that describes the data and a machine readable format for reading in the data.
 
 "Heavy Falcon"
 
-Complete information to completely reproduce the data, intructions, motivation, manual, and so on.
+Complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
 
 **The paper plane**
 
-A lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format.
+A lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format (more fragile if the format is hard to read).
 
 **Felix Culpa**
 
 This takes just enough time to be robust, but is still easy.
 
 Researchers and analysts should aim to be at the "good enough" as the new minimum: A README with human context, machine readable statement of variables, and the raw data. Some examples of data documentation are now discussed, and ranked on the DARECO.
+
+**The interaction of importance of data and time spent**
+
+Worthwhile to think about the use of time for the experiment/context:
+
+- e.g., an RCT experiment should be very robust because it might affect life and death, vs. collecting a small project with low risk and low impact (not life and death).
+
+> On a “writing and research retreat”.  This means i check and answer e-mail only between 8PM and 9PM each evening.  In that one hour I do the best i can--but a lot gets unanswered.  It is only a temporary victory over the great interruptor -- but even so, it is a exhilarating victory.  As the well-trodden Lithuanian folk saying goes: “beware of masters that are soul-sucking habits disguised as responsibility”  (translation may be a bit off).  Will resume normalcy on August 9.
 
 ## EML
 
@@ -93,7 +105,7 @@ There are also other formats, such as data dictionaries or code books, which are
 
 Some examples of "Codebooks" for data include `codemeta` and ...
 
-# rio
+# rio (more of a tool than an approach)
 
 [rio](https://github.com/leeper/rio)
 
@@ -127,7 +139,6 @@ Possibly explore how governments/civic bodies are documenting data:
 # Media
 
 The Pudding has some interesting examples of how they curate data: [pudding data](https://github.com/the-pudding/data)
-
 
 # References
 
