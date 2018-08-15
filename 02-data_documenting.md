@@ -1,6 +1,6 @@
 # How to document your dataset
 
-Documenting a dataset ensures others understand why the data was collected, how it was used, and how to use it appropriately. A `csv` file alone in a folder with no other information is unhelpful. By the same token, providing too much information can make it difficult to understand, and where to start. A useful way to frame this is think of data reusability falling on a continuum, which we the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming (or labourious).
+Documenting a dataset ensures others understand why the data was collected, how it was used, and how to use it appropriately. There are many different ways to provide data and the context around it. For example, a `csv` file alone in a folder with no other information is unhelpful, and equally, too much information can make it difficult to understand, and to know where to start. A useful way to frame this is think of data reusability falling on a continuum, which we the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming (or labourious).
 
 ![]("figures/fig-cartesian-plane.R")
 
