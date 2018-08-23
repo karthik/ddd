@@ -1,10 +1,10 @@
 # How to document your dataset
 
-Documenting a dataset ensures others understand why the data was collected, how it was used, and how to use it appropriately. There are many different ways to provide data and the context around it. For example, a `csv` file alone in a folder with no other information is unhelpful, and equally, too much information can make it difficult to understand, and to know where to start. A useful way to frame this is think of data reusability falling on a continuum, which we the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming (or labourious).
+The main benefit of sharing data is so that others can verify your results, learn from your analysis, and perhaps extend findings to other areas, and advance the field. Sharing your data helps other people stand on your shoulders, to look further into different problems. In order to share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately. There are different ways to provide data and the context around it. Very little information is unhelpful, for example, a `csv` file alone in a folder with no other information. Equally, too much information can make it difficult to parse and to know where to start. For example, an entire folder with dozens of data files and several papers written on the topic. To help us frame our thinking around data documenting and reusability we can think of data reusability falling on a continuum, which we call the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming (or labourious).
 
 ![]("figures/fig-cartesian-plane.R")
 
-_Figure of the continuum from only data, to data + readme + machine readable code + full instruction set_
+_An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
 This forms four quadrants:
 
@@ -15,15 +15,18 @@ This forms four quadrants:
 
 **The Homer Car**
 
-A complex dataset that is painstakingly documented but very difficult to read and interpret
-
-Optimizing too early as an example
-
-another example - writing a tome of a book to document the process, but using a technology that is not portable or standard. E.g., you recorded your data using a complex punch card system that is systematically documented; but no one can read punch cards anymore.
+A complex dataset that is painstakingly documented but very difficult to read and interpret. This is characterized by having something fragile and time consuming. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming, and fragile, as the process can easily be lost. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. An extreme example might be that the data is recorded using a complex punch card system that is systematically documented; but no one can read punch cards anymore. This type of problem can result from trying to optimise too early.
 
 **The Spaceship**
 
+A robust process is good because it will stand the test of time, and is easy to share. However, a time consuming process is costly. An important fact to consider when designing a system that is robust and time consuming is the overal reward for reproducibility. For example, randomized control trials for a new drug would have great benefits for reproducibility as the reward/cost is high - a new drug can have positive health benefits, and is also very expensive to repeat, and equally, the drug trial can have dire effects (severe illness or death), and so must have a high standard for reproducibility. **This interaction of importance of data and time spent** means that it is worthwhile to think about the use of time for the experiment/context - we need to consider things in regards to risk and impact. In this instance, an RCT is high risk and high impact, whereas a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system.
+
+On the other hand, if the experiment involves using existing data and combining it in an interesting way, for example pulling twitter data from different sources at different times. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
+
+Two was to think of the spaceship are the "light aeroplance" and the "heavy falcon".
+
 "light aeroplace / glider"
+
 
 Data with an accompanying human readable README file that describes the data and a machine readable format for reading in the data.
 
@@ -33,19 +36,15 @@ Complete information to completely reproduce the data, intructions, motivation, 
 
 **The paper plane**
 
-A lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format (more fragile if the format is hard to read).
+An example of a fragile and quick process could be a lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format. The format is more fragile if it is hard to read.
 
 **Felix Culpa**
 
-This takes just enough time to be robust, but is still easy.
+Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
 
-Researchers and analysts should aim to be at the "good enough" as the new minimum: A README with human context, machine readable statement of variables, and the raw data. Some examples of data documentation are now discussed, and ranked on the DARECO.
 
-**The interaction of importance of data and time spent**
+Some examples of data documentation are now discussed, and ranked on the DARECO.
 
-Worthwhile to think about the use of time for the experiment/context:
-
-- e.g., an RCT experiment should be very robust because it might affect life and death, vs. collecting a small project with low risk and low impact (not life and death).
 
 > On a “writing and research retreat”.  This means i check and answer e-mail only between 8PM and 9PM each evening.  In that one hour I do the best i can--but a lot gets unanswered.  It is only a temporary victory over the great interruptor -- but even so, it is a exhilarating victory.  As the well-trodden Lithuanian folk saying goes: “beware of masters that are soul-sucking habits disguised as responsibility”  (translation may be a bit off).  Will resume normalcy on August 9.
 
