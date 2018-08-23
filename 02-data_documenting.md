@@ -93,47 +93,44 @@ Variable codes apply to categorical (factor) varaibles, and are the values for t
 
 Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning.
 
+# Tools for creating codebooks
+
 Some examples of codebooks in R include packages `dataMeta` (@dataMeta), which attaches additional information about the dataset to a data.frame as an attribute through a `linker` object. Other packages include `memisc` and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
 
-[csvy](http://csvy.org/)
+Another package is [DataPackageR](https://github.com/RGLab/DataPackageR) and - [datapack](https://github.com/ropensci/datapack), which implement a data specification was initially developed by the Open Knowledge Foundation data specification. This specification was never quite fully completed, although they have recently completed the latest version of a specialised fiscal data package specification
+[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
+ [frictionless-data-data-pacakges-r](https://frictionlessdata.io/data-packages/)
 
+[csvy](http://csvy.org/) is an extended format for csv, comma separated value format, which has some additional front matter in a YAML format using a [Table Schema](https://frictionlessdata.io/specs/table-schema/). In contains field such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. The csvy format can be read using the R packages `csvy` and [rio](https://github.com/leeper/rio). `rio` provides an approach to try and read in any particular format of data with some intelligent guesses, and could be used where the data format is unknown.
 
 The `codemeta` project "focuses on metadata and discovery systems for software citation and attribution."
 
-The R package `rio` provides an approach to try and read in any particular format of data with some intelligent guesses, and could be used where the data format is unknown [rio](https://github.com/leeper/rio).
+# What belongs in the minimal structure for researchers
 
+# Human context: A README
 
-# DataPackageR
+The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
-[DataPackageR](https://github.com/RGLab/DataPackageR)
+# Case Study
 
-Some history:
+We now assess three/four (or perhaps just one!) case study areas and assess their data documenting, providing targeted feedback on how they could improve, and discuss the strengths.
 
-- [frictionless-data-data-pacakges-r](https://frictionlessdata.io/data-packages/)
-- [datapack](https://github.com/ropensci/datapack)
+## Academia
 
-# Open knowledge foundation data specifications
+A Journal Article
 
-[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/)
+## Industry
 
-[Other notes from OKFN on "data pacakge"](https://blog.okfn.org/?s=data+package)
+## Media
 
-# Civic bodies
+A media article, such as The Pudding, which has some interesting examples of how they curate data: [pudding data](https://github.com/the-pudding/data)
 
-Possibly explore how governments/civic bodies are documenting data:
+## Civic bodies
+
+Governments/civic bodies are documenting data:
 
 - [brisbane](https://www.data.brisbane.qld.gov.au/data/dataset)
 - [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
-
-# Media
-
-The Pudding has some interesting examples of how they curate data: [pudding data](https://github.com/the-pudding/data)
-
-# What belongs in the minimal structure for researchers
-
-# What goes in the README
-
-The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
 # References
 
@@ -143,3 +140,8 @@ The README is a catch-all place for most things - but it is primarily front-faci
 @McGill-codebook - interesting article about code books: http://www.medicine.mcgill.ca/epidemiology/joseph/pbelisle/CodebookCookbook/CodebookCookbook.pdf
 
 https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html
+
+**Open knowledge foundation data specifications**
+
+
+[Other notes from OKFN on "data pacakge"](https://blog.okfn.org/?s=data+package)
