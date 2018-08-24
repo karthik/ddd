@@ -131,6 +131,8 @@ Governments/civic bodies are documenting data:
 
 - [brisbane](https://www.data.brisbane.qld.gov.au/data/dataset)
 - [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
+- [code for America](https://www.codeforamerica.org/)
+- [code for Australia](https://codeforaustralia.org/)
 
 # References
 
