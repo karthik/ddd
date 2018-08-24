@@ -91,7 +91,7 @@ There are also other formats, such as data dictionaries or code books, which are
 
 Variable codes apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how date variables are formatted, this should be consistent.
 
-Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning.
+Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning. [@White2013; @Broman2017]
 
 # Tools for creating codebooks
 
@@ -104,6 +104,16 @@ Another package is [DataPackageR](https://github.com/RGLab/DataPackageR) and - [
 [csvy](http://csvy.org/) is an extended format for csv, comma separated value format, which has some additional front matter in a YAML format using a [Table Schema](https://frictionlessdata.io/specs/table-schema/). In contains field such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. The csvy format can be read using the R packages `csvy` and [rio](https://github.com/leeper/rio). `rio` provides an approach to try and read in any particular format of data with some intelligent guesses, and could be used where the data format is unknown.
 
 The `codemeta` project "focuses on metadata and discovery systems for software citation and attribution."
+
+Karthik's note:
+
+>... include a table that shows relative merits of each package, how stable and supported they are, and whether or not it already has a built in community. This will let the reader know which ones we are recommending for the purpose of being thorough versus recommendations on what to use.
+
+|thing        |links |pros |cons |stability |community |example |
+|:------------|:-----|:----|:----|:---------|:---------|:-------|
+|EML          |      |     |     |          |          |        |
+|DataPackageR |      |     |     |          |          |        |
+|csvy         |      |     |     |          |          |        |
 
 # What belongs in the minimal structure for researchers
 
@@ -146,4 +156,4 @@ https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codeboo
 **Open knowledge foundation data specifications**
 
 
-[Other notes from OKFN on "data pacakge"](https://blog.okfn.org/?s=data+package)
+[Other notes from OKFN on "data package"](https://blog.okfn.org/?s=data+package)
