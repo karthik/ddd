@@ -46,12 +46,14 @@ Once you've chosen a license, you need to make sure that you provide a good brea
 Putting it together, and following **ALMO**, in your licensed work, you need to include a license. This means that your data goes into a folder, and in that same folder, there is a README.md file, a LICENSE or LICENSE.md file, and optionally some other metadata folder that provides machine readable contents.
 Before adding the license to the data, check if: (1) You have the right to the data, and (2) Did you find or collect the data? These should help you decide which license is the most appropriate. You can also use the license chooser: https://creativecommons.org/choose/, and include the badge in the README, in addition to the license.
 
-- data/-
+```
+data--|
       |
-      |_ data.csv
-      |_ LICENSE.md
-      |_ README.md
-      |_ (optional)metadata-for-data
+      |- data.csv
+      |- LICENSE.md
+      |- README.md
+      |- (optional)metadata-for-data.json
+```
 
 _Figure. An example small directory with minimal requirements._
 
