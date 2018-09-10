@@ -1,13 +1,12 @@
 # Ten simple rules for publishing data
 
-1.
-2.
-3.
-4.
+1. Publish the data with a DOI
+2. Include a README file with a human readable description of the data
+3. Provide a codebook or glossary for each variable
+4. Provide a machine readable format for your data that describes what each column contains
 5.
 6.
 7.
 8.
 9.
 10.
-
