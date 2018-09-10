@@ -8,7 +8,7 @@ There is a balance for providing the right amount of information and context wit
 
 There are different ways to share data and its context, but there is not a standard way to discuss this problem. To help us frame our thinking around data documenting and reusability we can think of data reusability falling on a continuum, which we call the DARECO: **da**ta **re**usability **co**ntinuum, which has two axes. The first axis goes from Fragile to Robust, the second axis from Easy to Time Consuming (or labourious).
 
-![]("figures/fig-cartesian-plane.R")
+![]("figures/fig-cartesian-plane.png")
 
 _An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
