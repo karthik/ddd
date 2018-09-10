@@ -4,7 +4,7 @@ Research discusses how to share data for collaboration and how to format individ
 
 Sharing data means others can verify your results, learn from your analysis, and perhaps extend findings to other areas, advancing the field. In order to share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
 
-There is a balance for providing the right amount of information and context with data. Very little information is unhelpful. For example, a lone `csv` file in a folder with no other information does not tell us what the data contains, why it was collected. Too much information can also be challenging. For example, a folder with dozens of data files and several papers written on the topic. There is likely some rich information here, but it is hard to know where to start, and time consuming. In both of these cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data.
+There is a balance for providing the right amount of information and context with data. Very little, or too much information can be unhelpful. A lone `csv` file in a folder with no other information does not tell us what the data contains, why it was collected. Equally, a folder with dozens of data files and several papers written on the topic makes it is hard to know where to start, and is time consuming. In both of these cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data.
 
 There are different ways to share data and its context, but there is not a standard way to discuss this problem. To help us frame our thinking around data documenting and reusability we can think of data reusability falling on a continuum, which we call the DARECO: **da**ta **re**usability **co**ntinuum, which has two axes. The first axis goes from Fragile to Robust, the second axis from Easy to Time Consuming (or labourious).
 
@@ -30,23 +30,15 @@ In a similar way, a dataset could be painstakingly documented using a custom app
 
 ## The Spaceship
 
-A robust process is good because it will stand the test of time, and is easy to share. However, a time consuming process is costly. An important fact to consider when designing a system that is robust and time consuming is the overall reward for reproducibility. For example, randomized control trials for a new drug benefit greatly from reproducibility, as the cost and reward are high: a new drug can have positive health benefits, and is also very expensive to repeat, and equally, the drug trial can have dire effects (severe illness or death), and so must have a high standard for reproducibility.
+Robust data is good because it will stand the test of time, and is easy to share. However, a time consuming process is costly, but necessary for some project. We call this quadrant a spaceship as it is robust - it has to endure extreme temperatures and forces, and it is very expensive. A spaceship is a very useful machine that helps advance humanity and provide things like satellites and GPS, so the cost and time is justified. This provides a way for us to evaluate the effectiveness of data and sharing and evaluate its worth.
 
-There is an important interaction between the importance of the data, the time spent to document it, and the risk and impact of the data. For example, data from RCTs are important and have high risk and high impact. So, a lot of time should be spent documenting them. Comparatively, a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system.
+There is a tradeoff between the time and resources taken to document something so it can be shared and reproduced, and it's overall worth and importance. For example, Randomized Control Trials (RCTs) for a new drug benefit greatly from reproducibility, as the cost and reward are high: a new drug can have positive health benefits, and is also very expensive to repeat. Equally, the drug trial can have dire effects (severe illness or death), and so must have a high standard for documentation.
 
-On the other hand, if the experiment involves using existing data and combining it in an interesting way, for example pulling twitter data from different sources at different times. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
+There is an important interaction between the importance of the data, the time spent to document it, and the risk and impact of the data. For example, data from RCTs are important and have high risk and high impact. So, a lot of time should be spent documenting them. Comparatively, a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
 
 This tradeoff will change over time as the relative costs also change. For example, if it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent.
 
-Two was to think of the spaceship are the "light aeroplane" and the "heavy falcon".
-
-### Light aeroplane
-
-Data with an accompanying human readable README file that describes the data and a machine readable format for reading in the data.
-
-### Heavy Falcon
-
-Complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
+Two was to think of the spaceship are the "light aeroplane" and the "heavy falcon". Light aeroplane data come with accompanying human readable README file that describes the data and a machine readable format for reading in the data. Heavy Falcon data have complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
 
 ## The paper plane
 
