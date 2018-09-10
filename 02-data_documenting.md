@@ -1,10 +1,16 @@
 # How to document your dataset
 
-Documenting a dataset ensures others understand why the data was collected, how it was used, and how to use it appropriately. A `csv` file alone in a folder with no other information is unhelpful. By the same token, providing too much information can make it difficult to understand, and where to start. A useful way to frame this is think of data reusability falling on a continuum, which we the DARECO: **da**ta **re**usability **co**ntinuum. This has two axes: The first being from Fragile to Robust, and the second from Easy to Time Consuming (or labourious).
+Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @broman2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
+
+Sharing data means others can verify your results, learn from your analysis, and perhaps extend findings to other areas, advancing the field. In order to share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
+
+There is a balance for providing the right amount of information and context with data. Very little, or too much information can be unhelpful. A lone `csv` file in a folder with no other information does not tell us what the data contains, why it was collected. Equally, a folder with dozens of data files and several papers written on the topic makes it is hard to know where to start, and is time consuming. In both of these cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data.
+
+There are different ways to share data and its context, but there is not a standard way to discuss this problem. To help us frame our thinking around data documenting and reusability we can think of data reusability falling on a continuum, which we call the DARECO: **da**ta **re**usability **co**ntinuum, which has two axes. The first axis goes from Fragile to Robust, the second axis from Easy to Time Consuming (or labourious).
 
 ![]("figures/fig-cartesian-plane.R")
 
-_Figure of the continuum from only data, to data + readme + machine readable code + full instruction set_
+_An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
 This forms four quadrants:
 
@@ -13,41 +19,38 @@ This forms four quadrants:
 - Bottom left quadrant is fragile and easy: Not Ideal ("Paper plane")
 - Borrom right quadrant is robust and easy: Super Ideal ("Serendipitous / Felix Culpa / goldilocks")
 
-**The Homer Car**
+These are now discussed in turn.
 
-A complex dataset that is painstakingly documented but very difficult to read and interpret
+## The Homer Car
 
-Optimizing too early as an example
+Sometimes complexity and precision are more hindering than helpful.
+In the television show, "The Simpsons", Homer Simpson gets a huge budget to build a car for the everyday American. Homer designs the car for his needs, with features he wants: having three horns, a sound-proofed backseat for the children, extremely large cup holders, taillight fins, and a bubble dome. Unfortunately, the car is terrible, as what works for Homer does not work for anyone else. This was very expensive, and results in Homer's brother losing his business. In designing something completely bespoke for a given task, might not suit other cases, and can be very expensive to create.
 
-another example - writing a tome of a book to document the process, but using a technology that is not portable or standard. E.g., you recorded your data using a complex punch card system that is systematically documented; but no one can read punch cards anymore.
+In a similar way, a dataset could be painstakingly documented using a custom approach that fits that data and context. But in turn this makes it very difficult to read, interpret, and share. Such a dataset is characterized by being **fragile** and **time consuming**. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming. It is also fragile as the process can easily be lost, and so the system would fail. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. An extreme example might be that the data is recorded using a complex punch card system that is systematically documented; but no one can read punch cards anymore. This type of problem can result from trying to optimise too early without thinking about the generality.
 
-**The Spaceship**
+## The Spaceship
 
-"light aeroplace / glider"
+Robust data is good because it will stand the test of time, and is easy to share. However, a time consuming process is costly, but necessary for some project. We call this quadrant a spaceship as it is robust - it has to endure extreme temperatures and forces, and it is very expensive. A spaceship is a very useful machine that helps advance humanity and provide things like satellites and GPS, so the cost and time is justified. This provides a way for us to evaluate the effectiveness of data and sharing and evaluate its worth.
 
-Data with an accompanying human readable README file that describes the data and a machine readable format for reading in the data.
+There is a tradeoff between the time and resources taken to document something so it can be shared and reproduced, and it's overall worth and importance. For example, Randomized Control Trials (RCTs) for a new drug benefit greatly from reproducibility, as the cost and reward are high: a new drug can have positive health benefits, and is also very expensive to repeat. Equally, the drug trial can have dire effects (severe illness or death), and so must have a high standard for documentation.
 
-"Heavy Falcon"
+There is an important interaction between the importance of the data, the time spent to document it, and the risk and impact of the data. For example, data from RCTs are important and have high risk and high impact. So, a lot of time should be spent documenting them. Comparatively, a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
 
-Complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
+This tradeoff will change over time as the relative costs also change. For example, if it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent.
 
-**The paper plane**
+Two was to think of the spaceship are the "light aeroplane" and the "heavy falcon". Light aeroplane data come with accompanying human readable README file that describes the data and a machine readable format for reading in the data. Heavy Falcon data have complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
 
-A lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format (more fragile if the format is hard to read).
+## The paper plane
 
-**Felix Culpa**
+An example of a fragile and quick process could be a lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format. The format is more fragile if it is hard to read.
 
-This takes just enough time to be robust, but is still easy.
+## Felix Culpa
 
-Researchers and analysts should aim to be at the "good enough" as the new minimum: A README with human context, machine readable statement of variables, and the raw data. Some examples of data documentation are now discussed, and ranked on the DARECO.
+Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
 
-**The interaction of importance of data and time spent**
+# Ranking data on the DARECO
 
-Worthwhile to think about the use of time for the experiment/context:
-
-- e.g., an RCT experiment should be very robust because it might affect life and death, vs. collecting a small project with low risk and low impact (not life and death).
-
-> On a “writing and research retreat”.  This means i check and answer e-mail only between 8PM and 9PM each evening.  In that one hour I do the best i can--but a lot gets unanswered.  It is only a temporary victory over the great interruptor -- but even so, it is a exhilarating victory.  As the well-trodden Lithuanian folk saying goes: “beware of masters that are soul-sucking habits disguised as responsibility”  (translation may be a bit off).  Will resume normalcy on August 9.
+Some examples of data documentation are now discussed, and ranked on the DARECO.
 
 ## EML
 
@@ -55,92 +58,114 @@ The Ecological Metadata Language (EML) [@EML-about] is:
 
 > ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
 
-EML is at the top right quadrant of DARECO
-
-There is an R interface to this: https://github.com/ropensci/EML
-
-- [EML-pkg](https://github.com/ropensci/EML)
-- [EML-spec](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
-
+EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
+), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
 
 ## Journal "Data papers"
 
-Journals are now adding "data papers", specifically designed for publishing and sharing data. These provide more information and context around, crucial to understanding the data structure.
+To provide more information and context around the data used in research,  journals are now adding "data papers", specifically designed for publishing and sharing data. One example of this is **Elsevier's Data In Brief**, which aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data to improve reproducibility, enhance discoverability by taking it out of the supplementary materials, increase traffic and citations to both the research articles and the data, pave the way for collaborations. Data In Brief welcome data from all research areas.
 
-For example, **Elsevier's Data In Brief** aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data to improve reproducibility, enhance discoverability by taking it out of the supplementary materials, increase traffic and citations to both the research articles and the data, pave the way for collaborations. They welcome data from all research areas.
+The requirements of Data In Brief are similar to research articles, requiring a title, author list, afiliations, abstract, and references. They also require several clear bullet points explaining why the data is useful to others, a direct link to the data, a complete description of the design, materials, and methods, and a specifications table. Of particular interest are the sections **Completed specifications table** and **complete description of the experimental design and materials and methods**
 
-The requirements of Data In Brief are similar to research articles, requiring a title, author list, afiliations, abstract, and references. They also require several clear bullet points explaining why the data is useful to others, a direct link to the data, a complete description of the design, materials, and methods, and a specifications table.
+The completed specifications table details information on subject area, data type (image, table, text file, graph),the data format (raw, filtered, analysed), how the data was acquired, related articles, data accessibility (it is in a public repo etc), and features of the experimental factors and features, and related research article.
 
-Of particular interest are the sections **Completed specifications table** and **complete description of the experimental design and materials and methods**
+Whilst this is useful, the structure it provides is very flexible, and doesn't tell the researcher/analyst how to actually structure the data and folders. It doesn't tell them how to do it, just provides some good ideas on what they should include. This is a useful step towards improving data resuse, but it _lacks some minimal structure that allows a researcher to have a predictable way to access and interpret the data_.
 
-The Completed specifications table details information on subject area, data type (image, table, text file, graph),the data format (raw, filtered, analysed), how the data was acquired, related articles, data accessibility (it is in a public repo etc), and features of the experimental factors and features, and related research article.
-
-Whilst this is useful, the structure it provides is very flexible, and doesn't tell the researcher/analyst how to actually structure the data and folders. It doesn't tell them how to do it, just provides some good ideas on what they should include.
-
-It does not solve _PROBLEM STATEMENT_
-
-For example, it does not provide the same resolution of information as a Data Dictionary.
-
-As another example, Elsevier's guidelines on "a complete description of the experimental design and materials and methods", state that:
+For example, it does not provide the same resolution of information as a Data Dictionary. As another example, Elsevier's guidelines on "a complete description of the experimental design and materials and methods", state that:
 
 > Offer a complete description of the experimental design and methods used to acquire the data and, where applicable, to perform the analysis. Include any relevant figures and tables needed to understand the data fully. Please also provide, where applicable, any code files used for base-level analysis or filtering of the data
 
 - This is a good standard, but it does not provide explicit instructions.
 
-**License for "data in brief"**
+It is also unclear what the _license_ for data in brief is, as it appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses). Finally, to provide open access, this journal has an open access fee, which further limits the impact of the paper.
 
-It is unclear what the license for data in brief is, is appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses). Finally, to provide open access, this journal has an open access fee
-
-**journal: "data"**
+## journal: "data"
 
 http://www.mdpi.com/journal/data
 
-# What goes in the README
+> a peer-reviewed open access journal on data in science, with the aim of enhancing data transparency and reusability. The journal publishes in two sections: a section on the collection, treatment and analysis methods of data in science; a section publishing descriptions of scientific and scholarly datasets (one dataset per paper).
 
-The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
+> One of the current hot topics in science is data: how can datasets be used in scientific and scholarly research in a more reliable, citable and accountable way? Data is of paramount importance to scientific progress, yet most research data remains private. Enhancing the transparency of the processes applied to collect, treat and analyze data will help to render scientific research results reproducible and thus more accountable. The datasets itself should also be accessible to other researchers, so that research publications, dataset descriptions, and the actual datasets can be linked. The journal Data provides a forum to publish methodical papers on processes applied to data collection, treatment and analysis, as well as for data descriptors publishing descriptions of a linked dataset.
+
+> Data (ISSN 2306-5729) is a unique international, scientific open access journal on ʻdata in scienceʼ. It provides a forum for data scientists as well as for scientists working with data. The journal publishes two sections:
+
+> Methods: the Methods section publishes research articles, review papers and technical notes on methods for collecting, processing (treating), managing, storing and analyzing scientific and scholarly data. Related source code, if available, can be deposited as supplementary material.
+
+> Data Descriptors: the Data Descriptors section publishes descriptions of scientific and scholarly datasets (one dataset per paper). Described datasets need to be publicly deposited prior to publication, preferably under an open license, thus allowing others to re-use the dataset. Small datasets might also be published as supplementary material to the dataset paper in the journal Data. The link to the publicly hosted version of the dataset must be given in the paper. Data descriptors therefore provide easy citability, traceability and accountability of datasets used in scientific research. Research articles published elsewhere based on the data can link back to the data descriptors via a standard reference and DOI number. Data descriptors are published under a CC BY license, thus allowing the reuse of the descriptions in other research papers without copyright infringement.
 
 # Documenting using code books
 
-There are also other formats, such as data dictionaries or code books, which are recommended for use when sharing data @Ellis2017. These "codebooks" are provided in STATA, which provides a "codebook" command. This allows you to describe the data, using a set of commands.
+There are also other formats, such as data dictionaries or code books, which are recommended for use when sharing data @Ellis2017.  Codebooks provide a human friendly reference for the data, typically consisting of variable names, variable labels, variable codes, and missing data. Variable names are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". Variable labels are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook].
 
-Some examples of "Codebooks" for data include `codemeta` and ...
+Variable codes apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how date variables are formatted, this should be consistent.
 
-# rio (more of a tool than an approach)
+Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning. [@White2013; @Broman2017]
 
-[rio](https://github.com/leeper/rio)
+# Tools for creating codebooks
 
-# csvy
+Some examples of codebooks in R include packages `dataMeta` (@dataMeta), which attaches additional information about the dataset to a data.frame as an attribute through a `linker` object. Other packages include `memisc` and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
 
-[csvy](http://csvy.org/)
+Another package is [DataPackageR](https://github.com/RGLab/DataPackageR) and - [datapack](https://github.com/ropensci/datapack), which implement a data specification was initially developed by the Open Knowledge Foundation data specification. This specification was never quite fully completed, although they have recently completed the latest version of a specialised fiscal data package specification
+[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
+ [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
 
+[csvy](http://csvy.org/) is an extended format for csv, comma separated value format, which has some additional front matter in a YAML format using a [Table Schema](https://frictionlessdata.io/specs/table-schema/). In contains field such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. The csvy format can be read using the R packages `csvy` and [rio](https://github.com/leeper/rio). `rio` provides an approach to try and read in any particular format of data with some intelligent guesses, and could be used where the data format is unknown.
 
-# DataPackageR
+The `codemeta` project "focuses on metadata and discovery systems for software citation and attribution."
 
-[DataPackageR](https://github.com/RGLab/DataPackageR)
+To assis
 
-Some history:
+Karthik's note:
 
-- [frictionless-data-data-pacakges-r](https://frictionlessdata.io/data-packages/)
-- [datapack](https://github.com/ropensci/datapack)
+>... include a table that shows relative merits of each package, how stable and supported they are, and whether or not it already has a built in community. This will let the reader know which ones we are recommending for the purpose of being thorough versus recommendations on what to use.
 
-# Open knowledge foundation data specifications
+|thing        |links |pros |cons |stability |community |example |
+|:------------|:-----|:----|:----|:---------|:---------|:-------|
+|EML          |      |     |     |          |          |        |
+|DataPackageR |      |     |     |          |          |        |
+|csvy         |      |     |     |          |          |        |
 
-[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/)
+# What belongs in the minimal structure for researchers
 
-[Other notes from OKFN on "data pacakge"](https://blog.okfn.org/?s=data+package)
+# Human context: A README
 
-# Civic bodies
+The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
-Possibly explore how governments/civic bodies are documenting data:
+# Case Study
+
+We now assess three/four (or perhaps just one!) case study areas and assess their data documenting, providing targeted feedback on how they could improve, and discuss the strengths.
+
+## Academia
+
+A Journal Article
+
+## Industry
+
+???
+
+## Media
+
+A media article, such as The Pudding, which has some interesting examples of how they curate data: [pudding data](https://github.com/the-pudding/data)
+
+## Civic bodies
+
+Governments/civic bodies are documenting data:
 
 - [brisbane](https://www.data.brisbane.qld.gov.au/data/dataset)
 - [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
-
-# Media
-
-The Pudding has some interesting examples of how they curate data: [pudding data](https://github.com/the-pudding/data)
+- [code for America](https://www.codeforamerica.org/)
+- [code for Australia](https://codeforaustralia.org/)
 
 # References
 
 @EML-about: https://knb.ecoinformatics.org/#external//emlparser/docs/index.html
-@Ellis
+@Ellis:
+@Broman:
+
+@McGill-codebook - interesting article about code books: http://www.medicine.mcgill.ca/epidemiology/joseph/pbelisle/CodebookCookbook/CodebookCookbook.pdf
+
+https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html
+
+**Open knowledge foundation data specifications**
+
+[Other notes from OKFN on "data package"](https://blog.okfn.org/?s=data+package)
