@@ -51,24 +51,23 @@ Felix Culpa means "stroke of luck", and this is a process that takes just the ri
 
 # What belongs in the minimal structure for researchers
 
-Now that we've discussed these different aspects of data sharing, we now discuss some approaches to share data.
-
-In a [case study page on CC0 for data use](https://wiki.creativecommons.org/wiki/CC0_use_for_data), they state that there are three ways CC0 is expressed:
+Now that we've discussed these different aspects of data sharing, we now discuss some approaches to share data. A case study on CC0 for data use [@cc0-case-study] state there are three ways CC0 is expressed:
 
 > And like our licenses, CC0 has the benefit of being expressed in three ways – legal code, a human readable deed, and machine-readable code that allows works distributed under CC0 to be easily found.
 
 We can apply this template for metadata and context of data:
 
-1. Code book (legal code)
-2. Human readable (README / methods)
-3. Machine readable ({`date_collected`}: {["date", "YYYY-MM-DD", "GMT+11","Melbourne","Victoria", "Australia"]})
+1. Human readable (README / methods)
+2. Legal code (code book)
+3. Machine readable (JSON/structured data)
 
-# Human context: A README
+These are now discussed.
+
+# Human readable: A README
 
 The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
-
-# Documenting using code books
+# Legal code: Documenting using code books
 
 There are also other formats, such as data dictionaries or code books, which are recommended for use when sharing data @Ellis2017.  Codebooks provide a human friendly reference for the data, typically consisting of variable names, variable labels, variable codes, and missing data. Variable names are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". Variable labels are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook].
 
@@ -76,7 +75,15 @@ Variable codes apply to categorical (factor) varaibles, and are the values for t
 
 Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning. [@White2013; @Broman2017]
 
-# Tools for creating codebooks
+# Machine readable: JSON / structured data
+
+# Tooling for sharing
+
+## Tooling for README
+
+* perhaps discuss some kind of template
+
+## Tooling for codebooks
 
 Some examples of codebooks in R include packages `dataMeta` (@dataMeta), which attaches additional information about the dataset to a data.frame as an attribute through a `linker` object. Other packages include `memisc` and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
 
@@ -88,6 +95,7 @@ Another package is [DataPackageR](https://github.com/RGLab/DataPackageR) and - [
 
 The `codemeta` project "focuses on metadata and discovery systems for software citation and attribution."
 
+## Tooling for machine readability
 
 _Table XX An overview of the merits of each package. This shows the approach, some links, pros and cons, how stable and supported they are, and whether or not they have a built in community. For thoroughness, we recommend ..., else we recommend ... ._
 
@@ -101,9 +109,9 @@ _Table XX An overview of the merits of each package. This shows the approach, so
 # References
 
 @EML-about: https://knb.ecoinformatics.org/#external//emlparser/docs/index.html
-@Ellis:
-@Broman:
-
+@Ellis: Ellis + Leek article on sharing data for collaboration
+@Broman: Broman and Woo article on sharing data for collaboration
+@cc0-case-study: https://wiki.creativecommons.org/wiki/CC0_use_for_data
 @McGill-codebook - interesting article about code books: http://www.medicine.mcgill.ca/epidemiology/joseph/pbelisle/CodebookCookbook/CodebookCookbook.pdf
 
 https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html
