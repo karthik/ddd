@@ -1,23 +1,12 @@
 # Case Study
 
-We now assess three/four (or perhaps just one!) case study areas and assess their data documenting, providing targeted feedback on how they could improve, and discuss the strengths.
+We now briefly assess three case study areas and assess data documenting strengths, and areas of improvement. These are assessed using the DARECO (DAta REusability COntinuum) mentioned in section 2.
 
+The three case study areas are:
 
-# Ranking data on the DARECO
-
-Some examples of data documentation are now discussed, and ranked on the DARECO.
-
-## Academia
-
-## EML
-
-The Ecological Metadata Language (EML) [@EML-about] is:
-
-> ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
-
-EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
-), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
-
+1. A journal taken from the journal "data papers "
+2. a dataset from five thirty eight
+3. a dataset from the government of Brisbane
 
 ## Journal "Data papers"
 
@@ -51,19 +40,22 @@ http://www.mdpi.com/journal/data
 
 > Data Descriptors: the Data Descriptors section publishes descriptions of scientific and scholarly datasets (one dataset per paper). Described datasets need to be publicly deposited prior to publication, preferably under an open license, thus allowing others to re-use the dataset. Small datasets might also be published as supplementary material to the dataset paper in the journal Data. The link to the publicly hosted version of the dataset must be given in the paper. Data descriptors therefore provide easy citability, traceability and accountability of datasets used in scientific research. Research articles published elsewhere based on the data can link back to the data descriptors via a standard reference and DOI number. Data descriptors are published under a CC BY license, thus allowing the reuse of the descriptions in other research papers without copyright infringement.
 
-## Industry
-
-???
-
 ## Media
 
-A media article, such as The Pudding, which has some interesting examples of how they curate data: [pudding data](https://github.com/the-pudding/data)
+We assess data from [five-thirty-eight](https://data.fivethirtyeight.com/).
+
+Other media outlets are starting to share their data. For example, The Pudding, provides their data [pudding data](https://github.com/the-pudding/data).
 
 ## Civic bodies
 
-Governments/civic bodies are documenting data:
+Governments/civic bodies are documenting data, for example, each state and capital city in Australia has a website with links to their open datasets. We evaluate an example dataset from Brisbane, Queensland, Australia: [brisbane](https://www.data.brisbane.qld.gov.au/data/dataset)
 
-- [brisbane](https://www.data.brisbane.qld.gov.au/data/dataset)
+- [brisbane parking data](https://www.data.brisbane.qld.gov.au/data/dataset/brisbane-parking-stations)
+- [brisbane traffic data](https://www.data.brisbane.qld.gov.au/data/dataset/traffic-data-at-intersection-api)
+- [brisbane food safety](https://www.data.brisbane.qld.gov.au/data/dataset/food-safety-permits)
+
+Other civic bodies are using data at a national level in an interesting capacity:
+
 - [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
 - [code for America](https://www.codeforamerica.org/)
 - [code for Australia](https://codeforaustralia.org/)
