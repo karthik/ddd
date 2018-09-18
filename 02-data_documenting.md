@@ -48,6 +48,13 @@ An example of a fragile and quick process could be a lone data file in a folder,
 
 Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
 
+# current avenues for publishing data
+
+A brief (one paragraph-ish) summary of the places that we can submit data papers to?
+
+## Elsevier's "data in brief"
+## Nature
+## "data" journal
 
 # What belongs in the minimal structure for researchers
 
@@ -76,6 +83,15 @@ Variable codes apply to categorical (factor) varaibles, and are the values for t
 Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning. [@White2013; @Broman2017]
 
 # Machine readable: JSON / structured data
+
+## EML
+
+The Ecological Metadata Language (EML) [@EML-about] is:
+
+> ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
+
+EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
+), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
 
 # Tooling for sharing
 
