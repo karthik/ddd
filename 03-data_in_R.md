@@ -25,3 +25,5 @@ Disadvantages:
 
 - Data chapter from Hadley's R Packages book (which I reviewed) http://r-pkgs.had.co.nz/data.html
 - https://journal.r-project.org/archive/2017/RJ-2017-026/RJ-2017-026.pdf
+
+

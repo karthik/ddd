@@ -16,6 +16,10 @@ Python is a popular general purpose language, used in engineering, statistics, a
 
 > Mention Data packages (as a possible path). I worked with open knowledge foundation to bring this to R. For a brief time ropensci maintained the package. The data package standard does have limitations
 
+Including data in a python package: https://python-packaging.readthedocs.io/en/latest/non-code-files.html
+A user can typically include data (or any other arbitrary files) inside a python package by declaring it in the manifest.
+
+
 # References
 
 @METADATA-jl: https://github.com/JuliaLang/METADATA.jl
