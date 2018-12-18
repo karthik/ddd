@@ -1,6 +1,6 @@
 # How to document your dataset
 
-Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @broman2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
+Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @Broman2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
 
 Sharing data means others can verify your results, learn from your analysis, and perhaps extend findings to other areas, advancing the field. In order to share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
 
@@ -183,14 +183,6 @@ _Table XX An overview of the merits of each package. This shows the approach, so
 
 
 # References
-
-@EML-about: https://knb.ecoinformatics.org/#external//emlparser/docs/index.html
-@Ellis: Ellis + Leek article on sharing data for collaboration
-@Broman: Broman and Woo article on sharing data for collaboration
-@cc0-case-study: https://wiki.creativecommons.org/wiki/CC0_use_for_data
-@McGill-codebook - interesting article about code books: http://www.medicine.mcgill.ca/epidemiology/joseph/pbelisle/CodebookCookbook/CodebookCookbook.pdf
-
-https://www.icpsr.umich.edu/icpsrweb/content/shared/ICPSR/faqs/what-is-a-codebook.html
 
 **Open knowledge foundation data specifications**
 
