@@ -2,20 +2,20 @@
 
 Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @Broman2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
 
-Sharing data means others can verify your results, learn from your analysis, and perhaps extend findings to other areas, advancing the field. In order to share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
+Sharing data means others can verify your results, learn from your analysis, and perhaps extend findings to other areas. This advances the field. In order to share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
 
-There is a balance for providing the right amount of information and context with data. Very little, or too much information can be unhelpful. A lone `csv` file in a folder with no other information does not tell us what the data contains, why it was collected. Equally, a folder with dozens of data files and several papers written on the topic makes it is hard to know where to start, and is time consuming. In both of these cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data.
+There is a balance for providing the right amount of information and context with data. Very little, or too much information can be unhelpful. A lone `csv` file in a folder with no other information does not tell us what the data contains or why it was collected. Equally, a folder with dozens of data files and several papers written on the topic makes it is hard to know where to start, and is time consuming. In both of these cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data.
 
-There are different ways to share data and its context, but there is not a standard way to discuss this problem. To help us frame our thinking around data documenting and reusability we can think of data reusability falling on a continuum, which we call the DARECO: **da**ta **re**usability **co**ntinuum, which has two axes. The first axis goes from Fragile to Robust, the second axis from Easy to Time Consuming (or labourious).
+There are different ways to share data and its context, but there is not a standard way to discuss this problem. To help us frame our thinking around data documenting and reusability we can think of data reusability falling on a continuum, which we call the DARECO: **da**ta **re**usability **co**ntinuum. The DARECO has two axes, the first axis is "Brittleness", which goes from from Fragile to Robust. The second is "Time Investment", which from from Easy ("Quick and dirty") to more time ("Meticulous") (Laborious / Time Consuming)).
 
 ![]("figures/fig-cartesian-plane.png")
 
 _An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
-This forms four quadrants:
+These two axis form four quadrants:
 
-- Top left quadrant is fragile and time consuming: Not Ideal ("The Homer Car")
-- Top right quadrant is robust and time consuming: Strong and Complex ("The Spaceship")
+- Top left quadrant is fragile and laborious: Not Ideal ("The Homer Car")
+- Top right quadrant is robust and laborious: Strong and Complex ("The Spaceship")
 - Bottom left quadrant is fragile and easy: Not Ideal ("Paper plane")
 - Borrom right quadrant is robust and easy: Super Ideal ("Serendipitous / Felix Culpa / goldilocks")
 
@@ -24,7 +24,7 @@ These are now discussed in turn.
 ## The Homer Car
 
 Sometimes complexity and precision are more hindering than helpful.
-In the television show, "The Simpsons", Homer Simpson gets a huge budget to build a car for the everyday American. Homer designs the car for his needs, with features he wants: having three horns, a sound-proofed backseat for the children, extremely large cup holders, taillight fins, and a bubble dome. Unfortunately, the car is terrible, as what works for Homer does not work for anyone else. This was very expensive, and results in Homer's brother losing his business. In designing something completely bespoke for a given task, might not suit other cases, and can be very expensive to create.
+In the television show, "The Simpsons", Homer Simpson has a huge budget to build a car for the everyday American. Homer designs the car for his needs, with features he wants: three horns, a sound-proofed backseat for the children, extremely large cup holders, taillight fins, and a bubble dome. Unfortunately, the car is terrible, as what works for Homer does not work for anyone else. This was very expensive, and results in Homer's brother losing his business. Designing something completely bespoke for a given task might not suit other cases, and can be very expensive to create.
 
 In a similar way, a dataset could be painstakingly documented using a custom approach that fits that data and context. But in turn this makes it very difficult to read, interpret, and share. Such a dataset is characterized by being **fragile** and **time consuming**. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming. It is also fragile as the process can easily be lost, and so the system would fail. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. An extreme example might be that the data is recorded using a complex punch card system that is systematically documented; but no one can read punch cards anymore. This type of problem can result from trying to optimise too early without thinking about the generality.
 
