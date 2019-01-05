@@ -18,6 +18,20 @@ We assess data from [five-thirty-eight](https://data.fivethirtyeight.com/), for 
 
 ## Need to add some other examples of some examples that are low on this spectrum
 
+Note that there is a difference between easy to create vs easy to consume.
+
+The data reuse continuum should apply to the user, but it all kind of depends on the tooling available.
+
+The tidyverse has made package development a lot easier. In the past, there was a lot of work with using tools like `package.skeleton`, the pseudo-latex for documentation of each R function, and so on. This made it hard to create high quality R packages. There was a lot of manual work to make sure that things were documented properly. That has now been made easier thanks to `devtools`, and `roxygen2`. More people can now quite easily write a high quality package.
+
+We are still in the past a bit with the current state of data sharing tools. There is the same opportunity here with data tooling as there was with package development tools like `devtools`. Some features that such a tools to add:
+
+* Add Metadata
+* Add a README
+* Share on a cloud service
+* Run checks on the data source
+* Perform general data formatting checks
+
 Features that are worthwhile/useful as a data consumer:
 
 * Metadata (+/-)
@@ -25,9 +39,6 @@ Features that are worthwhile/useful as a data consumer:
 * Ease of retrieving the data (+/-)
 * General data formatting (+/-)
 
-Note that there is a difference between easy to create vs easy to consume.
-
-The data reuse continuum should apply to the user, but it all kind of depends on the tooling available. Currently, the tooling that is available is actually quite difficult. The tidyverse has made pkg development a lot easier now - in the past there was a lot of work with package.skeleton, latex for documentation, and so on. We are still in the past a bit with the current state of data sharing tools. There is the same opportunity here with data tooling as there was with pacakge development tools like `devtools`.
 
 ## Brisbane Government
 
