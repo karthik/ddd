@@ -16,7 +16,18 @@ The article that was selected for the "Data in Brief" article, was "" [@Obi2018]
 
 We assess data from [five-thirty-eight](https://data.fivethirtyeight.com/), for the article ["What 12 Months Of Record-Setting Temperatures Looks Like Across The U.S."](https://fivethirtyeight.com/features/what-12-months-of-record-setting-temperatures-looks-like-across-the-u-s/). The data source comes from [here](https://github.com/fivethirtyeight/data/tree/master/us-weather-history)
 
+## Need to add some other examples of some examples that are low on this spectrum
 
+Features that are worthwhile/useful as a data consumer:
+
+* Metadata (+/-)
+* README (+/-)
+* Ease of retrieving the data (+/-)
+* General data formatting (+/-)
+
+Note that there is a difference between easy to create vs easy to consume.
+
+The data reuse continuum should apply to the user, but it all kind of depends on the tooling available. Currently, the tooling that is available is actually quite difficult. The tidyverse has made pkg development a lot easier now - in the past there was a lot of work with package.skeleton, latex for documentation, and so on. We are still in the past a bit with the current state of data sharing tools. There is the same opportunity here with data tooling as there was with pacakge development tools like `devtools`.
 
 ## Brisbane Government
 
