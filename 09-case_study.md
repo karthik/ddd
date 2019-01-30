@@ -1,61 +1,64 @@
 # Case Study
 
-We now briefly assess three case study areas and assess data documenting strengths, and areas of improvement. These are assessed using the DARECO (DAta REusability COntinuum) mentioned in section 2.
+We have discussed different data documenting methods in section [@data-documenting]. We now briefly assess three case study applications, and assess data documenting strengths, and areas of improvement. These are assessed using the DARECO (DAta REusability COntinuum) described in section 2.
 
 The three case study areas are:
 
-1. A journal taken from the journal "data papers "
-2. a dataset from five thirty eight
-3. a dataset from the government of Brisbane
+1. A journal article from the journal "Data in Brief".
+2. A dataset from five thirty eight, "What 12 Months Of Record-Setting Temperatures Looks Like Across The U.S.".
+3. A dataset from the government of Brisbane, Australia: "Library Checkout Dataset".
 
-## Journal "Data papers"
+# Data In Brief Article
 
-To provide more information and context around the data used in research,  journals are now adding "data papers", specifically designed for publishing and sharing data. One example of this is **Elsevier's Data In Brief**, which aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data to improve reproducibility, enhance discoverability by taking it out of the supplementary materials, increase traffic and citations to both the research articles and the data, pave the way for collaborations. Data In Brief welcome data from all research areas.
+The article that was selected for the "Data in Brief" article, was "" [@Obi2018]. This article was chosen as it was one of the most downloaded articles advertised on their website.
 
-The requirements of Data In Brief are similar to research articles, requiring a title, author list, afiliations, abstract, and references. They also require several clear bullet points explaining why the data is useful to others, a direct link to the data, a complete description of the design, materials, and methods, and a specifications table. Of particular interest are the sections **Completed specifications table** and **complete description of the experimental design and materials and methods**
+## Five Thirty-Eight
 
-The completed specifications table details information on subject area, data type (image, table, text file, graph),the data format (raw, filtered, analysed), how the data was acquired, related articles, data accessibility (it is in a public repo etc), and features of the experimental factors and features, and related research article.
+We assess data from [five-thirty-eight](https://data.fivethirtyeight.com/), for the article ["What 12 Months Of Record-Setting Temperatures Looks Like Across The U.S."](https://fivethirtyeight.com/features/what-12-months-of-record-setting-temperatures-looks-like-across-the-u-s/). The data source comes from [here](https://github.com/fivethirtyeight/data/tree/master/us-weather-history)
 
-Whilst this is useful, the structure it provides is very flexible, and doesn't tell the researcher/analyst how to actually structure the data and folders. It doesn't tell them how to do it, just provides some good ideas on what they should include. This is a useful step towards improving data resuse, but it _lacks some minimal structure that allows a researcher to have a predictable way to access and interpret the data_.
+## Need to add some other examples of some examples that are low on this spectrum
 
-For example, it does not provide the same resolution of information as a Data Dictionary. As another example, Elsevier's guidelines on "a complete description of the experimental design and materials and methods", state that:
+Note that there is a difference between easy to create vs easy to consume.
 
-> Offer a complete description of the experimental design and methods used to acquire the data and, where applicable, to perform the analysis. Include any relevant figures and tables needed to understand the data fully. Please also provide, where applicable, any code files used for base-level analysis or filtering of the data
+The data reuse continuum should apply to the user, but it all kind of depends on the tooling available.
 
-- This is a good standard, but it does not provide explicit instructions.
+The tidyverse has made package development a lot easier. In the past, there was a lot of work with using tools like `package.skeleton`, the pseudo-latex for documentation of each R function, and so on. This made it hard to create high quality R packages. There was a lot of manual work to make sure that things were documented properly. That has now been made easier thanks to `devtools`, and `roxygen2`. More people can now quite easily write a high quality package.
 
-It is also unclear what the _license_ for data in brief is, as it appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses). Finally, to provide open access, this journal has an open access fee, which further limits the impact of the paper.
+We are still in the past a bit with the current state of data sharing tools. There is the same opportunity here with data tooling as there was with package development tools like `devtools`. Some features that such a tools to add:
 
-## journal: "data"
+* Add Metadata
+* Add a README
+* Share on a cloud service
+* Run checks on the data source
+* Perform general data formatting checks
 
-http://www.mdpi.com/journal/data
+Features that are worthwhile/useful as a data consumer:
 
-> a peer-reviewed open access journal on data in science, with the aim of enhancing data transparency and reusability. The journal publishes in two sections: a section on the collection, treatment and analysis methods of data in science; a section publishing descriptions of scientific and scholarly datasets (one dataset per paper).
+* Metadata (+/-)
+* README (+/-)
+* Ease of retrieving the data (+/-)
+* General data formatting (+/-)
 
-> One of the current hot topics in science is data: how can datasets be used in scientific and scholarly research in a more reliable, citable and accountable way? Data is of paramount importance to scientific progress, yet most research data remains private. Enhancing the transparency of the processes applied to collect, treat and analyze data will help to render scientific research results reproducible and thus more accountable. The datasets itself should also be accessible to other researchers, so that research publications, dataset descriptions, and the actual datasets can be linked. The journal Data provides a forum to publish methodical papers on processes applied to data collection, treatment and analysis, as well as for data descriptors publishing descriptions of a linked dataset.
 
-> Data (ISSN 2306-5729) is a unique international, scientific open access journal on ʻdata in scienceʼ. It provides a forum for data scientists as well as for scientists working with data. The journal publishes two sections:
+## Brisbane Government
 
-> Methods: the Methods section publishes research articles, review papers and technical notes on methods for collecting, processing (treating), managing, storing and analyzing scientific and scholarly data. Related source code, if available, can be deposited as supplementary material.
+We evaluate an example dataset from Brisbane, Queensland, Australia. Brisbane provides a [data portal](https://www.data.brisbane.qld.gov.au/data/dataset). The data accessed was the [Library checkout dataset](https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date#).
 
-> Data Descriptors: the Data Descriptors section publishes descriptions of scientific and scholarly datasets (one dataset per paper). Described datasets need to be publicly deposited prior to publication, preferably under an open license, thus allowing others to re-use the dataset. Small datasets might also be published as supplementary material to the dataset paper in the journal Data. The link to the publicly hosted version of the dataset must be given in the paper. Data descriptors therefore provide easy citability, traceability and accountability of datasets used in scientific research. Research articles published elsewhere based on the data can link back to the data descriptors via a standard reference and DOI number. Data descriptors are published under a CC BY license, thus allowing the reuse of the descriptions in other research papers without copyright infringement.
+We evaluate it on the two axes, Brittleness, and Time Investment.
 
-## Media
+* Issue: These axes kind of work for the developer / in historical context. However, these are actually not super clear in the eyes of a *user*.
 
-We assess data from [five-thirty-eight](https://data.fivethirtyeight.com/).
+Let's start with the website. The website provides some key overview information, describing what is in the data:
 
-Other media outlets are starting to share their data. For example, The Pudding, provides their data [pudding data](https://github.com/the-pudding/data).
+> Brisbane City Council Library checkouts borrowed at all branches on a single day. Information includes: Title, Author, Call Number, Item Identifier, Item Type, Status, Language, Checkout Branch, Date Borrowed. Also includes acronym lists. Data will be provided as a three day snapshot of every month.
 
-## Civic bodies
+It then provides a metadata acronym list of the data, and three days (7th - 9th) of every month in from June 2015 until November 2018, where each file is one month. At the bottom of the page it provides information on the date published, the license used, attribution, and update frequency.
 
-Governments/civic bodies are documenting data, for example, each state and capital city in Australia has a website with links to their open datasets. We evaluate an example dataset from Brisbane, Queensland, Australia: [brisbane](https://www.data.brisbane.qld.gov.au/data/dataset)
+Overall, this is quite good. It provides some key characteristics, namely:
 
-- [brisbane parking data](https://www.data.brisbane.qld.gov.au/data/dataset/brisbane-parking-stations)
-- [brisbane traffic data](https://www.data.brisbane.qld.gov.au/data/dataset/traffic-data-at-intersection-api)
-- [brisbane food safety](https://www.data.brisbane.qld.gov.au/data/dataset/food-safety-permits)
+- A README, a basic description of the data
+- The data in its rawest form
+- Some metadata file describing the contents of the data
+- some metadata describing what license the data is provided with, when it was first published, how to attribute, and how often it is updated.
 
-Other civic bodies are using data at a national level in an interesting capacity:
-
-- [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
-- [code for America](https://www.codeforamerica.org/)
-- [code for Australia](https://codeforaustralia.org/)
+Retrieving the data from the website was not terribly difficult, but did involve a bit of work to determine how to download all files at once, instead of manually downloading the data. Some work was done to extract a good file name from the URL of the extracted data, and then binding all the data together into one longer format. The data itself was quite clean, with each column forming a variable, it was quite close to tidy data. The metadata file was actually three separate pieces of metadata, with three types of metadata: branch information, data heading information, and item code. Overall, this data falls into the "super ideal", bottom right quadrant.
