@@ -74,7 +74,7 @@ Variable codes apply to categorical (factor) varaibles, and are the values for t
 
 Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning. [@White2013; @Broman2017]
 
-# Machine readable: JSON / structured data
+# Adding Machine readable metadata (JSON / structured data)
 
 ## EML
 
@@ -85,11 +85,20 @@ The Ecological Metadata Language (EML) [@EML-about] is:
 EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
 ), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
 
+* Look at Ellis + Leek paper on metadata
+
+## JSON
+
+JSON provides a human-friendly, machine readable format for data.
+
 # Tooling for sharing
 
 ## Tooling for README
 
+A blank README file can be added usin the `usethis` [@usethis] package, with a function like `use_readme_md()`.
+
 * perhaps discuss some kind of template
+  * What would go in this template?
 
 ## Tooling for codebooks
 
