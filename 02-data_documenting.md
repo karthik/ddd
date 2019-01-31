@@ -10,7 +10,7 @@ There is a balance for providing the right amount of information and context wit
 
 There are different ways to share data and its context, but there is not a standard way to discuss the process of developing and creating the data and context for sharing. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes, "Brittleness" and "Time Investiment." Brittleness goes from Fragile to Robust. "Time Investment" goes from from Easy ("Quick and dirty") to time ("Meticulous") (Laborious / Time Consuming)).
 
-![]("figures/fig-cartesian-plane.png")
+![]("figures/fig-robust-diff.png")
 
 _An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set_
 
@@ -22,6 +22,8 @@ These two axis form four quadrants:
 - Borrom right quadrant is robust and easy: Super Ideal ("Serendipitous / Felix Culpa / goldilocks")
 
 These are now discussed in turn.
+
+* Need to find an example of each of these things in each quadrant.
 
 ## Over-engineered
 
@@ -37,7 +39,7 @@ In the television show, "The Simpsons", Homer Simpson has a huge budget to build
 
 > YAGNI is a principle behind the XP practice of "do the simplest thing that could possibly work" (DTSTTCPW).
 
-Designing something completely bespoke for a given task might not suit other cases, and can be very expensive to create. For example, a dataset could be painstakingly documented using a custom approach that fits that data and context. But in turn this makes it very difficult to read, interpret, and share. Such a dataset is characterized by being **fragile** and **time consuming**. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming. It is also fragile as the process can easily be lost. If the book dissappeared and there are no copies, the system would fail. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. Or perhaps the data being recorded using a complex punch card system with thorough documentation. No one reads punch cards anymore, and sharing them is difficult. So it fails. This type of problem can result from trying to optimise too early, where features are being documented that might not necessary. Documentation should be added when it is needed, not when it is foreseen how someone might want it. Think about generality.
+Designing something completely bespoke for a given task might not suit other cases, and can be very expensive to create. For example, a dataset could be painstakingly documented using a custom approach that fits that data and context. But in turn this makes it very difficult to read, interpret, and share. Such a dataset is characterized by being **fragile** and **time consuming**. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming. It is also fragile as the process can easily be lost. If the book dissappeared and there are no copies, the system would fail. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. Or perhaps the data being recorded using a complex punch card system with thorough documentation. No one reads punch cards anymore, and sharing them is difficult. So it fails. This type of problem can result from trying to optimise and generalise too early. However it is still important
 
 ## The Spaceship
 
