@@ -1,47 +1,43 @@
+
 # How to document your dataset
 
 Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @Broman2018; @Arregoitia2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
 
-Sharing data means others can reproduce and verify your results, learn from your analysis, and extend findings to other areas. This advances the field. To share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
+To share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
 
-**here is where we could discuss what kind of data we are talking about?**
+Before we move ahead, we need to outline what kinds of data we are talking about in the paper. We are limiting ourselves to tabular datasets - which can be broadly defined as those things that fit into a spreadsheed or table. We will discuss how to handle small, medium, and large tabular data.
 
-There is a balance for providing the right amount of information and context with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic makes is time consumin; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected. Here, we also do not know where to start. In both of these cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data. This forms the first piece of advice on how to document your data: **provide a short README file that describes the data**. What, specifically, goes in the README?
+There is a balance for providing the right amount of information and context with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic makes is time consuming; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected.
 
-There are different ways to share data and its context, but there is not a standard way to discuss the process of developing and creating the data and context for sharing. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes, "Brittleness" and "Time Investiment." Brittleness goes from Fragile to Robust. "Time Investment" goes from from Easy ("Quick and dirty") to time ("Meticulous") (Laborious / Time Consuming)).
+There is no standard way to discuss the process of developing and creating the data and context for sharing. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Robustness, and Difficulty. Robustness goes from Fragile to Robust. Difficulty goes from easy to hard. We can then place particular datasets on this axis (see Figure 1.)
 
-![]("figures/fig-robust-diff.png")
+![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set]("figures/fig-robust-diff.png").
 
-_An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set_
+To help explain these descriptive qualities of the data, and the data sharing process/developer experience, we now discuss each of these datasets.
 
-These two axis form four quadrants:
+## Dataset 1: Forest Census Plot on Barro Colorado Island
 
-- Top left quadrant is fragile and laborious: Not Ideal ("Overengineered")
-- Top right quadrant is robust and laborious: Strong and Complex ("The Spaceship")
-- Bottom left quadrant is fragile and easy: Not Ideal ("Paper plane")
-- Borrom right quadrant is robust and easy: Super Ideal ("Serendipitous / Felix Culpa / goldilocks")
+This dataset is Robust and Difficult.
 
-These are now discussed in turn.
+http://ctfs.si.edu/webatlas/datasets/bci/
 
-* Need to find an example of each of these things in each quadrant.
+## Dataset 2: Sensor data
 
-## Over-engineered
+Datasets obtained from sensor data, such as meteorological data are typically easy to create, and very robust. This is because they will generally have a lot of description about the data that they collect, so it is easy to find the description of the data. Let's explore a weather dataset from NOAA:
 
-<!--
-In the television show, "The Simpsons", Homer Simpson has a huge budget to build a car for the everyday American. Homer designs the car for his needs, with features he wants: three horns, a sound-proofed backseat for the children, extremely large cup holders, taillight fins, and a bubble dome. Unfortunately, the car is terrible, as what works for Homer does not work for anyone else. This was very expensive, and results in Homer's brother losing his business.
--->
+...describe NOAA dataset.
 
-<!--
-**Talk about this in terms of YAGNI - "You Ain't Going to Need It"
+## Dataset 3: Most other datasets
 
-> a principle of extreme programming (XP) that states a programmer should not add functionality until deemed necessary.[4] XP co-founder Ron Jeffries has written: "Always implement things when you actually need them, never when you just foresee that you need them.
--->
+Many datasets are "data dumped" into repositories with a paper. Phrases such as the following might be familiar:
 
-> YAGNI is a principle behind the XP practice of "do the simplest thing that could possibly work" (DTSTTCPW).
+- What do these columns mean? "Sorry, I created the data 14 years ago and I don't remember".
+
+## Over-engineered (Fragile and Hard)
 
 Designing something completely bespoke for a given task might not suit other cases, and can be very expensive to create. For example, a dataset could be painstakingly documented using a custom approach that fits that data and context. But in turn this makes it very difficult to read, interpret, and share. Such a dataset is characterized by being **fragile** and **time consuming**. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming. It is also fragile as the process can easily be lost. If the book dissappeared and there are no copies, the system would fail. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. Or perhaps the data being recorded using a complex punch card system with thorough documentation. No one reads punch cards anymore, and sharing them is difficult. So it fails. This type of problem can result from trying to optimise and generalise too early. However it is still important
 
-## The Spaceship
+## The Spaceship (Robust and Hard)
 
 Robust data is good because it will stand the test of time. However, a time consuming process is costly, but it is necessary for some projects. We call this quadrant "the spaceship" as it is robust to many situations, and time consuming to create. A spaceship is a very useful machine that helps advance humanity and provide things like satellites and GPS, so the cost and time is justified. Thinking about the effective use of a tool helps us evaluate the effectiveness of data and sharing and evaluate its worth. Something that is robust and time consuming to create, but of little use or consequence would be bad.
 
@@ -53,13 +49,14 @@ This tradeoff will change over time as the relative costs also change. For examp
 
 Two was to think of the spaceship are the "light aeroplane" and the "heavy falcon". Light aeroplane data come with accompanying human readable README file that describes the data and a machine readable format for reading in the data. Heavy Falcon data have complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
 
-## The paper plane
+## The paper plane (Easy and Fragile)
 
 An example of a fragile and quick process could be a lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format. The format is more fragile if it is hard to read.
 
-## Felix Culpa
+## Felix Culpa (goldilocs - easy and robust)
 
 Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
+
 
 # What belongs in the minimal structure for researchers
 
@@ -76,6 +73,8 @@ We can apply this template for metadata and context of data:
 These are now discussed.
 
 # Human readable: A README
+
+In many cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data. This forms the first piece of advice on how to document your data: **provide a short README file that describes the data**. What, specifically, goes in the README?
 
 The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
