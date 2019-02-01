@@ -19,6 +19,8 @@ Comparatively, a small survey on simple demographics can have low impact. So it 
 
 Tradeoffs will change over time as the cost of making them easy to prepare and understand change. If it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent. This means that just because something might appear to have low impact, it should still be made easy to understand, if it doesn't take long to prepare that documentation.
 
+Data that is easy to use should avoid being in a proprietary format that requires special software to read. For example, a CSV should be preferred over proprietary data formats, such as SPSS or SAS custom data types.
+
 ## Understanding tradeoffs
 
 To help explain these descriptive qualities of the data sharing, we discuss three datasets and their position on the DARECO.
@@ -48,13 +50,4 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 > Researcher 1: "What do these columns mean?"
 > Researcher 2: "Sorry, I created the data 14 years ago and I don't remember".
 
-## Conclusion
-
-
-## The paper plane (Easy and Fragile)
-
-An example of a fragile and quick process could be a lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format. The format is more fragile if it is hard to read.
-
-## Felix Culpa (goldilocs - easy and robust)
-
-Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
+## Summary
