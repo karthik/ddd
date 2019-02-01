@@ -1,5 +1,17 @@
 # Morgue
 
+
+We have discussed these different aspects of data sharing, we now discuss some approaches to share data. A case study on CC0 for data use [@cc0-case-study] state there are three ways CC0 is expressed:
+
+> And like our licenses, CC0 has the benefit of being expressed in three ways – legal code, a human readable deed, and machine-readable code that allows works distributed under CC0 to be easily found.
+
+We can apply this template for metadata and context of data:
+
+1. Human readable (README / methods)
+2. Legal code (code book)
+3. Machine readable (JSON/structured data)
+
+
 # possible intro part
 
 Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @Broman2018; @Arregoitia2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.

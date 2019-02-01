@@ -1,10 +1,6 @@
 
 # Tradeoffs in documenting your dataset
 
-Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @Broman2018; @Arregoitia2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
-
-To share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
-
 There is a balance that must be struck to provide the right amount of documentation with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic can be overwhelming; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected. A good balance between the two is to provide a README file with the data that provides a human-friendly description of the data, and the variables.
 
 But there are other features to think about as well, such as the legal description of the use of the data - licenses, and whether the data and context can be made machine readable as well.
