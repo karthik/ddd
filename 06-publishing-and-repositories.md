@@ -4,8 +4,6 @@ There are two main routes to publish data: publishing through a data journal, or
 
 ## Publishing data through a data journal
 
-__A brief (one paragraph-ish) summary of the places that we can submit data papers to?__
-
 This section answers the following questions:
 
 * How is data currently being published?
