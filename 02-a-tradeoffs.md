@@ -1,11 +1,11 @@
 
 # Tradeoffs in documenting your dataset
 
-There is a balance that must be struck to provide the right amount of documentation with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic can be overwhelming; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected. A good balance between the two is to provide a README file with the data that provides a human-friendly description of the data, and the variables.
+There is a balance between providing the right amount of data documentation. Too much is overwhelming. Too little means you don't know anything. For example, too much could be a folder with dozens of data files and several papers written on the topic; it's hard to know where to start. To little could be a lone `csv` file in a folder with no other information; this does not tell us what the data contains, or why it was collected. A good balance between the two extremes is to provide a README file that provides a human-friendly description of the data and variables.
 
-But there are other features to think about as well, such as the legal description of the use of the data - licenses, and whether the data and context can be made machine readable as well.
+But there are other features to think about as well, such as the data licenses, any tidying scripts, and whether data can be made machine readable.
 
-There is no standard way to discuss the process of developing and creating the data and context, to make it easily sharable. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Robustness, and Difficulty. Robustness goes from Fragile to Robust. Difficulty goes from easy to hard. We can then place particular datasets on this axis (see Figure 1.)
+There is no standard way to discuss the process of developing and creating the data and context. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on this axis (see Figure 1.)
 
 ![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-robust-diff.png).
 
