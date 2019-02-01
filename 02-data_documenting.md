@@ -21,13 +21,27 @@ To help explain these descriptive qualities of the data sharing, we discuss thre
 
 ## Dataset 1: Forest Census Plot on Barro Colorado Island
 
-This dataset is Robust and Difficult.
+The ["Foreest Ceneus Plot on Barro Colorado Island"](http://ctfs.si.edu/webatlas/datasets/bci/) provides an example of data that is time consuming to document, but also robust. It contains information on trees from a 50-hectare tree plot. Here they state:
 
-http://ctfs.si.edu/webatlas/datasets/bci/
+> Censuses have been carried out in 1981-1983, 1985, 1990, 1995, 2000, 2005, 2010, and 2015. In each census, all free-standing woody stems at least 10 mm diameter at breast height were identified, tagged, and mapped. Over 350,000 individual trees have been censused over 35 years.
+
+This is an enourmous, ongoing research effort. Brief context of the data is provided at the link, along with a link to the census plot data from 2012 at [this paper](https://repository.si.edu/handle/10088/20925). This provides an abstract and description of the data, along with co-authors, and a recommended acknowledgement. This dataset is classed as Robust and Difficult.
+
+Robust because...
+
+Difficult because it is a large research effort that not only involves expensive research
+
+The impact of this kind of research is huge, as it provides information on biodiversity ...,  ..., ... .
+
+Data that has high potential for impact should be made as robust as possible.
+There is an important interaction between the importance of the data, the time spent to document it, and the risk and impact of the data. For example, data from medical randomized control trials (RCTs) can have high risk and high impact. So a lot of time should be spent documenting them. Comparatively, a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
+
+This tradeoff will change over time as the relative costs also change. For example, if it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent.
+
 
 ## Dataset 2: Sensor data
 
-Datasets obtained from sensor data, such as meteorological data are typically easy to create, and very robust. This is because they will generally have a lot of description about the data that they collect, so it is easy to find the description of the data. Let's explore a weather dataset from NOAA:
+Datasets obtained from sensor data, such as meteorological data are typically easy to create, and very robust.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. As an example, let's explore a weather dataset from NOAA, the National Oceanic and Atmospheric Administration.
 
 ...describe NOAA dataset.
 
@@ -37,18 +51,6 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 
 > Researcher 1: "What do these columns mean?"
 > Researcher 2: "Sorry, I created the data 14 years ago and I don't remember".
-
-## The Spaceship (Robust and Difficult)
-
-This type of data is called "the spaceship" as it is robust to many situations, and time consuming to create. A spaceship is a very useful machine that helps advance humanity by providing things like satellites and GPS, so the cost and time is justified. Thinking about the effective use of a tool helps us evaluate the effectiveness of data and sharing and evaluate its worth. Something that is robust and time consuming to create, but of little use or consequence would be bad.
-
-There is a tradeoff between the time and resources taken to document something so it can be shared and reproduced, and it's overall worth and importance. For example, Randomized Control Trials (RCTs) for a new drug benefit greatly from reproducibility, as the cost and reward are high: a new drug can have positive health benefits, and is also very expensive to repeat. Equally, the drug trial can have dire effects (severe illness or death), and so must have a high standard for documentation.
-
-There is an important interaction between the importance of the data, the time spent to document it, and the risk and impact of the data. For example, data from RCTs are important and have high risk and high impact. So, a lot of time should be spent documenting them. Comparatively, a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
-
-This tradeoff will change over time as the relative costs also change. For example, if it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent.
-
-Two was to think of the spaceship are the "light aeroplane" and the "heavy falcon". Light aeroplane data come with accompanying human readable README file that describes the data and a machine readable format for reading in the data. Heavy Falcon data have complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
 
 ## The paper plane (Easy and Fragile)
 
