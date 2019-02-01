@@ -5,10 +5,6 @@ Research discusses how to share data for collaboration and how to format individ
 
 To share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
 
-(Should this go in the introduction?)
-
-In this paper we focus on tabular datasets, broadly defined as data that fit into a spreadsheed or table. We discuss how to handle small, medium, and large tabular data. We wil not specifically cover data sources such as raster, image, sound, or video. The principles covered will generalise to some extent, however.
-
 There is a balance that must be struck to provide the right amount of documentation with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic can be overwhelming; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected. A good balance between the two is to provide a README file with the data that provides a human-friendly description of the data, and the variables.
 
 But there are other features to think about as well, such as the legal description of the use of the data - licenses, and whether the data and context can be made machine readable as well.
