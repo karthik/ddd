@@ -5,44 +5,51 @@ There is a balance between providing the right amount of data documentation. Too
 
 But there are other features to think about as well, such as the data licenses, any tidying scripts, and whether data can be made machine readable.
 
-There is no standard way to discuss the process of developing and creating the data and context. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on this axis (see Figure 1.)
+There is no standard way to discuss the process of developing and creating the data and context. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on the graph (see Figure 1.) to indicate the ease of understanding and preparation.
 
-![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-robust-diff.png).
+![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-effort-understanding.png).
 
-To help explain these descriptive qualities of the data sharing, we discuss three datasets and where they fall in the DARECO.
+**Tradeoffs**
 
-## Dataset 1: Forest Census Plot on Barro Colorado Island
+There are tradeoffs when it comes to the ease of understanding and effort to prepare. These are typically related to the importance or the impact of the data. Essentially, data with high potential for impact should be made as easy to understand as possible, and so may require lots of effort to prepare.
+
+As an example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact. Therefore, a lot of effort should be spent making the data easy to understand and use.
+
+Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not overcomplicated.
+
+Tradeoffs will change over time as the cost of making them easy to prepare and understand change. If it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent. This means that just because something might appear to have low impact, it should still be made easy to understand, if it doesn't take long to prepare that documentation.
+
+## Understanding tradeoffs
+
+To help explain these descriptive qualities of the data sharing, we discuss three datasets and their position on the DARECO.
+
+### Dataset 1: Forest Census Plot on Barro Colorado Island
 
 The ["Foreest Ceneus Plot on Barro Colorado Island"](http://ctfs.si.edu/webatlas/datasets/bci/) provides an example of data that is time consuming to document, but also robust. It contains information on trees from a 50-hectare tree plot. Here they state:
 
 > Censuses have been carried out in 1981-1983, 1985, 1990, 1995, 2000, 2005, 2010, and 2015. In each census, all free-standing woody stems at least 10 mm diameter at breast height were identified, tagged, and mapped. Over 350,000 individual trees have been censused over 35 years.
 
-This is an enourmous, ongoing research effort. Brief context of the data is provided at the link, along with a link to the census plot data from 2012 at [this paper](https://repository.si.edu/handle/10088/20925). This provides an abstract and description of the data, along with co-authors, and a recommended acknowledgement. This dataset is classed as Robust and Difficult.
+This is an enourmous, ongoing research effort. Brief context of the data is provided at the link, along with a link to the census plot data from 2012 at [this paper](https://repository.si.edu/handle/10088/20925). This provides an abstract and description of the data, along with co-authors, and a recommended acknowledgement.
 
-Robust because...
-
-Difficult because it is a large research effort that not only involves expensive research
+This dataset falls in the top right of the graph, at high effort to prepare, and high ease of understanding. It is high effort to prepare because it is a large research effort that not only involves expensive research in terms of time. It is high ease of understanding because
 
 The impact of this kind of research is huge, as it provides information on biodiversity ...,  ..., ... .
 
-Data that has high potential for impact should be made as robust as possible.
-There is an important interaction between the importance of the data, the time spent to document it, and the risk and impact of the data. For example, data from medical randomized control trials (RCTs) can have high risk and high impact. So a lot of time should be spent documenting them. Comparatively, a small experiment with low risk and low impact might not have a worthwhile tradeoff for time spent to create a robust system. This documentation should be kept relatively simple and not overcomplicated, as it is cheap to repeat, and the cost and reward could be low.
+### Dataset 2: Sensor data
 
-This tradeoff will change over time as the relative costs also change. For example, if it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent.
-
-
-## Dataset 2: Sensor data
-
-Datasets obtained from sensor data, such as meteorological data are typically easy to create, and very robust.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. As an example, let's explore a weather dataset from NOAA, the National Oceanic and Atmospheric Administration.
+Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. As an example, let's explore a weather dataset from NOAA, the National Oceanic and Atmospheric Administration.
 
 ...describe NOAA dataset.
 
-## Dataset 3: Most other datasets
+### Dataset 3: Most other datasets
 
 Many datasets are "data dumped" into repositories with a paper. Phrases such as the following might be familiar:
 
 > Researcher 1: "What do these columns mean?"
 > Researcher 2: "Sorry, I created the data 14 years ago and I don't remember".
+
+## Conclusion
+
 
 ## The paper plane (Easy and Fragile)
 
