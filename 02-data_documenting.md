@@ -5,15 +5,19 @@ Research discusses how to share data for collaboration and how to format individ
 
 To share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
 
-Before we move ahead, we need to outline what kinds of data we are talking about in the paper. We are limiting ourselves to tabular datasets - which can be broadly defined as those things that fit into a spreadsheed or table. We will discuss how to handle small, medium, and large tabular data.
+(Should this go in the introduction?)
 
-There is a balance for providing the right amount of information and context with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic makes is time consuming; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected.
+In this paper we focus on tabular datasets, broadly defined as data that fit into a spreadsheed or table. We discuss how to handle small, medium, and large tabular data. We wil not specifically cover data sources such as raster, image, sound, or video. The principles covered will generalise to some extent, however.
 
-There is no standard way to discuss the process of developing and creating the data and context for sharing. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Robustness, and Difficulty. Robustness goes from Fragile to Robust. Difficulty goes from easy to hard. We can then place particular datasets on this axis (see Figure 1.)
+There is a balance that must be struck to provide the right amount of documentation with data. Too much, or not enough information can be unhelpful. A folder with dozens of data files and several papers written on the topic can be overwhelming; it is hard to know where to start.  Equally, a lone `csv` file in a folder with no other information does not tell us what the data contains, or why it was collected. A good balance between the two is to provide a README file with the data that provides a human-friendly description of the data, and the variables.
 
-![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set]("figures/fig-robust-diff.png").
+But there are other features to think about as well, such as the legal description of the use of the data - licenses, and whether the data and context can be made machine readable as well.
 
-To help explain these descriptive qualities of the data, and the data sharing process/developer experience, we now discuss each of these datasets.
+There is no standard way to discuss the process of developing and creating the data and context, to make it easily sharable. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Robustness, and Difficulty. Robustness goes from Fragile to Robust. Difficulty goes from easy to hard. We can then place particular datasets on this axis (see Figure 1.)
+
+![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-robust-diff.png).
+
+To help explain these descriptive qualities of the data sharing, we discuss three datasets and where they fall in the DARECO.
 
 ## Dataset 1: Forest Census Plot on Barro Colorado Island
 
@@ -31,15 +35,12 @@ Datasets obtained from sensor data, such as meteorological data are typically ea
 
 Many datasets are "data dumped" into repositories with a paper. Phrases such as the following might be familiar:
 
-- What do these columns mean? "Sorry, I created the data 14 years ago and I don't remember".
+> Researcher 1: "What do these columns mean?"
+> Researcher 2: "Sorry, I created the data 14 years ago and I don't remember".
 
-## Over-engineered (Fragile and Hard)
+## The Spaceship (Robust and Difficult)
 
-Designing something completely bespoke for a given task might not suit other cases, and can be very expensive to create. For example, a dataset could be painstakingly documented using a custom approach that fits that data and context. But in turn this makes it very difficult to read, interpret, and share. Such a dataset is characterized by being **fragile** and **time consuming**. An example of this would be a large, handwritten book that documents the process of designing an experiment. Hand written notes require scanning and encoding into images or PDF to share, and would require transcribing. This is time consuming. It is also fragile as the process can easily be lost. If the book dissappeared and there are no copies, the system would fail. Another example of fragile and time consuming is writing in bespoke software encoded in a binary format that cannot be read by other softwares. Or perhaps the data being recorded using a complex punch card system with thorough documentation. No one reads punch cards anymore, and sharing them is difficult. So it fails. This type of problem can result from trying to optimise and generalise too early. However it is still important
-
-## The Spaceship (Robust and Hard)
-
-Robust data is good because it will stand the test of time. However, a time consuming process is costly, but it is necessary for some projects. We call this quadrant "the spaceship" as it is robust to many situations, and time consuming to create. A spaceship is a very useful machine that helps advance humanity and provide things like satellites and GPS, so the cost and time is justified. Thinking about the effective use of a tool helps us evaluate the effectiveness of data and sharing and evaluate its worth. Something that is robust and time consuming to create, but of little use or consequence would be bad.
+This type of data is called "the spaceship" as it is robust to many situations, and time consuming to create. A spaceship is a very useful machine that helps advance humanity by providing things like satellites and GPS, so the cost and time is justified. Thinking about the effective use of a tool helps us evaluate the effectiveness of data and sharing and evaluate its worth. Something that is robust and time consuming to create, but of little use or consequence would be bad.
 
 There is a tradeoff between the time and resources taken to document something so it can be shared and reproduced, and it's overall worth and importance. For example, Randomized Control Trials (RCTs) for a new drug benefit greatly from reproducibility, as the cost and reward are high: a new drug can have positive health benefits, and is also very expensive to repeat. Equally, the drug trial can have dire effects (severe illness or death), and so must have a high standard for documentation.
 
@@ -73,8 +74,6 @@ We can apply this template for metadata and context of data:
 These are now discussed.
 
 # Human readable: A README
-
-In many cases, providing a short README file that described the variables in the dataset would improve the accessibility of the data. This forms the first piece of advice on how to document your data: **provide a short README file that describes the data**. What, specifically, goes in the README?
 
 The README is a catch-all place for most things - but it is primarily front-facing, it is meant for a human to read and understand more about the data. It should contain links to the license, notes on any additional changes to the data (if any), or
 
