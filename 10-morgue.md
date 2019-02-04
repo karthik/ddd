@@ -78,3 +78,9 @@ I'm still not precisely clear _where_ we put the notice in the data. It seems ea
 
 - https://wiki.creativecommons.org/wiki/Data_and_CC_licenses
 - https://wiki.creativecommons.org/wiki/CC0_use_for_data
+
+# References
+
+**Open knowledge foundation data specifications**
+
+[Other notes from OKFN on "data package"](https://blog.okfn.org/?s=data+package)
