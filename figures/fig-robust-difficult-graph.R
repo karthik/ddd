@@ -19,7 +19,7 @@ dat_prep
 
 library(ggrepel)
 
-# plot_effort_understanding <-
+plot_effort_understanding <-
 ggplot(dat_prep,
        aes(x = prep,
            y = understanding,
