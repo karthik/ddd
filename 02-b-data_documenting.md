@@ -5,30 +5,43 @@ There are 8 pieces to an ideal structure for sharing your data:
 
 1. Human readable description of the data
 2. human readable data dictionary / code book
-3. Machine readable meta data
-4. A license for your data
-5. Citation - how you want your data to be cited
-6. raw data
-7. scripts to tidy raw data
-8. Tidy / analysis data
+3. A license for your data
+4. Citation (How you want your data to be cited)
+5. Machine readable meta data
+6. Raw data
+7. Scripts to tidy raw data
+8. Tidy data / final data used in analysis
 
-Out of these sections, the minimal viable format is:
+Out of these sections, the minimal viable format are the first four:
 
-- README
-- codebook
-- license
-- citation
+1. README
+2. Codebook
+3. License
+4. Citation
 
-Each of these sections are now discussed.
+What goes into each of these sections is now described.
 
 # Human readable: A README
 
 The README is the first place people will go to learn more about the data.
-It is meant for someone to read and understand more about the data. It should contain the "who, what, when, where, why, & how" of the data. That is, who collected it, what the data is, when it was collected, where it was collected, and how. This should be brief. It should also provide links to the other sections. For example, it should contain links to the data dictionary, the machine readable data, the licence, how to cite the data, if raw data is provided, it should describe where to find it, any scripts to be used to turn the raw data to tidy data.
+It is meant for someone to read and understand more about the data. It should contain the "who, what, when, where, why, & how" of the data. That is, who collected it, what the data is, when it was collected, where it was collected, and how. This should be brief. It should also provide links to the other sections. For example, it should contain links to the data dictionary, the machine readable data, the licence, how to cite the data, if raw data is provided, it should describe where to find it, any scripts to be used to turn the raw data to tidy data. Saving a README as a .md file gives the author the formatting benefits of markdown, such as easily inserting links, tables, and easily making lists that will render nicely.
 
 # Human readable data dictionary
 
-Data dictionaries or code books are recommended for use when sharing data @Ellis2017.  Codebooks provide a human friendly reference for the data, typically consisting of variable names, variable labels, variable codes, and missing data. Variable names are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". Variable labels are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook].
+Data dictionaries or code books are recommended for use when sharing data @Ellis2017.  Codebooks provide a human friendly reference for the data, typically consisting of variable names, variable labels, variable codes, and missing data. Variable names are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". Variable labels are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook]. Below is a data dictionary table taken from the [tidy tuesday repository on incarceration trends](https://github.com/rfordatascience/tidytuesday).
+
+__Table 1. The prisoner summary data dictionary.__
+
+|variable        |class     | Description |
+|:---------------|:---------| :---------- |
+|year            |integer (date)   | Year |
+|urbanicity      |character | County-type (urban, suburban, small/mid, rural) |
+|pop_category    |character | Category for population - either race, gender, or Total |
+|rate_per_100000 |double    | Rate within a category for prison population per 100,000 people |
+
+A good place for this table to be placed is in the README, rendered as a table.
+
+- note that for every data dictionary table provided, it should ideally be provided in its raw form in the repository as well.
 
 Variable codes apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how date variables are formatted, this should be consistent.
 
