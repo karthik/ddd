@@ -102,7 +102,7 @@ Once you've chosen a license, you need to make sure that you provide a good brea
 
 **O** is for _other stuff_ - is there anything else that people should know about? This is a good place for things such as if the data is under an _embargo_ or if it has special _copyright issues_. It is also a place to mention if the work is derivative of other work, and give appropriate citations and credit. The CC licenses cannot have their terms changed, but you can grant additional permissions or warranties. For example, if you license something under CCBY but there are particular cases where you don't mind no attribution, this is the place to specify this.
 
-## So how do you actually include the license with the data?
+## Adding the license to the data?
 
 Putting it together, and following **ALMO**, in your licensed work, you need to include a license. This means that your data goes into a folder, and in that same folder, there is a README.md file, a LICENSE or LICENSE.md file, and optionally some other metadata folder that provides machine readable contents.
 Before adding the license to the data, check if: (1) You have the right to the data, and (2) Did you find or collect the data? These should help you decide which license is the most appropriate. You can also use the license chooser: https://creativecommons.org/choose/, and include the badge in the README, in addition to the license.
@@ -127,10 +127,24 @@ Going through the criteria:
 
 # Data citation
 
-How you want your data to be cited
+How you want your data to be cited. This can be added with a plaintext file called CITATION or `CITATION.md`. This file should contain some plaintext describing how the data should be cited, and could include a `.bibtex` of the recommended citation (see figure below)
 
+```
+bibentry(bibtype = "Misc",
+         title = "...",
+         author = c(person("Firstname", "Lastname")),
+         doi = "",
+         url = "",
+         year = ,
+         publisher = ""
+)
+```
+
+_example bibtex citation file._
 
 # Machine readable metadata
+
+The data dictionary provides _human readable_ information on the data - what the variables contain, why type of data, and so on. But to actually read in the data correctly, and ensure that dates are parsed as the right dates, names are characters, and so on, there needs to be some form of machine readable metadata. We will discuss two popular standards, EML, the Ecological Metadata Language, and JSON.
 
 ## EML
 
@@ -149,12 +163,15 @@ JSON provides a human-friendly, machine readable format for data.
 
 # Raw data
 
-## Scripts to tidy raw data
+Raw data is usually the first format the data was given to the researcher before any tidying or cleaning of the data. If the size of the raw data is practical to share, it should be shared in a folder called `raw-data`. If possible, data dictionaries of the raw data should be provided in this folder as well. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.
+
+# Scripts to tidy raw data
+
+If raw data is used, then any code used to clean and tidy the data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
 
 # Tidy / analysis data
 
-# References
+The data used in the data analysis should be provided in a folder called `data`.
+Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows (figure?). Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged.
 
-**Open knowledge foundation data specifications**
-
-[Other notes from OKFN on "data package"](https://blog.okfn.org/?s=data+package)
+# Conclusion
