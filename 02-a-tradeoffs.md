@@ -11,7 +11,7 @@ There is no standard way to discuss the process of developing and creating the d
 
 **Tradeoffs**
 
-There are tradeoffs when it comes to the ease of understanding and effort to prepare. These are typically related to the importance or the impact of the data. Essentially, data with high potential for impact should be made as easy to understand as possible, and so may require lots of effort to prepare.
+There are tradeoffs when it comes to the ease of understanding and effort to prepare. These are typically related to the importance or the impact of the data. Essentially, data with higher potential for reuse should be made as easy to understand as possible, and so may require lots of effort to prepare.
 
 As an example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact. Therefore, a lot of effort should be spent making the data easy to understand and use.
 
@@ -39,9 +39,22 @@ The impact of this kind of research is huge, as it provides information on biodi
 
 ### Dataset 2: Sensor data
 
-Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. As an example, let's explore a weather dataset from NOAA, the National Oceanic and Atmospheric Administration.
+Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. It contains:
 
-...describe NOAA dataset.
+> ... the most detailed three-dimensional maps of the Universe ever made, with deep multi-color images of one third of the sky, and spectra for more than three million astronomical objects. --(https://www.sdss.org/)
+
+- Contains good metadata
+- Data is in multiple formats
+- Released in archives
+- Data is also available in a database
+- Entire dataset available for download
+- All the tables have metadata in SCHEMA
+- Standard for the field
+- Interface covers all skills
+- Provides tutorials from school children to professional astronomers
+- Raw data before processed into database is also available
+
+(remember to cite appropriately from: https://www.sdss.org/collaboration/citing-sdss/)
 
 ### Dataset 3: Most other datasets
 
@@ -51,3 +64,30 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 > Researcher 2: "Sorry, I created the data 14 years ago and I don't remember".
 
 ## Summary
+
+
+## SDSS-IV acknowledgement:
+
+Funding for the Sloan Digital Sky Survey IV has been provided by the Alfred P. Sloan Foundation, the U.S. Department of Energy Office of Science, and the Participating Institutions. SDSS-IV acknowledges
+support and resources from the Center for High-Performance Computing at
+the University of Utah. The SDSS web site is www.sdss.org.
+
+SDSS-IV is managed by the Astrophysical Research Consortium for the
+Participating Institutions of the SDSS Collaboration including the
+Brazilian Participation Group, the Carnegie Institution for Science,
+Carnegie Mellon University, the Chilean Participation Group, the French Participation Group, Harvard-Smithsonian Center for Astrophysics,
+Instituto de Astrofísica de Canarias, The Johns Hopkins University, Kavli Institute for the Physics and Mathematics of the Universe (IPMU) /
+University of Tokyo, the Korean Participation Group, Lawrence Berkeley National Laboratory,
+Leibniz Institut für Astrophysik Potsdam (AIP),
+Max-Planck-Institut für Astronomie (MPIA Heidelberg),
+Max-Planck-Institut für Astrophysik (MPA Garching),
+Max-Planck-Institut für Extraterrestrische Physik (MPE),
+National Astronomical Observatories of China, New Mexico State University,
+New York University, University of Notre Dame,
+Observatário Nacional / MCTI, The Ohio State University,
+Pennsylvania State University, Shanghai Astronomical Observatory,
+United Kingdom Participation Group,
+Universidad Nacional Autónoma de México, University of Arizona,
+University of Colorado Boulder, University of Oxford, University of Portsmouth,
+University of Utah, University of Virginia, University of Washington, University of Wisconsin,
+Vanderbilt University, and Yale University.
