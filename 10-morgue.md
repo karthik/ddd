@@ -84,3 +84,11 @@ I'm still not precisely clear _where_ we put the notice in the data. It seems ea
 **Open knowledge foundation data specifications**
 
 [Other notes from OKFN on "data package"](https://blog.okfn.org/?s=data+package)
+
+# packages for adding data dictionaries
+
+including `dataMeta` [@dataMeta], which attaches additional information about the dataset to a data.frame as an attribute through a `linker` object.
+
+The csvy format can be read using the R packages `csvy` and [rio](https://github.com/leeper/rio). `rio` provides an approach to try and read in any particular format of data with some intelligent guesses, and could be used where the data format is unknown.
+
+Mention codemeta? The `codemeta` project "focuses on metadata and discovery systems for software citation and attribution."
