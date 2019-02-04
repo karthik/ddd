@@ -47,3 +47,34 @@ An example of a fragile and quick process could be a lone data file in a folder,
 ## Felix Culpa (goldilocs - easy and robust)
 
 Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
+
+
+## References:
+
+@plos-comp-bio-data: http://journals.plos.org/ploscompbiol/s/licenses-and-copyright
+
+@ccby-short: https://creativecommons.org/licenses/by/4.0/
+@ccby-long: https://creativecommons.org/licenses/by/4.0/legalcode
+@cc0-short: https://creativecommons.org/publicdomain/zero/1.0/
+@cc0-long: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+@tldr-legal: https://tldrlegal.com/
+@creative-commons: https://creativecommons.org/
+@cc-data: https://wiki.creativecommons.org/wiki/Data
+@wiki-cc: https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license#Example:_Dataset
+
+# Notes / discussion
+
+
+From the [creative commons wiki](https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license#Example:_Dataset):
+
+> Lastly, Is there anything else the user should know about the material?
+
+> Is your work a modification of another work? Does your work incorporate elements of several third party materials? Are you adding any warranties, or modifying the existing disclaimer in the CC license? Are you granting additional permissions beyond what the license allows? If your answer is yes to any of these, then you should note that along with the license information about your work. For example, if your work incorporates third party materials, you would note those materials and make sure to attribute each of them correctly. This is also your chance to grant additional permissions. For example, if you license something under CC BY but are okay with people not attributing you in certain cases--this is your chance to specify those cases. You can't change the terms of a CC license, but you can always grant additional permissions or warranties.
+
+I'm still not precisely clear _where_ we put the notice in the data. It seems eaasier for video or audio or an image - a caption can be placed under an image, for example. I  discuss this in the last paragraph
+
+**need to read over these case studies for CC0 and CC use for data**
+
+- https://wiki.creativecommons.org/wiki/Data_and_CC_licenses
+- https://wiki.creativecommons.org/wiki/CC0_use_for_data

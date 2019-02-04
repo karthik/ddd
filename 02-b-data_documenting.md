@@ -21,16 +21,34 @@ Out of these sections, the minimal viable format are the first four:
 
 What goes into each of these sections is now described.
 
-# Human readable: A README
+# README: Human readable data description
 
-The README is the first place people will go to learn more about the data.
-It is meant for someone to read and understand more about the data. It should contain the "who, what, when, where, why, & how" of the data. That is, who collected it, what the data is, when it was collected, where it was collected, and how. This should be brief. It should also provide links to the other sections. For example, it should contain links to the data dictionary, the machine readable data, the licence, how to cite the data, if raw data is provided, it should describe where to find it, any scripts to be used to turn the raw data to tidy data. Saving a README as a .md file gives the author the formatting benefits of markdown, such as easily inserting links, tables, and easily making lists that will render nicely.
+The README is often the first place people will go to learn more about data.
+It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
+
+- **Who** collected it
+- **What** is the data
+- **When** was it collected
+- **Where** was it collected
+- **How** is was collected
+
+This should be brief. It should also provide links to the other sections. For example, it should contain links to the data dictionary/codebook, the licence, how to cite the data, the machine readable metadata, if raw data is provided, it should describe where to find it, any scripts to be used to turn the raw data to tidy data. Saving a README as a .md file gives the author the formatting benefits of markdown, such as easily inserting links, tables, and easily making lists that will render nicely.
 
 # Human readable data dictionary
 
-Data dictionaries or code books are recommended for use when sharing data @Ellis2017.  Codebooks provide a human friendly reference for the data, typically consisting of variable names, variable labels, variable codes, and missing data. Variable names are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". Variable labels are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook]. Below is a data dictionary table taken from the [tidy tuesday repository on incarceration trends](https://github.com/rfordatascience/tidytuesday).
+Data dictionaries or code books are recommended for use when sharing data @Ellis2017.  Codebooks provide a human readable table of the variables (Columns) in the data. This typically consists of **variable names**, **variable labels**, **variable codes**, and if there are special values for **missing data**.
 
-__Table 1. The prisoner summary data dictionary.__
+**Variable names** are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company".
+
+**Variable labels** are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook].
+
+**Variable codes** apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how formatting date variables, which should be consistent.
+
+**Missing data** are values not observed, but should have been. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known, then it should be recorded. For example, in censored data, or where there is patient drop out, or measurement error. These can have different values, such as "unknown" or -99, and cleaned up later. [@White2013; @Broman2017]
+
+Below is an example data dictionary table taken from the [tidy tuesday repository on incarceration trends](https://github.com/rfordatascience/tidytuesday).
+
+__Table 1. The prisoner summary data dictionary, with columns on the variable, it's class, and a short description of the contents of the variable.__
 
 |variable        |class     | Description |
 |:---------------|:---------| :---------- |
@@ -39,30 +57,7 @@ __Table 1. The prisoner summary data dictionary.__
 |pop_category    |character | Category for population - either race, gender, or Total |
 |rate_per_100000 |double    | Rate within a category for prison population per 100,000 people |
 
-A good place for this table to be placed is in the README, rendered as a table.
-
-- note that for every data dictionary table provided, it should ideally be provided in its raw form in the repository as well.
-
-Variable codes apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how date variables are formatted, this should be consistent.
-
-Missing data are values that were not observed, but should have been, and the reason for their missingness is unknown. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known then it should be recorded - for example censored data, or where there is patient drop out or measurement error. These can have different values, such as "unknown" or -99, and can be cleaned up upon data cleaning. [@White2013; @Broman2017]
-
-# Machine readable metadata
-
-## EML
-
-The Ecological Metadata Language (EML) [@EML-about] is:
-
-> ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
-
-EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
-), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
-
-* Look at Ellis + Leek paper on metadata
-
-## JSON
-
-JSON provides a human-friendly, machine readable format for data.
+Data dictionary tables should be placed in the README, where they can be rendered as a markdown table. Every data dictionary table provided should also be provided in its raw form in the repository - perhaps saved as a CSV.
 
 # Data licenses
 
@@ -130,40 +125,27 @@ Going through the criteria:
 - **M**achine-readable - this is provided through the LICENSE.md file and also in the meta-data-for-data file
 - **Other Stuff** is also provided in the README.md file
 
-## References:
-
-@plos-comp-bio-data: http://journals.plos.org/ploscompbiol/s/licenses-and-copyright
-
-@ccby-short: https://creativecommons.org/licenses/by/4.0/
-@ccby-long: https://creativecommons.org/licenses/by/4.0/legalcode
-@cc0-short: https://creativecommons.org/publicdomain/zero/1.0/
-@cc0-long: https://creativecommons.org/publicdomain/zero/1.0/legalcode
-
-@tldr-legal: https://tldrlegal.com/
-@creative-commons: https://creativecommons.org/
-@cc-data: https://wiki.creativecommons.org/wiki/Data
-@wiki-cc: https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license#Example:_Dataset
-
-# Notes / discussion
-
-
-From the [creative commons wiki](https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license#Example:_Dataset):
-
-> Lastly, Is there anything else the user should know about the material?
-
-> Is your work a modification of another work? Does your work incorporate elements of several third party materials? Are you adding any warranties, or modifying the existing disclaimer in the CC license? Are you granting additional permissions beyond what the license allows? If your answer is yes to any of these, then you should note that along with the license information about your work. For example, if your work incorporates third party materials, you would note those materials and make sure to attribute each of them correctly. This is also your chance to grant additional permissions. For example, if you license something under CC BY but are okay with people not attributing you in certain cases--this is your chance to specify those cases. You can't change the terms of a CC license, but you can always grant additional permissions or warranties.
-
-I'm still not precisely clear _where_ we put the notice in the data. It seems eaasier for video or audio or an image - a caption can be placed under an image, for example. I  discuss this in the last paragraph
-
-**need to read over these case studies for CC0 and CC use for data**
-
-- https://wiki.creativecommons.org/wiki/Data_and_CC_licenses
-- https://wiki.creativecommons.org/wiki/CC0_use_for_data
-
-
 # Data citation
 
 How you want your data to be cited
+
+
+# Machine readable metadata
+
+## EML
+
+The Ecological Metadata Language (EML) [@EML-about] is:
+
+> ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
+
+EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
+), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
+
+* Look at Ellis + Leek paper on metadata
+
+## JSON
+
+JSON provides a human-friendly, machine readable format for data.
 
 # Raw data
 
