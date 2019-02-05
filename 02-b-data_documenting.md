@@ -183,13 +183,13 @@ EML provides ways to describe the heterogenous data common in ecology, which ran
 
 ## JSON
 
-JSON provides a human-friendly, machine readable format for data.
+JavaScript Object Notation (JSON) is a lightweight, human-friendly, machine readable data-interchange format. It is built on two structures: (1) name/value pairs, and (2) an ordered list. [@https://www.json.org]
 
 ## Data package specification
 
 The data package specification was initially developed by the Open Knowledge Foundation. This specification was never quite fully completed, it can be implemented in R with [datapack](https://github.com/ropensci/datapack), and in python with ...
 
-NOTE: Nick to read more about data packages
+NOTE: Nick to read more about data packages (starting here: https://ropensci.org/blog/2018/09/18/datapackager/)
 
 They have recently completed the latest version of a specialised
 [The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
