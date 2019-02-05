@@ -6,7 +6,7 @@ There are 8 pieces to an ideal structure for sharing your data:
 1. README: A Human readable description of the data
 2. Codebook: Human readable dictionary of data contents
 3. License: How to use and share the data
-4. Citation: (How you want your data to be cited)
+4. Citation: How you want your data to be cited
 5. Machine readable meta data
 6. Raw data: The original/first data provided
 7. Scripts: To clean raw data ready for analysis
@@ -69,11 +69,10 @@ Data dictionary tables should be placed in the README, where they can be present
 
 Creating codebooks can take time. There are R packages that help create codebooks in R, including `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
 
-# Data licenses
+# License: How to use and share the data
+
 
 Data with a license clearly establishes rules on how everyone can modify, use, and share data. Without a license, these rules are unclear, and can lead to problems with attribution and citation.
-
-## Choosing a license
 
 It can be overwhelmeing to try and the right license for a use case. Two licenses that  are well suited for data sharing are:
 
@@ -146,7 +145,7 @@ Going through the criteria:
 - **M**achine-readable - this is provided through the LICENSE.md file and also in the meta-data-for-data file
 - **Other Stuff** is also provided in the README.md file
 
-# Data citation
+# Citation: How you want your data to be cited
 
 How you want your data to be cited. This can be added with a plaintext file called CITATION or `CITATION.md`. This file should contain some plaintext describing how the data should be cited, and could include a `.bibtex` of the recommended citation (see figure below)
 
@@ -165,7 +164,7 @@ _example bibtex citation file._
 
 # Machine readable metadata
 
-The data dictionary provides _human readable_ information on the data - what the variables contain, why type of data, and so on. But to actually read in the data correctly, and ensure that dates are parsed as the right dates, names are characters, and so on, there needs to be some form of machine readable metadata. We will discuss the following standards, Table Schema, EML, the Ecological Metadata Language, and JSON.
+The data dictionary provides _human readable_ information on the data - what the variables contain, why type of data, and so on. But to actually read in the data correctly, and ensure that dates are parsed as the right dates, names are characters, and so on, there needs to be some form of machine readable metadata. We will discuss the following standards, Table Schema, EML, the Ecological Metadata Language, JSON, and the data package specification.
 
 ## Table Schema
 
@@ -186,7 +185,19 @@ EML provides ways to describe the heterogenous data common in ecology, which ran
 
 JSON provides a human-friendly, machine readable format for data.
 
-### Evaluating metadata formats?
+## Data package specification
+
+The data package specification was initially developed by the Open Knowledge Foundation. This specification was never quite fully completed, it can be implemented in R with [datapack](https://github.com/ropensci/datapack), and in python with ...
+
+NOTE: Nick to read more about data packages
+
+They have recently completed the latest version of a specialised
+[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
+ [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
+
+[DataPackageR](https://github.com/RGLab/DataPackageR)
+
+**?Evaluating metadata formats?**
 
 _Table XX An overview of the merits of each package. This shows the approach, some links, pros and cons, how stable and supported they are, and whether or not they have a built in community. For thoroughness, we recommend ..., else we recommend ... ._
 
@@ -196,16 +207,15 @@ _Table XX An overview of the merits of each package. This shows the approach, so
 |DataPackageR |      |     |     |          |          |        |
 |csvy         |      |     |     |          |          |        |
 
-
-# Raw data
+# Raw data: The original/first data provided
 
 Raw data is usually the first format the data was given to the researcher before any tidying or cleaning of the data. If the size of the raw data is practical to share, it should be shared in a folder called `raw-data`. If possible, data dictionaries of the raw data should be provided in this folder as well. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.
 
-# Scripts to tidy raw data
+# Scripts: To clean raw data ready for analysis
 
 If raw data is used, then any code used to clean and tidy the data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
 
-# Tidy / analysis data
+# Analysis ready data: Final data used in analysis
 
 The data used in the data analysis should be provided in a folder called `data`.
 Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows (figure?). Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged.
