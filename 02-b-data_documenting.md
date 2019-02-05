@@ -48,10 +48,7 @@ The README is often the first place people will go to learn more about data. It 
 - **Where** was it collected
 - **How** is was collected
 
-This should be brief, and provide links to the other aforementioned sections. Saving a README as a .md file gives the author the formatting benefits of markdown, such as easily inserting links, tables, and easily making lists that will render nicely. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
-
-The README should be placed in the top level of the project, and should provide addit
-
+The README should be placed in the top level of the project. It should be brief, and provide links to the other aforementioned sections. Saving a README with the extension `.md` file gives the author the formatting benefits of `markdown`, making it simple to insert links, tables, and make lists. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
 
 # Human readable data dictionary
 
