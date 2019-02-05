@@ -1,9 +1,7 @@
 
 # Tradeoffs in documenting your dataset
 
-There is a balance between providing the right amount of data documentation. Too much is overwhelming. Too little means you don't know anything. For example, too much could be a folder with dozens of data files and several papers written on the topic; it's hard to know where to start. To little could be a lone `csv` file in a folder with no other information; this does not tell us what the data contains, or why it was collected. A good balance between the two extremes is to provide a README file that provides a human-friendly description of the data and variables.
-
-But there are other features to think about as well, such as the data licenses, any tidying scripts, and whether data can be made machine readable.
+There is a balance in providing the right amount of data documentation. Too much is overwhelming. Too little means you don't know anything. For example, too much could be a folder with dozens of data files and several papers written on the topic; it's hard to know where to start. To little could be a lone `csv` file in a folder with no other information; this does not tell us what the data contains, or why it was collected. A good balance between the two extremes is to provide a README file that provides a human-friendly description of the data and variables. Other important features include data licenses, raw data, tidying scripts, machine readable metadata. It can be hard to know where to start.
 
 There is no standard way to discuss the process of developing and creating the data and context. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on the graph (see Figure 1.) to indicate the ease of understanding and preparation.
 
@@ -43,18 +41,18 @@ Datasets obtained from sensors such as meteorological data are typically easy to
 
 > ... the most detailed three-dimensional maps of the Universe ever made, with deep multi-color images of one third of the sky, and spectra for more than three million astronomical objects. --(https://www.sdss.org/)
 
-- Contains good metadata
-- Data is in multiple formats
-- Released in archives
-- Data is also available in a database
+The telescope data is very high quality, with the following features:
+
+- Good metadata in SCHEMA, a machine readable standard
+- Data in multiple formats:
+- Released data in archives
+- Data is available in a database
 - Entire dataset available for download
-- All the tables have metadata in SCHEMA
-- Standard for the field
-- Interface covers all skills
-- Provides tutorials from school children to professional astronomers
+- Interface to the data covers all skills
+- The interface provides tutorials from school children to professional astronomers on how to read it
 - Raw data before processed into database is also available
 
-(remember to cite appropriately from: https://www.sdss.org/collaboration/citing-sdss/)
+The SDSS provides different degrees of understanding, for different understanding. It is a huge project involving many people, and so would have provided enourmous effort to prepare, but has a high degree of understanding. It would be in the top right hand corner of the DARECO.
 
 ### Dataset 3: Most other datasets
 
@@ -63,8 +61,11 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 > Researcher 1: "What do these columns mean?"
 > Researcher 2: "Sorry, I created the data 14 years ago and I don't remember".
 
+** Need to get an example of this.
+
 ## Summary
 
+This needs to lead into the next section, on data documenting
 
 ## SDSS-IV acknowledgement:
 
