@@ -38,7 +38,7 @@ Out of these sections, the minimal viable format are the first four plus the ana
 
 What goes into each of these sections is now described.
 
-# README: Human readable data description
+# README: A Human readable description of the data
 
 The README is often the first place people will go to learn more about data. It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
 
@@ -50,17 +50,9 @@ The README is often the first place people will go to learn more about data. It 
 
 The README should be placed in the top level of the project. It should be brief, and provide links to the other aforementioned sections. Saving a README with the extension `.md` file gives the author the formatting benefits of `markdown`, making it simple to insert links, tables, and make lists. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
 
-# Human readable data dictionary
+# Codebook: Human readable dictionary of data contents
 
-Data dictionaries or code books are recommended for use when sharing data @Ellis2017.  Codebooks provide a human readable table of the variables (Columns) in the data. This typically consists of **variable names**, **variable labels**, **variable codes**, and if there are special values for **missing data**.
-
-* **Variable names** are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company".
-
-* **Variable labels** are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook].
-
-* **Variable codes** apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how formatting date variables, which should be consistent.
-
-* **Missing data** are values not observed, but should have been. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known, then it should be recorded. For example, in censored data, or where there is patient drop out, or measurement error. These can have different values, such as "unknown" or -99, and cleaned up later. [@White2013; @Broman2017]
+Codebooks provide a human readable table of the variables (columns) in the data. They contain information on **variable names**, **variable labels**, **variable codes**, and if there are special values for **missing data**. **Variable names** are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". **Variable labels** are more descriptive, and provide more context for other reader, for example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook]. **Variable codes** apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how formatting date variables, which should be consistent. **Missing data** are values not observed, but should have been. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known, then it should be recorded. For example, in censored data, or where there is patient drop out, or measurement error. These can have different values, such as "unknown" or -99, and cleaned up later. [@White2013; @Broman2017]
 
 Below is an example data dictionary table taken from the [tidy tuesday repository on incarceration trends](https://github.com/rfordatascience/tidytuesday). This includes information on the variable the class (type) of the variable, and a longer description of the variable.
 
@@ -73,15 +65,9 @@ __Table 1. The prisoner summary data dictionary, with columns on the variable, i
 |pop_category    |character | Category for population - either race, gender, or Total |
 |rate_per_100000 |double    | Rate within a category for prison population per 100,000 people |
 
-Data dictionary tables should be placed in the README, where they can be presented as a table. Every data dictionary table provided should also be provided in its raw form in the repository - perhaps even saved as a CSV.
+Data dictionary tables should be placed in the README, where they can be presented as a table. Every data dictionary table provided should also be provided in its raw form in the repository, for example, saved as a CSV.
 
 Creating codebooks can take time. There are R packages that help create codebooks in R, including `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
-
-Another package is [DataPackageR](https://github.com/RGLab/DataPackageR) and - [datapack](https://github.com/ropensci/datapack), which implement a data specification was initially developed by the Open Knowledge Foundation data specification. This specification was never quite fully completed, although they have recently completed the latest version of a specialised fiscal data package specification
-[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
- [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
-
-(data pack also has a python format).
 
 # Data licenses
 
