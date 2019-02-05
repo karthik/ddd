@@ -3,21 +3,38 @@
 
 There are 8 pieces to an ideal structure for sharing your data:
 
-1. Human readable description of the data
-2. human readable data dictionary / code book
-3. A license for your data
-4. Citation (How you want your data to be cited)
+1. README: A Human readable description of the data
+2. Codebook: Human readable dictionary of data contents
+3. License: How to use and share the data
+4. Citation: (How you want your data to be cited)
 5. Machine readable meta data
-6. Raw data
-7. Scripts to tidy raw data
-8. Tidy data / final data used in analysis
+6. Raw data: The original/first data provided
+7. Scripts: To clean raw data ready for analysis
+8. Analysis ready data: Final data used in analysis
 
-Out of these sections, the minimal viable format are the first four:
+```
+proj-name/
+         |
+         | - README.md
+         | - Codebook.csv
+         | - LICENSE.md
+         | - metadata.json
+         | - raw-data/
+                     | - raw-data.csv
+                     | - 01-read-tidy-raw-data.csv
+         | - data/
+                 | - final-data.csv
+```
+
+_Figure XX. Example project description._
+
+Out of these sections, the minimal viable format are the first four plus the analysis-read-data:
 
 1. README
 2. Codebook
 3. License
 4. Citation
+5. Analysis ready data
 
 What goes into each of these sections is now described.
 
@@ -32,6 +49,8 @@ The README is often the first place people will go to learn more about data. It 
 - **How** is was collected
 
 This should be brief, and provide links to the other aforementioned sections. Saving a README as a .md file gives the author the formatting benefits of markdown, such as easily inserting links, tables, and easily making lists that will render nicely. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
+
+The README should be placed in the top level of the project, and should provide addit
 
 
 # Human readable data dictionary
