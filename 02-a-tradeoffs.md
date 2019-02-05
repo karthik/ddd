@@ -9,7 +9,10 @@ There is no standard way to discuss the process of developing and creating the d
 
 **Tradeoffs**
 
-There are tradeoffs when it comes to the ease of understanding and effort to prepare. These are typically related to the importance or the impact of the data. Essentially, data with higher potential for reuse should be made as easy to understand as possible, and so may require lots of effort to prepare.
+* Documenting data is a time consuming process
+* You need to consider the tradeoffs: does the time spent match the potential impact, would verification become easier with access to good quality data?
+
+There are tradeoffs when it comes to perceived impact and effort to prepare of data. The tradeoff is time. Essentially, data with higher potential for reuse should be made as easy to understand as possible, and so may require lots of effort to prepare.
 
 As an example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact. Therefore, a lot of effort should be spent making the data easy to understand and use.
 
