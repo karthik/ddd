@@ -44,3 +44,52 @@ Another journal of data publishing is ["Data"](http://www.mdpi.com/journal/data)
 1. > Methods: the Methods section publishes research articles, review papers and technical notes on methods for collecting, processing (treating), managing, storing and analyzing scientific and scholarly data. Related source code, if available, can be deposited as supplementary material.
 
 2. > Data Descriptors: the Data Descriptors section publishes descriptions of scientific and scholarly datasets (one dataset per paper). Described datasets need to be publicly deposited prior to publication, preferably under an open license, thus allowing others to re-use the dataset. Small datasets might also be published as supplementary material to the dataset paper in the journal Data. The link to the publicly hosted version of the dataset must be given in the paper. Data descriptors therefore provide easy citability, traceability and accountability of datasets used in scientific research. Research articles published elsewhere based on the data can link back to the data descriptors via a standard reference and DOI number. Data descriptors are published under a CC BY license, thus allowing the reuse of the descriptions in other research papers without copyright infringement.
+
+
+
+### Media published datasets
+
+Other media outlets are starting to share their data. For example, The Pudding, provides their data [pudding data](https://github.com/the-pudding/data).
+
+### Civic bodies
+
+Governments/civic bodies are documenting data, for example, each state and capital city in Australia has a website with links to their open datasets.
+
+Other civic bodies are using data at a national level in an interesting capacity:
+
+- [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
+- [code for America](https://www.codeforamerica.org/)
+- [code for Australia](https://codeforaustralia.org/)
+
+### Nature "Scientific Data"
+
+For example, it does not provide the same resolution of information as a Data Dictionary. License use for data is unclear in data in brief, as it appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses).
+
+
+Principles for [Nature Scientific Data](https://www.nature.com/sdata/about/principles).
+
+> Scientific Data is an open-access, online-only journal for descriptions of scientifically valuable datasets, and research that advances the sharing and reuse of scientific data. Our primary content-type, the Data Descriptor, combines traditional narrative content with curated, structured descriptions (metadata) of data to provide a new framework for data-sharing and -reuse that we believe will ultimately accelerate the pace of scientific discovery. These principles are designed to align with and support the FAIR Principles for scientific data management and stewardship, which declare that research data should be Findable, Accessible, Interoperable and Reusable.
+
+The six principles of _Scientific Data_
+
+1. Credit: recognize data as a citable contribution
+2. Reuse: Standardized descriptions make it simpler to find and reuse data
+3. Quality:
+4. Discovery:
+5. Open
+6. Service
+
+### Other mediums of publishing {introduction}
+
+Other outlets of publishing include datasets published by media, such as The Pudding [@PuddingData], and FiveThirtyEight [@538]. Industry groups such as Kaggle are also publishing data sources. Government and civic bodies are also releasing large quantities of data. For example, each state and capital city in Australia has a website with links to their open datasets. One such dataset from the Brisbane Data Portal [@bris-data-portal] is the library checkout data [@bris-lib]. This contains a three day monthly snapshot of checkouts from Brisbane libraries including information such as the branch, item identifier, language, title, and author.
+
+Meta/NOTE:
+
+The publishing and repositories section answers the following questions:
+
+* How is data currently being published?
+* What is good and bad about current data publishing?
+
+> - I'm not convinced that we need to talk about what is good and bad on current data publishing, I think that it makes more sense to explain the concept of a data journal, and discuss other places people are publishing data. Then discuss how to do that. Perhaps in the future we can write another paper about what is currently good and bad about data publishing processes.
+
+> - Nature scientific data also looks like it might have some useful metric we could use to assess data prep, perhaps?
