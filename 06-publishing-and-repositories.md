@@ -1,33 +1,28 @@
 # Publishing and repositories
 
-When publishing data, there are a three common options:
+There are a three common options for publishing data in research:
 
-1. **Technical**: Publish the data inside a package, as part of a gh release, in serverless databaseses etc. Ones without too many moving parts for a researcher to maintain.
+1. **Least Moving Parts**
+2. **Domain Specific Venue**
+3. **Long Term Archive**
 
-2. **Traditional venues**: Journal data papers. Either domain specific (ecology, monographs) or domain agnostic
+In this section of the paper, we talk about what each of these options are, and some recommendations on how to publish data in these areas.
 
-3 **Long-term archive**. Talk about why data is best made avaialbe at zenodo or similar even if made available easily elsewhere
+In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release, or a in serverless databaseses. This approach means that you want to **get the data somewhere rather than nowhere**. A great benefit with this is that it is quite minimal, and easy to maintain for the author. Some of the downsides are that it does not scale to larger data. We recommend that the data in this instance is ... .  Avoid self hosting the data, as this requires maintaining things like website domains, which might be suscetible to bit rot.
 
-We believe that no matter where you submit the data, you should have a canonical data repo in one long term archive. This contains information on metadata, data dictionaries, the README, and data used in analysis (ref section 2).
+In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astrnonomy ... . We recommend that the data is ...
 
-There are two main routes to publish data: publishing through a data journal, or serving the data on a repository.
+A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite. Providers for this include companies like zenodo, figshare, and dryad.
 
+If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Another alternative for Zenodo is figshare. Unlike Zenodo, figshare is a commmercially run data platform that provides a free tier for users.
 
-Perhaps provide a continuum of this for things like:
+Another option is the that some universities provide institutional repositories. The tradeoff with long term archives are that they can be slow to set up.
 
-- data in a package
-- github releases
-- hosted data set (bad)
-- zenodo
-- institutional repository (varies by instution)
+**Principles for all three**
 
-Long term repo is not the fastest thing to get to.
+The data should contain information on metadata, data dictionaries, the README, and data used in analysis (ref section 2).
 
-What are the options that we want to provide?
-
-
-Other things to cover:
-- How to link the doi
+No matter where data is submitted, there should ideally be a canonical data repo in one long term archive.
 
 ## Publishing data through a data journal
 
@@ -40,10 +35,6 @@ Data papers are similar to research articles, they have titles, authors, affilia
 Whilst useful, these requirements do not tell the author how to actually structure the data and folders. Instead providing ideas on what they should include. This is a useful step towards improving data resuse, but it _lacks some minimal structure that allows a researcher to have a predictable way to access and interpret the data_.
 
 Other journals operating in this space include journals like "data in brief", "Data", and "Nature Scientific Data". Guidelines for what is required in the content of the paper vary by journal.
-
-## Publishing data through a repository
-
-If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Another alternative for Zenodo is figshare. Unlike Zenodo, figshare is a commmercially run data platform that provides a free tier for users.
 
 # References
 
