@@ -8,7 +8,7 @@ There are a three common options for publishing data in research:
 
 We discuss each of these options and provide recommendations on how to publish data in these areas.
 
-In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release, or a in serverless databaseses. This approach **gets the data somewhere rather than nowhere**. It's minimal features means it is simple to maintain. A downsides is that it does not scale to larger data. Self hosting hosting the data is an option that we discourage, as it may succumb to bit rot.
+In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databaseses. This approach **gets the data somewhere rather than nowhere**. It's minimal features means it is simple to maintain. A downsides is that it does not scale to larger data. Self hosting hosting the data is an option that we discourage, as it may succumb to bit rot.
 
 In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astronomy the data is hosted at the SDSS. This is appropriate for the domain.
 
@@ -34,6 +34,11 @@ Whilst useful, these requirements do not tell the author how to actually structu
 
 Other journals operating in this space include journals like "data in brief", "Data", and "Nature Scientific Data". Guidelines for what is required in the content of the paper vary by journal.
 
+# Other places to put data
+
+Some other places to put data include the open science framework: https://osf.io/, dataverse, https://dataverse.org/, and data.world, https://data.world/.
+
+
 # References
 
 @dryad: https://datadryad.org/
@@ -43,3 +48,4 @@ Other journals operating in this space include journals like "data in brief", "D
 @538: https://data.fivethirtyeight.com/
 @bris-data-portal: https://www.data.brisbane.qld.gov.au/data/dataset
 @bris-lib: https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date#
+@piggyback: https://github.com/ropensci/piggyback
