@@ -6,17 +6,15 @@ There are a three common options for publishing data in research:
 2. **Domain Specific Venue**
 3. **Long Term Archive**
 
-In this section of the paper, we talk about what each of these options are, and some recommendations on how to publish data in these areas.
+We discuss each of these options and provide recommendations on how to publish data in these areas.
 
-In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release, or a in serverless databaseses. This approach means that you want to **get the data somewhere rather than nowhere**. A great benefit with this is that it is quite minimal, and easy to maintain for the author. Some of the downsides are that it does not scale to larger data. We recommend that the data in this instance is ... .  Avoid self hosting the data, as this requires maintaining things like website domains, which might be suscetible to bit rot.
+In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release, or a in serverless databaseses. This approach **gets the data somewhere rather than nowhere**. It's minimal features means it is simple to maintain. A downsides is that it does not scale to larger data. Self hosting hosting the data is an option that we discourage, as it may succumb to bit rot.
 
-In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astrnonomy ... . We recommend that the data is ...
+In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astronomy the data is hosted at the SDSS. This is appropriate for the domain.
 
-A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite. Providers for this include companies like zenodo, figshare, and dryad.
+A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite.
 
-If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Another alternative for Zenodo is figshare. Unlike Zenodo, figshare is a commmercially run data platform that provides a free tier for users.
-
-Another option is the that some universities provide institutional repositories. The tradeoff with long term archives are that they can be slow to set up.
+If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Another alternative for Zenodo is figshare. Unlike Zenodo, figshare is a commmercially run data platform that provides a free tier for users. Another option is the that some universities provide institutional repositories. Figshare offers to integrate with university repositories, so that universities can have their data on site, but available through figshare. The tradeoff with long term archives are that they can be slow to set up, but they can last the life of the university; typically very long.
 
 **Principles for all three**
 
@@ -28,7 +26,7 @@ No matter where data is submitted, there should ideally be a canonical data repo
 
 Data used in publications are often shared in the supplementary materials of articles, served on repositories such as the Dryad Digital Repository [@dryad]. Dryad makes data from scientific publiations discoverable, reusable, and citable. It is well funded through grants from the NSF, European Commission. (clocks?)
 
-To provide more information and context around the data used in research,  journals are now adding "data papers", specifically designed for publishing articles about the data, and sharing it. This benefits both researchers and readers. Researchers receive credit for data they have collected or produced. Readers get more context about the data.
+To provide more information and context around the data used in research,  journals are now adding "data papers". These are specifically designed for publishing articles about the data, and sharing it. This benefits both researchers and readers. Researchers receive credit for data they have collected or produced. Readers get more context about the data.
 
 Data papers are similar to research articles, they have titles, authors, affiliations, abstract, and references.  They generally require an explanation of why the data is useful to others, a direct link to the data, description of the design, materials, and methods. Other information on the subject area, data type, format, and related articles are usually required.
 
