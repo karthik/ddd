@@ -29,6 +29,11 @@ If you are working with data that is already copyrighted, say for example under 
 
 Data under an embargo means that the data cannot be shared more widely until a specific release time. If you are sharing data under an embargo, then detailed information on the embargo needs to be included in the README, and in separate correspondence with those who receive the data.
 
+> Most data repositories (see 'Data repositories') allow you to place a - temporary - embargo on your data: during the embargo period the description of the dataset is published, but the data themselves are not available for reuse by others.
+
+-- https://library.bath.ac.uk/research-data/archiving-and-sharing/sharing-data
+-- https://www.wur.nl/en/Value-Creation-Cooperation/WDCC/Data-Management-WDCC/Finishing/When-and-why-to-publish-your-dataset.htm
+
 ## Adding a license to your data
 
 Once you've chosen a license, you need to make sure that you provide a good breadcrumb trail back to your work. We recommend a modified guideline from the creative commons to follow the acroynm **ALMO**: **A**uthor, **L**icense, **M**achine-readability, **O**ther good stuff? @wiki-cc.
