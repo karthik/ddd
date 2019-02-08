@@ -8,6 +8,11 @@ output: md_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+# TODO
+# Can the raw numbers have the %s provided with them? Or perhaps we can refer to a table of results for this as well.
+# A bit meta, but should we include metadata, data dictionary, README, for this data used in the paper?
+# scales::percent(0.1)
+# ------------------------------------------------------------------------------------------------------
 ```
 
 ```{r echo = FALSE}
@@ -29,3 +34,4 @@ percent <- function(x, digits = 2, format = "f", ...) {
 ``` 
 
 Of the 15539 packages on Central R Archive Network (CRAN),  `r packages_with_data` contain datasets either as binary data (`r data_folder` packages) or as external datasets (`r extdata_folder`). Binary files comprise a bulk of the data shipped in the `data` folder (`r types[1:2, ]$percentage %>% sum %>% percent`) with other plain text formats such as txt, csv, dat, json comprising less than one percent of data shipped in packages. 
+
