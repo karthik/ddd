@@ -49,3 +49,4 @@ Some other places to put data include the open science framework: https://osf.io
 @bris-data-portal: https://www.data.brisbane.qld.gov.au/data/dataset
 @bris-lib: https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date#
 @piggyback: https://github.com/ropensci/piggyback
+@White2013: Make it easier to (re)use your data
