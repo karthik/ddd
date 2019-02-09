@@ -1,25 +1,5 @@
 # Morgue
 
-
-We have discussed these different aspects of data sharing, we now discuss some approaches to share data. A case study on CC0 for data use [@cc0-case-study] state there are three ways CC0 is expressed:
-
-> And like our licenses, CC0 has the benefit of being expressed in three ways – legal code, a human readable deed, and machine-readable code that allows works distributed under CC0 to be easily found.
-
-We can apply this template for metadata and context of data:
-
-1. Human readable (README / methods)
-2. Legal code (code book)
-3. Machine readable (JSON/structured data)
-
-
-# possible intro part
-
-Research discusses how to share data for collaboration and how to format individual datasets [@Ellis2017; @Broman2018; @Arregoitia2018], but these focus on more specific features: how to format the individual data, and how to share data with a collaborator. They do not discuss best practices for sharing data or publishing data for wider use.
-
-To share data, it needs to be documented. Documenting a dataset ensures others understand why the data was collected, what it was used for, and how to use it appropriately.
-
-
-
 # tabular scope
 
 In this paper we focus on tabular datasets, broadly defined as data that fit into a table. We discuss how to handle small, medium, and large tabular data. We wil not specifically cover data sources such as raster, image, sound, or video. The principles covered will generalise to some extent, however.
@@ -40,120 +20,76 @@ This tradeoff will change over time as the relative costs also change. For examp
 
 Two was to think of the spaceship are the "light aeroplane" and the "heavy falcon". Light aeroplane data come with accompanying human readable README file that describes the data and a machine readable format for reading in the data. Heavy Falcon data have complete information to completely reproduce the data, intructions, motivation, manual, and so on, with a format that is transferrable.
 
-## The paper plane (Easy and Fragile)
+# publishing + repositories
 
-An example of a fragile and quick process could be a lone data file in a folder, where the data is undocumented, and might be in plain or proprietary format. The format is more fragile if it is hard to read.
+One example of this is **Elsevier's Data In Brief**, which aims to provide an outlet where researchers can easily share and reuse data by publishing articles about the data to improve reproducibility, enhance discoverability by taking it out of the supplementary materials, increase traffic and citations to both the research articles and the data, pave the way for collaborations. Data In Brief welcome data from all research areas.
 
-## Felix Culpa (goldilocs - easy and robust)
+Of particular interest are the sections **Completed specifications table** and **complete description of the experimental design and materials and methods**
 
-Felix Culpa means "stroke of luck", and this is a process that takes just the right amount of time so that it isn't overly time consuming, but it is also robust. One example of this could be a README to provide the human context, a machine readable statement of variables, and the raw data.
+The completed specifications table details information on subject area, data type (image, table, text file, graph),the data format (raw, filtered, analysed), how the data was acquired, related articles, data accessibility (it is in a public repo etc), and features of the experimental factors and features, and related research article.
 
+As another example, Elsevier's guidelines on "a complete description of the experimental design and materials and methods", state that:
 
-## References:
+> Offer a complete description of the experimental design and methods used to acquire the data and, where applicable, to perform the analysis. Include any relevant figures and tables needed to understand the data fully. Please also provide, where applicable, any code files used for base-level analysis or filtering of the data
 
-@plos-comp-bio-data: http://journals.plos.org/ploscompbiol/s/licenses-and-copyright
+- This is a good standard, but it does not provide explicit instructions.
 
-@ccby-short: https://creativecommons.org/licenses/by/4.0/
-@ccby-long: https://creativecommons.org/licenses/by/4.0/legalcode
-@cc0-short: https://creativecommons.org/publicdomain/zero/1.0/
-@cc0-long: https://creativecommons.org/publicdomain/zero/1.0/legalcode
-
-@tldr-legal: https://tldrlegal.com/
-@creative-commons: https://creativecommons.org/
-@cc-data: https://wiki.creativecommons.org/wiki/Data
-@wiki-cc: https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license#Example:_Dataset
-
-# Notes / discussion
+It is also unclear what the _license_ for data in brief is, as it appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses). Finally, to provide open access, this journal has an open access fee, which further limits the impact of the paper.
 
 
-From the [creative commons wiki](https://wiki.creativecommons.org/wiki/Marking_your_work_with_a_CC_license#Example:_Dataset):
+### Journal, "Data".
 
-> Lastly, Is there anything else the user should know about the material?
+Another journal of data publishing is ["Data"](http://www.mdpi.com/journal/data). This journal has two sections (taken verbatim from their site):
 
-> Is your work a modification of another work? Does your work incorporate elements of several third party materials? Are you adding any warranties, or modifying the existing disclaimer in the CC license? Are you granting additional permissions beyond what the license allows? If your answer is yes to any of these, then you should note that along with the license information about your work. For example, if your work incorporates third party materials, you would note those materials and make sure to attribute each of them correctly. This is also your chance to grant additional permissions. For example, if you license something under CC BY but are okay with people not attributing you in certain cases--this is your chance to specify those cases. You can't change the terms of a CC license, but you can always grant additional permissions or warranties.
+1. > Methods: the Methods section publishes research articles, review papers and technical notes on methods for collecting, processing (treating), managing, storing and analyzing scientific and scholarly data. Related source code, if available, can be deposited as supplementary material.
 
-I'm still not precisely clear _where_ we put the notice in the data. It seems eaasier for video or audio or an image - a caption can be placed under an image, for example. I  discuss this in the last paragraph
-
-**need to read over these case studies for CC0 and CC use for data**
-
-- https://wiki.creativecommons.org/wiki/Data_and_CC_licenses
-- https://wiki.creativecommons.org/wiki/CC0_use_for_data
-
-# References
-
-**Open knowledge foundation data specifications**
-
-[Other notes from OKFN on "data package"](https://blog.okfn.org/?s=data+package)
-
-# packages for adding data dictionaries
-
-including `dataMeta` [@dataMeta], which attaches additional information about the dataset to a data.frame as an attribute through a `linker` object.
-
-The csvy format can be read using the R packages `csvy` and [rio](https://github.com/leeper/rio). `rio` provides an approach to try and read in any particular format of data with some intelligent guesses, and could be used where the data format is unknown.
-
-Mention codemeta? The `codemeta` project "focuses on metadata and discovery systems for software citation and attribution."
-
-# Case Study
-
-We have discussed different data documenting methods in section [@data-documenting]. We now briefly assess three case study applications, and assess data documenting strengths, and areas of improvement. These are assessed using the DARECO (DAta REusability COntinuum) described in section 2.
-
-The three case study areas are:
-
-1. A journal article from the journal "Data in Brief".
-2. A dataset from five thirty eight, "What 12 Months Of Record-Setting Temperatures Looks Like Across The U.S.".
-3. A dataset from the government of Brisbane, Australia: "Library Checkout Dataset".
-
-# Data In Brief Article
-
-The article that was selected for the "Data in Brief" article, was "" [@Obi2018]. This article was chosen as it was one of the most downloaded articles advertised on their website.
-
-## Five Thirty-Eight
-
-We assess data from [five-thirty-eight](https://data.fivethirtyeight.com/), for the article ["What 12 Months Of Record-Setting Temperatures Looks Like Across The U.S."](https://fivethirtyeight.com/features/what-12-months-of-record-setting-temperatures-looks-like-across-the-u-s/). The data source comes from [here](https://github.com/fivethirtyeight/data/tree/master/us-weather-history)
-
-## Need to add some other examples of some examples that are low on this spectrum
-
-Note that there is a difference between easy to create vs easy to consume.
-
-The data reuse continuum should apply to the user, but it all kind of depends on the tooling available.
-
-The tidyverse has made package development a lot easier. In the past, there was a lot of work with using tools like `package.skeleton`, the pseudo-latex for documentation of each R function, and so on. This made it hard to create high quality R packages. There was a lot of manual work to make sure that things were documented properly. That has now been made easier thanks to `devtools`, and `roxygen2`. More people can now quite easily write a high quality package.
-
-We are still in the past a bit with the current state of data sharing tools. There is the same opportunity here with data tooling as there was with package development tools like `devtools`. Some features that such a tools to add:
-
-* Add Metadata
-* Add a README
-* Share on a cloud service
-* Run checks on the data source
-* Perform general data formatting checks
-
-Features that are worthwhile/useful as a data consumer:
-
-* Metadata (+/-)
-* README (+/-)
-* Ease of retrieving the data (+/-)
-* General data formatting (+/-)
+2. > Data Descriptors: the Data Descriptors section publishes descriptions of scientific and scholarly datasets (one dataset per paper). Described datasets need to be publicly deposited prior to publication, preferably under an open license, thus allowing others to re-use the dataset. Small datasets might also be published as supplementary material to the dataset paper in the journal Data. The link to the publicly hosted version of the dataset must be given in the paper. Data descriptors therefore provide easy citability, traceability and accountability of datasets used in scientific research. Research articles published elsewhere based on the data can link back to the data descriptors via a standard reference and DOI number. Data descriptors are published under a CC BY license, thus allowing the reuse of the descriptions in other research papers without copyright infringement.
 
 
-## Brisbane Government
 
-We evaluate an example dataset from Brisbane, Queensland, Australia. Brisbane provides a [data portal](https://www.data.brisbane.qld.gov.au/data/dataset). The data accessed was the [Library checkout dataset](https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date#).
+### Media published datasets
 
-We evaluate it on the two axes, Brittleness, and Time Investment.
+Other media outlets are starting to share their data. For example, The Pudding, provides their data [pudding data](https://github.com/the-pudding/data).
 
-* Issue: These axes kind of work for the developer / in historical context. However, these are actually not super clear in the eyes of a *user*.
+### Civic bodies
 
-Let's start with the website. The website provides some key overview information, describing what is in the data:
+Governments/civic bodies are documenting data, for example, each state and capital city in Australia has a website with links to their open datasets.
 
-> Brisbane City Council Library checkouts borrowed at all branches on a single day. Information includes: Title, Author, Call Number, Item Identifier, Item Type, Status, Language, Checkout Branch, Date Borrowed. Also includes acronym lists. Data will be provided as a three day snapshot of every month.
+Other civic bodies are using data at a national level in an interesting capacity:
 
-It then provides a metadata acronym list of the data, and three days (7th - 9th) of every month in from June 2015 until November 2018, where each file is one month. At the bottom of the page it provides information on the date published, the license used, attribution, and update frequency.
+- [ands - Australian National Data Service](http://www.ands.org.au/working-with-data/publishing-and-reusing-data/data-journals)
+- [code for America](https://www.codeforamerica.org/)
+- [code for Australia](https://codeforaustralia.org/)
 
-Overall, this is quite good. It provides some key characteristics, namely:
+### Nature "Scientific Data"
 
-- A README, a basic description of the data
-- The data in its rawest form
-- Some metadata file describing the contents of the data
-- some metadata describing what license the data is provided with, when it was first published, how to attribute, and how often it is updated.
+For example, it does not provide the same resolution of information as a Data Dictionary. License use for data is unclear in data in brief, as it appears to be CC-BY, but upon acceptance of an article, authors are asked to complete an 'Exclusive License Agreement' [more information](https://www.elsevier.com/about/our-business/policies/copyright), and that third party reuse of open access articles is determined by the author's choice of [user license](https://www.elsevier.com/about/our-business/policies/open-access-licenses).
 
-Retrieving the data from the website was not terribly difficult, but did involve a bit of work to determine how to download all files at once, instead of manually downloading the data. Some work was done to extract a good file name from the URL of the extracted data, and then binding all the data together into one longer format. The data itself was quite clean, with each column forming a variable, it was quite close to tidy data. The metadata file was actually three separate pieces of metadata, with three types of metadata: branch information, data heading information, and item code. Overall, this data falls into the "super ideal", bottom right quadrant.
+
+Principles for [Nature Scientific Data](https://www.nature.com/sdata/about/principles).
+
+> Scientific Data is an open-access, online-only journal for descriptions of scientifically valuable datasets, and research that advances the sharing and reuse of scientific data. Our primary content-type, the Data Descriptor, combines traditional narrative content with curated, structured descriptions (metadata) of data to provide a new framework for data-sharing and -reuse that we believe will ultimately accelerate the pace of scientific discovery. These principles are designed to align with and support the FAIR Principles for scientific data management and stewardship, which declare that research data should be Findable, Accessible, Interoperable and Reusable.
+
+The six principles of _Scientific Data_
+
+1. Credit: recognize data as a citable contribution
+2. Reuse: Standardized descriptions make it simpler to find and reuse data
+3. Quality:
+4. Discovery:
+5. Open
+6. Service
+
+### Other mediums of publishing {introduction}
+
+Other outlets of publishing include datasets published by media, such as The Pudding [@PuddingData], and FiveThirtyEight [@538]. Industry groups such as Kaggle are also publishing data sources. Government and civic bodies are also releasing large quantities of data. For example, each state and capital city in Australia has a website with links to their open datasets. One such dataset from the Brisbane Data Portal [@bris-data-portal] is the library checkout data [@bris-lib]. This contains a three day monthly snapshot of checkouts from Brisbane libraries including information such as the branch, item identifier, language, title, and author.
+
+Meta/NOTE:
+
+The publishing and repositories section answers the following questions:
+
+* How is data currently being published?
+* What is good and bad about current data publishing?
+
+> - I'm not convinced that we need to talk about what is good and bad on current data publishing, I think that it makes more sense to explain the concept of a data journal, and discuss other places people are publishing data. Then discuss how to do that. Perhaps in the future we can write another paper about what is currently good and bad about data publishing processes.
+
+> - Nature scientific data also looks like it might have some useful metric we could use to assess data prep, perhaps?
