@@ -40,3 +40,15 @@ Going through the criteria:
 - **L**icense is provided
 - **M**achine-readable - this is provided through the LICENSE.md file and also in the meta-data-for-data file
 - **Other Stuff** is also provided in the README.md file
+
+
+## EML
+
+The Ecological Metadata Language (EML) [@EML-about] is:
+
+> ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
+
+EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
+), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
+
+* Look at Ellis + Leek paper on metadata

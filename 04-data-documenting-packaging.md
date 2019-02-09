@@ -134,22 +134,9 @@ The data dictionary provides _human readable_ information on the data - what the
 
 ## Table Schema
 
-[Table Schema](https://frictionlessdata.io/specs/table-schema/) contains fields such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. Table schema is baked into formats such as  [csvy](http://csvy.org/), an extended csv format, which has additional front matter in a YAML format using Table Schema.
+[Table Schema](https://frictionlessdata.io/specs/table-schema/) contains fields such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. It is built on two structures: (1) name/value pairs, and (2) an ordered list. [@https://www.json.org]. Table schema is baked into formats such as  [csvy](http://csvy.org/), an extended csv format, which has additional front matter in a YAML format using Table Schema.
 
-## EML
-
-The Ecological Metadata Language (EML) [@EML-about] is:
-
-> ...an open source, community oriented project dedicated to providing a high-quality metadata specification for describing data relevant to the ecological discipline. EML provides a very highly structured approach to documenting data.
-
-EML provides ways to describe the heterogenous data common in ecology, which range from the gene level to the biosphere level [@Jones2006]. The EML standard has a [documented standard](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html)
-), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
-
-* Look at Ellis + Leek paper on metadata
-
-## JSON
-
-JavaScript Object Notation (JSON) is a lightweight, human-friendly, machine readable data-interchange format. It is built on two structures: (1) name/value pairs, and (2) an ordered list. [@https://www.json.org]
+## Tooling for packaging data
 
 ## Data package specification
 
