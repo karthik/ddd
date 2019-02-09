@@ -150,16 +150,6 @@ They have recently completed the latest version of a specialised
 
 [DataPackageR](https://github.com/RGLab/DataPackageR)
 
-**?Evaluating metadata formats?**
-
-_Table XX An overview of the merits of each package. This shows the approach, some links, pros and cons, how stable and supported they are, and whether or not they have a built in community. For thoroughness, we recommend ..., else we recommend ... ._
-
-|thing        |links |pros |cons |stability |community |example |
-|:------------|:-----|:----|:----|:---------|:---------|:-------|
-|EML          |      |     |     |          |          |        |
-|DataPackageR |      |     |     |          |          |        |
-|csvy         |      |     |     |          |          |        |
-
 # Raw data: The original/first data provided
 
 Raw data is usually the first format the data was given to the researcher before any tidying or cleaning of the data. If the size of the raw data is practical to share, it should be shared in a folder called `raw-data`. If possible, data dictionaries of the raw data should be provided in this folder as well. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.

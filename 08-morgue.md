@@ -52,3 +52,14 @@ EML provides ways to describe the heterogenous data common in ecology, which ran
 ), available on its website, and is widely used in ecology. There is an R package to interface into the EML package, called [`EML`](https://github.com/ropensci/EML), which allows for reading and creating EML files. Creating an EML document is time consuming, but the format is robust, so EML lives at the top right quadrant of DARECO.
 
 * Look at Ellis + Leek paper on metadata
+
+
+**?Evaluating metadata formats?**
+
+_Table XX An overview of the merits of each package. This shows the approach, some links, pros and cons, how stable and supported they are, and whether or not they have a built in community. For thoroughness, we recommend ..., else we recommend ... ._
+
+|thing        |links |pros |cons |stability |community |example |
+|:------------|:-----|:----|:----|:---------|:---------|:-------|
+|EML          |      |     |     |          |          |        |
+|DataPackageR |      |     |     |          |          |        |
+|csvy         |      |     |     |          |          |        |
