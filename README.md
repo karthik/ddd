@@ -1,36 +1,24 @@
 # Possible outline for the paper
 
-- Introduction
-- Challenges around sharing data (what is the current state of the system)
-- How to share your data
-    - By language
-        - R
-        - Python
-        - Julia
-        - Other package managers and languages
-- How to document your data
-- How to license your data
-- How to publish data for maximum reuse
-- Best, good, good enough, and worst practices around data
-- Conclusions(?)/Ten simple rules for publishing your data
-
-- Editorial on advice for publishing your data
-    - Just spitballing some thoughts here. Why can't we `pip install a dataset` like we can for packages? What is the current state of the art for data managers (analogous to package managers)
-    - 
-
-
-## Misc sections
-- A taxonomy of practices
-- ``<-easy ------------------- time consuming-> (x)``
-- ``<-fragile ---------------- robust-> (y)``
-- Taxonomies have separate "user" and "developer" dimensions.
- 
- 
-Other axis:
-- size (5mb for CRAN, type thing. Small to big)
-- complexity (images, tabular)
-- persistence(?) 
-- implementation (R, Python, Julia, etc)
-- privacy (is the data identifiable?)
-- usability
-- purpose? (education only, data is the value)
+01-introduction
+02-tradeoffs
+	- Use cases
+	- Simple, throw away datasets
+	- ...
+	- More complex examples
+03-approaches-to-data-sharing
+	03-a-ship-alongside-code
+	03-b-ship-w-software
+	03-c-larger-data-medium
+	03-d-long-term-archiving
+04-data-documenting-packaging
+	- Code books
+	- Citation
+	- Minimal structure
+	- License
+05-example-data
+	- Complex, well documented (BCI)
+	- Sensor, Sloan
+	- Other
+06-ten-rules
+07-conclusions
