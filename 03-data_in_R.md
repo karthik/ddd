@@ -1,25 +1,16 @@
+
 # Releasing data in R
 
-- One should only release data inside a R package if the primary audience is R users. Examples of such cases include those with an interest in the subject matter area, or the data itself for purposes such as teaching or training (Wickham 2016)
+One low cost and easy way to distribute data alongside compute would be to package the datasets as a data only package or as part of something larger where the methods are being implemented. The R ecosystem has many noteworthy examples of data-only packages. One exemplar.  One exemplar is the `nycflights13` package by Hadley Wickham (https://cran.r-project.org/web/packages/nycflights13/index.html). This package makes available airline data for all flights departing New York city in 2013 in a tidy format, with distinct tables for metadata on airlines, airports, weather, and planes. The package not only provides ready to use binary data but also ships raw data (in a folder called `data-raw`) along with scripts used to clean them. The package was originally created as a way to provide example data to teach tidy data principles and serves as a great model for how one can publish a data package in R.
 
-## History of data in R
+A more common use case is to include data as part of a regular package where analytical methods are being implemented and shared. This serves the dual purpose of exposing methods and data together, making it extremely easy for a researcher to simply install and load the library at the top of their script. CRAN's distributed network (along with the global content distribution network maintained by Rstudio) ensure that the package is quickly accessible to anyone in the R ecosystem. A second critical advantage in this approach is that one could also benefit from R's package documentation syntax to generate useful metadata for fast reference. This approach can also easily be adapted to other languages. Python for example, is far more flexible with respect to including arbitrary files as part of a package. 
 
-R packages have always had the option for a "data/" folder, which could be accessed using `data()`. This data has served as a way to make examples work, and nothing more. It is unclear when the first "data only" packages were created. Having data along with the software has a precedent, for sample, STATA has accompanying data with it.
+**Other benefits of packaging data in R**
 
-### Advantages of including data inside R packages
-- Easy to share via CRAN's distributed network
-- documentation comes included
+1. Packaging data can be a very powerful pedagogical tool to help researchers understand how to transform data and prepare it for further analysis. To do so, one can package raw data alongside scripts. Long form documentation such as Vignettes can provide further detailed discussion on the process. Advanced users can simply skip the raw data and scripts and proceed directly to the fast binary data which can hold a lot of data when heavily compressed.
+2. When the primary motivation for shipping data is to illustrate visualization techniques or to run examples, one can skip the raw data and processing scripts and only include the binary data. As long as the total package size doesn't exceed 5 megabytes, it would be acceptable as part of CRAN. For cases when this size is hard to maintain, CRAN recommends data-only packages that will be rarely updated. For a detailed discussion on this issue and alternative approaches, see [@Brooke_Anderson2017]
 
-Disadvantages:
-- This becomes R specific and excludes users from other languages and interfaces
-- Citation and attribution become problematic.
-
-### Technical advice for R users
-- If the aim of your data sharing is also to encourage users to understand the process of munging (i.e. transforming messy, raw data into clean analyzable data), include the raw data files in `inst/extdata` and provide scripts (or functions) that will transform such data into usable form. The vignette (R's long-form package documentation) would be ideal for walking users through the thought process behind one's data transformation efforts.
-- If the primary purpose is to provide example datasets for purposes such as illustrating statistical methods, computational methods, or for similar uses, you may place binary data in the `data/` folder of the package structure. The binary format is important because CRAN imposes strict limits on package sizes. The general rule of thumb is that a package cannot exceed 5mb (code, documentation, and data included) (https://cran.r-project.org/web/packages/policies.html). For cases when this size is hard to maintain, CRAN recommends data-only packages that will be rarely updated. We do not recommend this practice for various reasons. For a detailed discussion on this issue, see Anderson and Eddelbuettel (2017)
-- Another R specific solution is to host data using the `drat` package and accessing it via packages of small size. The location of the data is user-controlled and can be published for free on GitHub which has a size limit of 1gb (compared to CRANs 5 mb limit).
-		- This solution is not general purpose since `drat` cannot be listed as an `Imports` or `Depends`.
-
+One major disadvantage of packaging data inside R is that it makes the data availability very language centric. Non R users are unlikely to download and export data out of a package. This is why we recommend, as a rule, that researchers also archive data in a long-term data repository. These include domain specific repositories (see SECTION) or more general purpose ones such as Zenodo or figshare and include the persistent identifier in all locations where the data is referenced such as the manuscript, notebook and data package. 
 
 **References:**
 
