@@ -6,28 +6,34 @@ library(ggplot2)
 
 library(tibble)
 
-data <- tibble(Robust = c(5,95,100),
-                  Difficult = c(5,5,100),
-                  label = c("Most studies",
+dat_prep <- tibble(prep = c(15,20,25,95, 96),
+               understanding = c(15,20,95,95,96),
+                  label = c("Data Dump",
+                            "Most studies",
                             "Sensor",
-                            "50 hectare"))
+                            "50 hectare",
+                            "RCT"
+                            ))
 
-data
+dat_prep
 
 library(ggrepel)
 
-robust_diff_plot <-
-ggplot(data,
-       aes(x = Robust,
-           y = Difficult,
+plot_effort_understanding <-
+ggplot(dat_prep,
+       aes(x = prep,
+           y = understanding,
            label = label)) +
   geom_point() +
   geom_label_repel(
     segment.size = 0.2,
-    direction = "y",
     segment.color = "grey50") +
-  theme_minimal()
+  theme_minimal() +
+  labs(x = "Effort to Prepare",
+       y = "Ease of Understanding") +
+  xlim(0,100) + 
+  ylim(0, 100)
 
-ggsave(filename = "../ddd/figures/fig-robust-diff.png",
-       plot = robust_diff_plot,
+ggsave(filename = "../ddd/figures/fig-effort-understanding.png",
+       plot = plot_effort_understanding,
        device = "png")
