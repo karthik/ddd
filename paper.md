@@ -14,9 +14,10 @@ For nearly two decades, researchers who work in areas related to computational s
 **In this paper we focus on the practical side of sharing data for the purpose of reproducibility.** Our goal is to describe various methods in which an analyst can share their data with minimal friction. We steer clear of theoretical ideas such as the FAIR data principles [@Wilkinson2016] since they still do not help a researcher share their data. We also skip the discussion around citation and credit because data citations are still poorly tracked and there is no standardized metric or a h-index equivalent for data as of this writing. 
 
 For a piece of computational research to be minimally reproducible, it requires three distinct elements:
-1. Code
-2. Computing environment
-3. Data
+
+1. Code  
+2. Computing environment  
+3. Data  
 
 The first two of these challenges have largely been solved. 
 
@@ -24,7 +25,7 @@ Although code sharing in science had a rocky start [@Barnes2010], more and more 
 
 A typical data scientist loads a dozen or two of these open source libraries at the top of a notebook and then rely on existing routines to rapidly read, transform, visualize, and model data. Each of these packages individually depend on a complex web of other packages, building upon existing work rather than reimplementing everything from scratch. Working from script and a list of such dependencies, a data analyst can easily install all the necessary tools in any local or remote environment and reproduce the computation. When new functionality is developed, it is packaged into a separate entity and added to a language's package manager.
 
-The computing environment is also easily captured with modern tools such as Docker [@Boettiger2015; @Jupyter2018]. Modern tools such as Binder (citation) can parse Docker files and dependency trees to provide on demand, live notebooks in R and Python that a reader can immediately execute in the browser without dealing with the challenges of local installation. This makes it simple to load a specific environment to run any analysis. Code is handled by version control with tools like Git and GitHub (@git; @github), paired with archiving such as Zenodo provide access to code (particularly model implementations)[@zenodo]. All the necessary software is available from various package managers (and their numerous geographic mirrors and archives) making it easy to install any version of a software package. However, the biggest challenge, even today, remains easy and repeatable access to data in a data science notebook.
+The computing environment is also easily captured with modern tools such as Docker [@Boettiger2015; @Jupyter2018]. Modern tools such as Binder (citation) can parse Docker files and dependency trees to provide on demand, live notebooks in R and Python that a reader can immediately execute in the browser without dealing with the challenges of local installation. This makes it simple to load a specific environment to run any analysis. Code is handled by version control with tools like Git and GitHub (@git; @github), paired with archiving such as Zenodo provide access to code (particularly model implementations)[@zenodo]. All the necessary software is available from various package managers (and their numerous geographic mirrors and archives) making it easy to install any version of a software package. However, the biggest challenge, even today, remains easy and repeatable access to data in a data analysis.
 
 Although there are numerous public and private data repositories, none  of them function as package managers. Datasets are also far more diverse in complexity, size, and formats, making them particularly challenging to standardize or easily "install" where the code is running. As a result, data used in an analysis is often read from various locations (local, network, or cloud), various formats, varying levels of tidiness [@Wickham2014]. There is also the overhead associated with data publishing, the act of archiving data in a repository that also mints permanent identifiers, that are not required of all projects due to the effort and time involved. It is worth drawing the distinction between data sharing (making the data available with little effort) and data publishing (archiving the data in a long-term repository, with our without curated metadata).
 
@@ -33,11 +34,12 @@ What aspects of data make them particularly challenging to share from a reproduc
 We discuss how to share and/or publish data and cover various tradeoffs when deciding how much to do. We skip detailed discussions of the minutiae of data preparation (covered elsewhere in various articles), licenses (there are not many options when it comes to data), or citation (as of this writing, data citation is still in its infancy). We also analyze the state of data contained inside software packages, shared and made available as part of modern data analysis. How often are data shipped inside software packages? How does data format and size impact availability? 
 
 ![](figures/data_sharing_workflow.png)
+
 # Tradeoffs in documenting your dataset
 
 There is a balance in providing the right amount of data documentation. Too much is overwhelming; too little and you don't know anything. For example, a folder with dozens of data files and several papers written on the topic is to much; it's hard to know where to start. A lone `csv` file in a folder with no other information is too little; it does not tell us what the data contains, or why it was collected. A good balance between the two extremes is to provide a README file that provides a human-readable description of the data and variables. Other important features include data licenses, raw data, tidying scripts, machine readable metadata. But what to include, and how much detail for each? It can be hard to know where to start. This section sheds light on this, and tells you how to document your data.
 
-The process of collecting, processing, and documenting the data is complicated. There is no standard way to discuss it. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on the graph to indicate the ease of understanding and preparation (see Figure 1.).
+The process of collecting, processing, and documenting the data is complicated. There is no standard way to discuss it. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on the graph to indicate the ease of understanding and preparation (see Figure 2.).
 
 ![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-effort-understanding.png).
 
@@ -61,14 +63,14 @@ One of the easiest solutions to making data available alongside an analysis is t
 
 One low cost and easy way to distribute data alongside compute would be to package the datasets as a data only package or as part of something larger where the methods are being implemented. The R ecosystem has many noteworthy examples of data-only packages. One exemplar.  One exemplar is the `nycflights13` package by Hadley Wickham (https://cran.r-project.org/web/packages/nycflights13/index.html). This package makes available airline data for all flights departing New York city in 2013 in a tidy format, with distinct tables for metadata on airlines, airports, weather, and planes. The package not only provides ready to use binary data but also ships raw data (in a folder called `data-raw`) along with scripts used to clean them. The package was originally created as a way to provide example data to teach tidy data principles and serves as a great model for how one can publish a data package in R.
 
-A more common use case is to include data as part of a regular package where analytical methods are being implemented and shared. This serves the dual purpose of exposing methods and data together, making it extremely easy for a researcher to simply install and load the library at the top of their script. CRAN's distributed network (along with the global content distribution network maintained by Rstudio) ensure that the package is quickly accessible to anyone in the R ecosystem. A second critical advantage in this approach is that one could also benefit from R's package documentation syntax to generate useful metadata for fast reference. This approach can also easily be adapted to other languages. Python for example, is far more flexible with respect to including arbitrary files as part of a package. 
+A more common use case is to include data as part of a regular package where analytical methods are being implemented and shared. This serves the dual purpose of exposing methods and data together, making it extremely easy for a researcher to simply install and load the library at the top of their script. CRAN's distributed network (along with the global content distribution network maintained by Rstudio) ensure that the package is quickly accessible to anyone in the R ecosystem. A second critical advantage in this approach is that one could also benefit from R's package documentation syntax to generate useful metadata for fast reference. This approach can also easily be adapted to other languages. Python for example, is far more flexible with respect to including arbitrary files as part of a package.
 
 **Other benefits of packaging data in R**
 
 1. Packaging data can be a very powerful pedagogical tool to help researchers understand how to transform data and prepare it for further analysis. To do so, one can package raw data alongside scripts. Long form documentation such as Vignettes can provide further detailed discussion on the process. Advanced users can simply skip the raw data and scripts and proceed directly to the fast binary data which can hold a lot of data when heavily compressed.
 2. When the primary motivation for shipping data is to illustrate visualization techniques or to run examples, one can skip the raw data and processing scripts and only include the binary data. As long as the total package size doesn't exceed 5 megabytes, it would be acceptable as part of CRAN. For cases when this size is hard to maintain, CRAN recommends data-only packages that will be rarely updated. For a detailed discussion on this issue and alternative approaches, see [@Brooke_Anderson2017]
 
-One major disadvantage of packaging data inside R is that it makes the data availability very language centric. Non R users are unlikely to download and export data out of a package. This is why we recommend, as a rule, that researchers also archive data in a long-term data repository. These include domain specific repositories (see SECTION) or more general purpose ones such as Zenodo or figshare and include the persistent identifier in all locations where the data is referenced such as the manuscript, notebook and data package. 
+One major disadvantage of packaging data inside R is that it makes the data availability very language centric. Non R users are unlikely to download and export data out of a package. This is why we recommend, as a rule, that researchers also archive data in a long-term data repository. These include domain specific repositories (see SECTION) or more general purpose ones such as Zenodo or figshare and include the persistent identifier in all locations where the data is referenced such as the manuscript, notebook and data package.
 
 **References:**
 
@@ -105,31 +107,14 @@ Python is a popular general purpose language, used in engineering, statistics, a
 Including data in a python package: https://python-packaging.readthedocs.io/en/latest/non-code-files.html
 A user can typically include data (or any other arbitrary files) inside a python package by declaring it in the manifest.
 
-
-# References
-
-@METADATA-jl: https://github.com/JuliaLang/METADATA.jl
-@data-access: https://github.com/JuliaDatabases
-@R-DBI: https://github.com/r-dbi).
-@NOAA-jl: https://github.com/pazzo83/NOAAData.jl .
-@econ-data-jl: https://juliafinmetrix.github.io/EconDatasets.jl/#sec-1
-@face-data-jl: https://github.com/dfdx/FaceDatasets.jl
-@market-data-jl: https://marketdata.readthedocs.io/en/latest/
-@r-data-jl: https://github.com/johnmyleswhite/RDatasets.jl
-@vega-data-jl: https://github.com/davidanthoff/VegaDatasets.jl
-@ml-data-jl: https://github.com/JuliaML/MLDatasets.jl
-@fake-data-jl: https://github.com/codeneomatrix/Faker.jl
-@charlatan-data-r: https://github.com/ropensci/charlatan
-@wakefield-data-r: https://github.com/trinker/wakefield
-
 # Dealing with medium to large data
 
 Another common situation that researchers face is in dealing with data that fall somewhere between small (tabular data such as csvs that are in the order of bytes to megabytes to gigabytes that can be easily compressed) to large (what falls under the umbrella of `big data`). The happy medium is generally data that are too big to fit on memory of most standard machines, but can successfully fit on disk (https://ropensci.github.io/arkdb/articles/articles/noapi.html). In this case, users who do not have the support to maintain resource intensive database servers can instead rely on light serverless databases such as MonetDB or SQLite. These databases provide disk based storage and using language agnostic interfaces, a analyst can easily query these data in manageable chunks that don't overrun memory limitations. Using software packages such as arkdb (https://ropensci.github.io/arkdb/index.html) one could easily chunk large data from flat text files to these lite databases without running into memory limitations.
 
 As for making these files available alongside compute, one ingenious but short-term solution is to use the GitHub release feature to attach such large database dumps. GitHub releases are designed to serve software releases and provide the opportunity to attach binary files. This mechanism can also be used to attach arbitrary files such as large data files, binary data, and database dumps as long as each file does not exceed 2gb. The R package `piggyback` allows for uploading and downloading such files to GitHub releases, which would make it easy for anyone to access data files wherever the script is being run. It's worth emphasizing again that this is a short-term solution that is dependent on GitHub maintaining this service.# Publishing and repositories
 
+It is worth distinguishing between sharing data and publishing data. One can share data in numerous ways without going through the trouble of publishing it, which often requires metadata that a human must verify. Data can be shared in numerous ways including by placing it in a repository, packaging it with methods, or by using various free tiers of commercial services. However, one must publish data when appropriate. 
 
-Sentence clearly describing difference between making data available versus data publishing.
 
 There are a three common options for publishing data in research:
 
@@ -401,7 +386,10 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 This needs to lead into the next section, on data documenting
 # Ten simple rules for publishing data
 
-1. **Publish the data with a DOI**. Archive somewhere that is persistent and long-term and ideally a member of CLOCKSS. This allows the user to check/confirm when the data was used/published.
+TODO: Write a detailed section under each
+
+
+1. **Decide whether publishing is appropriate for your data** (or how best you want to be cited for your contribution) 
 2. **Include a README** file with a human readable description of the data
 3. **Provide a codebook** or glossary for each variable
 4. **Provide a machine readable format** for your data that describes what each column contains. This can be a json schema file, which also helps websites like Google datasearch automatically discover your data
@@ -409,7 +397,7 @@ This needs to lead into the next section, on data documenting
 6. **Provide [open source?] scripts** used to clean data from rawest form into tidy/analysis ready format.
 7. **Keep additional copies in more accessible locations**: Even if you archive the data somewhere long-term, keep a second (or additional copies) in locations that are more readily and easily accessible for data analysis workflows. These include services like GitHub, GitHub LFS and others where fast CDNs make access and reuse practical, but fall back to Zenodo or similar in case these services were to go away.
 8. **Use a hash function like MD5 checksum** to make it easy for an end user to verify the same data that you used.
-9. **Decide whether publishing is appropriate for your data** (or how best you want to be cited for your contribution)
+9. **Only add a citation if your data has a DOI**. A citation only makes sense when your data has a DataCtie compliant DOI, which is automatically provided when data is published in repositories like Zenodo and Dryad. Even then a citation may not accrue references, but without a DOI, it is gauraunteed not to.
 10. Use a standard base format (like csv), 
 
 # Conclusions

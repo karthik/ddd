@@ -14,9 +14,10 @@ For nearly two decades, researchers who work in areas related to computational s
 **In this paper we focus on the practical side of sharing data for the purpose of reproducibility.** Our goal is to describe various methods in which an analyst can share their data with minimal friction. We steer clear of theoretical ideas such as the FAIR data principles [@Wilkinson2016] since they still do not help a researcher share their data. We also skip the discussion around citation and credit because data citations are still poorly tracked and there is no standardized metric or a h-index equivalent for data as of this writing. 
 
 For a piece of computational research to be minimally reproducible, it requires three distinct elements:
-1. Code
-2. Computing environment
-3. Data
+
+1. Code  
+2. Computing environment  
+3. Data  
 
 The first two of these challenges have largely been solved. 
 
@@ -24,7 +25,7 @@ Although code sharing in science had a rocky start [@Barnes2010], more and more 
 
 A typical data scientist loads a dozen or two of these open source libraries at the top of a notebook and then rely on existing routines to rapidly read, transform, visualize, and model data. Each of these packages individually depend on a complex web of other packages, building upon existing work rather than reimplementing everything from scratch. Working from script and a list of such dependencies, a data analyst can easily install all the necessary tools in any local or remote environment and reproduce the computation. When new functionality is developed, it is packaged into a separate entity and added to a language's package manager.
 
-The computing environment is also easily captured with modern tools such as Docker [@Boettiger2015; @Jupyter2018]. Modern tools such as Binder (citation) can parse Docker files and dependency trees to provide on demand, live notebooks in R and Python that a reader can immediately execute in the browser without dealing with the challenges of local installation. This makes it simple to load a specific environment to run any analysis. Code is handled by version control with tools like Git and GitHub (@git; @github), paired with archiving such as Zenodo provide access to code (particularly model implementations)[@zenodo]. All the necessary software is available from various package managers (and their numerous geographic mirrors and archives) making it easy to install any version of a software package. However, the biggest challenge, even today, remains easy and repeatable access to data in a data science notebook.
+The computing environment is also easily captured with modern tools such as Docker [@Boettiger2015; @Jupyter2018]. Modern tools such as Binder (citation) can parse Docker files and dependency trees to provide on demand, live notebooks in R and Python that a reader can immediately execute in the browser without dealing with the challenges of local installation. This makes it simple to load a specific environment to run any analysis. Code is handled by version control with tools like Git and GitHub (@git; @github), paired with archiving such as Zenodo provide access to code (particularly model implementations)[@zenodo]. All the necessary software is available from various package managers (and their numerous geographic mirrors and archives) making it easy to install any version of a software package. However, the biggest challenge, even today, remains easy and repeatable access to data in a data analysis.
 
 Although there are numerous public and private data repositories, none  of them function as package managers. Datasets are also far more diverse in complexity, size, and formats, making them particularly challenging to standardize or easily "install" where the code is running. As a result, data used in an analysis is often read from various locations (local, network, or cloud), various formats, varying levels of tidiness [@Wickham2014]. There is also the overhead associated with data publishing, the act of archiving data in a repository that also mints permanent identifiers, that are not required of all projects due to the effort and time involved. It is worth drawing the distinction between data sharing (making the data available with little effort) and data publishing (archiving the data in a long-term repository, with our without curated metadata).
 

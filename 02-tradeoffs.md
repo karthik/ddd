@@ -1,9 +1,10 @@
 
+
 # Tradeoffs in documenting your dataset
 
 There is a balance in providing the right amount of data documentation. Too much is overwhelming; too little and you don't know anything. For example, a folder with dozens of data files and several papers written on the topic is to much; it's hard to know where to start. A lone `csv` file in a folder with no other information is too little; it does not tell us what the data contains, or why it was collected. A good balance between the two extremes is to provide a README file that provides a human-readable description of the data and variables. Other important features include data licenses, raw data, tidying scripts, machine readable metadata. But what to include, and how much detail for each? It can be hard to know where to start. This section sheds light on this, and tells you how to document your data.
 
-The process of collecting, processing, and documenting the data is complicated. There is no standard way to discuss it. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on the graph to indicate the ease of understanding and preparation (see Figure 1.).
+The process of collecting, processing, and documenting the data is complicated. There is no standard way to discuss it. To help frame discussion around data documenting and reusability we can think of data reuse falling on a **da**ta **re**use **co**ntinuum, the DARECO. The DARECO has two axes: Effort to prepare, and Ease of understanding. We can then place particular datasets on the graph to indicate the ease of understanding and preparation (see Figure 2.).
 
 ![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-effort-understanding.png).
 
