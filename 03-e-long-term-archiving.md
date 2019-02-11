@@ -1,5 +1,8 @@
 # Publishing and repositories
 
+
+Sentence clearly describing difference between making data available versus data publishing.
+
 There are a three common options for publishing data in research:
 
 1. **Least Moving Parts**
@@ -18,11 +21,15 @@ This is a good option when the data is appropriate for the domain. This is often
 
 A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite. Data can be placed in a long term archive and a DOI can be minted. This DOI can then be used in other venues, such as domain specific or even self hosted, and will ensure that the projects refer back appropriately.
 
-If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Another alternative for Zenodo is figshare. Unlike Zenodo, figshare is a commmercially run data platform that provides a free tier for users. Another option is the that some universities provide institutional repositories. Figshare offers to integrate with university repositories, so that universities can have their data on site, but available through figshare. The tradeoff with long term archives are that they can be slow to set up, but they can last the life of the university; typically very long.
+If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. 
 
 **Principles for all three**
 
 The data should contain information on metadata, data dictionaries, the README, and data used in analysis (ref section 2). No matter where data is submitted, there should ideally be a canonical data repo in one long term archive that links to others with a DOI
+
+## Publishing data in a data repository
+
+
 
 ## Publishing data through a data journal
 
