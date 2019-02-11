@@ -103,7 +103,7 @@ Other licenses or notices to be aware of are **copyrighted data**, and **data em
 
 # Citation: How you want your data to be cited
 
-When citing data, aim to mention the creator, publication year, title, publisher, and persistent identifier (e.g., DOI). If submitting data to a long term storage archive such as zenodo or dryad, this citation information is already captured. You can provide citation information in a plaintext file. For example, the R programming language provides a file called CITATION. This citation information can be referred to in the README.
+A DOI is a prerequisite for citation. When citing data, it only makes sense to cite datasets taht have been deposited into a datacite compliant repo. If, for example, the data are depostired in dryad or zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, datacite provides the DOI. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
 
 # Machine readable metadata
 
@@ -164,6 +164,8 @@ The data used in the data analysis should be provided in a folder called `data`.
 Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows. Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged in favour of interoperability.
 
 ## Tooling for packaging data
+
+NOTE: not sure if this quite fits
 
 Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
 
