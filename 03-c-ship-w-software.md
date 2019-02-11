@@ -35,9 +35,7 @@ Julia was established in 2012, and is a high level language with great performan
 
 # Python
 
-Python is a popular general purpose language, used in engineering, statistics, and computer science.
-
-> Mention Data packages (as a possible path). I worked with open knowledge foundation to bring this to R. For a brief time ropensci maintained the package. The data package standard does have limitations
+Python is a popular general purpose language, used in engineering, statistics, and computer science. One language agnostic solution is to use the Open Knowledge Foundations Frictionless data spec. This is implemented in both R and Python.
 
 Including data in a python package: https://python-packaging.readthedocs.io/en/latest/non-code-files.html
 A user can typically include data (or any other arbitrary files) inside a python package by declaring it in the manifest.
