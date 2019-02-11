@@ -89,3 +89,14 @@ Universidad Nacional Autónoma de México, University of Arizona,
 University of Colorado Boulder, University of Oxford, University of Portsmouth,
 University of Utah, University of Virginia, University of Washington, University of Wisconsin,
 Vanderbilt University, and Yale University.
+
+
+The data package specification was initially developed by the Open Knowledge Foundation. This specification was never quite fully completed, it can be implemented in R with [datapack](https://github.com/ropensci/datapack), and in python with ...
+
+They have recently completed the latest version of a specialised
+[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
+ [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
+
+
+
+# Conclusion

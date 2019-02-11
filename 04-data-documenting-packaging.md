@@ -165,18 +165,6 @@ Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy dat
 
 ## Tooling for packaging data
 
-NOTE: not sure if this quite fits
+NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia
 
-Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
-
-The data package specification was initially developed by the Open Knowledge Foundation. This specification was never quite fully completed, it can be implemented in R with [datapack](https://github.com/ropensci/datapack), and in python with ...
-
-They have recently completed the latest version of a specialised
-[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
- [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
-
-[DataPackageR](https://github.com/RGLab/DataPackageR)
-* takeway: it provides tools to wrap up data in an R package, while prioviding helpers with MD5sum checks, and
-
-
-# Conclusion
+Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with [DataPackageR](https://github.com/RGLab/DataPackageR), which provides tools to wrap up data into an R package, while prioviding helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec](https://frictionlessdata.io/docs/tabular-data-package/).
