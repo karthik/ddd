@@ -99,4 +99,19 @@ They have recently completed the latest version of a specialised
 
 
 
-# Conclusion
+
+ # References
+
+ @METADATA-jl: https://github.com/JuliaLang/METADATA.jl
+ @data-access: https://github.com/JuliaDatabases
+ @R-DBI: https://github.com/r-dbi).
+ @NOAA-jl: https://github.com/pazzo83/NOAAData.jl .
+ @econ-data-jl: https://juliafinmetrix.github.io/EconDatasets.jl/#sec-1
+ @face-data-jl: https://github.com/dfdx/FaceDatasets.jl
+ @market-data-jl: https://marketdata.readthedocs.io/en/latest/
+ @r-data-jl: https://github.com/johnmyleswhite/RDatasets.jl
+ @vega-data-jl: https://github.com/davidanthoff/VegaDatasets.jl
+ @ml-data-jl: https://github.com/JuliaML/MLDatasets.jl
+ @fake-data-jl: https://github.com/codeneomatrix/Faker.jl
+ @charlatan-data-r: https://github.com/ropensci/charlatan
+ @wakefield-data-r: https://github.com/trinker/wakefield
