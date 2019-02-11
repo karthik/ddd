@@ -151,17 +151,7 @@ Whilst useful, these requirements do not tell the author how to actually structu
 
 Other journals operating in this space include journals like "data in brief", "Data", and "Nature Scientific Data". Guidelines for what is required in the content of the paper, and the required information along with the data (meta data, data format, etc.) vary by journal.
 
-# References
 
-@dryad: https://datadryad.org/
-@zenodo
-@figshare
-@PuddingData: https://github.com/the-pudding/data
-@538: https://data.fivethirtyeight.com/
-@bris-data-portal: https://www.data.brisbane.qld.gov.au/data/dataset
-@bris-lib: https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date#
-@piggyback: https://github.com/ropensci/piggyback
-@White2013: Make it easier to (re)use your data
 
 # What belongs in the minimal structure for researchers
 
