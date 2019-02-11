@@ -12,11 +12,6 @@ A more common use case is to include data as part of a regular package where ana
 
 One major disadvantage of packaging data inside R is that it makes the data availability very language centric. Non R users are unlikely to download and export data out of a package. This is why we recommend, as a rule, that researchers also archive data in a long-term data repository. These include domain specific repositories (see SECTION) or more general purpose ones such as Zenodo or figshare and include the persistent identifier in all locations where the data is referenced such as the manuscript, notebook and data package.
 
-**References:**
-
-- Data chapter from Hadley's R Packages book (which I reviewed) http://r-pkgs.had.co.nz/data.html
-- https://journal.r-project.org/archive/2017/RJ-2017-026/RJ-2017-026.pdf
-
 
 Of the 15539 packages on Central R Archive Network (CRAN), 6278 contain
 datasets either as binary data (5903 packages) or as external datasets
