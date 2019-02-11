@@ -1,8 +1,8 @@
 
-# A Realistic Guide to Making Data Available for Reproducibility
+# A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility
 
 
-> “Data!data!data!" he cried impatiently. "I can't make bricks without clay.” - Sherlock Holmes (PBS Series, 2010-2017)
+> “Data! data! data!" he cried impatiently. "I can't make bricks without clay.” - Sherlock Holmes (PBS Series, 2010-2017)
 
 
 # Introduction
@@ -352,6 +352,7 @@ Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy dat
 NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia
 
 Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with [DataPackageR](https://github.com/RGLab/DataPackageR), which provides tools to wrap up data into an R package, while prioviding helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec](https://frictionlessdata.io/docs/tabular-data-package/).
+
 # Example datasets
 
 
