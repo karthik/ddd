@@ -93,7 +93,7 @@ The CC BY enforces attribution and due credit by default, but gives a lot of fre
 * Data cannot be sublicensed, that is - a change to the existing license
 * There is also no warranty, so the person or people who obtained the data cannot be held liable.
 
-The journal PLOS Comp Bio requires that data submitted cannot be more restrictive than CC BY [@plot-comp-bio-data]. For a brief overview of the CC BY, suitable to include in a README, see @ccby-short. For the full license, see @ccby-long.
+The journal PLOS Comp Bio requires that data submitted cannot be more restrictive than CC BY [@plos-comp-bio-data]. For a brief overview of the CC BY, suitable to include in a README, see @ccby-short. For the full license, see @ccby-long.
 
 **CC0**
 
