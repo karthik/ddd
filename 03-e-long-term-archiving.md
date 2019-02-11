@@ -13,7 +13,7 @@ We discuss each of these options and provide recommendations on how to publish d
 
 In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databaseses. This approach **gets the data somewhere rather than nowhere**. It's minimal features means it is simple to maintain. A downsides is that it does not scale to larger data. Self hosting the data is an option, but we discourage this, as it may succumb to bit rot.
 
-In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astronomy the data is hosted at the SDSS [@SDSS], Genetic data can be hosted at GenBank [@GenBank], and so on.  Some other places to put data include the open science framework: https://osf.io/, dataverse, https://dataverse.org/, and data.world, https://data.world/. Other datasets might be produced
+In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astronomy the data is hosted at the SDSS (SDSS), Genetic data can be hosted at GenBank (@GenBank), and so on.  Some other places to put data include the open science framework: https://osf.io/, dataverse, https://dataverse.org/, and data.world, https://data.world/. Other datasets might be produced
 
 The purpose, use, and origin of the data is an important component to consider. Data for research has a different domain compared to data collected by governments, or by journalists. Many governments or civil organisations are now making their own data available through a government website interface. Media and journalism groups are also making their data available either through places like GitHub (https://github.com/the-pudding/data), or organisations such as data.world, or may self host their data (https://data.fivethirtyeight.com/).
 
@@ -33,7 +33,7 @@ The data should contain information on metadata, data dictionaries, the README, 
 
 ## Publishing data through a data journal
 
-Data used in publications are often shared in the supplementary materials of articles, or served on repositories such as the Dryad Digital Repository [@dryad]. Dryad makes data from scientific publiations discoverable, reusable, and citable. It is well funded through grants from the NSF, European Commission. (clocks?)
+Data used in publications are often shared in the supplementary materials of articles, or served on repositories such as the Dryad Digital Repository (@dryad). Dryad makes data from scientific publiations discoverable, reusable, and citable. It is well funded through grants from the NSF, European Commission. (clocks?)
 
 To provide better context around the data used in research and better expose data for reuse, journals are now adding "data papers". These are specifically designed for publishing articles about the data, and sharing it. This benefits both researchers and readers. Researchers receive credit for data they have collected or produced. Readers get more context about the data.
 
