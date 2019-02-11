@@ -97,55 +97,84 @@ The journal PLOS Comp Bio requires that data submitted cannot be more restrictiv
 
 **CC0**
 
-The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required.
+The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see https://creativecommons.org/choose/zero/.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
-If you wish to use the CC0, see https://creativecommons.org/choose/zero/.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
-
-Other licenses or notices to be aware of are **copyrighted data**, and **data embargos**. If you are working with data already copyrighted, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit.
-
-Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data.
+Other licenses or notices to be aware of are **copyrighted data**, and **data embargos**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data.
 
 # Citation: How you want your data to be cited
 
-Citation can be added with a plaintext file.
-
-For example, in the R programming world, a file called CITATION or `CITATION.md` is added. This file contains some plaintext describing how to cite the data. The most important thing to remember when citing data is to cite the Author
+When citing data, aim to mention the creator, publication year, title, publisher, and persistent identifier (e.g., DOI). If submitting data to a long term storage archive such as zenodo or dryad, this citation information is already captured. You can provide citation information in a plaintext file. For example, the R programming language provides a file called CITATION. This citation information can be referred to in the README.
 
 # Machine readable metadata
 
-The data dictionary provides _human readable_ information on the data - what the variables contain, why type of data, and so on. But to actually read in the data correctly, and ensure that dates are parsed as the right dates, names are characters, and so on, there needs to be some form of machine readable metadata. We will discuss the following standards, Table Schema, EML, the Ecological Metadata Language, JSON, and the data package specification.
+The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is [Table Schema](https://frictionlessdata.io/specs/table-schema/). Say for a dataset called "demographics" with three variables:
 
-## Table Schema
+| age| height|nationality |
+|---:|------:|:-----------|
+|  12|  161.5|Australian  |
+|  21|  181.2|American    |
+|  37|  178.3|New Zealand |
 
-[Table Schema](https://frictionlessdata.io/specs/table-schema/) contains fields such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. It is built on two structures: (1) name/value pairs, and (2) an ordered list. [@https://www.json.org]. Table schema is baked into formats such as  [csvy](http://csvy.org/), an extended csv format, which has additional front matter in a YAML format using Table Schema.
+_Table XX Example demographics table of age, height, and nationality._
+
+```
+{
+  "name": "demographics",
+  # here we list the data files in this dataset
+  "resources": [
+    {
+      "path": "demographics.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "age",
+            "type": "integer"
+          },
+          {
+            "name": "height",
+            "type": "number"
+          },
+          {
+            "name": "nationality",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+
+_Figure XX Example snippet of some Table Schema data for a dataset with three variables. This provides a description of each field, and the type of field, and it's description._
+
+This contains fields such as path, and a schema with subfields name and type, for each variable. It also provides information for, licensing and features such as line breaks, and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as [csvy](http://csvy.org/), an extended csv format, which has additional front matter in a YAML format using Table Schema.
+
+# Raw data: The original/first data provided
+
+Raw data is usually the first format of the data provided before any tidying or cleaning of the data. If the raw data is a practical size to share, it should be shared in a folder called `raw-data`. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.  If possible, data dictionaries of the raw data should be provided in this folder as well.
+
+# Scripts: To clean raw data ready for analysis
+
+Any code used to clean and tidy the raw data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
+
+# Analysis ready data: Final data used in analysis
+
+The data used in the data analysis should be provided in a folder called `data`.
+Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows. Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged in favour of interoperability.
 
 ## Tooling for packaging data
 
-Creating codebooks can take time. There are R packages that help create codebooks in R, including `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
-
-## Data package specification
+Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
 
 The data package specification was initially developed by the Open Knowledge Foundation. This specification was never quite fully completed, it can be implemented in R with [datapack](https://github.com/ropensci/datapack), and in python with ...
-
-NOTE: Nick to read more about data packages (starting here: https://ropensci.org/blog/2018/09/18/datapackager/)
 
 They have recently completed the latest version of a specialised
 [The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
  [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
 
 [DataPackageR](https://github.com/RGLab/DataPackageR)
+* takeway: it provides tools to wrap up data in an R package, while prioviding helpers with MD5sum checks, and
 
-# Raw data: The original/first data provided
-
-Raw data is usually the first format the data was given to the researcher before any tidying or cleaning of the data. If the size of the raw data is practical to share, it should be shared in a folder called `raw-data`. If possible, data dictionaries of the raw data should be provided in this folder as well. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.
-
-# Scripts: To clean raw data ready for analysis
-
-If raw data is used, then any code used to clean and tidy the data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
-
-# Analysis ready data: Final data used in analysis
-
-The data used in the data analysis should be provided in a folder called `data`.
-Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows (figure?). Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged.
 
 # Conclusion
