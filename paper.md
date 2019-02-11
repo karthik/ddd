@@ -369,6 +369,7 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 ## Summary
 
 This needs to lead into the next section, on data documenting
+
 # Ten simple rules for publishing data
 
 TODO: Write a detailed section under each
