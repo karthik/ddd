@@ -115,3 +115,16 @@ They have recently completed the latest version of a specialised
  @fake-data-jl: https://github.com/codeneomatrix/Faker.jl
  @charlatan-data-r: https://github.com/ropensci/charlatan
  @wakefield-data-r: https://github.com/trinker/wakefield
+
+
+ # Publishing data References
+
+@dryad: https://datadryad.org/
+@zenodo
+@figshare
+@PuddingData: https://github.com/the-pudding/data
+@538: https://data.fivethirtyeight.com/
+@bris-data-portal: https://www.data.brisbane.qld.gov.au/data/dataset
+@bris-lib: https://www.data.brisbane.qld.gov.au/data/dataset/library-checkouts-branch-date#
+@piggyback: https://github.com/ropensci/piggyback
+@White2013: Make it easier to (re)use your data
