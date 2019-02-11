@@ -8,5 +8,5 @@
 6. **Provide [open source?] scripts** used to clean data from rawest form into tidy/analysis ready format.
 7. **Keep additional copies in more accessible locations**: Even if you archive the data somewhere long-term, keep a second (or additional copies) in locations that are more readily and easily accessible for data analysis workflows. These include services like GitHub, GitHub LFS and others where fast CDNs make access and reuse practical, but fall back to Zenodo or similar in case these services were to go away.
 8. **Use a hash function like MD5 checksum** to make it easy for an end user to verify the same data that you used.
-9. **Include a citation** (or how best you want to be cited for your contribution)
+9. **Decide whether publishing is appropriate for your data** (or how best you want to be cited for your contribution)
 10. Use a standard base format (like csv), 

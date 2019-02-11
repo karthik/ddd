@@ -1,4 +1,10 @@
 
+A Realisitic Guide to Making Data Available for Reproduciblity
+
+
+> “Data!data!data!" he cried impatiently. "I can't make bricks without clay.”
+
+
 # Introduction
 
 Data are a fundamental currency upon which scientific discoveries are made. Without access to good data, it becomes extremely difficult if not impossible to advance science. Yet, a large majority of data on which published research papers are based rarely see the light of day and are only ever made available to the original authors (TODO: Citation).  Sharing datasets upon publication of a research paper has benefits to individual researchers, often through increased visibility of the work. But there is also a component of benefit to the broader scientific community. This primarily comes in the form of potential for reuse in other contexts, and use for training and teaching (@McKiernan2016). Assuming that the data have no privacy concerns (e.g. patient data, locations of critically endangered species), or that the act of sharing doesn't put the authors at a competitive disadvantage, sharing data will always have a net positive benefit. First and foremost, sharing data along with other artifacts can make it easier for a reader to independently reproduce the results, thereby increasing transparency and trust in the work. The act of easy data sharing can also improves model training, as many different models can be tried and tested on latest data sources, closing the loop on research and application of statistical techniques. Existing datasets can be combined or linked with new or existing data, fostering the development and synthesis of new ideas and research areas. The biggest of these benefits is the overall increase in reproducibility.
