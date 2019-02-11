@@ -1,7 +1,7 @@
 
 # What belongs in the minimal structure for researchers
 
-There are 8 pieces to an ideal structure for sharing your data:
+There are 8 pieces of content to consider for data sharing:
 
 1. README: A Human readable description of the data
 2. Codebook: Human readable dictionary of data contents
@@ -26,9 +26,9 @@ proj-name/
                  | - final-data.csv
 ```
 
-_Figure XX. Example project description._
+_Figure XX. Example directory layout and structure for a data repository._
 
-Out of these sections, the minimal viable format are the first four plus the analysis-read-data:
+Out of these sections, the minimal viable format are:
 
 1. README
 2. Codebook
@@ -52,14 +52,14 @@ The README should be placed in the top level of the project. It should be brief,
 
 # Codebook: Human readable dictionary of data contents
 
-Codebooks provide a human readable table of the variables (columns) in the data. They contain information on:
+Codebooks provide human readable description of the variables in the data and contain information on:
 
 - **variable names**
 - **variable labels**
 - **variable codes**, and
 - special values for **missing data**.
 
-**Variable names** are short, descriptive names with no spaces or special characters, such as "job_position", "faculty_level", and "years_at_company". **Variable labels** are descriptions of the variables, providing more context. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University [@McGill-codebook]. **Variable codes** apply to categorical (factor) varaibles, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid a problem where one variable codes 0 as yes and another codes 1 and yes as well. Another code to consider is how formatting date variables, which should be consistent. **Missing data** are values not observed, but should have been. The code for missingness should be documented in the codebook, and should nominally be `NA`. Importantly, the corresponding code for missing must be recorded, even if it is -99, -9, ".", or "whatever", it needs to be known. If the reason for missingness is known, then it should be recorded. For example, in censored data, or where there is patient drop out, or measurement error. These can have different values, such as "unknown" or -99, and cleaned up later. [@White2013; @Broman2017]
+**Variable names** are short, descriptive names with no spaces or special characters. For example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 =yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the codebook, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown" or -99 [@White2013; @Broman2017].
 
 Below is an example data dictionary table taken from the [tidy tuesday repository on incarceration trends](https://github.com/rfordatascience/tidytuesday). This includes information on the variable the class (type) of the variable, and a longer description of the variable.
 
@@ -72,16 +72,13 @@ __Table 1. The prisoner summary data dictionary, with columns on the variable, i
 |pop_category    |character | Category for population - either race, gender, or Total |
 |rate_per_100000 |double    | Rate within a category for prison population per 100,000 people |
 
-Data dictionary tables should be placed in the README, where they can be presented as a table. Every data dictionary table provided should also be provided in its raw form in the repository, for example, saved as a CSV (see Figure XX.).
-
-Creating codebooks can take time. There are R packages that help create codebooks in R, including `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command.
+Data dictionary tables should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form in the repository, for example, saved as a CSV (see Figure XX.).
 
 # License: How to use and share the data
 
-
 Data with a license clearly establishes rules on how everyone can modify, use, and share data. Without a license, these rules are unclear, and can lead to problems with attribution and citation.
 
-It can be overwhelmeing to try and the right license for a use case. Two licenses that  are well suited for data sharing are:
+It can be overwhelmeing to try and the right license for a use case. Two licenses that are well suited for data sharing are:
 
 1. Creative Commons Attribution 4.0 International Public License (CC BY), and
 2. Creative Commons CC0 1.0 Universal (CC0)
@@ -100,67 +97,74 @@ The journal PLOS Comp Bio requires that data submitted cannot be more restrictiv
 
 **CC0**
 
-The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required.
+The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see https://creativecommons.org/choose/zero/.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
-If you wish to use the CC0, see https://creativecommons.org/choose/zero/.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
-
-Other licenses or notices to be aware of are **copyrighted data**, and **data embargos**. If you are working with data that is already copyrighted, for example under the CC BY or CC0 notice, you must give ensure that you follow the appropriate guidelines for giving credit.
-
-A **Data embargo** means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo needs in:
-
-* The README, and
-* In separate correspondence with those who receive the data.
+Other licenses or notices to be aware of are **copyrighted data**, and **data embargos**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data.
 
 # Citation: How you want your data to be cited
 
-Citation can be added with a plaintext file. For example, in the R programming world, a file called CITATION or `CITATION.md` is added. This file contains some plaintext describing how to cite the data. It could include a `.bibtex` of the recommended citation (see figure below)
-
-```
-bibentry(bibtype = "Misc",
-         title = "...",
-         author = c(person("Firstname", "Lastname")),
-         doi = "",
-         url = "",
-         year = ,
-         publisher = ""
-)
-```
-
-_example bibtex citation file._
+A DOI is a prerequisite for citation. When citing data, it only makes sense to cite datasets taht have been deposited into a datacite compliant repo. If, for example, the data are depostired in dryad or zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, datacite provides the DOI. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
 
 # Machine readable metadata
 
-The data dictionary provides _human readable_ information on the data - what the variables contain, why type of data, and so on. But to actually read in the data correctly, and ensure that dates are parsed as the right dates, names are characters, and so on, there needs to be some form of machine readable metadata. We will discuss the following standards, Table Schema, EML, the Ecological Metadata Language, JSON, and the data package specification.
+The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is [Table Schema](https://frictionlessdata.io/specs/table-schema/). Say for a dataset called "demographics" with three variables:
 
-## Table Schema
+| age| height|nationality |
+|---:|------:|:-----------|
+|  12|  161.5|Australian  |
+|  21|  181.2|American    |
+|  37|  178.3|New Zealand |
 
-[Table Schema](https://frictionlessdata.io/specs/table-schema/) contains fields such as path, and a schema, which has the subfields name and type, for each variable, and also provides information for licensing and other features like line breaks and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. It is built on two structures: (1) name/value pairs, and (2) an ordered list. [@https://www.json.org]. Table schema is baked into formats such as  [csvy](http://csvy.org/), an extended csv format, which has additional front matter in a YAML format using Table Schema.
+_Table XX Example demographics table of age, height, and nationality._
 
-## Tooling for packaging data
+```
+{
+  "name": "demographics",
+  # here we list the data files in this dataset
+  "resources": [
+    {
+      "path": "demographics.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "age",
+            "type": "integer"
+          },
+          {
+            "name": "height",
+            "type": "number"
+          },
+          {
+            "name": "nationality",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
 
-## Data package specification
 
-The data package specification was initially developed by the Open Knowledge Foundation. This specification was never quite fully completed, it can be implemented in R with [datapack](https://github.com/ropensci/datapack), and in python with ...
+_Figure XX Example snippet of some Table Schema data for a dataset with three variables. This provides a description of each field, and the type of field, and it's description._
 
-NOTE: Nick to read more about data packages (starting here: https://ropensci.org/blog/2018/09/18/datapackager/)
-
-They have recently completed the latest version of a specialised
-[The Fiscal Data Package specification](https://blog.okfn.org/2018/05/28/introducing-version-1-of-the-fiscal-data-package-specification/), and have written extensively on data packages.
- [frictionless-data-data-packages-r](https://frictionlessdata.io/data-packages/)
-
-[DataPackageR](https://github.com/RGLab/DataPackageR)
+This contains fields such as path, and a schema with subfields name and type, for each variable. It also provides information for, licensing and features such as line breaks, and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as [csvy](http://csvy.org/), an extended csv format, which has additional front matter in a YAML format using Table Schema.
 
 # Raw data: The original/first data provided
 
-Raw data is usually the first format the data was given to the researcher before any tidying or cleaning of the data. If the size of the raw data is practical to share, it should be shared in a folder called `raw-data`. If possible, data dictionaries of the raw data should be provided in this folder as well. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.
+Raw data is usually the first format of the data provided before any tidying or cleaning of the data. If the raw data is a practical size to share, it should be shared in a folder called `raw-data`. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.  If possible, data dictionaries of the raw data should be provided in this folder as well.
 
 # Scripts: To clean raw data ready for analysis
 
-If raw data is used, then any code used to clean and tidy the data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
+Any code used to clean and tidy the raw data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
 
 # Analysis ready data: Final data used in analysis
 
 The data used in the data analysis should be provided in a folder called `data`.
-Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows (figure?). Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged.
+Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows. Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged in favour of interoperability.
 
-# Conclusion
+## Tooling for packaging data
+
+NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia
+
+Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with [DataPackageR](https://github.com/RGLab/DataPackageR), which provides tools to wrap up data into an R package, while prioviding helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec](https://frictionlessdata.io/docs/tabular-data-package/).
