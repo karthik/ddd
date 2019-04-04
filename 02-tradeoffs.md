@@ -2,13 +2,27 @@
 
 # Tradeoffs in documenting your dataset
 
-There is a balance in providing the right amount of data documentation. Too much is overwhelming; too little and you don't know anything. For example, a folder with dozens of data files and several papers written on the topic is too much; it's hard to know where to start. A lone `csv` file in a folder with no other information is too little; it does not tell us what the data contains, or why it was collected. A good balance between the two extremes could be a README file with human-readable descriptions of data and variables. Other features to include data licenses, raw data, tidying scripts, machine readable metadata. But it can be difficult to know what to include, and how much detail to provide. This section explores this, discussing how to document data.
+There is a balance in providing the right amount of data documentation. Too much is overwhelming; too little and you don't know anything. For example, a folder with dozens of data files and several papers written on the topic is too much; it's hard to know where to start. A lone `csv` file in a folder with no other information is too little; it does not tell us what the data contains, or why it was collected. A good balance between the two extremes could be a README file with human-readable descriptions of data and variables. Other features such as data licenses, raw data, data cleaning scripts, and machine readable metadata all help make the dat easier to understand. But it can be difficult to know what to include, and how much detail to provide. This section explores this, discussing the idea of the tradeoffs of time and effort and ease of understanding.
 
 Two axes help frame discussion around data documenting and reusability: **Effort to prepare**, and **Ease of understanding**. We can then place particular datasets on the graph to indicate the ease of understanding and preparation (see Figure 2.).
 
 ![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-effort-understanding.png).
 
-**Tradeoffs**
+* One challenge could be that it generally takes more effort to prepare your data so it is easy to understand.
+* Another challenge is that data with high potential impact should be made easy to understand and share
+* Where to share?
+* How to ensure long term provenance?
+
+* If something has high impact, you should put more effort into it
+* More effort  = easier to understand.
+
+* Show the number of citatations that the 50 Hectare plot has informed as a way of demonstrating its impact
+
+* Rather than look at tradeoffs, look at **challenges**
+    * Maybe not all challenges are orthogonal, but some are.
+
+
+## Tradeoffs
 
 To improve data impact it needs more time to prepare. Accordingly, data with higher potential for impact and reuse should be made as easy to understand as possible, so it will require more effort to prepare. For example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact. Therefore, a lot of effort should be spent making the data easy to understand and use. Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not overcomplicated.
 
@@ -18,4 +32,4 @@ Data that is easy to use should avoid being in a proprietary format that require
 
 ## Understanding tradeoffs
 
-To help explain these descriptive qualities of the data sharing, we discuss three datasets and their relationship to **Effort to prepare**, and **Ease of understanding** in section 5.
+To help explain these descriptive qualities of the data sharing, we discuss three datasets and their relationship of **Effort to prepare**, and **Ease of understanding** in section 5.
