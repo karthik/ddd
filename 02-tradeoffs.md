@@ -9,6 +9,7 @@ To provide a well documented dataset alongside research requires meeting several
 - Pieces/features of documentation - metadata, license, etc
 - Where to share data
 - How to ensure long term provenance of the data
+- Sharing data with colleagues: binary data is quick to share, but not as good as something like a simpler format like CSV (ask Laura DeCicco re this)
 
 Providing the right amount of documentation for your data is challenging. Too much is overwhelming; too little and you don't know anything. To illustrate this, imagine two datasets. The first is contained in a folder with dozens of data files and several papers on the topic. The second contains only a single csv file. The first is too much; understanding it requires a high time cost. The second is too little; we don't know anything about what the data is or why it was collected. The challenge is to provide the right level of detail, somewhere between these two extremes. 
 
