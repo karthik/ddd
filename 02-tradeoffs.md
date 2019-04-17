@@ -1,28 +1,30 @@
 
 
-# Tradeoffs in documenting your dataset
+# Challenges in documenting your dataset
 
-There is a balance in providing the right amount of data documentation. Too much is overwhelming; too little and you don't know anything. For example, a folder with dozens of data files and several papers written on the topic is too much; it's hard to know where to start. A lone `csv` file in a folder with no other information is too little; it does not tell us what the data contains, or why it was collected. A good balance between the two extremes could be a README file with human-readable descriptions of data and variables. Other features such as data licenses, raw data, data cleaning scripts, and machine readable metadata all help make the dat easier to understand. But it can be difficult to know what to include, and how much detail to provide. This section explores this, discussing the idea of the tradeoffs of time and effort and ease of understanding.
+There is a challenge in providing the right amount of data documentation. Too much is overwhelming; too little and you don't know anything. To illustrate this, let's look at two datasets. The first is contained in a folder with dozens of data files and several papers on the topic. The second contains only a single csv file. The first is too much - to understand this would require a high time cost. The second is too little - we don't know anything about what the data is, or why it was collected. 
 
-Two axes help frame discussion around data documenting and reusability: **Effort to prepare**, and **Ease of understanding**. We can then place particular datasets on the graph to indicate the ease of understanding and preparation (see Figure 2.).
+There are many features to consider when documenting data, such as a README file with human-readable descriptions of data and variables, data licenses, whether to include raw data, data cleaning scripts, and machine readable metadata. Together these all help make the data easier to understand. These features are not clearly described in the scientific literature in the context of including them alongside research. 
 
-![An illustration of the continuum from only data, to data + readme + machine readable code + full instruction set](figures/fig-effort-understanding.png).
+A challenge as a scientist in documenting your data lies in firstly understanding just what each feature is. 
 
-* One challenge could be that it generally takes more effort to prepare your data so it is easy to understand.
-* Another challenge is that data with high potential impact should be made easy to understand and share
-* Where to share?
-* How to ensure long term provenance?
+Another challenge is understanding how much detail to provide, and understanding the time and effort that goes into making data easier to understand.
 
-* If something has high impact, you should put more effort into it
-* More effort  = easier to understand.
+To speak plainly, it takes more effort to prepare data so that it is easy to understand and share. The challenge here is understanding how much time to spent to make it easier to understand before the gains in understanding are outweighed by the time taken to improve them.
 
-* Show the number of citatations that the 50 Hectare plot has informed as a way of demonstrating its impact
+There is also a challenge in understanding the impact of data. Data with high potential for impact should be made easier to understand and share. This can be seen in the research created from the 50 hectare plot.
 
-* Rather than look at tradeoffs, look at **challenges**
-    * Maybe not all challenges are orthogonal, but some are.
+Another challenge is where to share your data
 
+Yet another challenge is how to ensure the long term provenance of the data
 
-## Tradeoffs
+Not all of these challenges are orthogonal, but some are.
+
+To frame discussion around the challenges of data documenting, we can think of two features: "Effort to prepare", and "Ease of understanding". We can plot these on two axes and place datasets along each to indicate the ease of understanding and preparation (see Figure 2.).
+
+![There is a big difference in the effort to prepare data, and how easy it is to udnerstand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT).](figures/fig-effort-understanding.png).
+
+## Challenges
 
 To improve data impact it needs more time to prepare. Accordingly, data with higher potential for impact and reuse should be made as easy to understand as possible, so it will require more effort to prepare. For example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact. Therefore, a lot of effort should be spent making the data easy to understand and use. Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not overcomplicated.
 
