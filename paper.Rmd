@@ -1,9 +1,13 @@
 ---
 title: A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility
 output:
-  bookdown::pdf_book:
-    base_format: rmarkdown::pdf_document
+  bookdown::pdf_document2:
+    toc: no
+    includes:
+      in_header: preamble.tex
 bibliography: references.bib
+header-includes: 
+  - \linespread{2} 
 ---
 
 ```{r setup, echo = FALSE}
