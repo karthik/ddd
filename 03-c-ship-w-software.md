@@ -27,11 +27,11 @@ Sharing data in a programming language happens to some extent in other languages
 
 # Julia
 
-Julia was established in 2012, and is a high level language with great performance. Searching METADATA.jl @METADATA-jl for packages mentioning data revealed three main categories of data packages in Julia:
+Julia was established in 2012, and is a high level language with great performance. Searching METADATA.jl [@METADATA-jl] for packages mentioning data revealed three main categories of data packages in Julia:
 
-1. Database access @data-access for services like MySQL, Hive, and ODBC, similar to R’s DBI organisation @R-DBI
-2. Accessing data online via APIs, such as accessing the weather source NOAA @NOAA-jl
-3. Data is provided directly. For example, accessing Econometric datasets @econ-data-jl, face datasets @face-data-jl, Market data @market-data-jl, and even R datasets @r-data-jl. It is telling that the datasets provided in R are useful, as there is even a Julia package, RDatasets that provides over 700 datasets from R packages. There are also packages for Accessing datasets used in vega @vega-data-jl, for accessing common machine learning datasets @ml-data-jl. There are also packages for generating fake data @fake-data-jl, for which there are at least two R packages that do this, charlatan @charlatan-data-r, and @wakefield-data-r.
+1. Database access [@data-access] for services like MySQL, Hive, and ODBC, similar to R’s DBI organisation [@R-DBI]
+2. Accessing data online via APIs, such as accessing the weather source NOAA [@NOAA-jl]
+3. Data is provided directly. For example, accessing Econometric datasets [@econ-data-jl], face datasets [@face-data-jl], Market data [@market-data-jl], and even R datasets [@r-data-jl]. It is telling that the datasets provided in R are useful, as there is even a Julia package, RDatasets that provides over 700 datasets from R packages. There are also packages for Accessing datasets used in vega [@vega-data-jl], for accessing common machine learning datasets [@ml-data-jl]. There are also packages for generating fake data [@fake-data-jl], for which there are at least two R packages that do this, charlatan [@charlatan-data-r], and [@wakefield-data-r].
 
 # Python
 
