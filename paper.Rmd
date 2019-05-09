@@ -12,8 +12,7 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 
-> “Data! data! data!" he cried impatiently. "I can't make bricks without clay.” - Sherlock Holmes (PBS Series, 2010-2017)
-
+> "Data! data! data!" he cried impatiently. "I can't make bricks without clay." - Sherlock Holmes (PBS Series, 2010-2017)
 
 # Introduction
 
