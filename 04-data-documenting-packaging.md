@@ -78,7 +78,7 @@ Data dictionary tables should be placed in the README and presented as a table. 
 
 Data with a license clearly establishes rules on how everyone can modify, use, and share data. Without a license, these rules are unclear, and can lead to problems with attribution and citation.
 
-It can be overwhelmeing to try and the right license for a use case. Two licenses that are well suited for data sharing are:
+It can be overwhelming to try and the right license for a use case. Two licenses that are well suited for data sharing are:
 
 1. Creative Commons Attribution 4.0 International Public License (CC BY), and
 2. Creative Commons CC0 1.0 Universal (CC0)
@@ -90,7 +90,7 @@ The CC BY enforces attribution and due credit by default, but gives a lot of fre
 * You must provide appropriate credit to the source. This means listing the names of the creators.
 * Link back to the CC BY license, and
 * Clearly show if changes were made.
-* Data cannot be sublicensed, that is - a change to the existing license
+* Data cannot be sub-licensed, that is - a change to the existing license
 * There is also no warranty, so the person or people who obtained the data cannot be held liable.
 
 The journal PLOS Comp Bio requires that data submitted cannot be more restrictive than CC BY [@plos-comp-bio-data]. For a brief overview of the CC BY, suitable to include in a README, see @ccby-short. For the full license, see @ccby-long.
@@ -103,7 +103,7 @@ Other licenses or notices to be aware of are **copyrighted data**, and **data em
 
 # Citation: How you want your data to be cited
 
-A DOI is a prerequisite for citation. When citing data, it only makes sense to cite datasets taht have been deposited into a datacite compliant repo. If, for example, the data are depostired in dryad or zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, datacite provides the DOI. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
+A DOI is a prerequisite for citation. When citing data, it only makes sense to cite datasets that have been deposited into a DataCite compliant repo. If, for example, the data are deposited in dryad or Zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, DataCite provides the DOI. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
 
 # Machine readable metadata
 
