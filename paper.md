@@ -6,13 +6,15 @@ output:
 bibliography: references.bib
 ---
 
-```{r setup, echo = FALSE}
+
+```r
 knitr::opts_chunk$set(echo = FALSE,
                       out.width = "100%")
 ```
 
 
-> "Data! data! data!" he cried impatiently. "I can't make bricks without clay." - Sherlock Holmes (PBS Series, 2010-2017)
+> “Data! data! data!" he cried impatiently. "I can't make bricks without clay.” - Sherlock Holmes (PBS Series, 2010-2017)
+
 
 # Introduction
 
@@ -42,9 +44,7 @@ What aspects of data make them particularly challenging to share from a reproduc
 
 We discuss how to share and/or publish data and cover various tradeoffs when deciding how much to do. We skip detailed discussions of the minutiae of data preparation (covered elsewhere in various articles), licenses (there are not many options when it comes to data), or citation (as of this writing, data citation is still in its infancy). We also analyze the state of data contained inside software packages, shared and made available as part of modern data analysis. How often are data shipped inside software packages? How does data format and size impact availability?
 
-```{r fig-data-sharing-workflow, fig.cap = "The steps required compared to effort required for data sharing for reproducibility."}
-knitr::include_graphics("figures/data_sharing_workflow.png")
-```
+<img src="figures/data_sharing_workflow.png" title="The steps required compared to effort required for data sharing for reproducibility." alt="The steps required compared to effort required for data sharing for reproducibility." width="100%" />
 
 
 # Challenges in documenting your dataset
@@ -65,41 +65,7 @@ There are many features to consider when documenting data, such as a README file
 
 To frame discussion around the challenges of data documenting, we can think of two features: "Effort to prepare", and "Ease of understanding". We can plot these on two axes and place datasets along each to indicate the ease of understanding and preparation (see Figure \@ref(fig:fig-effort-underrstanding)).
 
-```{r fig-effort-underrstanding, fig.cap = "There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)."}
-library(ggplot2)
-
-# There are two Axis:
-#   X axis: <- Robustness (brittle - robust)
-#   Y axis: <- Difficulty (easy - hard)
-
-library(tibble)
-
-dat_prep <- tibble(prep = c(15,20,25,95, 96),
-               understanding = c(15,20,95,95,96),
-                  label = c("Data Dump",
-                            "Most studies",
-                            "Sensor",
-                            "50 hectare",
-                            "RCT"
-                            ))
-
-library(ggrepel)
-
-ggplot(dat_prep,
-       aes(x = prep,
-           y = understanding,
-           label = label)) +
-  geom_point() +
-  geom_label_repel(
-    segment.size = 0.2,
-    segment.color = "grey50") +
-  theme_minimal() +
-  labs(x = "Effort to Prepare",
-       y = "Ease of Understanding") +
-  xlim(0,100) +
-  ylim(0, 100)
-
-```
+<img src="figure/fig-effort-underrstanding-1.png" title="There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)." alt="There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)." width="100%" />
 
 
 ## Challenges
