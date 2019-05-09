@@ -7,10 +7,6 @@ bibliography: references.bib
 ---
 
 
-```r
-knitr::opts_chunk$set(echo = FALSE,
-                      out.width = "100%")
-```
 
 
 > “Data! data! data!" he cried impatiently. "I can't make bricks without clay.” - Sherlock Holmes (PBS Series, 2010-2017)
