@@ -8,6 +8,7 @@ output:
 bibliography: references.bib
 header-includes: 
   - \linespread{2} 
+  - \usepackage[utf8]{inputenc}
 ---
 
 ```{r setup, echo = FALSE}
@@ -402,22 +403,20 @@ The impact of this kind of research is huge, as it provides information on biodi
 
 ### Dataset 2: Sensor data
 
-Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. It contains:
+Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is typically because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. It contains the most detailed, three dimensionsal maps of the universe ever made, and has been operated since 2000, now producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. It is not possible to summarise the contents of the data, but briefly, the SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico.
 
-> ... the most detailed three-dimensional maps of the Universe ever made, with deep multi-color images of one third of the sky, and spectra for more than three million astronomical objects. --(https://www.sdss.org/)
 
+The data are are free to use and publicly accessible, with the interface to the data being designed to cover all skills, from shcool children to professional astronomers.
 The telescope data is very high quality, with the following features:
 
 - Good metadata in SCHEMA, a machine readable standard
-- Data in multiple formats:
+- Data in multiple formats
 - Released data in archives
 - Data is available in a database
-- Entire dataset available for download
-- Interface to the data covers all skills
-- The interface provides tutorials from school children to professional astronomers on how to read it
+- Entire datasets available for download
 - Raw data before processed into database is also available
 
-The SDSS provides different degrees of understanding, for different understanding. It is a huge project involving many people, and so would have provided enormous effort to prepare, but has a high degree of understanding. It would be in the top right hand corner of the DARECO.
+The SDSS provides different degrees of understanding. It is a huge project involving many people, and requiring a staggering and enormous effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:fig-effort-underrstanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
 
 ### Dataset 3: Most other datasets
 
