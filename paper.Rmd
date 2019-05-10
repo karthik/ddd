@@ -391,15 +391,10 @@ Tooling for producing these this information speeds up the process of sharing da
 
 ### Dataset 1: Forest Census Plot on Barro Colorado Island
 
-The ["Forest Ceneus Plot on Barro Colorado Island"](http://ctfs.si.edu/webatlas/datasets/bci/) provides an example of data that is time consuming to document, but also robust. It contains information on trees from a 50-hectare tree plot. Here they state:
+Long-term field surveys, where the same type of data is repeatedly measured and collected over a long period of time, are an example of data collection where the time and financial investment would necessitate meticulously curated and easily accessible metadata. Both from the fact that the same protocol is being followed year after year, and that field data collection efforts are quite expensive, these data need to be well documented, with documentation available alongside the data.
 
-> Censuses have been carried out in 1981-1983, 1985, 1990, 1995, 2000, 2005, 2010, and 2015. In each census, all free-standing woody stems at least 10 mm diameter at breast height were identified, tagged, and mapped. Over 350,000 individual trees have been censused over 35 years.
+One example of a very laborious, long-term study is the 50-hectare plot on Barro Colorado Island in Panama. Researchers at the field station have censused every single tree in a pre-defined plot 7 times over the past 30 years. More than a million trees have been counted. The data and metadata however and hard to reach. To obtain the data, one must fill out a form and agree to terms and conditions which require approval and authorship prior to publication. The biggest challenge with this study is that the data are stored on a personal FTP server of one of the authors. While the data are available in CSV and binary Rdata formats, the data storage servers do not have any metadata, README files or codebooks. A separate, public archive hosts the metadata (https://repository.si.edu/handle/10088/20925) in a PDF file (https://repository.si.edu/bitstream/handle/10088/20925/RoutputFull.pdf?sequence=1&isAllowed=y) that describe the fields.
 
-This is an enormous, ongoing research effort. Brief context of the data is provided at the link, along with a link to the census plot data from 2012 at [this paper](https://repository.si.edu/handle/10088/20925). This provides an abstract and description of the data, along with co-authors, and a recommended acknowledgement.
-
-This dataset falls in the top right of the graph, at high effort to prepare, and high ease of understanding. It is high effort to prepare because it is a large research effort that not only involves expensive research in terms of time. It is high ease of understanding because
-
-The impact of this kind of research is huge, as it provides information on biodiversity ...,  ..., ... .
 
 ### Dataset 2: Sensor data
 
