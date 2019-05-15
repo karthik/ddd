@@ -187,7 +187,7 @@ We discuss each of these options and provide recommendations on how to publish d
 
 In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databases. This approach **gets the data somewhere rather than nowhere**. It's minimal features means it is simple to maintain. A downsides is that it does not scale to larger data. Self hosting the data is an option, but we discourage this, as it may succumb to bit rot.
 
-In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astronomy the data is hosted at the SDSS (SDSS), Genetic data can be hosted at GenBank (@GenBank), and so on.  Some other places to put data include the open science framework: https://osf.io/, Dataverse, https://dataverse.org/, and Data World, https://data.world/. Other datasets might be produced
+In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, in astronomy the data is hosted at the SDSS (SDSS), Genetic data can be hosted at GenBank (@GenBank), and so on.  Some other places to put data include the open science framework [@OSF], Dataverse, [@dataverse], and Data World, [@dataworld]. Other datasets might be produced
 
 The purpose, use, and origin of the data is an important component to consider. Data for research has a different domain compared to data collected by governments, or by journalists. Many governments or civil organizations are now making their own data available through a government website interface. Media and journalism groups are also making their data available either through places like GitHub [@pudding-data], or organizations such as Data World, or may self host their data, such as five thirty eight [@data-538].
 
@@ -314,7 +314,7 @@ The journal PLOS Comp Bio requires that data submitted cannot be more restrictiv
 
 **CC0**
 
-The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see https://creativecommons.org/choose/zero/.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
+The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
 Other licenses or notices to be aware of are **copyrighted data**, and **data embargoes**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data.
 
@@ -324,7 +324,7 @@ A DOI is a prerequisite for citation. When citing data, it only makes sense to c
 
 # Machine readable metadata
 
-The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is [Table Schema](https://frictionlessdata.io/specs/table-schema/). Say for a dataset called "demographics" with three variables:
+The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. Say for a dataset called "demographics" with three variables:
 
 | age| height|nationality |
 |---:|------:|:-----------|
@@ -384,7 +384,7 @@ Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy dat
 
 NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia
 
-Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with [DataPackageR](https://github.com/RGLab/DataPackageR), which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec](https://frictionlessdata.io/docs/tabular-data-package/).
+Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with DataPackageR [@DataPackageR], which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec [@frictionlessdata-data-pkg].
 
 # Example datasets
 
