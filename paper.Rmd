@@ -109,9 +109,7 @@ ggplot(dat_prep,
 ```
 
 
-## Challenges
-
-**Challenges: higher potential impact means more time**
+## Higher potential impact means more time**
 
 To improve data impact it needs more time to prepare so it is easier to understand. Accordingly, data with higher potential for impact and reuse should be made as easy to understand as possible. Therefore data with high potential impact requires more time and effort to prepare. For example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact, so requires a lot of time and effort document. Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not over complicated.
 
@@ -151,22 +149,13 @@ folder (68.06%) with other plain text formats such as txt, CSV, dat,
 
 # Data Sharing in Julia and Python
 
-Sharing data in a programming language happens to some extent in other languages. We discuss how Julia and Python share and distribute data in the following section.
+Sharing data in a programming language happens to some extent in other languages, such as Julia and Python. 
 
-# Julia
+Julia was established in 2012, and is a high level language with great performance.
+Similar to R, Julia provides packages for database access, API access, and data packages [@METADATA-jl]. This includes access to MySQL databases, NOAA [@NOAA-jl], and actual datasets from Econometrics [@econ-data-jl], faces, [@face-data-jl], Market data [@market-data-jl], and even R datasets [@r-data-jl].
 
-Julia was established in 2012, and is a high level language with great performance. Searching METADATA.jl [@METADATA-jl] for packages mentioning data revealed three main categories of data packages in Julia:
-
-1. Database access [@data-access] for services like MySQL, Hive, and ODBC, similar to R’s DBI organization [@R-DBI]
-2. Accessing data online via APIs, such as accessing the weather source NOAA [@NOAA-jl]
-3. Data is provided directly. For example, accessing Econometric datasets [@econ-data-jl], face datasets [@face-data-jl], Market data [@market-data-jl], and even R datasets [@r-data-jl]. It is telling that the datasets provided in R are useful, as there is even a Julia package, RDatasets that provides over 700 datasets from R packages. There are also packages for Accessing datasets used in vega [@vega-data-jl], for accessing common machine learning datasets [@ml-data-jl]. There are also packages for generating fake data [@fake-data-jl], for which there are at least two R packages that do this, charlatan [@charlatan-data-r], and [@wakefield-data-r].
-
-# Python
-
-Python is a popular general purpose language, used in engineering, statistics, and computer science. One language agnostic solution is to use the Open Knowledge Foundations Frictionless data spec. This is implemented in both R and Python.
-
-Including data in a python package: [@include-data-py-pkg]
-A user can typically include data (or any other arbitrary files) inside a python package by declaring it in the manifest.
+Python is a popular general purpose language, used in engineering, statistics, and computer science. 
+Including data in a python package is straightforward; a user can include data (or any other arbitrary files) inside a python package by declaring it in the manifest [@include-data-py-pkg].
 
 # Dealing with medium to large data
 
@@ -465,5 +454,9 @@ These should ideally operate on some raw data stored in the "data-raw" folder (r
 # Conclusions
 
 TBD
+
+# Morgue
+
+One language agnostic solution is to use the Open Knowledge Foundations Frictionless data spec, implemented in both R and Python.
 
 # Literature Cited
