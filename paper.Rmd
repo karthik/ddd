@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE,
 
 # Introduction
 
-Data are a fundamental currency upon which scientific discoveries are made. Without access to good data, it becomes extremely difficult, if not impossible, to advance science. Yet, a large majority of data on which published research papers are based rarely see the light of day and are only visible to the original authors [@Rowhani-Farid2016; @Stodden2018].  Sharing data sets upon publication of a research paper has benefits to individual researchers, often through increased visibility of the work [@Kirk2019]. But there is also a component of benefit to the broader scientific community. This primarily comes in the form of potential for reuse in other contexts along use for training and teaching (@McKiernan2016). Assuming that the data have no privacy concerns (e.g., human subjects, locations of critically endangered species), or that the act of sharing doesn't put the authors at a competitive disadvantage, sharing data will always have a net positive benefit. First and foremost, sharing data along with other artifacts can make it easier for a reader to independently reproduce the results, thereby increasing transparency and trust in the work. The act of easy data sharing can also improves model training, as many different models can be tried and tested on latest data sources, closing the loop on research and application of statistical techniques. Existing data sets can be combined or linked with new or existing data, fostering the development and synthesis of new ideas and research areas. The biggest of these benefits is the overall increase in reproducibility.
+Data are a fundamental currency upon which scientific discoveries are made. Without access to good data, it becomes extremely difficult, if not impossible, to advance science. Yet, a large majority of data on which published research papers are based rarely see the light of day and are only visible to the original authors [@Rowhani-Farid2016; @Stodden2018].  Sharing data sets upon publication of a research paper has benefits to individual researchers, often through increased visibility of the work [Popkin2019; @Kirk2019]. But there is also a component of benefit to the broader scientific community. This primarily comes in the form of potential for reuse in other contexts along use for training and teaching (@McKiernan2016). Assuming that the data have no privacy concerns (e.g., human subjects, locations of critically endangered species), or that the act of sharing doesn't put the authors at a competitive disadvantage, sharing data will always have a net positive benefit. First and foremost, sharing data along with other artifacts can make it easier for a reader to independently reproduce the results, thereby increasing transparency and trust in the work. The act of easy data sharing can also improves model training, as many different models can be tried and tested on latest data sources, closing the loop on research and application of statistical techniques. Existing data sets can be combined or linked with new or existing data, fostering the development and synthesis of new ideas and research areas. The biggest of these benefits is the overall increase in reproducibility.
 
 For nearly two decades, researchers who work in areas related to computational science have pushed for better standards to verify scientific claims, especially in areas where a full replication of the study would be prohibitively expensive. To meet these minimal standards, there must be easy access to the data, models, and code. Among the different areas with a computational bent, the bioinformatics community in particular has a strong culture around open source [@Gentleman2004], and has made releasing code and associated software a recognized mainstream activity. Many journals in these fields have also pushed authors to submit code (model implementations) alongside their papers, with a few journals going as far as providing a "reproducibility review" [@Peng2011].
 
@@ -255,7 +255,7 @@ Out of these sections, the minimal viable format are:
 
 What goes into each of these sections is now described.
 
-# README: A Human readable description of the data
+## README: A Human readable description of the data
 
 The README is often the first place people will go to learn more about data. It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
 
@@ -267,7 +267,7 @@ The README is often the first place people will go to learn more about data. It 
 
 The README should be placed in the top level of the project. It should be brief, and provide links to the other aforementioned sections. Saving a README with the extension `.md` file gives the author the formatting benefits of `markdown`, making it simple to insert links, tables, and make lists. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
 
-# Codebook: Human readable dictionary of data contents
+## Codebook: Human readable dictionary of data contents
 
 Codebooks provide human readable description of the variables in the data and contain information on:
 
@@ -291,7 +291,7 @@ __Table 1. The prisoner summary data dictionary, with columns on the variable, i
 
 Data dictionary tables should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form in the repository, for example, saved as a CSV (see Figure XX.).
 
-# License: How to use and share the data
+## License: How to use and share the data
 
 Data with a license clearly establishes rules on how everyone can modify, use, and share data. Without a license, these rules are unclear, and can lead to problems with attribution and citation.
 
@@ -300,7 +300,7 @@ It can be overwhelming to try and the right license for a use case. Two licenses
 1. Creative Commons Attribution 4.0 International Public License (CC BY), and
 2. Creative Commons CC0 1.0 Universal (CC0)
 
-**CC BY**
+### CC BY
 
 The CC BY enforces attribution and due credit by default, but gives a lot of freedom for its use. Data can be shared and adapted, even for commercial use, with the following conditions:
 
@@ -312,17 +312,17 @@ The CC BY enforces attribution and due credit by default, but gives a lot of fre
 
 The journal PLOS Comp Bio requires that data submitted cannot be more restrictive than CC BY [@plos-comp-bio-data]. For a brief overview of the CC BY, suitable to include in a README, see @ccby-short. For the full license, see @ccby-long.
 
-**CC0**
+### CC0
 
 The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
 Other licenses or notices to be aware of are **copyrighted data**, and **data embargoes**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data.
 
-# Citation: How you want your data to be cited
+## Citation: How you want your data to be cited
 
 A DOI is a prerequisite for citation. When citing data, it only makes sense to cite datasets that have been deposited into a DataCite compliant repo. If, for example, the data are deposited in dryad or Zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, DataCite provides the DOI. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
 
-# Machine readable metadata
+## Machine readable metadata
 
 The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. Say for a dataset called "demographics" with three variables:
 
@@ -367,36 +367,35 @@ _Figure XX Example snippet of some Table Schema data for a dataset with three va
 
 This contains fields such as path, and a schema with subfields name and type, for each variable. It also provides information for, licensing and features such as line breaks, and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as csvy [@csvy], an extended `csv` format, which has additional front matter in a YAML format using Table Schema.
 
-# Raw data: The original/first data provided
+## Raw data: The original/first data provided
 
 Raw data is usually the first format of the data provided before any tidying or cleaning of the data. If the raw data is a practical size to share, it should be shared in a folder called `raw-data`. The raw data should be in the form that was first received, even if it is in binary or some proprietary format.  If possible, data dictionaries of the raw data should be provided in this folder as well.
 
-# Scripts: To clean raw data ready for analysis
+## Scripts: To clean raw data ready for analysis
 
 Any code used to clean and tidy the raw data should be provided in the `raw-data` directory. Ideally this would involve only scripted languages, but if other practical steps were taken to clean up the data, these should be recorded in a plain text or markdown file.
 
-# Analysis ready data: Final data used in analysis
+## Analysis ready data: Final data used in analysis
 
 The data used in the data analysis should be provided in a folder called `data`.
 Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows. Contrasting `raw data`, `tidy data`/`analysis data` should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged in favor of interoperability.
 
-## Tooling for packaging data
+# Tooling for packaging data
 
-NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia
+<!-- NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia -->
 
 Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with DataPackageR [@DataPackageR], which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec [@frictionlessdata-data-pkg].
 
 # Example datasets
 
-
-### Dataset 1: Forest Census Plot on Barro Colorado Island
+## Dataset 1: Forest Census Plot on Barro Colorado Island
 
 Long-term field surveys, where the same type of data is repeatedly measured and collected over a long period of time, are an example of data collection where the time and financial investment would necessitate meticulously curated and easily accessible metadata. Both from the fact that the same protocol is being followed year after year, and that field data collection efforts are quite expensive, these data need to be well documented, with documentation available alongside the data.
 
 One example of a very laborious, long-term study is the 50-hectare plot on Barro Colorado Island in Panama. Researchers at the field station have censused every single tree in a pre-defined plot 7 times over the past 30 years. More than a million trees have been counted. The data and metadata however and hard to reach. To obtain the data, one must fill out a form and agree to terms and conditions which require approval and authorship prior to publication. The biggest challenge with this study is that the data are stored on a personal FTP server of one of the authors. While the data are available in CSV and binary Rdata formats, the data storage servers do not have any metadata, README files or codebooks. A separate, public archive hosts the metadata (https://repository.si.edu/handle/10088/20925) in a PDF file (https://repository.si.edu/bitstream/handle/10088/20925/RoutputFull.pdf?sequence=1&isAllowed=y) that describe the fields.
 
 
-### Dataset 2: Sensor data
+## Dataset 2: Sensor data
 
 Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is typically because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. It contains the most detailed, three dimensionsal maps of the universe ever made, and has been operated since 2000, now producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. It is not possible to summarise the contents of the data, but briefly, the SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico.
 
@@ -413,7 +412,7 @@ The telescope data is very high quality, with the following features:
 
 The SDSS provides different degrees of understanding. It is a huge project involving many people, and requiring a staggering and enormous effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:fig-effort-understanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
 
-### Dataset 3: Most other datasets
+## Dataset 3: Most other datasets
 
 Many datasets are "data dumped" into repositories with a paper. Phrases such as the following might be familiar:
 
