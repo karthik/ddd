@@ -14,6 +14,8 @@ header-includes:
 ```{r setup, echo = FALSE}
 knitr::opts_chunk$set(echo = FALSE,
                       out.width = "100%")
+
+library(kableExtra)
 ```
 
 
@@ -278,16 +280,27 @@ Codebooks provide human readable description of the variables in the data and co
 
 **Variable names** are short, descriptive names with no spaces or special characters. For example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 =yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the codebook, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown" or -99 [@White2013; @Broman2017].
 
-Below is an example data dictionary table taken from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable the class (type) of the variable, and a longer description of the variable.
+Table \@ref(tab:table-data-incarcerate) shows an example data dictionary table taken from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable the class (type) of the variable, and a longer description of the variable.
 
-__Table 1. The prisoner summary data dictionary, with columns on the variable, it's class, and a short description of the contents of the variable.__
+```{r table-data-incarcerate}
+dictionary_incarcerate <- data.frame(
+  Variable = c("year", "urbanicity", "pop_category", "rate_per_100000"),
+  Class  = c("integer (date)",
+             "character",
+             "character",
+             "double"),
+  description = c("Year",
+                  "County-type (urban, suburban, small/mid, rural)",
+                  "Category for population - either race, gender, or Total",
+                  "Rate within a category for prison population per 100,000 people")
+)
 
-|variable        |class     | Description |
-|:---------------|:---------| :---------- |
-|year            |integer (date)   | Year |
-|urbanicity      |character | County-type (urban, suburban, small/mid, rural) |
-|pop_category    |character | Category for population - either race, gender, or Total |
-|rate_per_100000 |double    | Rate within a category for prison population per 100,000 people |
+knitr::kable(dictionary_incarcerate,
+             caption = "The prisoner summary data dictionary, with columns on the variable, it's class, and a short description of the contents of the variable.",
+             booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position"))
+```
+
 
 Data dictionary tables should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form in the repository, for example, saved as a CSV (see Figure XX.).
 
@@ -324,15 +337,21 @@ A DOI is a prerequisite for citation. When citing data, it only makes sense to c
 
 ## Machine readable metadata
 
-The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. Say for a dataset called "demographics" with three variables:
+The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. Say for a dataset called "demographics" with three variables (Table \@ref(tab:table-machine-readable))
 
-| age| height|nationality |
-|---:|------:|:-----------|
-|  12|  161.5|Australian  |
-|  21|  181.2|American    |
-|  37|  178.3|New Zealand |
+```{r table-machine-readable}
+table_machine_readable <- data.frame(
+  age = c(12L, 21L, 37L),
+  height = c(161.5, 181.2, 178.3),
+  nationality = c("Australian", "American", "New Zealand")
+)
 
-_Table XX Example demographics table of age, height, and nationality._
+knitr::kable(table_machine_readable,
+             caption = "Example demographics table of age, height, and nationality.",
+             booktabs = TRUE) %>%
+  kable_styling(latex_options = c("hold_position"))
+```
+
 
 ```
 {
