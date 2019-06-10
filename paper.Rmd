@@ -416,7 +416,63 @@ The telescope data is very high quality, with the following features:
 - Entire datasets available for download
 - Raw data before processed into database is also available
 
-The SDSS provides different degrees of understanding. It is a huge project involving many people, and requiring a staggering and enormous effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:fig-effort-underrstanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
+The SDSS provides different degrees of understanding. It is a huge project involving many people, and a staggering effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:fig-effort-underrstanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
+
+**include some references to the SDSS project and some of the key/impactful findings**
+
+As an example, the optical and spectral data are explained here: https://www.sdss.org/dr15/spectro/spectro_basics/ and can be downloaded here in special FITS dataformat, or even as a plain CSV: http://skyserver.sdss.org/dr15/en/tools/quicklook/summary.aspx?
+
+An example plot in Figure \@ref(fig:sdss-spectra)A shows the Wavelength against Flux. Here, flux is ..., and wave is ...
+
+```{r prepare-spectra-plot, include = FALSE}
+
+sdss_image_path <- here::here("figures", "sdss-spectra-example-plate-1678.png")
+library(magick)
+library(ggplot2)
+library(cowplot)
+
+spectra <- readr::read_csv(
+  here::here("data",
+             "plateid-1678_mjd-53433_fiberid-425_reduction2d-v5_7_0.csv")
+)
+
+gg_spectra <- ggplot(spectra,
+                     aes(x = Wavelength,
+                         y = Flux)) +
+  geom_line() + 
+  theme_minimal() + 
+  theme(aspect.ratio = 1)
+
+plot_spectra <- ggdraw() + 
+  draw_image(sdss_image_path)
+
+```
+
+
+```{r sdss-spectra, fig.cap = "Spectra image of wavelength against flux from SDSS. Part A shows the example image taken from SDSS website. Part B shows the replicated figure using data provided"}
+
+plot_grid(plot_spectra, gg_spectra, labels = "AUTO")
+```
+
+
+A great litmus test of reproducibility for this is the fact that from downloading the CSV from the website, a similar data visualisation can be produced, seen in Figure \@ref(fig:sdss-spectra)B: 
+
+
+The data was downloaded from: http://dr15.sdss.org/optical/spectrum/view/data/format=csv?plateid=1678&mjd=53433&fiberid=425&reduction2d=v5_7_0
+
+This URL contains details of the data, specifically:
+
+* plateid = 1678
+* mjd = 53433
+* fiberid = 425
+* reduction2d = v5.7.0
+
+These are unique identifying features of the data, which tell us:
+
+* plateid is the plate that they use to explore a given section of night sky. It uniquely identifies a "plug plate" used to eollcet the data
+* mjd is an integer that marks the "modified julian date" of the night when observations was carried out.
+* fiberid is an integer that marks the fiber number used.
+* The version marked as `v5_7_0` is the pipeline version used for BOSS in DR12
 
 ### Dataset 3: Most other datasets
 
