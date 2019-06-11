@@ -70,7 +70,7 @@ There are many features to consider when documenting data, such as a README file
 
 To frame discussion around the challenges of data documenting, we can think of two features: "Effort to prepare", and "Ease of understanding". We can plot these on two axes and place datasets along each to indicate the ease of understanding and preparation (see Figure \@ref(fig:fig-effort-understanding)).
 
-```{r fig-effort-underrstanding, fig.cap = "There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)."}
+```{r fig-effort-understanding, fig.cap = "There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)."}
 library(ggplot2)
 
 # There are two Axis:
@@ -388,6 +388,7 @@ Tooling for producing these this information speeds up the process of sharing da
 
 # Example datasets
 
+To demonstrate the variety of datasets and documentation practices, we now discuss three datasets of varying quality.
 
 ### Dataset 1: Forest Census Plot on Barro Colorado Island
 
@@ -403,28 +404,30 @@ The impact of this kind of research is huge, as it provides information on biodi
 
 ### Dataset 2: Sensor data
 
-Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is typically because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. It contains the most detailed, three dimensionsal maps of the universe ever made, and has been operated since 2000, now producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. It is not possible to summarise the contents of the data, but briefly, the SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico.
+Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand, since sensors measure specific features. This means the description of data type happens upstream at the instrument-design level, and flows down to data collection. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. 
+
+It is not possible to summarise the contents of the data, but briefly, the SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico, operating since 2000,s producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. . This data has been used to produce the most detailed, three dimensionsal maps of the universe ever made.
+
+The data are are free to use and publicly accessible, with the interface to the data being designed to cover a wide range of skills. For example, the marvin service to streamline access and visualisation of MaNGA data [@marvin-service], through to raw data access (see Figure \@ref(fig:sdss-raw-data-screenshot)).
+
+```{r sdss-raw-data-screenshot, fig.cap = "Screenshot of Raw data avaialbe through DR15 FITS."}
+knitr::include_graphics(here::here("figures",
+                                   "sdss-raw-data-screenshot.png"))
+```
 
 
-The data are are free to use and publicly accessible, with the interface to the data being designed to cover all skills, from shcool children to professional astronomers.
 The telescope data is very high quality, with the following features:
 
-- Good metadata in SCHEMA, a machine readable standard
-- Data in multiple formats
-- Released data in archives
+- Metadata in the machine readable standard, SCHEMA
+- Data in multiple formats (e.g., .csv and .fits)
+- Previously released data available in archives
 - Data is available in a database
 - Entire datasets available for download
 - Raw data before processed into database is also available
 
-The SDSS provides different degrees of understanding. It is a huge project involving many people, and a staggering effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:fig-effort-underrstanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
+As an example, the optical and spectral data can be accessed in FITS data format, or even as a plain CSV, the first few rows shown in Table \@ref(tab:spectra-tab). An example plot in Figure \@ref(fig:sdss-spectra)A shows the Wavelength against Flux as produced on the SDSS website, while Figure \@ref(fig:sdss-spectra)B. The fact that figure Figure \@ref(fig:sdss-spectra)A is reproduced in Figure \@ref(fig:sdss-spectra)B demonstrates great reproducibility.
 
-**include some references to the SDSS project and some of the key/impactful findings**
-
-As an example, the optical and spectral data are explained here: https://www.sdss.org/dr15/spectro/spectro_basics/ and can be downloaded here in special FITS dataformat, or even as a plain CSV: http://skyserver.sdss.org/dr15/en/tools/quicklook/summary.aspx?
-
-An example plot in Figure \@ref(fig:sdss-spectra)A shows the Wavelength against Flux. Here, flux is ..., and wave is ...
-
-```{r prepare-spectra-plot, include = FALSE}
+```{r prepare-spectra-data, include = FALSE}
 
 sdss_image_path <- here::here("figures", "sdss-spectra-example-plate-1678.png")
 library(magick)
@@ -448,19 +451,30 @@ plot_spectra <- ggdraw() +
 
 ```
 
+```{r spectra-tab, echo = FALSE}
+library(kableExtra)
+head(spectra) %>%
+  knitr::kable(caption = "Example spectra data from SDSS, showing values for Wavelength, Flux, BestFit, and SkyFlux.",
+               booktabs = TRUE) %>%
+  kable_styling(latex_options = c("striped",
+                                  "hold_position"))
+               
+```
 
-```{r sdss-spectra, fig.cap = "Spectra image of wavelength against flux from SDSS. Part A shows the example image taken from SDSS website. Part B shows the replicated figure using data provided"}
+
+```{r sdss-spectra, fig.cap = "Spectra image of wavelength against flux from SDSS from two sources. Part A shows the example image taken from SDSS website. Part B shows the replicated figure using data provided as CSV, demonstrating great reproducibility."}
 
 plot_grid(plot_spectra, gg_spectra, labels = "AUTO")
 ```
 
+Metadata from the data cannot be contained in the CSV file, but is available in the URL the csv was downloaded from:
 
-A great litmus test of reproducibility for this is the fact that from downloading the CSV from the website, a similar data visualisation can be produced, seen in Figure \@ref(fig:sdss-spectra)B: 
+```
+http://dr15.sdss.org/optical/spectrum/view/data/format=csv?
+plateid=1678&mjd=53433&fiberid=425&reduction2d=v5_7_0
+```
 
-
-The data was downloaded from: http://dr15.sdss.org/optical/spectrum/view/data/format=csv?plateid=1678&mjd=53433&fiberid=425&reduction2d=v5_7_0
-
-This URL contains details of the data, specifically:
+Which contains details of the data, specifically:
 
 * plateid = 1678
 * mjd = 53433
@@ -469,10 +483,14 @@ This URL contains details of the data, specifically:
 
 These are unique identifying features of the data, which tell us:
 
-* plateid is the plate that they use to explore a given section of night sky. It uniquely identifies a "plug plate" used to eollcet the data
-* mjd is an integer that marks the "modified julian date" of the night when observations was carried out.
-* fiberid is an integer that marks the fiber number used.
-* The version marked as `v5_7_0` is the pipeline version used for BOSS in DR12
+* **plateid** is the plate that they use to explore a given section of night sky. It uniquely identifies a "plug plate" used to eollcet the data
+* **mjd** is an integer that marks the "modified julian date" of the night when observations was carried out.
+* **fiberid** is an integer that marks the fiber number used (the fiber optic cable used to transmit light to the sensor).
+* The **version** marked as `v5_7_0` is the pipeline version used for BOSS in DR12.
+
+As a researcher who does not work in astrophysics, this information on the data was quite easy to retrieve from the SDSS website section called "Understanding SDSS spectroscopic data": https://www.sdss.org/dr12/spectro/spectro_basics/.
+
+The SDSS provides data at different levels of complexity for different degrees of understanding. It is a huge project involving many people, and a staggering effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:fig-effort-understanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
 
 ### Dataset 3: Most other datasets
 
