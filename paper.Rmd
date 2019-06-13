@@ -506,10 +506,6 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 
 ** Need to get an example of this.
 
-## Summary {#ex-data-summary}
-
-TODO: Needs a succinct summary here
-
 # Ten simple rules for publishing data {#10-rules}
 
 1. **Decide whether publishing is appropriate for your data** 
@@ -534,8 +530,6 @@ It is critical to publish your data if they are the basis for a peer-reviewed re
 10. **Stick with simple data formats** to ensure long-term usefulness of datasets in a way that is not tied to transient technologies (such as ever changing spreadsheet standards), store the data as plain text where possible. This can take the form of comma/tab separated files in most cases. This will ensure transparency and future proof your data.
 
 # Conclusions {#conclusions}
-
-# Conclusions
 
 The open science literature has been advocating the importance of data sharing for a long time. However many of these articles appeal to the broader benefits of data sharing but rarely talk about the practical considerations of making data available alongside code. Trivial reproducibility has always relied up on the idea that as long as code exists on a platform such as GitHub and clearly lists open source dependencies, one should be able to run the code at a future time. Containerization efforts such as Docker have made it even easier to capture system dependencies and rapidly launch containers. But true reproducibility requires not just code but also data. 
 
