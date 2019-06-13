@@ -12,10 +12,16 @@ header-includes:
 ---
 
 ```{r setup, echo = FALSE}
+
 knitr::opts_chunk$set(echo = FALSE,
                       out.width = "100%")
 
-library(kableExtra)
+suppressMessages(library(ggrepel))
+suppressMessages(library(tibble))
+suppressMessages(library(kableExtra))
+suppressMessages(library(magick))
+suppressMessages(library(ggplot2))
+suppressMessages(library(cowplot))
 ```
 
 
@@ -73,13 +79,10 @@ There are many features to consider when documenting data, such as a README file
 To frame discussion around the challenges of data documenting, we can think of two features: "Effort to prepare", and "Ease of understanding". We can plot these on two axes and place datasets along each to indicate the ease of understanding and preparation (see Figure \@ref(fig:fig-effort-understanding)).
 
 ```{r fig-effort-understanding, fig.cap = "There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)."}
-library(ggplot2)
 
 # There are two Axis:
 #   X axis: <- Robustness (brittle - robust)
 #   Y axis: <- Difficulty (easy - hard)
-
-library(tibble)
 
 dat_prep <- tibble(prep = c(15,20,25,95, 96),
                understanding = c(15,20,95,95,96),
@@ -90,7 +93,7 @@ dat_prep <- tibble(prep = c(15,20,25,95, 96),
                             "RCT"
                             ))
 
-library(ggrepel)
+
 
 ggplot(dat_prep,
        aes(x = prep,
@@ -109,7 +112,7 @@ ggplot(dat_prep,
 ```
 
 
-## Higher potential impact means more time**
+## Higher potential impact means more time
 
 To improve data impact it needs more time to prepare so it is easier to understand. Accordingly, data with higher potential for impact and reuse should be made as easy to understand as possible. Therefore data with high potential impact requires more time and effort to prepare. For example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact, so requires a lot of time and effort document. Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not over complicated.
 
@@ -220,21 +223,12 @@ There are 8 pieces of content to consider for data sharing:
 7. Scripts: To clean raw data ready for analysis
 8. Analysis ready data: Final data used in analysis
 
-```
-proj-name/
-         |
-         | - README.md
-         | - Codebook.csv
-         | - LICENSE.md
-         | - metadata.json
-         | - raw-data/
-                     | - raw-data.csv
-                     | - 01-read-tidy-raw-data.csv
-         | - data/
-                 | - final-data.csv
-```
+One basic suggested directory layout is given below in Figure \@ref(fig:code-directory).
 
-_Figure XX. Example directory layout and structure for a data repository._
+```{r code-directory, out.width = "75%", fig.align = "center", fig.cap = "Example directory layout and structure for a data repository."}
+knitr::include_graphics(here::here("figures",
+                                   "directory-structure.png"))
+```
 
 Out of these sections, the minimal viable format are:
 
@@ -328,7 +322,7 @@ A DOI is a prerequisite for citation. When citing data, it only makes sense to c
 
 ## Machine readable metadata {#machine-metadata}
 
-The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. Say for a dataset called "demographics" with three variables (Table \@ref(tab:table-machine-readable))
+The data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. Say for a dataset called "demographics" with three variables (Table \@ref(tab:table-machine-readable)) and JSON equivalent in Figure \@ref(fig:json-code).
 
 ```{r table-machine-readable}
 table_machine_readable <- data.frame(
@@ -344,36 +338,11 @@ knitr::kable(table_machine_readable,
 ```
 
 
-```
-{
-  "name": "demographics",
-  # here we list the data files in this dataset
-  "resources": [
-    {
-      "path": "demographics.csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "age",
-            "type": "integer"
-          },
-          {
-            "name": "height",
-            "type": "number"
-          },
-          {
-            "name": "nationality",
-            "type": "string"
-          }
-        ]
-      }
-    }
-  ]
-}
+```{r json-code, fig.align = "center", out.width = "75%", fig.cap = "Example snippet of some Table Schema data for a dataset with three variables. This provides a description of each field, and the type of field, and it's description."}
+knitr::include_graphics(here::here("figures",
+                                   "json-code.png"))
 ```
 
-
-_Figure XX Example snippet of some Table Schema data for a dataset with three variables. This provides a description of each field, and the type of field, and it's description._
 
 This contains fields such as path, and a schema with subfields name and type, for each variable. It also provides information for, licensing and features such as line breaks, and delimiters. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as csvy [@csvy], an extended `csv` format, which has additional front matter in a YAML format using Table Schema.
 
@@ -435,9 +404,6 @@ As an example, the optical and spectral data can be accessed in FITS data format
 ```{r prepare-spectra-data, include = FALSE}
 
 sdss_image_path <- here::here("figures", "sdss-spectra-example-plate-1678.png")
-library(magick)
-library(ggplot2)
-library(cowplot)
 
 spectra <- readr::read_csv(
   here::here("data",
@@ -457,7 +423,7 @@ plot_spectra <- ggdraw() +
 ```
 
 ```{r spectra-tab, echo = FALSE}
-library(kableExtra)
+
 head(spectra) %>%
   knitr::kable(caption = "Example spectra data from SDSS, showing values for Wavelength, Flux, BestFit, and SkyFlux.",
                booktabs = TRUE) %>%
@@ -510,7 +476,7 @@ Many datasets are "data dumped" into repositories with a paper. Phrases such as 
 
 TODO: Needs a succinct summary here
 
-# Ten simple rules for publishing data {#10-rules}
+# Ten simple rules for publishing data {#ten-rules}
 
 1. **Decide whether publishing is appropriate for your data** 
 It is critical to publish your data if they are the basis for a peer-reviewed research publication. To be broadly useful, your data must be deposited in a permanent archive (to ensure that it does not disappear from a ephemeral location such as your university website), along with useful metadata so that someone outside the project team can understand what the data mean. However, this level of effort is not always critical for all data science efforts. For small-scale projects such as ones where one might generate simulated datasets, this level of curation is highly unnecessary. Here making data available in a transient location like GitHub or a website is sufficient.
