@@ -260,14 +260,16 @@ The README should be placed in the top level of the project. It should be brief,
 
 ## Codebook: Human readable dictionary of data contents {#codebook}
 
-Codebooks provide human readable description of the variables in the data and contain information on:
+> A high-level summary, ideally combined with text explaining the structure and nature of the data set, also helps to explain an unfamiliar data set to researchers who want to reproduce analyses or reuse the data.
+
+Codebooks provide human readable description of the data, providing context on the nature and structure of the data. This helps someone not familiar with the data understand, and use the data. At a minimum they should contain:
 
 - **variable names**
 - **variable labels**
 - **variable codes**, and
 - special values for **missing data**.
 
-**Variable names** are short, descriptive names with no spaces or special characters. For example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 =yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the codebook, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown" or -99 [@White2013; @Broman2017].
+**Variable names** are short, descriptive names with no spaces or special characters. For example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook; @Arslan2019]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, 0 = no, 1 = yes, and 0 = male and 1 = female. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 =yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the codebook, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown" or -99 [@White2013; @Broman2017].
 
 Table \@ref(tab:table-data-incarcerate) shows an example data dictionary table taken from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable the class (type) of the variable, and a longer description of the variable.
 
@@ -392,7 +394,7 @@ Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy dat
 
 <!-- NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia -->
 
-Tooling for producing these this information speeds up the process of sharing data. To help create codebooks, there are R packages such as `dataMeta`, `memisc`. and `codebook`. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with DataPackageR [@DataPackageR], which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec [@frictionlessdata-data-pkg].
+Tooling for producing these this information speeds up the process of sharing data. Machine-readable metadata that can be indexed by google is created using the `dataspice` package [@dataspice]. To help create codebooks, we recommend the `codebook` package in R [@Arslan2019], which also generates machine readable metadata. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with DataPackageR [@DataPackageR], which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to [Frictionlessdata's tabular data package spec [@frictionlessdata-data-pkg]. 
 
 # Example datasets {#example-data}
 
