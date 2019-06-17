@@ -366,7 +366,7 @@ One example of a very laborious, long-term study is the 50-hectare plot on Barro
 
 Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand, since sensors measure specific features. This means the description of data type happens upstream at the instrument-design level, and flows down to data collection. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. 
 
-It is not possible to summarise the contents of the data, but briefly, the SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico, operating since 2000,s producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. . This data has been used to produce the most detailed, three dimensional maps of the universe ever made.
+It is not possible to summarise the contents of the data, but briefly, the SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico, operating since 2000,s producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. This data has been used to produce the most detailed, three dimensional maps of the universe ever made.
 
 The data are are free to use and publicly accessible, with the interface to the data being designed to cover a wide range of skills. For example, the marvin service to streamline access and visualisation of MaNGA data [@marvin-service], through to raw data access (see Figure \@ref(fig:sdss-raw-data-screenshot)).
 
