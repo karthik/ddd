@@ -58,29 +58,22 @@ We discuss how to share and/or publish data and cover various tradeoffs when dec
 
 # Challenges in documenting your dataset {#doco-challenge}
 
-There are many features to consider when documenting, sharing, and publishing data. What format to store the data in? How do you describe the variables, observations, and collection methods? Do you include raw data? What about data used in analysis? What about metadata for the variables? And then there's linceses, and long term storage. It can be hard to know where to start. This section discusses challenges that come with these features of data documenting, sharing, and publication, setting up the discussion for the rest of the paper.
+There are many features to include with data alongside publications. However, not all of these are needed for every dataset. This section discusses how to think about the degree of documentation to include. To frame discussion around the challenges of data documenting, we can think of how an individual dataset falls on two features: "Effort to prepare", and "Ease of understanding" in Figure \@ref(fig:fig-effort-understanding).
 
-## How far to go with data documenting
-
-To frame discussion around the challenges of data documenting, we can think of how an individual dataset fits on two features: "Effort to prepare", and "Ease of understanding", see Figure \@ref(fig:fig-effort-understanding).
-
-```{r fig-data-sharing-workflow, fig.cap = "The steps required compared to effort required for data sharing for reproducibility."}
-knitr::include_graphics("figures/data_sharing_workflow.png")
-```
-
-```{r fig-effort-understanding, fig.cap = "There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT)."}
+```{r fig-effort-understanding, fig.cap = "There is a big difference in the effort to prepare data, and how easy it is to understand - look at the difference between most datasets, and something like a Randomized Control Trial (RCT).", out.width = "90%"}
 
 # There are two Axis:
 #   X axis: <- Robustness (brittle - robust)
 #   Y axis: <- Difficulty (easy - hard)
 
-dat_prep <- tibble(prep = c(15,20,25,95, 96),
-               understanding = c(15,20,95,95,96),
+dat_prep <- tibble(prep = c(15,20,25,90, 96, 98),
+               understanding = c(15,20,95,90,96, 80),
                   label = c("Data Dump",
                             "Most studies",
-                            "Sensor",
+                            "Sensor Data",
                             "50 hectare",
-                            "RCT"
+                            "RCT",
+                            "Simulation Study"
                             ))
 
 ggplot(dat_prep,
@@ -90,49 +83,43 @@ ggplot(dat_prep,
   geom_point() +
   geom_label_repel(
     segment.size = 0.2,
-    segment.color = "grey50") +
-  theme_minimal() +
+    segment.color = "grey50"
+    ) +
+  # theme_void() + 
+  theme(axis.line.x = element_line(arrow = arrow(length = unit(3, 'mm'))), 
+        axis.line.y = element_line(arrow = arrow(length = unit(3, 'mm'))),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        aspect.ratio = 1
+  ) + 
   labs(x = "Effort to Prepare",
        y = "Ease of Understanding") +
   xlim(0,100) +
-  ylim(0, 100)
+  ylim(0, 100) 
+  
 
 ```
 
-There are many features to include in data documentation.
-Not all of these are needed for every dataset. But, deciding which to include should be based upon the potential impact of the data. The more impactful the data, the more features to include. This is one of the first challanges (tradeoffs) to discuss: how to decide what to include with your data.
+```{r data-sharing-workflow, fig.cap = "The steps required compared to effort required for data sharing for reproducibility.", out.width = "90%"}
+knitr::include_graphics("figures/data_sharing_workflow.png")
+```
 
-Together these all help make the data easier to understand. These features are not clearly described in the scientific literature in the context of including them alongside research.
+To decide the extent of data documentation to include should be based on the impact of the data. The more impactful the data, the more features to include.
 
-## Data format
 
-Data that is easy to use should avoid being in a proprietary format that requires special software to read. For example, a CSV should be preferred over proprietary data formats, such as SPSS or SAS custom data types.
 
-There is also the challenge for format. A simpler format data like CSV (Comma Separated Value) is more reliable than binary serialised or compressed data, but can sometimes be slower to read in and out, and harder to share. 
+To improve data impact it needs more time to prepare so it is easier to understand. Accordingly, data with higher potential for impact and reuse should be made as easy to understand as possible. Therefore data with high potential impact requires more time and effort to prepare. 
 
-To improve data impact it needs more time to prepare so it is easier to understand. Accordingly, data with higher potential for impact and reuse should be made as easy to understand as possible. Therefore data with high potential impact requires more time and effort to prepare. For example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact, so requires a lot of time and effort document. Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not over complicated. Likewise, data that can be created via simulation from open source software could arguably not be archived - since it can be generated from scratch with code; a reproducible process with likely very low cost in person time to create.
+High impact data should be easy to understand and use. Impact is hard to measure as a general measure, and may vary from field to field. An example is given below.
+
+For example, data from medical randomized control trials (RCTs) on cancer treatment can have high impact, so requires a lot of time and effort document. Comparatively, a small survey on simple demographics can have low impact. So it might not have a worthwhile tradeoff for ease of understanding and ease of preparation. This means effort put into preparing data documentation for a small survey to be made easy to use should be kept relatively simple and not over complicated. Likewise, data that can be created via simulation from open source software could arguably not be archived - since it can be generated from scratch with code; a reproducible process with likely very low cost in person time to create.
+
+Figure \@ref(fig:data-sharing-workflow) shows the different degrees or steps of this.
 
 Tradeoffs may change over time as the cost of making them easy to prepare and understand change. If it becomes technologically cheaper and easier to document data more rigorously in the same time as it takes to do poorly now, then there is no reason why more people cannot do this, even when the benefits are not immediately apparent. So if something might appear to have low impact, it should still be made easy to understand, if it doesn't take long to prepare that documentation.
 
-High impact data should be easy to understand and use, but how do you assess its impact?
-
-
-## Describing the variables and metadata
-
-## Including raw data
-
-## Data used in analysis
-
-## Licenses
-
-## Long term storage
-
-## Just how much to include
-
-
-Another challenge is in the gross total amount of documentation. Too much documentation can be overwhelming; too little and you don't know anything. For example, compare a folder with dozens of data files and several papers, to a single CSV file. The first is too much, and understanding it requires a high time cost. The second is too little; we don't know anything about what the data is or why it was collected. The challenge is to provide the right level of detail, somewhere between these two extremes. This changes depending on the impact of the data, and the task at hand. 
-
-Creating good documentation has the same challenge as doing good writing: it takes time, and it can be hard to know when you are done.
+Creating good documentation has the same challenge as doing good writing: it takes time, and it can be hard to know when you are done. Thinking about the potential impact of should help guide the researcher in how much they should document their data.
 
 
 # Releasing data in R {#data-release-r}
@@ -516,7 +503,16 @@ The key message for the reader is that accessing data for reproducibility should
 
 # Morgue
 
+## Challenges - Data format
+
+Data that is easy to use should avoid being in a proprietary format that requires special software to read.  For example, a more basic format such as CSV (Comma Separated Value) should be preferred over proprietary data formats, such as SPSS or SAS custom data types, or binary formats, as it is more reliable, although it can sometimes be slower to read in and out, and harder to share due to size.
+
 ## Challenges -  Understanding tradeoffs
+
+Another challenge is in the gross total amount of documentation. Too much documentation can be overwhelming; too little and you don't know anything. For example, compare a folder with dozens of data files and several papers, to a single CSV file. The first is too much, and understanding it requires a high time cost. The second is too little; we don't know anything about what the data is or why it was collected. The challenge is to provide the right level of detail, somewhere between these two extremes. This changes depending on the impact of the data, and the task at hand. 
+
+
+There are many features to consider when documenting, sharing, and publishing data. What format to store the data in? How do you describe the variables, observations, and collection methods? Do you include raw data? What about data used in analysis? What about metadata for the variables? And then there's lincenses, and long term storage. It can be hard to know where to start, but together they all help make the data easier to understand. These features are not clearly described in the scientific literature in the context of including them alongside research.
 
 The research created from the 50 hectare plot, discussed in section \@ref(ex-data-1) - this dataset was challenging to understand without special domain expertise.
 
