@@ -1,3 +1,27 @@
+
+# Morgue
+
+## Challenges -  Understanding tradeoffs
+
+To improve data impact it needs more time to prepare so it is easier to understand. 
+
+Another challenge is in the gross total amount of documentation. Too much documentation can be overwhelming; too little and you don't know anything. For example, compare a folder with dozens of data files and several papers, to a single CSV file. The first is too much, and understanding it requires a high time cost. The second is too little; we don't know anything about what the data is or why it was collected. The challenge is to provide the right level of detail, somewhere between these two extremes. This changes depending on the impact of the data, and the task at hand. 
+
+
+There are many features to consider when documenting, sharing, and publishing data. What format to store the data in? How do you describe the variables, observations, and collection methods? Do you include raw data? What about data used in analysis? What about metadata for the variables? And then there's licenses, and long term storage. It can be hard to know where to start, but together they all help make the data easier to understand. These features are not clearly described in the scientific literature in the context of including them alongside research.
+
+The research created from the 50 hectare plot, discussed in section \@ref(ex-data-1) - this dataset was challenging to understand without special domain expertise.
+
+Ultimately, creating good documentation has the same challenge as good writing: it takes time, and it can be hard to know when you are done. 
+
+It can be hard to find the right amount of time to spend. Ideally, you want the gains in understanding not to be outweighed by the time taken to improve them.
+
+Impact is a difficult quantity to measure. 
+
+To help explain these descriptive qualities of the data sharing, we discuss three datasets and their relationship of **Effort to prepare**, and **Ease of understanding** in section 5.
+
+One of the easiest solutions to making data available alongside an analysis is to include it in the same version controlled repository as the analysis scripts. This works well with the data file sizes are in the order of bytes to megabytes. When a reader clones the repository, the scripts and notebooks will be able to read all data files from relative paths with no further modifications to the code itself. Assuming the data would be useful beyond the context of the analysis, it would be beneficial to also archive it in a long-term repository.
+
 One language agnostic solution is to use the Open Knowledge Foundations Frictionless data spec, implemented in both R and Python.
 
 
