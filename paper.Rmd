@@ -199,10 +199,10 @@ To share data analysis data, there should be some minimal set of requirements. F
 There are 8 pieces of content to consider for data sharing:
 
 1. README: A Human readable description of the data
-2. Codebook: Human readable dictionary of data contents
+2. Data dictionary: Human readable dictionary of data contents
 3. License: How to use and share the data
 4. Citation: How you want your data to be cited
-5. Machine readable meta data
+5. Machine readable meta data: Make your data searchable
 6. Raw data: The original/first data provided
 7. Scripts: To clean raw data ready for analysis
 8. Analysis ready data: Final data used in analysis
@@ -217,7 +217,7 @@ knitr::include_graphics(here::here("figures",
 Out of these sections, the minimal viable format are:
 
 1. README
-2. Codebook
+2. Data dictionary
 3. License
 4. Citation
 5. Analysis ready data
@@ -237,16 +237,16 @@ The README is often the first place people will go to learn more about data, and
 
 The README should be placed in the top level of the project. It should be brief, and provide links to the other aforementioned sections. Saving a README with the extension `.md` file gives the author the formatting benefits of `markdown`, making it simple to insert links, tables, and make lists. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
 
-## Codebook: Human readable dictionary of data contents {#codebook}
+## Data dictionary: Human readable dictionary of data contents {#data-dictionary}
 
-Codebooks provide human readable description of the data, providing context on the nature and structure of the data. This helps someone not familiar with the data understand, and use the data. At a minimum they should contain:
+A data dictionary provide human readable description of the data, providing context on the nature and structure of the data. This helps someone not familiar with the data understand, and use the data. At a minimum they should contain:
 
 - **variable names**
 - **variable labels**
 - **variable codes**, and
 - special values for **missing data**.
 
-**Variable names** should be short, descriptive names with no spaces or special characters. In the most common tabular data case, these correspond to column names, for example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook; @Arslan2019]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, a variable could contain answers to a question, with values and codes like so: `0 = no, 1 = yes`, or for another variable indicating indoors or outdoors: `0 = inside` and `1 = outside`. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 = yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". Date formatting should be described in the variable labels. **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the codebook, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown", -99, or other value codes [@White2013; @Broman2017].
+**Variable names** should be short, descriptive names with no spaces or special characters. In the most common tabular data case, these correspond to column names, for example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook; @Arslan2019]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, a variable could contain answers to a question, with values and codes like so: `0 = no, 1 = yes`, or for another variable indicating indoors or outdoors: `0 = inside` and `1 = outside`. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 = yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". Date formatting should be described in the variable labels. **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the data dictionary, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown", -99, or other value codes [@White2013; @Broman2017].
 
 Table \@ref(tab:table-data-incarcerate) shows an example data dictionary table taken from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable the class (type) of the variable, and a longer description of the variable.
 
@@ -330,12 +330,12 @@ This contains fields such as "path", which describe the file path to the data, a
 Expand on:
 
 - Explain formats like XML, as people might come into formats that wany XML.
-- The power lies in the contrast to a csv codebook, as there is a defined, nested structure.
+- The power lies in the contrast to a csv data dictionary, as there is a defined, nested structure.
 - Ontologies and domain specific metadata standards such as EML might also be worth mentioning.
 - introduce the holy grail of the semantic web: JSON-LD
 
 - readers just been advised to make a:
-  - a csv codebook,
+  - a csv data dictionary,
   - put that in the README
   - then make a JSON file. 
 Is there a way to discuss strategies on harmonising all these formats?
@@ -361,7 +361,7 @@ The data used in the data analysis should be provided in a folder called `data`.
 
 <!-- NOTE: not sure if this quite fits here, tooling is important, but at the moment we are not sure if we should describe all tooling, as I will have a lot of examples for R, and not for Python/Julia -->
 
-Tooling for producing data documentation information speeds up and simplifies the process of sharing data. Machine-readable metadata that can be indexed by google is created using the `dataspice` package [@dataspice]. To help create codebooks, we recommend the `codebook` package in R [@Arslan2019], which also generates machine readable metadata. Codebooks are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with DataPackageR [@DataPackageR], which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to Frictionlessdata's tabular data package spec [@frictionlessdata-data-pkg]. 
+Tooling for producing data documentation information speeds up and simplifies the process of sharing data. Machine-readable metadata that can be indexed by google is created using the `dataspice` package [@dataspice]. To help create a data dictionary, we recommend the `codebook` package in R [@Arslan2019], which also generates machine readable metadata. Data dictionaries are implemented in other software such as STATA, which provides a "codebook" command. Data can be packaged up in a "data package" with DataPackageR [@DataPackageR], which provides tools to wrap up data into an R package, while providing helpers with MD5sum checks that track versioning. Note that is different to Frictionlessdata's tabular data package spec [@frictionlessdata-data-pkg]. 
 
 # Example datasets {#example-data}
 
@@ -371,7 +371,7 @@ We now explore the variety of documentation practices of a few selected datasets
 
 Long-term field surveys, where the same type of data is repeatedly measured and collected over a long period of time, are an example of data collection where the time and financial investment would necessitate meticulously curated and easily accessible metadata. Both from the fact that the same protocol is being followed year after year, and that field data collection efforts are quite expensive, these data need to be well documented, with documentation available alongside the data.
 
-One example of a very laborious, long-term study is the 50-hectare plot on Barro Colorado Island in Panama. Researchers at the field station have censused every single tree in a pre-defined plot 7 times over the past 30 years. More than a million trees have been counted. The data and metadata however are hard to reach. To obtain the data, one must fill out a form and agree to terms and conditions which require approval and authorship prior to publication. The biggest challenge with this study is that the data are stored on a personal FTP server of one of the authors. While the data are available in CSV and binary Rdata formats, the data storage servers do not have any metadata, README files or codebooks. A separate, public archive hosts the metadata (https://repository.si.edu/handle/10088/20925) in a PDF file (https://repository.si.edu/bitstream/handle/10088/20925/RoutputFull.pdf?sequence=1&isAllowed=y) that describe the fields.
+One example of a very laborious, long-term study is the 50-hectare plot on Barro Colorado Island in Panama. Researchers at the field station have censused every single tree in a pre-defined plot 7 times over the past 30 years. More than a million trees have been counted. The data and metadata however are hard to reach. To obtain the data, one must fill out a form and agree to terms and conditions which require approval and authorship prior to publication. The biggest challenge with this study is that the data are stored on a personal FTP server of one of the authors. While the data are available in CSV and binary Rdata formats, the data storage servers do not have any metadata, README files or a data dictionary. A separate, public archive hosts the metadata (https://repository.si.edu/handle/10088/20925) in a PDF file (https://repository.si.edu/bitstream/handle/10088/20925/RoutputFull.pdf?sequence=1&isAllowed=y) that describe the fields.
 
 
 ## Dataset 2: Sensor data {#sdss-data}
@@ -475,7 +475,7 @@ It is critical to publish your data if they are the basis for a peer-reviewed re
 
 2. **Include a README** file with your data archive. README files have a long history in software (https://medium.com/@NSomar/readme-md-history-and-components-a365aff07f10) and are named so that the ASCII systems capital letters filename would show this file first, making it the obvious place to put relevant information. In the context of datasets, READMEs are particularly useful when there are no reliable standards. The best practice here is to have one README per dataset, with names that easily associate with the corresponding data files. In addition to metadata about the data such as variable names, units of measurement and code books, the README should also contain information on licenses, authors/copyright, a title, and dates and locations where the data were collected. Additionally keywords, author identifiers such as ORCID, and funder information would be useful.
 
-3. **Provide a codebook** or glossary for each variable. Codebooks provide a free-form way to document the data, their structure and underlying details of how they were collected (https://www.emgo.nl/kc/codebook/). More importantly they provide a way for future consumers of the data to understand how the variables were named, how missing data were documented, along with any additional information that might impact how the data are interpreted.
+3. **Provide a data dictionary** or glossary for each variable. Data dictionaries provide a free-form way to document the data, their structure and underlying details of how they were collected (https://www.emgo.nl/kc/codebook/). More importantly they provide a way for future consumers of the data to understand how the variables were named, how missing data were documented, along with any additional information that might impact how the data are interpreted.
 
 4. **Provide a machine readable format** for your data. When possible, provide machine readable metadata that map on to the open standards of [schema.org](https://schema.org/) and [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD). These metadata provide all of the information described in the README best practices (rule 2), but in a machine readable way and include much of the same information such as name, description, spatial/temporal coverage etc. One way to test if your metadata are machine readable is to use Google's structured testing data (https://search.google.com/structured-data/testing-tool/u/0/) to verify the integrity of the metadata.
 
