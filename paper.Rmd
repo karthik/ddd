@@ -333,11 +333,16 @@ Expand on:
 - The power lies in the contrast to a csv codebook, as there is a defined, nested structure.
 - Ontologies and domain specific metadata standards such as EML might also be worth mentioning.
 - introduce the holy grail of the semantic web: JSON-LD
+
 - readers just been advised to make a:
   - a csv codebook,
   - put that in the README
   - then make a JSON file. 
 Is there a way to discuss strategies on harmonising all these formats?
+
+- we could map out how these things link together (e.g., you can turn JSON into xml with package ...)
+- make a table that describes how to do something in R, or Python, or Julia
+- 
 
 ## Raw data: The original or first data provided {#raw-data}
 
