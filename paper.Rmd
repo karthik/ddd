@@ -245,15 +245,6 @@ folder (68.06%) with other plain text formats such as txt, CSV, dat,
 `json` comprising less than one percent of data shipped in packages.
 
 
-
-# Data Sharing in Julia and Python {#julia-python}
-
-Sharing data in a programming language happens to some extent in other languages, such as Julia and Python.  Julia was established in 2012, and is a high level language with great performance [@bezanson2012julia].
-Similar to R, Julia provides packages for database access, API access, and data packages [@METADATA-jl]. This includes access to MySQL databases, NOAA, and actual datasets from Econometrics, faces, Market data, and even R datasets  [@NOAA-jl; @econ-data-jl; @face-data-jl; @market-data-jl; @r-data-jl].
-
-Python is a popular general purpose language, used in engineering, statistics, and computer science. 
-Including data in a python package is straightforward; a user can include data (or any other arbitrary files) inside a python package by declaring it in the manifest [@include-data-py-pkg].
-
 # Dealing with medium to large data {#med-large}
 
 Another common situation that researchers face is in dealing with data that fall somewhere between small and large. For example, small data could be tabular, as a CSV, in the order of bytes to megabytes to gigabytes that can be easily compressed, and large could be what falls under the umbrella of **big data**. The happy medium is generally data that are too big to fit on memory of most standard machines, but can successfully fit on disk (https://ropensci.github.io/arkdb/articles/articles/noapi.html). In this case, users who do not have the support to maintain resource intensive database servers can instead rely on light serverless databases such as MonetDB or SQLite. These databases provide disk based storage and using language agnostic interfaces, a analyst can easily query these data in manageable chunks that don't overrun memory limitations. Using software packages such as `arkdb` [@arkdb] one could easily chunk large data from flat text files to these lite databases without running into memory limitations.
