@@ -16,6 +16,28 @@ The impact of this kind of research is huge, as it provides information on biodi
 
 ### Dataset 2: Sensor data
 
+...
+Metadata from the data cannot be contained in the CSV file, but is available in the URL the csv was downloaded from: `http://dr15.sdss.org/optical/spectrum/view/data/format=csv?`
+`plateid=1678&mjd=53433&fiberid=425&reduction2d=v5_7_0`
+
+Which contains details of the data, specifically:
+
+* plateid = 1678
+* mjd = 53433
+* fiberid = 425
+* reduction2d = v5.7.0
+
+These are unique identifying features of the data, which tell us:
+
+* **plateid:** the unique plate used to explore a given section of night sky. 
+* **mjd:** an integer that marks the "modified julian date" of the night of observation.
+* **fiberid:** an integer of the fiber optic cable used to transmit light to the sensor.
+* The **version** marked as `v5_7_0` is the pipeline version used for BOSS in DR12.
+
+As a researcher who does not work in astrophysics, this information on the data was quite easy to retrieve from the SDSS website section called "Understanding SDSS spectroscopic data": https://www.sdss.org/dr12/spectro/spectro_basics/.
+
+...
+
 Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand.  This is because the sensors have to be very specific about what they are measuring, so a lot of the description of the type of data collected happens upstream at the instrument-design level. This flows down to when data is collected. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of this. It contains:
 
 > ... the most detailed three-dimensional maps of the Universe ever made, with deep multi-color images of one third of the sky, and spectra for more than three million astronomical objects. --(https://www.sdss.org/)

@@ -1,6 +1,16 @@
 
 # Morgue
 
+
+# Data Sharing in Julia and Python {#julia-python}
+
+Sharing data in a programming language happens to some extent in other languages, such as Julia and Python.  Julia was established in 2012, and is a high level language with great performance [@bezanson2012julia].
+Similar to R, Julia provides packages for database access, API access, and data packages [@METADATA-jl]. This includes access to MySQL databases, NOAA, and actual datasets from Econometrics, faces, Market data, and even R datasets  [@NOAA-jl; @econ-data-jl; @face-data-jl; @market-data-jl; @r-data-jl].
+
+Python is a popular general purpose language, used in engineering, statistics, and computer science. 
+Including data in a python package is straightforward; a user can include data (or any other arbitrary files) inside a python package by declaring it in the manifest [@include-data-py-pkg].
+
+
 ## Challenges -  Understanding tradeoffs
 
 To improve data impact it needs more time to prepare so it is easier to understand. 

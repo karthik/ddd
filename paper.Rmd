@@ -81,6 +81,7 @@ Out of these sections, the minimal viable format are:
 3. License
 4. Citation
 5. Analysis ready data
+6. Scripts to tidy analysis raw data into ready data
 
 What goes into each of these sections is now described.
 
@@ -214,9 +215,9 @@ Any code used to clean and tidy the raw data should be provided in the `raw-data
 
 ## Analysis ready data: Final data used in analysis {#final-data}
 
-The data used in the data analysis should be provided in a folder called `data`. Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, and observations in rows. Contrasting "raw data", "analysis ready data" should be in an easily readable plain-text format, such as CSV, tab separated, or semicolon separated. Binary or proprietary formats are discouraged in favor of interoperability, as it requires special software to read, even if it is sometimes slower to read in and out, and harder to share due to size.
+The data used in the data analysis should be provided in a folder called `data`. Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, observations in rows, and only one value per cell. 
 
-
+In contrast to "raw data", "analysis ready data" should be in an easily readable plain-text format, such as comma-, tab- or semicolon-separated. Binary or proprietary formats are discouraged in favor of interoperability, as it requires special software to read, even if it is sometimes slower to read in and out, and harder to share due to size. There are times where Tidy Data format can inflate the size of data due to repetition, which make it difficult to share - in these cases it might be worthwhile to consider multiple smaller, connected tables or other easily compressible formats such as apache Arrow.
 
 
 # Releasing data in R {#data-release-r}
@@ -244,15 +245,6 @@ datasets either as binary data (5903 packages) or as external datasets
 folder (68.06%) with other plain text formats such as txt, CSV, dat,
 `json` comprising less than one percent of data shipped in packages.
 
-
-
-# Data Sharing in Julia and Python {#julia-python}
-
-Sharing data in a programming language happens to some extent in other languages, such as Julia and Python.  Julia was established in 2012, and is a high level language with great performance [@bezanson2012julia].
-Similar to R, Julia provides packages for database access, API access, and data packages [@METADATA-jl]. This includes access to MySQL databases, NOAA, and actual datasets from Econometrics, faces, Market data, and even R datasets  [@NOAA-jl; @econ-data-jl; @face-data-jl; @market-data-jl; @r-data-jl].
-
-Python is a popular general purpose language, used in engineering, statistics, and computer science. 
-Including data in a python package is straightforward; a user can include data (or any other arbitrary files) inside a python package by declaring it in the manifest [@include-data-py-pkg].
 
 # Dealing with medium to large data {#med-large}
 
@@ -376,7 +368,6 @@ Long-term field surveys, where the same type of data is repeatedly measured and 
 
 One example of a very laborious, long-term study is the 50-hectare plot on Barro Colorado Island in Panama. Researchers at the field station have censused every single tree in a pre-defined plot 7 times over the past 30 years. More than a million trees have been counted. The data and metadata however are hard to reach. To obtain the data, one must fill out a form and agree to terms and conditions which require approval and authorship prior to publication. The biggest challenge with this study is that the data are stored on a personal FTP server of one of the authors. While the data are available in CSV and binary Rdata formats, the data storage servers do not have any metadata, README files or a data dictionary. A separate, public archive hosts the metadata (https://repository.si.edu/handle/10088/20925) in a PDF file (https://repository.si.edu/bitstream/handle/10088/20925/RoutputFull.pdf?sequence=1&isAllowed=y) that describe the fields.
 
-
 ## Dataset 2: Sensor data {#sdss-data}
 
 Datasets obtained from sensors such as meteorological data are typically easy to prepare and understand. This is because sensors measure specific features, so the description of data type happens upstream at the instrument-design level, and flows down to data collection. The telescope data from the Sloan Digital Sky Survey (SDSS) is a great example of sensor data. 
@@ -437,24 +428,6 @@ head(spectra) %>%
 plot_grid(plot_spectra, gg_spectra, labels = "AUTO")
 ```
 
-Metadata from the data cannot be contained in the CSV file, but is available in the URL the csv was downloaded from: `http://dr15.sdss.org/optical/spectrum/view/data/format=csv?`
-`plateid=1678&mjd=53433&fiberid=425&reduction2d=v5_7_0`
-
-Which contains details of the data, specifically:
-
-* plateid = 1678
-* mjd = 53433
-* fiberid = 425
-* reduction2d = v5.7.0
-
-These are unique identifying features of the data, which tell us:
-
-* **plateid:** the unique plate used to explore a given section of night sky. 
-* **mjd:** an integer that marks the "modified julian date" of the night of observation.
-* **fiberid:** an integer of the fiber optic cable used to transmit light to the sensor.
-* The **version** marked as `v5_7_0` is the pipeline version used for BOSS in DR12.
-
-As a researcher who does not work in astrophysics, this information on the data was quite easy to retrieve from the SDSS website section called "Understanding SDSS spectroscopic data": https://www.sdss.org/dr12/spectro/spectro_basics/.
 
 The SDSS provides data at different levels of complexity for different degrees of understanding. It is a huge project involving many people, and a staggering effort to prepare. Despite this, it is still very easy to understand. This is a further reflection on the idea that high effort  can create highly understandable data, (see Figure \@ref(fig:effort-understanding)). The impact of this data is high, having changed the way we understand the past, present and future of the universe itself. This impact is surely due to the care and thought put into making the data accessible and public. It is a statement of what is possible with good data sharing practices.
 
