@@ -1,5 +1,6 @@
 ---
-title: A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility
+title: A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility.
+author: Nicholas J Tierney^1,2,*^, Karthik Ram^3,*^
 output:
   bookdown::pdf_document2:
     toc: no
@@ -11,6 +12,11 @@ header-includes:
   - \usepackage[utf8]{inputenc}
 ---
 
+1 = Monash University, Department of Econometrics and Business Statistics
+2 = Australia Centre of Excellence for Mathematical and Statistical Frontiers
+3 = University of California, Berkeley
+* = Both authors contributed equally to the work
+ 
 ```{r setup, echo = FALSE}
 
 knitr::opts_chunk$set(echo = FALSE,
@@ -217,7 +223,7 @@ Any code used to clean and tidy the raw data should be provided in the `raw-data
 
 The data used in the data analysis should be provided in a folder called `data`. Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, observations in rows, and only one value per cell. 
 
-In contrast to "raw data", "analysis ready data" should be in an easily readable plain-text format, such as comma-, tab- or semicolon-separated. Binary or proprietary formats are discouraged in favor of interoperability, as it requires special software to read, even if it is sometimes slower to read in and out, and harder to share due to size. There are times where Tidy Data format can inflate the size of data due to repetition, which make it difficult to share - in these cases it might be worthwhile to consider multiple smaller, connected tables or other easily compressible formats such as apache Arrow.
+In contrast to "raw data", "analysis ready data" should be in an easily readable plain-text format, such as comma-, tab- or semicolon-separated files. These typically have file extensions like `.csv`, `.tsv` or `.txt`. Binary or proprietary formats are discouraged in favor of interoperability, as it requires special software to read, even if it is sometimes slower to read in and out, and harder to share due to size. For example, R data formats like `.rds`, `.rda`, or SPSS, STATA, or SAS data formats, `.sav`, `.dta`, or `.sas7bdat`.
 
 
 # Releasing data in R {#data-release-r}
