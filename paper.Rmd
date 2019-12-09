@@ -1,6 +1,6 @@
 ---
 title: A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility.
-author: Nicholas J Tierney^1,2,*^, Karthik Ram^3,*^
+author: Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)
 output:
   bookdown::pdf_document2:
     toc: no
@@ -13,9 +13,12 @@ header-includes:
 ---
 
 1 = Monash University, Department of Econometrics and Business Statistics
+
 2 = Australia Centre of Excellence for Mathematical and Statistical Frontiers
+
 3 = University of California, Berkeley
-* = Both authors contributed equally to the work
+
+\* = Both authors contributed equally to the work
  
 ```{r setup, echo = FALSE}
 
@@ -31,7 +34,7 @@ suppressMessages(library(cowplot))
 ```
 
 
-> "Data! data! data!" he cried impatiently. "I can't make bricks without clay." - Sherlock Holmes (PBS Series, 2010-2017)
+> "Data! data! data!" he cried impatiently. "I can't make bricks without clay." - Sherlock Holmes (The Adventure of the Copper Beeches by Sir Arthur Conan Doyle)
 
 # Introduction {#intro}
 
@@ -162,7 +165,7 @@ The journal PLOS Comp Bio requires that data submitted cannot be more restrictiv
 
 The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
-Other licenses or notices to be aware of are **copyrighted data**, and **data embargoes**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data.
+Other licenses or notices to be aware of are **copyrighted data**, and **data embargoes**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data. Databases may also be licensed with the Open Data Commons Open Database License: https://opendatacommons.org/licenses/odbl/, which provides provisions for sharing, creating, and adapting, provided that work is attributed, shared, and kept open.
 
 ## Citation: How you want your data to be cited {#cite}
 
@@ -194,27 +197,9 @@ knitr::include_graphics(here::here("figures",
 
 This contains fields such as "path", which describe the file path to the data, and a schema with subfields name and type, for each variable. It also provides information for licensing and features such as line breaks, and delimiters, useful to ensure the data is correctly imported into a machine. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as csvy [@csvy], an extended `csv` format, which has additional front matter in a lightweight markup format (YAML) using Table Schema.
 
-In contrasst to a CSV data dictionary, JSON-LD has a defined, nested structure, which means more can be communicated efficiently, while still maintaining readability, and avoiding extra writing and repetition that comes with a plain CSV where everything is defined from scratch.
+In contrast to a CSV data dictionary, JSON-LD has a defined, nested structure, which means more can be communicated efficiently, while still maintaining readability, and avoiding extra writing and repetition that comes with a plain CSV where everything is defined from scratch.
 
-Another rich format is XML, the eXtensible Markup Language. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is very powerful - it powers the entire Microsoft Office suite, but for metadata purposes it is not as human readable. However, one example of its usage is in EML, the Ecological Metadata Language. XML and JSON can be converted into each others respective formats
-
-Expand on:
-
-- The holy grail of the semantic web: JSON-LD
-
-- readers just been advised to make a:
-  - a csv data dictionary,
-  - put that in the README
-  - then make a JSON file. 
-Is there a way to discuss strategies on harmonising all these formats?
-
-
-
-- we could map out how these things link together (e.g., you can turn JSON into xml with package ...)
-- make a table that describes how to do something in R, or Python, or Julia
-
-
-
+Another rich format is XML, the e**X**tensible **M**arkup **L**anguage. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is very powerful - it powers the entire Microsoft Office suite, but for metadata purposes it is not as human readable. XML is used is in EML, the Ecological Metadata Language. XML differs to JSON in that JSON is shorter, and quicker and easier to read and write. JSON can also be parsed with standard JavaScript, whereas XML must be parsed by a special XML parser. JSON has key-value pairs of information, whereas XML represents data in a tree structure. XML and JSON can be converted into each others respective formats, for example with the `json` or `xml2` R packages.
 
 ## Raw data: The original or first data provided {#raw-data}
 
@@ -344,10 +329,10 @@ This is a good option when the data is appropriate for the domain. This is often
 
 A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite. Data can be placed in a long term archive and a DOI can be minted. This DOI can then be used in other venues, such as domain specific or even self hosted, and will ensure that the projects refer back appropriately.
 
-If the dataset you are shipping has a research application, the most relevant home for it would be the research data repositories **zenodo** or **dryad**. Zenodo, Launched in 2013 in a joint collaboration between openAIRE and CERN, provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Dryad performs data curation
+If the dataset you are shipping has a research application, the most relevant home for it would be the research data repositories **zenodo** or **dryad**. Zenodo, Launched in 2013 in a joint collaboration between openAIRE and CERN, provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Dryad will take data from any field of research, and perform human quality control and assistance  of the data, with the ability to link data with a journal publication, but requires a data publishing fee.
 
 
-```{r create-draft-table, }
+```{r create-draft-table}
 tibble::tribble(
   ~Organisation,              ~Pros, ~Cons,
   "FigShare",                 "",     "",
@@ -355,7 +340,7 @@ tibble::tribble(
   "Zenodo",                   "",     "",
   "Institutional Repository", "",     "",
 ) %>% 
-  knitr::kable(caption = "Table Comparing common data submission platforms")
+  knitr::kable(caption = "Comparison of common data submission platforms.")
 ```
 
 ## Publishing data in a data repository
@@ -496,5 +481,6 @@ The key message for the reader is that accessing data for reproducibility should
 - Mile McBain
 - Anna Krystalli
 - Daniella Lowenberg
+- ACEMS International Mobility Programme
 
 # Literature Cited
