@@ -194,12 +194,13 @@ knitr::include_graphics(here::here("figures",
 
 This contains fields such as "path", which describe the file path to the data, and a schema with subfields name and type, for each variable. It also provides information for licensing and features such as line breaks, and delimiters, useful to ensure the data is correctly imported into a machine. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as csvy [@csvy], an extended `csv` format, which has additional front matter in a lightweight markup format (YAML) using Table Schema.
 
+In contrasst to a CSV data dictionary, JSON-LD has a defined, nested structure, which means more can be communicated efficiently, while still maintaining readability, and avoiding extra writing and repetition that comes with a plain CSV where everything is defined from scratch.
+
+Another rich format is XML, the eXtensible Markup Language. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is very powerful - it powers the entire Microsoft Office suite, but for metadata purposes it is not as human readable. However, one example of its usage is in EML, the Ecological Metadata Language. XML and JSON can be converted into each others respective formats
+
 Expand on:
 
-- Explain formats like XML, as people might come into formats that wany XML.
-- The power lies in the contrast to a csv data dictionary, as there is a defined, nested structure.
-- Ontologies and domain specific metadata standards such as EML might also be worth mentioning.
-- introduce the holy grail of the semantic web: JSON-LD
+- The holy grail of the semantic web: JSON-LD
 
 - readers just been advised to make a:
   - a csv data dictionary,
@@ -207,9 +208,13 @@ Expand on:
   - then make a JSON file. 
 Is there a way to discuss strategies on harmonising all these formats?
 
+
+
 - we could map out how these things link together (e.g., you can turn JSON into xml with package ...)
 - make a table that describes how to do something in R, or Python, or Julia
-- 
+
+
+
 
 ## Raw data: The original or first data provided {#raw-data}
 
@@ -319,7 +324,7 @@ Documentation challenges may evolve over time as the cost of making them easy to
 
 # Publishing and repositories {#publish-repos}
 
-It is worth distinguishing between sharing data and publishing data. One can share data in numerous ways without going through the trouble of publishing it, which often requires metadata that a human must verify. Data can be shared in numerous ways, including placing it in a repository, packaging it with methods, or using various free tiers of commercial services (such as dropbox or google drive). However, one must publish data when appropriate.
+It is worth distinguishing between sharing data and publishing data. Data can be shared in numerous ways without going through the trouble of publishing it, which often requires metadata that a human must verify. Data can be shared in numerous ways, including placing it in a repository, packaging it with methods, or using various free tiers of commercial services (such as dropbox or google drive). However, one must publish data when appropriate.
 
 There are a three common options for publishing data in research:
 
@@ -329,17 +334,29 @@ There are a three common options for publishing data in research:
 
 We discuss each of these options and provide recommendations on how to publish data in these areas.
 
-In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databases. This approach **gets the data somewhere rather than nowhere**. Its minimal features means it is simple to maintain. In addition, piggyback also keeps the data in the same location as the code, making it easier and simpler to organise. A downsides is that it does not scale to larger data. Self hosting the data is an option, but we discourage this, as it may succumb to bit rot -.
+In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databases. This approach **gets the data somewhere rather than nowhere**. Its minimal features means it is simple to maintain. In addition, piggyback also keeps the data in the same location as the code, making it easier and simpler to organise. A downsides is that it does not scale to larger data. Self hosting the data is an option, but we discourage this, as it may succumb to bit rot - where data is corrupted, degraded, or servers turn off.
 
-In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, an astronomy project hosts its data at the Sloan Digital Sky Survey (SDSS), and Genetic data can be hosted at GenBank (@GenBank), and so on.  Some other places to put data include the open science framework [@OSF], Dataverse, [@dataverse], and Data World, [@dataworld]. Other datasets might be produced
+In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, an astronomy project hosts its data at the Sloan Digital Sky Survey (SDSS), and Genetic data can be hosted at GenBank (@GenBank), and so on.
 
-The purpose, use, and origin of the data is an important component to consider. Data for research has a different domain compared to data collected by governments, or by journalists. Many governments or civil organizations are now making their own data available through a government website interface. Media and journalism groups are also making their data available either through places like GitHub [@pudding-data], or organizations such as Data World, or may self host their data, such as five thirty eight [@data-538].
+The purpose, use, and origin of the data is an important component to consider. Data for research has a different domain compared to data collected by governments, or by journalists. Many governments or civil organizations are now making their own data available through a government website interface. Media and journalism groups are also making their data available either through places like GitHub [@pudding-data], or may self host their data, such as five thirty eight [@data-538].
 
 This is a good option when the data is appropriate for the domain. This is often decided by community standards. We recommend adhering to community standards for a location to publish your data, as this will likely improve data reuse. The guidelines suggested in this paper for sharing the data should be included.
 
 A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite. Data can be placed in a long term archive and a DOI can be minted. This DOI can then be used in other venues, such as domain specific or even self hosted, and will ensure that the projects refer back appropriately.
 
-If the dataset you are shipping has a research application, the most relevant home for it would be Zenodo, a research data repository. Launched in 2013 in a joint collaboration between openAIRE and CERN, Zenodo provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request.
+If the dataset you are shipping has a research application, the most relevant home for it would be the research data repositories **zenodo** or **dryad**. Zenodo, Launched in 2013 in a joint collaboration between openAIRE and CERN, provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Dryad performs data curation
+
+
+```{r create-draft-table, }
+tibble::tribble(
+  ~Organisation,              ~Pros, ~Cons,
+  "FigShare",                 "",     "",
+  "Dryad",                    "",     "",
+  "Zenodo",                   "",     "",
+  "Institutional Repository", "",     "",
+) %>% 
+  knitr::kable(caption = "Table Comparing common data submission platforms")
+```
 
 ## Publishing data in a data repository
 
@@ -473,5 +490,11 @@ The open science literature has been advocating the importance of data sharing f
 Over the years researchers have made data available in a multitude of unreliable ways, including offering downloads from university websites, FTP repositories, and password protected servers, all of which are prone to bit rot. In rare cases where the data are deposited in a permanent archive, insufficient metadata and missing data processing scripts have made it harder and time intensive to map these to code.  Our goal here is to describe a variety of ways in which a researcher can ship data, analogous to how easy it has become to push code to services like GitHub. The choice of technology and method all depends on the nature of the data, and its size and complexity. Once the issue of access is solved, we also discuss how much metadata to include in order to make the data useful. Ultimately there is a tradeoff to consider on a case by case basis. Long-term studies with complex protocols require structured metadata, while more standardized datasets such as those coming from sensors require far less effort.
 
 The key message for the reader is that accessing data for reproducibility should come with minimal barriers. Having users jump through data usage forms or other barriers is enough of a roadblock to dissuade users, which over time will make it hard to track the provenance of critical studies. For data with broad impact, one should further invest effort in documenting the metadata (either unstructured or structured depending on the complexity) and also focus on ensuring that at least one archival copy exists in a permanent archive. Following this continuum can ensure that more and more computational work becomes readily reproducible without unreasonable effort.
+
+# Acknowledgements
+
+- Mile McBain
+- Anna Krystalli
+- Daniella Lowenberg
 
 # Literature Cited
