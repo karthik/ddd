@@ -63,7 +63,7 @@ We discuss how to share and/or publish data and cover various tradeoffs when dec
 
 **Principles for all three**
 
-To share data analysis data, there should be some minimal set of requirements. For example, the data should contain information on metadata, data dictionaries, the README, and data used in analysis (See Section \@ref(minimal)). No matter where data is submitted, there should ideally be a canonical data repo in one long term archive that links to others with a DOI.
+To share data analysis data, there should be some minimal set of requirements. For example, the data should contain information on metadata, data dictionaries, the README, and data used in analysis (See Section \@ref(minimal)). No matter where data is submitted, there should ideally be a canonical data repository in one long term archive that links to others with a DOI.
 
 There are 8 pieces of content to consider for data sharing:
 
@@ -199,7 +199,7 @@ This contains fields such as "path", which describe the file path to the data, a
 
 In contrast to a CSV data dictionary, JSON-LD has a defined, nested structure, which means more can be communicated efficiently, while still maintaining readability, and avoiding extra writing and repetition that comes with a plain CSV where everything is defined from scratch.
 
-Another rich format is XML, the e**X**tensible **M**arkup **L**anguage. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is very powerful - it powers the entire Microsoft Office suite, but for metadata purposes it is not as human readable. XML is used is in EML, the Ecological Metadata Language. XML differs to JSON in that JSON is shorter, and quicker and easier to read and write. JSON can also be parsed with standard JavaScript, whereas XML must be parsed by a special XML parser. JSON has key-value pairs of information, whereas XML represents data in a tree structure. XML and JSON can be converted into each others respective formats, for example with the `json` or `xml2` R packages.
+Another rich format is XML, the e**X**tensible **M**arkup **L**anguage. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is very powerful - it powers the entire Microsoft Office suite, but for metadata purposes it is not as human readable as JSON. JSON is shorter, and quicker and easier to read and write than XML, and can also be parsed with standard JavaScript, whereas XML must be parsed by a special XML parser. XML and JSON can be converted into each others respective formats, for example with the `json` or `xml2` R packages. XML is still used as metadata for data storage, for example in EML, the Ecological Metadata Language [@EML-about].
 
 ## Raw data: The original or first data provided {#raw-data}
 
@@ -329,8 +329,7 @@ This is a good option when the data is appropriate for the domain. This is often
 
 A **Long Term Archive** is the best option to share the data. Long term archives provide information such as DOI (Digital Object Identifier) that make it easier to cite. Data can be placed in a long term archive and a DOI can be minted. This DOI can then be used in other venues, such as domain specific or even self hosted, and will ensure that the projects refer back appropriately.
 
-If the dataset you are shipping has a research application, the most relevant home for it would be the research data repositories **zenodo** or **dryad**. Zenodo, Launched in 2013 in a joint collaboration between openAIRE and CERN, provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. Dryad will take data from any field of research, and perform human quality control and assistance  of the data, with the ability to link data with a journal publication, but requires a data publishing fee.
-
+If the dataset you are shipping has a research application, the most relevant home would be the research data repositories **zenodo** or **dryad**. Zenodo, Launched in 2013 in a joint collaboration between openAIRE and CERN, provides a free, archival location for any researcher to depositor their datasets. The only limits to file sizes are 50gb for individual files, which is generous enough to accommodate a large number of use cases. Zenodo is able to accommodate larger file sizes upon request. The Dryad Digital Repository (@dryad) will take data from any field of research, and perform human quality control and assistance  of the data, with the ability to link data with a journal publication, in exchange for a data publishing fee.
 
 ```{r create-draft-table}
 tibble::tribble(
@@ -357,7 +356,6 @@ Data papers are similar to research articles, they have titles, authors, affilia
 Whilst useful, these requirements do not tell the author how to actually structure the data and folders. Instead providing ideas on what they should include. This is a useful step towards improving data reuse, but it _lacks some minimal structure that allows a researcher to have a predictable way to access and interpret the data_.
 
 Other journals operating in this space include journals like "data in brief", "Data", and "Nature Scientific Data". Guidelines for what is required in the content of the paper, and the required information along with the data (meta data, data format, etc.) vary by journal.
-
 
 
 # Tooling for packaging data {#tooling}
@@ -448,7 +446,7 @@ The vast majority of datasets are handled in an ad-hoc manner [@Michener2001] an
 # Ten simple rules for publishing data {#ten-rules}
 
 1. **Decide whether publishing is appropriate for your data** 
-It is critical to publish your data if they are the basis for a peer-reviewed research publication. To be broadly useful, your data must be deposited in a permanent archive, to ensure that it does not disappear from a ephemeral location such as your university website. It shoudl also contain useful metadata so that someone outside the project team can understand what the data mean. However, this level of effort is not always critical for all data science efforts. For small-scale projects such as ones where one might generate simulated datasets, this level of curation is highly unnecessary. Here making data available in a transient location like GitHub or a website is sufficient.
+It is critical to publish your data if they are the basis for a peer-reviewed research publication. To be broadly useful, your data must be deposited in a permanent archive, to ensure that it does not disappear from a ephemeral location such as your university website. It should also contain useful metadata so that someone outside the project team can understand what the data mean. However, this level of effort is not always critical for all data science efforts. For small-scale projects such as ones where one might generate simulated datasets, this level of curation is highly unnecessary. Here making data available in a transient location like GitHub or a website is sufficient.
 
 2. **Include a README** file with your data archive. README files have a long history in software (https://medium.com/@NSomar/readme-md-history-and-components-a365aff07f10) and are named so that the ASCII systems capital letters filename would show this file first, making it the obvious place to put relevant information. In the context of datasets, READMEs are particularly useful when there are no reliable standards. The best practice here is to have one README per dataset, with names that easily associate with the corresponding data files. In addition to metadata about the data such as variable names, units of measurement and code books, the README should also contain information on licenses, authors/copyright, a title, and dates and locations where the data were collected. Additionally keywords, author identifiers such as ORCID, and funder information would be useful.
 
