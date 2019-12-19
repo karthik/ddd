@@ -216,7 +216,7 @@ A Digital Object Identifier (DOI), is a unique identifier for a digital object s
 
 ## Machine readable metadata {#machine-metadata}
 
-The README and data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. Machine readable metadata also provide a structure that allow the data to be indexed and searched online, through services scuh as google datasets search. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. For example, a dataset called "demographics" with three variables is shown in Table \@ref(tab:table-machine-readable), which has the Java Script Object Notation (JSON) equivalent in Figure \@ref(fig:json-code).
+The README and data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. Machine readable metadata also provide a structure that allow the data to be indexed and searched online, through services scuh as google datasets search [@google-data-search]. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. For example, a dataset called "demographics" with three variables is shown in Table \@ref(tab:table-machine-readable), which has the Java Script Object Notation (JSON) equivalent in Figure \@ref(fig:json-code).
 
 ```{r table-machine-readable}
 table_machine_readable <- data.frame(
