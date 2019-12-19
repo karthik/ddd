@@ -80,7 +80,7 @@ knitr::include_graphics(here::here("figures",
                                    "directory-structure.png"))
 ```
 
-Out of these sections, the minimal viable format are the following provided in one main directory folder:
+Out of these sections, the minimal files to provide, in order of most importance should be provided in one main directory folder:
 
 1. README
 2. Data dictionary
@@ -93,7 +93,9 @@ These sections are now described.
 
 ## README: A Human readable description of the data {#readme}
 
-The README is often the first place people will go to learn more about data, and helps users navigate the repository. It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
+In the context of datasets, READMEs are particularly useful when there are no reliable standards. The best practice here is to have one README per dataset.
+
+A README is often the first place people will go to learn more about anything in a folder - they are very common in softwar, and historically were includd so that the uppecase lettrs of README meant ti would be at the top of a directory. In the context of data, a README when there are no reliable standards. It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
 
 - **Who** collected it
 - **What** is the data
@@ -102,18 +104,62 @@ The README is often the first place people will go to learn more about data, and
 - **Why** it was collected
 - **How** is was collected
 
-The README should be placed in the top level of the project. It should be brief, and provide links to the other aforementioned sections. Saving a README with the extension `.md` file gives the author the formatting benefits of `markdown`, making it simple to insert links, tables, and make lists. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
+The README should be placed in the top level of the project, and with one README per dataset. It should be brief, and provide links to the other aforementioned sections, and be in one directory. Saving a README with the extension `.md` file gives the author the formatting benefits of `markdown`, making it simple to insert links, tables, and make lists. In systems like GitHub, a README file is detected and rendered in nice HTML on the repository by default.
 
 ## Data dictionary: Human readable dictionary of data contents {#data-dictionary}
 
-A data dictionary provide human readable description of the data, providing context on the nature and structure of the data. This helps someone not familiar with the data understand, and use the data. At a minimum they should contain:
+A data dictionary provide human readable description of the data, providing context on the nature and structure of the data. This helps someone not familiar with the data understand, and use the data. At a minimum they should contain the following pieces of information about the data:
 
 - **variable names**
 - **variable labels**
 - **variable codes**, and
 - special values for **missing data**.
 
-**Variable names** should be short, descriptive names with no spaces or special characters. In the most common tabular data case, these correspond to column names, for example, "job_position", "faculty_level", and "years_at_company". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook; @Arslan2019]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, a variable could contain answers to a question, with values and codes like so: `0 = no, 1 = yes`, or for another variable indicating indoors or outdoors: `0 = inside` and `1 = outside`. These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 = yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". Date formatting should be described in the variable labels. **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the data dictionary, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown", -99, or other value codes [@White2013; @Broman2017].
+Figure \@ref(fig:variables) shows an example of the data and data dictionary details.
+**Variable names** should be short, descriptive names with no spaces or special characters. In the most common tabular data case, these correspond to column names, for example, "job_position", "faculty_level", and "years_at_uni". **Variable labels** are longer descriptions of variables. For example "University Job Position", "University Faculty Position Level", and  "Number of Years Worked at University" [@McGill-codebook; @Arslan2019]. **Variable codes** apply to categorical (factor) variables, and are the values for their contents. For example, a variable could contain answers to a question, with values and codes like so: `0 = no, 1 = yes`, to indicate if someone is in statistics, for example.  These should be consistent across similar variables to avoid problems where `0 = yes` for one variable, and `1 = yes` in another. Date variables should have consistent formatting. For example, all date information could be in format "YYYY-MM-DD", and this should not be mixed with "YYYY-DD-MM". Date formatting should be described in the variable labels. **Missing data** are values that should have been observed, but were not. The code for missingness should be documented in the data dictionary, and should nominally be `NA`. If the reason for missingness is known it should be recorded. For example, censored data, patient drop out, or measurement error can have different values, such as "unknown", -99, or other value codes [@White2013; @Broman2017].
+
+```{r variables, fig.cap = "Four tables - the data, and it's variable names, variable codes, and the meaning of missing values", fig.height = 8}
+library(tibble)
+
+dat <- tibble::tribble(
+  ~job_position, ~outside, ~statistics, ~date_started,
+   "Lecturer",        1,        1,      "2019-01-01",
+   "Professor",       0,        0,      NA,
+   "Senior Lecturer", 1,        1,      "unknown"
+)
+
+variable_labels <- tibble::tribble(
+  ~variable, ~description,
+  "job_position", "University Job Position",
+  "outside",      "Did this person study outside this university?",
+  "statistics",   "Is this perosn in the statistics faculty",
+  "date_started", "What date did this perosn start their position?"
+)
+
+variable_codes <- tibble::tribble(
+  ~variable,        ~code,
+   "job_position",   "text description of job position",
+   "outside",       "0 = not studied outside, \n1 = has studied outside",
+   "statistics",    "0 = is not in statistics dept., \n1 = is currently in statistics dept.",
+   "date_started",   "date variable in format YYYY-MM-DD, \ne.g., 2001-01-01 is 1st January, 2001"
+)
+
+missing_values <- tibble::tribble(
+  ~value, ~meaning,
+  NA,     "Missing value",
+  "unknown", "Missing value"
+)
+
+library(gridExtra)
+grid.arrange(
+  tableGrob(dat),
+  tableGrob(variable_labels),
+  tableGrob(variable_codes),
+  tableGrob(missing_values),
+  ncol = 1
+)
+
+```
 
 Table \@ref(tab:table-data-incarcerate) shows an example data dictionary table taken from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable the class (type) of the variable, and a longer description of the variable.
 
@@ -124,20 +170,20 @@ dictionary_incarcerate <- data.frame(
              "character",
              "character",
              "double"),
-  description = c("Year",
+  Description = c("Year",
                   "County-type (urban, suburban, small/mid, rural)",
                   "Category for population - either race, gender, or Total",
                   "Rate within a category for prison population per 100,000 people")
 )
 
 knitr::kable(dictionary_incarcerate,
-             caption = "The prisoner summary data dictionary, with columns on the variable, it's class, and a short description of the contents of the variable.",
+             caption = "The prisoner summary data dictionary, with columns for the variable, its class, and a short description of the contents of the variable.",
              booktabs = TRUE) %>%
   kable_styling(latex_options = c("hold_position"))
 ```
 
 
-Data dictionary tables should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form in the repository, for example, saved as a CSV.
+Data dictionary tables should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form in the repository, for example, saved as a CSV, so that they don't become trapped in a README.
 
 ## License: How to use and share the data {#license}
 
@@ -160,17 +206,17 @@ The journal PLOS Comp Bio requires that data submitted cannot be more restrictiv
 
 ### CC0
 
-The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, this means it can be copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
+The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
 Other licenses or notices to be aware of are **copyrighted data**, and **data embargoes**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data. Databases may also be licensed with the Open Data Commons Open Database License: https://opendatacommons.org/licenses/odbl/, which provides provisions for sharing, creating, and adapting, provided that work is attributed, shared, and kept open.
 
 ## Citation: How you want your data to be cited {#cite}
 
-A Digital Object Identifier (DOI), is a unique identifier for a digital object such as a paper, poster, or software, and is a prerequisite for citation. For example, if the data are deposited in dryad or Zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, the DOI is "minted" by DataCite, who provide DOIs for research outputs and data. This means that when citing data, it only makes sense to cite datasets that have been deposited into a DataCite compliant repository. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
+A Digital Object Identifier (DOI), is a unique identifier for a digital object such as a paper, poster, or software, and is a prerequisite for citation. For example, if the data are deposited in repositories like Dryad or Zenodo, the best practice would be to copy the citation created by these repositories. Under the hood, the DOI is "minted" by DataCite, who provide DOIs for research outputs and data. This means that when citing data, it only makes sense to cite datasets that have been deposited into a DataCite compliant repository. If a DOI is unavailable, a citation will be meaningless, as it cannot be tracked by any means.
 
 ## Machine readable metadata {#machine-metadata}
 
-The README, and data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. Machine readable metadata also provide a structure that means the data can be indexed and searched. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. For example, a dataset called "demographics" with three variables is shown in Table \@ref(tab:table-machine-readable), which has the Java Script Object Notation (JSON) equivalent in Figure \@ref(fig:json-code).
+The README and data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. Machine readable metadata also provide a structure that allow the data to be indexed and searched online, through services scuh as google datasets search. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. For example, a dataset called "demographics" with three variables is shown in Table \@ref(tab:table-machine-readable), which has the Java Script Object Notation (JSON) equivalent in Figure \@ref(fig:json-code).
 
 ```{r table-machine-readable}
 table_machine_readable <- data.frame(
@@ -196,7 +242,7 @@ This contains fields such as "path", which describe the file path to the data, a
 
 In contrast to a CSV data dictionary, JSON-LD has a defined, nested structure, which means more can be communicated efficiently, while still maintaining readability, and avoiding extra writing and repetition that comes with a plain CSV where everything is defined from scratch.
 
-Another rich format is XML, the e**X**tensible **M**arkup **L**anguage. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is very powerful - it powers the entire Microsoft Office suite, but for metadata purposes it is not as human readable as JSON. JSON is shorter, and quicker and easier to read and write than XML, and can also be parsed with standard JavaScript, whereas XML must be parsed by a special XML parser. XML and JSON can be converted into each others respective formats, for example with the `json` or `xml2` R packages. XML is still used as metadata for data storage, for example in EML, the Ecological Metadata Language [@EML-about].
+Another rich format is XML, the e**X**tensible **M**arkup **L**anguage. This was an early iteration on the idea of a plain text format that was both human and machine readable. It is powerful and extensible (it powers the entire Microsoft Office suite), but for metadata purposes it is not as human readable as JSON. JSON is shorter, and quicker and easier to read and write than XML, and can also be parsed with standard JavaScript, whereas XML must be parsed by a special XML parser. XML and JSON can be converted into each others respective formats, for example with the `json` or `xml2` R packages. XML is still used as metadata for data storage, for example in EML, the Ecological Metadata Language [@EML-about].
 
 ## Raw data: The original or first data provided {#raw-data}
 
@@ -225,9 +271,7 @@ A more common use case is to include data as part of a regular package where ana
 
 2. When the primary motivation for shipping data is to illustrate visualization techniques or to run examples, one can skip the raw data and processing scripts and only include the binary data. As long as the total package size doesn't exceed 5 megabytes, it would be acceptable as part of CRAN. For cases when this size is hard to maintain, CRAN recommends data-only packages that will be rarely updated. For a detailed discussion on this issue and alternative approaches, see @Brooke_Anderson2017.
 
-Unlike CRAN, bioconductor, does not have a 5 megabyte limit for package size and offers a more liberal data inclusion policy. They have a strict specification for how to organise genomic data in a package, so they can be used for data analysis out of the box. This is a robust solution, but only works for homogeneous data as found with bioinformatics. For example, data in their ExperimentData section (bioconductor.org/packages/3.9/data/experiment) can be used in a reliable way. However, such a strict standard would be impossible to enforce or scale on a repository as heterogeneous as CRAN.
-
-However, these packages are still generally used for demonstration or testing purposes, over generating new knowledge for papers.
+Unlike CRAN, bioconductor does not have a 5 megabyte limit for package size and offers a more liberal data inclusion policy. They have a strict specification for how to organise genomic data in a package, so they can be used for data analysis out of the box. This is a robust solution, but only works for homogeneous data as found with bioinformatics. For example, data in their ExperimentData section (bioconductor.org/packages/3.9/data/experiment) can be used in a reliable way. However, such a strict standard would be impossible to enforce or scale on a repository as heterogeneous as CRAN. However, these packages are still generally used for demonstration or testing purposes, over generating new knowledge for papers.
 
 One major disadvantage of packaging data inside R is that it makes the data availability very language centric. Non R users are unlikely to download and export data out of a package. This is why we recommend, as a rule, that researchers also archive data in a long-term data repository. These include domain specific repositories (see Section \@ref(publish-repos)) or more general purpose ones such as Zenodo or Figshare and include the persistent identifier in all locations where the data is referenced such as the manuscript, notebook and data package.
 
@@ -308,7 +352,7 @@ Documentation challenges may evolve over time as the cost of making them easy to
 
 It is worth distinguishing between sharing data and publishing data. Data can be shared in numerous ways without going through the trouble of publishing it, which often requires metadata that a human must verify. Data can be shared in numerous ways, including placing it in a repository, packaging it with methods, or using various free tiers of commercial services (such as dropbox or google drive). However, one must publish data when appropriate.
 
-There are a three common options for publishing data in research:
+There are three common options for publishing data in research:
 
 1. **Least Moving Parts**
 2. **Domain Specific Venue**
@@ -316,7 +360,7 @@ There are a three common options for publishing data in research:
 
 We discuss each of these options and provide recommendations on how to publish data in these areas.
 
-In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databases. This approach **gets the data somewhere rather than nowhere**. Its minimal features means it is simple to maintain. In addition, piggyback also keeps the data in the same location as the code, making it easier and simpler to organise. A downsides is that it does not scale to larger data. Self hosting the data is an option, but we discourage this, as it may succumb to bit rot - where data is corrupted, degraded, or servers turn off.
+In **Least Moving Parts**, the data might be published with an R package, or as part of a GitHub release using piggyback @piggyback, or a in serverless databases. This approach **gets the data somewhere rather than nowhere**. Its minimal features means it is simple to maintain. In addition, piggyback also keeps the data in the same location as the code, making it easier and simpler to organise. A downside is that it does not scale to larger data. Self hosting the data is an option, but we discourage this, as it may succumb to bit rot - where data is corrupted, degraded, or servers turn off.
 
 In **Domain Specific Venue**, data can be published in journal data papers, or venues specific to the type of data. For example, an astronomy project hosts its data at the Sloan Digital Sky Survey (SDSS), and Genetic data can be hosted at GenBank (@GenBank), and so on.
 
@@ -344,13 +388,13 @@ tibble::tribble(
 
 ## Publishing data through a data journal
 
-Data used in publications are often shared in the supplementary materials of articles, or served on repositories such as the Dryad Digital Repository (@dryad). Dryad makes data from scientific publications discoverable, reusable, and citable. It is well funded through grants from the NSF, European Commission.
+Data used in publications are often shared in the supplementary materials of articles, or served on repositories such as the Dryad Digital Repository (@dryad). Dryad makes data from scientific publications discoverable, reusable, and citable. It is well funded through grants from the National Science Foundation and European Commission.
 
-To provide better context around the data used in research and better expose data for reuse, journals are now adding "data papers". These are specifically designed for publishing articles about the data, and sharing it. This benefits both researchers and readers. Researchers receive credit for data they have collected or produced. Readers get more context about the data.
+To provide better context around the data used in research and better expose data for reuse, journals are now adding "data papers". These are specifically designed for publishing articles about the data, and sharing it. This benefits both researchers and readers. Researchers receive credit for data they have collected or produced, and readers get more context about the data.
 
 Data papers are similar to research articles, they have titles, authors, affiliations, abstract, and references.  They generally require an explanation of why the data is useful to others, a direct link to the data, description of the design, materials, and methods. Other information on the subject area, data type, format, and related articles are usually required.
 
-Whilst useful, these requirements do not tell the author how to actually structure the data and folders. Instead providing ideas on what they should include. This is a useful step towards improving data reuse, but it _lacks some minimal structure that allows a researcher to have a predictable way to access and interpret the data_.
+Whilst useful, these requirements do not tell the author how to actually structure the data and folders for reuse. Instead, they provide ideas on what they should include. This is a useful step towards improving data reuse, but it _lacks some minimal structure that allows a researcher to have a predictable way to access and interpret the data_.
 
 Other journals operating in this space include journals like "data in brief", "Data", and "Nature Scientific Data". Guidelines for what is required in the content of the paper, and the required information along with the data (meta data, data format, etc.) vary by journal.
 
@@ -377,7 +421,7 @@ Datasets obtained from sensors such as meteorological data are typically easy to
 
 The SDSS data includes photometric and spectroscopic information obtained from a 2.5m telescope at Apache Point Observatory in New Mexico, operating since 2000, producing over 200Gb of data every day [@sdss-one-paper; @sdss-four-paper; @sdss-website]. This data has been used to produce the most detailed, three dimensional maps of the universe ever made.
 
-The data are are free to use and publicly accessible, with the interface to the data being designed to cover a wide range of skills. For example, the marvin service to streamline access and visualisation of MaNGA data [@marvin-service], through to raw data access (see Figure \@ref(fig:sdss-raw-data-screenshot)).
+The data are free to use and publicly accessible, with the interface to the data being designed to cover a wide range of skills. For example, the marvin service to streamline access and visualisation of MaNGA data [@marvin-service], through to raw data access (see Figure \@ref(fig:sdss-raw-data-screenshot)).
 
 ```{r sdss-raw-data-screenshot, fig.cap = "Screenshot of Raw data avaialbe through DR15 FITS.", out.width = "60%", fig.align = "center"}
 knitr::include_graphics(here::here("figures",
@@ -387,7 +431,7 @@ knitr::include_graphics(here::here("figures",
 The telescope data is very high quality, with the following features:
 
 - Metadata in the machine readable standard, SCHEMA
-- Data in multiple formats (e.g., .csv and .fits, database)
+- Data in multiple formats (e.g., .csv, .fits, and database)
 - Previously released data available in archives
 - Entire datasets available for download
 - Raw data before processed into database is also available
@@ -443,7 +487,7 @@ The vast majority of datasets are handled in an ad-hoc manner [@Michener2001] an
 # Ten simple rules for publishing data {#ten-rules}
 
 1. **Decide whether publishing is appropriate for your data** 
-It is critical to publish your data if they are the basis for a peer-reviewed research publication. To be broadly useful, your data must be deposited in a permanent archive, to ensure that it does not disappear from a ephemeral location such as your university website. It should also contain useful metadata so that someone outside the project team can understand what the data mean. However, this level of effort is not always critical for all data science efforts. For small-scale projects such as ones where one might generate simulated datasets, this level of curation is highly unnecessary. Here making data available in a transient location like GitHub or a website is sufficient.
+It is critical to publish your data if they are the basis for a peer-reviewed research publication. To be broadly useful, your data must be deposited in a permanent archive, to ensure that it does not disappear from a ephemeral location such as your university website. It should also contain useful metadata so that someone outside the project team can understand what the data, and variables, mean. However, this level of effort is not always critical for all data science efforts. For small-scale projects such as ones where one might generate simulated datasets, this level of curation is highly unnecessary. Here making data available in a transient location like GitHub or a website is sufficient.
 
 2. **Include a README** file with your data archive. README files have a long history in software (https://medium.com/@NSomar/readme-md-history-and-components-a365aff07f10) and are named so that the ASCII systems capital letters filename would show this file first, making it the obvious place to put relevant information. In the context of datasets, READMEs are particularly useful when there are no reliable standards. The best practice here is to have one README per dataset, with names that easily associate with the corresponding data files. In addition to metadata about the data such as variable names, units of measurement and code books, the README should also contain information on licenses, authors/copyright, a title, and dates and locations where the data were collected. Additionally keywords, author identifiers such as ORCID, and funder information would be useful.
 
@@ -461,13 +505,13 @@ It is critical to publish your data if they are the basis for a peer-reviewed re
 
 9. **Only add a citation if your data has a DOI**. A citation only makes sense when your data has a DataCite compliant DOI, which is automatically provided when data is published in repositories like Zenodo and Dryad. Although a citation may not accrue references, without a DOI it is guaranteed not to.
 
-10. **Stick with simple data formats** to ensure long-term usefulness of datasets in a way that is not tied to transient technologies (such as ever changing spreadsheet standards), store the data as plain text (e.g., CSV) where possible. This can take the form of comma/tab separated files in most cases. This will ensure transparency and future proof your data.
+10. **Stick with simple data formats** to ensure long-term usefulness of datasets in a way that is not tied to transient technologies (such as ever changing spreadsheet standards), store the data as plain text (e.g., CSV) where possible. This can take the form of comma, or tab separated files in most cases. This will ensure transparency, and future proof your data.
 
 # Conclusions {#conclusions}
 
 The open science literature has been advocating the importance of data sharing for a long time. Many of these articles appeal to the broader benefits of data sharing, but rarely talk about the practical considerations of making data available alongside code. Trivial reproducibility has always relied upon the idea that as long as code exists on a platform such as GitHub, and clearly lists open source dependencies, one should be able to run the code at a future time. Containerization efforts such as Docker have made it even easier to capture system dependencies, and rapidly launch containers. But true reproducibility requires not just code, but also data. 
 
-Over the years researchers have made data available in a multitude of unreliable ways, including offering downloads from university websites, FTP repositories, and password protected servers, all of which are prone to bit rot. In rare cases where the data are deposited in a permanent archive, insufficient metadata and missing data processing scripts have made it harder and time intensive to map these to code.  Our goal here is to describe a variety of ways in which a researcher can ship data, analogous to how easy it has become to push code to services like GitHub. The choice of technology and method all depends on the nature of the data, and its size and complexity. Once the issue of access is solved, we also discuss how much metadata to include in order to make the data useful. Ultimately there is a tradeoff to consider on a case by case basis. Long-term studies with complex protocols require structured metadata, while more standardized datasets such as those coming from sensors require far less effort.
+Over the years researchers have made data available in a multitude of unreliable ways, including offering downloads from university websites, FTP repositories, and password protected servers, all of which are prone to bit rot. In rare cases where the data are deposited in a permanent archive, insufficient metadata and missing data processing scripts have made it harder and more time intensive to map these to code.  Our goal here is to describe a variety of ways a researcher can ship data, analogous to how easy it has become to push code to services like GitHub. The choice of technology and method all depends on the nature of the data, and its size and complexity. Once the issue of access is solved, we also discuss how much metadata to include in order to make the data useful. Ultimately there is a tradeoff to consider on a case by case basis. Long-term studies with complex protocols require structured metadata, while more standardized datasets such as those coming from sensors require far less effort.
 
 The key message for the reader is that accessing data for reproducibility should come with minimal barriers. Having users jump through data usage forms or other barriers is enough of a roadblock to dissuade users, which over time will make it hard to track the provenance of critical studies. For data with broad impact, one should further invest effort in documenting the metadata (either unstructured or structured depending on the complexity) and also focus on ensuring that at least one archival copy exists in a permanent archive. Following this continuum can ensure that more and more computational work becomes readily reproducible without unreasonable effort.
 
