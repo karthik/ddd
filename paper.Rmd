@@ -12,13 +12,18 @@ header-includes:
   - \usepackage[utf8]{inputenc}
 ---
 
-1 = Monash University, Department of Econometrics and Business Statistics
+1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia
 
-2 = Australia Centre of Excellence for Mathematical and Statistical Frontiers
+2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)
 
-3 = University of California, Berkeley
+3 = University of California, Berkeley, USA
 
 \* = Both authors contributed equally to the work
+
+**Abstract**
+
+Data makes science possible. Sharing data improves visibility, and makes the research process transparent. This increases trust in the work, and allows for independent reproduction of results. However, a large proportion of data from published research is often only available to the original authors. Despite the obvious benefits of sharing data, and scientists' advocating for the importance of sharing data, most advice on sharing data discusses its broader benefits, rather than the practical considerations of sharing. This paper provides practical, actionable advice on how to actually share data alongside research. The key message is sharing data falls on a continuum, and entering it should come with minimal barriers.
+
  
 ```{r setup, echo = FALSE}
 
@@ -33,10 +38,11 @@ suppressMessages(library(ggplot2))
 suppressMessages(library(cowplot))
 ```
 
+# Introduction {#intro}
+
 
 > "Data! data! data!" he cried impatiently. "I can't make bricks without clay." - Sherlock Holmes (The Adventure of the Copper Beeches by Sir Arthur Conan Doyle)
 
-# Introduction {#intro}
 
 Data are a fundamental currency upon which scientific discoveries are made. Without access to good data, it becomes extremely difficult, if not impossible, to advance science. Yet, a large majority of data on which published research papers are based rarely see the light of day and are only visible to the original authors [@Rowhani-Farid2016; @Stodden2018].  Sharing data sets upon publication of a research paper has benefits to individual researchers, often through increased visibility of the work [@Popkin2019; @Kirk2019]. But there is also a component of benefit to the broader scientific community. This primarily comes in the form of potential for reuse in other contexts along use for training and teaching (@McKiernan2016). Assuming that the data have no privacy concerns (e.g., human subjects, locations of critically endangered species), or that the act of sharing doesn't put the authors at a competitive disadvantage (data can be embargoed for reasonable periods of time), sharing data will always have a net positive benefit. First and foremost, sharing data along with other artifacts can make it easier for a reader to independently reproduce the results, thereby increasing transparency and trust in the work. The act of easy data sharing can also improves model training, as many different models can be tried and tested on latest data sources, closing the loop on research and application of statistical techniques. Existing data sets can be combined or linked with new or existing data, fostering the development and synthesis of new ideas and research areas. The biggest of these benefits is the overall increase in reproducibility.
 
@@ -60,7 +66,7 @@ We discuss how to share and/or publish data and cover various tradeoffs when dec
 
 # A minimal structure to share data for analysis {#minimal}
 
-To share data analysis data, there should be some minimal set of requirements. For example, the data should contain information on metadata, data dictionaries, the README, and data used in analysis (See Section \@ref(minimal)). No matter where data is submitted, there should ideally be a canonical data repository in one long term archive that links to others. It should also have an accession number, or Digital Object Identification (DOI) number, which allows for it to be cited (discussed further in \@ref(cite).
+To share data analysis data, there should be some minimal set of requirements. For example, the data should contain information on metadata, data dictionaries, the README, and data used in analysis (See Section \@ref(minimal)). No matter where data is submitted, there should ideally be a canonical data repository in one long term archive that links to others. It should also have an accession number, or Digital Object Identification (DOI) number, which allows for it to be cited (discussed further in \@ref(cite)).
 
 There are 8 pieces of content to consider for data sharing:
 
@@ -80,7 +86,7 @@ knitr::include_graphics(here::here("figures",
                                    "directory-structure.png"))
 ```
 
-Out of these sections, the minimal files to provide, in order of most importance should be provided in one main directory folder:
+From these sections, the minimal files to provide in order of most importance are:
 
 1. README
 2. Data dictionary
@@ -93,9 +99,7 @@ These sections are now described.
 
 ## README: A Human readable description of the data {#readme}
 
-In the context of datasets, READMEs are particularly useful when there are no reliable standards. The best practice here is to have one README per dataset.
-
-A README is often the first place people will go to learn more about anything in a folder - they are very common in softwar, and historically were includd so that the uppecase lettrs of README meant ti would be at the top of a directory. In the context of data, a README when there are no reliable standards. It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
+In the context of datasets, READMEs are particularly useful when there are no reliable standards. The best practice here is to have one README per dataset. A README is often the first place people will go to learn more about anything in a folder - they are very common in softwar, and historically were includd so that the uppecase lettrs of README meant ti would be at the top of a directory. In the context of data, a README when there are no reliable standards. It is meant for someone to read and understand more about the data and contains the "who, what, when, where, why, & how":
 
 - **Who** collected it
 - **What** is the data
@@ -161,7 +165,7 @@ grid.arrange(
 
 ```
 
-Table \@ref(tab:table-data-incarcerate) shows an example data dictionary table taken from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable the class (type) of the variable, and a longer description of the variable.
+Table \@ref(tab:table-data-incarcerate) shows an example data dictionary table from the Tidy Tuesday repository on incarceration trends [@tidy-tuesday-incarcerate]. This includes information on the variable, its class (type), and a longer description.
 
 ```{r table-data-incarcerate}
 dictionary_incarcerate <- data.frame(
@@ -183,7 +187,7 @@ knitr::kable(dictionary_incarcerate,
 ```
 
 
-Data dictionary tables should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form in the repository, for example, saved as a CSV, so that they don't become trapped in a README.
+Data dictionaries should be placed in the README and presented as a table. Every data dictionary should also be provided in its raw form (e.g., a CSV) in the repository, so they aren't "trapped" in the README.
 
 ## License: How to use and share the data {#license}
 
@@ -206,7 +210,7 @@ The journal PLOS Comp Bio requires that data submitted cannot be more restrictiv
 
 ### CC0
 
-The CC0 is a “public domain” license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
+The CC0 is a "public domain" license. Data with a CC0 license means the data owners waive all their rights to the work, and it now "owned" by the public. The data can be freely shared, copied, modified, and distributed, even for commercial purposes _without asking permission_. When using data with CC0, it is good practice to cite the original paper, but it is not required. If you wish to use the CC0, see @choose-cc0.  For a brief overview of the CC0, see @cc0-short, and for the full license, see @cc0-long.
 
 Other licenses or notices to be aware of are **copyrighted data**, and **data embargoes**. If you are working with data **already copyrighted**, (for example under CC BY or CC0), you must give follow appropriate guidelines for giving credit. Data may also be under **embargo**. This means data cannot be shared more widely until a specific release time. If sharing data under an embargo, include detailed information on the embargo requirements in: the README, and in separate correspondence with those who receive the data. Databases may also be licensed with the Open Data Commons Open Database License: https://opendatacommons.org/licenses/odbl/, which provides provisions for sharing, creating, and adapting, provided that work is attributed, shared, and kept open.
 
@@ -216,7 +220,7 @@ A Digital Object Identifier (DOI), is a unique identifier for a digital object s
 
 ## Machine readable metadata {#machine-metadata}
 
-The README and data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. Machine readable metadata also provide a structure that allow the data to be indexed and searched online, through services scuh as google datasets search [@google-data-search]. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. For example, a dataset called "demographics" with three variables is shown in Table \@ref(tab:table-machine-readable), which has the Java Script Object Notation (JSON) equivalent in Figure \@ref(fig:json-code).
+The README and data dictionary provides _human readable_ information on the data. To ensure data types are preserved - dates are dates, names are characters, and so on - there needs to be some form of _machine readable_ metadata. This provides a structure allowing the data to be indexed and searched online, through services scuh as google datasets search [@google-data-search]. An excellent standard for metadata is Table Schema written by frictionless data [@fritionless-table-schema]. For example, a dataset "demographics" with three variables is shown in Table \@ref(tab:table-machine-readable), and the Java Script Object Notation (JSON) equivalent in Figure \@ref(fig:json-code).
 
 ```{r table-machine-readable}
 table_machine_readable <- data.frame(
@@ -238,7 +242,7 @@ knitr::include_graphics(here::here("figures",
 ```
 
 
-This contains fields such as "path", which describe the file path to the data, and a schema with subfields name and type, for each variable. It also provides information for licensing and features such as line breaks, and delimiters, useful to ensure the data is correctly imported into a machine. It is built on JSON (JavaScript Object Notation), a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as csvy [@csvy], an extended `csv` format, which has additional front matter in a lightweight markup format (YAML) using Table Schema.
+This contains fields such as "path", describing the file path to the data, and a schema with subfields name and type, for each variable. It also provides information for licensing and features such as line breaks, and delimiters, useful to ensure the data is correctly imported into a machine. It is built on JSON, a lightweight, human-friendly, machine readable data-interchange format. Table schema is baked into formats such as csvy [@csvy], an extended `csv` format, which has additional front matter in a lightweight markup format (YAML) using Table Schema.
 
 In contrast to a CSV data dictionary, JSON-LD has a defined, nested structure, which means more can be communicated efficiently, while still maintaining readability, and avoiding extra writing and repetition that comes with a plain CSV where everything is defined from scratch.
 
@@ -254,7 +258,7 @@ Any code used to clean and tidy the raw data should be provided in the `raw-data
 
 ## Analysis ready data: Final data used in analysis {#final-data}
 
-The data used in the data analysis should be provided in a folder called `data`. Ideally, the data should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, observations in rows, and only one value per cell. 
+The data used in the data analysis should be provided in a folder called `data`. Ideally, the data "analysis ready data" should be in "Tidy Data" format [@Wickham2014], where tidy data contains variables in columns, observations in rows, and only one value per cell. 
 
 In contrast to "raw data", "analysis ready data" should be in an easily readable plain-text format, such as comma-, tab- or semicolon-separated files. These typically have file extensions like `.csv`, `.tsv` or `.txt`. Binary or proprietary formats are discouraged in favor of interoperability, as it requires special software to read, even if it is sometimes slower to read in and out, and harder to share due to size. For example, R data formats like `.rds`, `.rda`, or SPSS, STATA, or SAS data formats, `.sav`, `.dta`, or `.sas7bdat`.
 
@@ -383,7 +387,7 @@ tibble::tribble(
   knitr::kable(caption = "Comparison of common data submission platforms.")
 ```
 
-## Publishing data in a data repository
+## Publishing data in a data repository (need some help here)
 
 
 ## Publishing data through a data journal
