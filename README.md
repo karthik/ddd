@@ -1,25 +1,16 @@
-# Possible outline for the paper
+# A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility.
 
 
-- 01-introduction   
-- 02-tradeoffs   
-	- Use cases   
-	- Simple, throw away datasets     
-  - More complex examples   
-- 03-approaches-to-data-sharing    
-	- 03-b-ship-alongside-code   
-	- 03-c-ship-w-software   
-	- 03-d-larger-data-medium    
-	- 03-e-long-term-archiving  
-  
-- 04-data-documenting-packaging   
-	- Code books   
-	- Citation   
-	- Minimal structure   
-	- License   
-- 05-example-data
-	- Complex, well documented (BCI)   
-	- Sensor, Sloan   
-	- Other   
-- 06-ten-rules   
-- 07-conclusions   
+_Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)_
+
+1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia
+
+2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)
+
+3 = Berkeley Institute for Data Science, University of California, Berkeley, USA
+
+\* = Both authors contributed equally to the work
+
+**Abstract**
+
+Data makes science possible. Sharing data improves visibility, and makes the research process transparent. This increases trust in the work, and allows for independent reproduction of results. However, a large proportion of data from published research is often only available to the original authors. Despite the obvious benefits of sharing data, and scientists' advocating for the importance of sharing data, most advice on sharing data discusses its broader benefits, rather than the practical considerations of sharing. This paper provides practical, actionable advice on how to actually share data alongside research. The key message is sharing data falls on a continuum, and entering it should come with minimal barriers.
