@@ -16,7 +16,7 @@ header-includes:
 
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)
 
-3 = University of California, Berkeley, USA
+3 = Berkeley Institute for Data Science, University of California, Berkeley, USA
 
 \* = Both authors contributed equally to the work
 
@@ -525,5 +525,6 @@ The key message for the reader is that accessing data for reproducibility should
 - Anna Krystalli
 - Daniella Lowenberg
 - ACEMS International Mobility Programme
+- Helmsley Charitable Trust, Gordon and Betty Moore Foundation, Sloan Foundation.
 
 # Literature Cited
