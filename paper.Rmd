@@ -387,8 +387,9 @@ tibble::tribble(
   knitr::kable(caption = "Comparison of common data submission platforms.")
 ```
 
-## Publishing data in a data repository (need some help here)
+## Publishing data in a data repository 
 
+Scientists have numerous venues to deposit their data, many of which are ephemeral, despite the convenience they offer. For data that are not narrow in scope with limited potential for reuse, we recommend publishing data in an established data repository such as Dryad. In addition to providing a long-term home for data, these repositories also include data curation by a professional data manager, compliance with open source standards, and metrics. 
 
 ## Publishing data through a data journal
 
