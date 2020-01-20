@@ -4,9 +4,7 @@ all:
 	Rscript -e "rmarkdown::render( \
 	                input = 'paper.Rmd', \
 	                output_format = bookdown::html_document2( \
-	                    toc = TRUE, \
-	                    toc_depth = 3, \
-	                    toc_float = TRUE, \
-	                    number_sections = TRUE), \
+	                    number_sections = TRUE, \
+	                    base_format = rmdformats::material), \
 	                output_file = 'docs/index.html' \
 	                )"
