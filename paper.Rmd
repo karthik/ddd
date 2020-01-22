@@ -191,7 +191,7 @@ Data dictionaries should be placed in the README and presented as a table. Every
 
 ## License: How to use and share the data {#license}
 
-Data with a license clearly establishes rules on how everyone can modify, use, and share data. Without a license, these rules are unclear, and can lead to problems with attribution and citation. It can be overwhelming to try and the right license for a use case. Two licenses that are well suited for data sharing are:
+Data with a license clearly establishes rules on how everyone can modify, use, and share data. Without a license, these rules are unclear, and can lead to problems with attribution and citation. It can be overwhelming to try and find the right license for a use case. Two licenses that are well suited for data sharing are:
 
 1. Creative Commons Attribution 4.0 International Public License (CC BY), and
 2. Creative Commons CC0 1.0 Universal (CC0)
