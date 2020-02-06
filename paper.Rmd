@@ -3,6 +3,7 @@ title: A Realistic Guide to Making Data Available Alongside Code to Improve Repr
 author: Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)
 output:
   bookdown::pdf_document2:
+    keep_tex: true
     toc: no
     includes:
       in_header: preamble.tex
