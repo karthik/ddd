@@ -1,0 +1,20 @@
+---
+from: Nicholas Tierney
+fromqualifications: BPsySc (Hons), PhD (Statistics)
+fromtitle: Lecturer
+fromWWW: njtierney.com
+fromemail: nicholas.tierney@gmail.com
+fromphone: +61 3 9905 9352
+fromsignature: sigfile.png
+toname: Dr. Sarah Callaghan
+toaddress: Patterns
+opening: Dear Dr. Sarah Callaghan,
+closing: Regards, \newline Dr. Nicholas Tierney \newline Lecturer
+spacing: 1.4
+output: MonashEBSTemplates::letter
+---
+
+Please consider our article "A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility" for publication in the Patterns. This article describes an accessible approach to sharing data alongside research. The key message of the paper is that accessing data for reproducibility should come with minimal barriers. 
+Along with the PDF is an accompanying .zip file, which contains all of the code, data, and rmarkdown document to reproduce the paper. This article is not under consideration elsewhere, although we have submitted a pre-print of this article to arxiv.
+
+We hope that you find this paper of interest to the readers of the Patterns,

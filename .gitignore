@@ -4,3 +4,5 @@
 *.DS_Store
 *.Rproj
 paper.log
+/cover-letter/sigfile.png
+/cover-letter/*.pdf
