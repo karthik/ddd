@@ -1,5 +1,3 @@
-# Online Link to paper: https://karthik.github.io/ddd/
-
 # A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility.
 
 
@@ -15,8 +13,7 @@ _Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)_
 
 **Abstract**
 
-Data makes science possible. Sharing data improves visibility, and makes the research process transparent. This increases trust in the work, and allows for independent reproduction of results. However, a large proportion of data from published research is often only available to the original authors. Despite the obvious benefits of sharing data, and scientists' advocating for the importance of sharing data, most advice on sharing data discusses its broader benefits, rather than the practical considerations of sharing. This paper provides practical, actionable advice on how to actually share data alongside research. The key message is sharing data falls on a continuum, and entering it should come with minimal barriers.
-
+New abstract pending
 
 ## Talks on the topic
 
