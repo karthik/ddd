@@ -4,3 +4,6 @@
 *.DS_Store
 *.Rproj
 paper.log
+cover-letter/*.png
+cover-letter/*.pdf
+*.zip
