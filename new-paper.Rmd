@@ -113,11 +113,11 @@ As academic data scientists, we spend considerable time cleaning messy data and 
 
 To make data more reusable, we need to make it easier to generate metadata, standardise good practices within and across communities, and make reusable data sharing a recognized, normalised, part of research. Here we present a set of best practices to enable this change. These include documentation (\@ref(documentation-readmes)), licensing (\@ref(licences)), citation (\@ref(citation-how-you-want-your-data-to-be-cited)), code (\@ref(data-as-part-of-open-source-packages)), raw and analysis ready data (\@ref(raw-data-vs-analysis-read-data)). We also discuss considerations for sharing of data of various sizes \@ref(considerations-for-data-size).
 
-# Documentation (READMEs) {.readme}
+# Documentation (READMEs) {#readme}
 
 A README is often the first place users will look to learn more about a directory [@Prana2019]. The README is a concise text file containing guidance on how to read and interpret the directory - the who, what, when, where, and how (<https://betta.io/blog/2017/02/07/developer-experience-github-readmes/> and [@Prana2019]. For example, a README in a data repository might explain which directories contain data, tidying scripts, and also why data was collected. The README should be placed in the top level of the project, and there can be multiple README files in a project. In the context of datasets, READMEs are particularly useful when there are no reliable standards.
 
-# Licences {.licenses}
+# Licences {#licenses}
 
 A license for data clearly establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard license, these rules are unclear, and lead to issues with use, attribution and citation. We recommend using a license from Creative Commons (<https://creativecommons.org/>), specifically, we recommend CCBY and CC0 as they are commonly used, and provide simple rules for attribution, warranty, and use. We recommend against non-standard licenses, such as those custom written by the authors, as some terms can render them unusable. Once a license is chosen, a LICENSE file should be provided, containing the entire license in the top level of the directory. The license type should be mentioned in the README, if used.
 
@@ -130,7 +130,7 @@ Some data repositories and journals will automatically require a license when su
 knitr::include_graphics("figures/carbon-dir-layout.png")
 ```
 
-# Metadata {.metadata}
+# Metadata {#metadata}
 
 There are three benefits to a dataset having metadata: (1) They provide context by describing variables to humans; (2) They avoid errors by describing and preserving variable types for machine readability; (3) They make data easier to find online by facilitating indexing [@google-data-search]. Three pieces of metadata should be considered: (1) **variable names**, (2) **variable descriptions**, and (3) **unit text**. These should be curated by a person. Metadata created should be clearly labelled in a folder or in files named METADATA.
 
@@ -144,21 +144,21 @@ EML is widely used in Ecology (for example [@Maerz2014]). JSON-LD provides advan
 knitr::include_graphics("figures/carbon-json-ld.png")
 ```
 
-# Raw data vs analysis read data {.rawdata}
+# Raw data vs analysis read data {#rawdata}
 
 Raw data is the first format of data provided before any cleaning has taken place (e.g., data in some binary or proprietary format). It should be placed in its own folder. Data used in analysis should be provided, especially if computationally intense to derive. It should be in its own folder, and to maximise interoperability, recorded in a plain text (e.g., csv, tsv), not a binary format (e.g., .rds, .sav, .xlsx). Ideally data should be in "Tidy Data" form, where variables are in columns, observations in rows, and each cell has only one value [@Wickham2014].
 
 We don't have particular recommendations for non tabular of data, like binary images, but given the ubiquity of tables in papers, these recommendations will be broadly useful. For other data formats we recommend using a copy of the most robust common format and avoid the latest tools that may be more brittle and likely to change in the future. For example, for an image, a TIFF image in addition to a custom photoshop file.
 
-# Data cleaning scripts {.scripts}
+# Data cleaning scripts {#scripts}
 
 Code used to transform data from its raw format into analysis ready form should be kept in the same place as raw data (Section \@ref(fig:dir-layout)). Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file.
 
-# Citation: How you want your data to be cited {.cite}
+# Citation: How you want your data to be cited {#cite}
 
 Citation is important for provenance, and credit. Citing data clarifies the data version used (provenance), and provides authors a citation (credit). To ensure these are provided, data needs to have an accession number, such as a Digital Object Identifier (DOI). A DOI is a permanent, unique identifier for a digital object such as a paper, poster, or software, and is a prerequisite for citation. If a DOI or accession number is unavailable, a citation will be meaningless, as it cannot be tracked by any means. A file named CITATION should be placed in the directory at the top level. It should contain a DOI, and could be in `.bibtex` format - \@ref(fig:dir-layout). Avenues that provide DOIs are discussed in \@ref(avenues-to-share-data)].
 
-# Avenues to share data {.avenues}
+# Avenues to share data {#avenues}
 
 There are different avenues to share data, and although the terms are sometimes used interchangeably, they are, in fact, different. These include: (1) Data sharing: Making data publicly available; (2) Data archiving: Depositing data somewhere permanent; (3) Data publishing: writing a paper to explain the archived data.
 
@@ -174,13 +174,13 @@ Although it is fine to share data among collaborators using temporary cloud stor
 
 Journals provide data papers, where they provide a formal publication explaining data that is archived. This is a familiar avenue for researchers to receive credit and citation. Writing a data paper can be very useful for researchers, however, data papers lack guidelines on how to structure data for effective reuse and sharing. We recommend partnering with [@dryad] to archive data and link it with research papers, as they provide a person to help curate your data, improving usability.
 
-# Data as part of open source packages {.pkgs}
+# Data as part of open source packages {#pkgs}
 
 Data can be distributed alongside code using a format such as a package in R, Python, and Julia [@nycflights; @horst-penguins; @data-python-pkg; @r-data-julia]. A package or module structure provides an advantage as it can be "installed" and loaded just like code. Despite the advantages of sharing data as a software package, there are a few major disadvantages. Firstly, packaging data inside a software package makes the data availability language centric. Users who work in other languages are unlikely to download and export data out of a package. Secondly, data size can be a limitation depending on the repository (CRAN, the R repository, for example, limits package sizes to 5mb although there are workarounds [@Brooke_Anderson2017]). Other fields, such as bioinformatics have a process of sharing data through repositories like Bioconductor, with larger data size. Thirdly, there is the cost of authors and data curators/custodians understanding intricacies of package development in order to share data.
 
 Packaged data and archival on venues like Zenodo are not mutually exclusive. We recommend researchers first archive data in a long-term data repository (Section \@ref(avenues-to-share-data)), before including it in a package. This makes the data easily citable wherever data is referenced.
 
-# Considerations for data size {.size}
+# Considerations for data size {#size}
 
 How data is shared can change depending on its size. Defining data size will always be somewhat ill-defined, since storage capacity and norms constantly change. We consider data sizes in reference to a moderately priced laptop, where small data fits on computer memory (RAM), medium data does not fit on RAM, and big data does not fit on the hard disk. No matter the size, the data should be archived with an accession number or DOI.
 
