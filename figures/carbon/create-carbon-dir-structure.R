@@ -3,6 +3,7 @@ egg <-
   'proj-name
 ├── README.md
 ├── LICENSE
+├── METADATA
 ├── raw-data
 │   ├── raw-data.csv
 │   └── 01-read-tidy-raw.R

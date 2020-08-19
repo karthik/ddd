@@ -536,7 +536,7 @@ In the future, we hope that the culture around data sharing will change, and sha
 
 **Nicholas Tierney**
 
-Nicholas Tierney has an honours degree in Psychological Science, and a PhD in Statistics. He is a Lecturer at Monash University, teaching introduction to data analysis and researching how to improve data analysis workflow. This ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. Nick is a keen outdoorsman, and loves hiking, trail running, rock climbing, photography, and making coffee.
+Nicholas Tierney has an honours degree in Psychological Science, and a PhD in Statistics. He is a Lecturer at Monash University, teaching introduction to data analysis. His ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. Nick is a keen outdoorsman, and loves hiking, trail running, rock climbing, photography, and making coffee.
 
 **Karthik Ram**
 
