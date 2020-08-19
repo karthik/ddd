@@ -7,3 +7,6 @@ paper.log
 cover-letter/*.png
 cover-letter/*.pdf
 *.zip
+*.log
+new-paper.tex
+new-paper.pdf
