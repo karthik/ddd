@@ -1,5 +1,5 @@
 ---
-title: A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility.
+title: Meaningful data sharing.
 author: Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)
 output:
   bookdown::pdf_document2:
@@ -15,13 +15,26 @@ header-includes:
 
 ```{=tex}
 \begin{singlespace}
+Other titles under consideration: 
+
+- Data sharing practices to realign incentives and enable positive/meaningful culture change
+
+- Enabling culture change for meaningful data sharing
+
+- Enabling culture change for meaningful data sharing: Aligning incentives and best practices
+
+- Principles of sharing data
+
+- Elements of meaningful data sharing
+
+- Better practices in data sharing to enable culture change
 
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
 3 = Berkeley Institute for Data Science, University of California, Berkeley, USA\\
 * = Both authors contributed equally to the work\\
 Correspondence to:\\
-Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (k@karthik.io)
+Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (karthik.ram@berkeley.edu)
 
 \end{singlespace}
 ```
@@ -107,7 +120,7 @@ Use metadata with your data. There are three benefits to a dataset having metada
 
 Metadata should provided in plain text files following a standard format. Such formats include the Ecological Metadata Language [@EML-about] (EML), which uses XML (The eXtensible Markup Language), and Table Schema, which uses JSON-LD (Java Script Object Notation - Linked Data) \@ref(fig:json-ld). One implementation of this is Frictionless Data [@Fowler2017], which provides a language agnostic way to document data - to learn more see <https://frictionlessdata.io/guide/>.
 
-EML is widely used in Ecology (for example [@Maerz2014]). JSON-LD provides advantages over EML, by having fields to facilitate data discovery with google dataset search [@EML-data]. Use JSON-LD over EML, as it is more human readable, shorter, and quicker and easier to read and write. For more information on tooling to assist generating metadata, see <https://knb.ecoinformatics.org/tools/morpho> and [@Arslan2019].
+EML is widely used in Ecology (for example [@Maerz2014]). JSON-LD provides advantages over EML, by having fields to facilitate data discovery with google dataset search [@google-data-search]. Use JSON-LD over EML, as it is more human readable, shorter, and quicker and easier to read and write. For more information on tooling to assist generating metadata, see <https://knb.ecoinformatics.org/tools/morpho> and [@Arslan2019].
 
 ```{r json-ld, fig.cap = "Example snippet of some Table Schema data for a dataset with three variables. This provides a description of each field, and the type of field."}
 knitr::include_graphics("figures/carbon-json-ld.png")
@@ -131,21 +144,21 @@ Describe how you want your data to be cited. Citation is important for provenanc
 
 There are different avenues to share data, and although the terms are sometimes used interchangeably, they are, in fact, different. These include: (1) Data sharing: Making data publicly available; (2) Data archiving: Depositing data somewhere permanent; (3) Data publishing: writing a paper to explain the archived data.
 
-As discussed in \@ref(citation-how-you-want-your-data-to-be-cited),archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes are the research data repositories **zenodo**, **dryad**, or **Open Science Framework** (OSF). In addition to minting DOIs, they also provide citation templates that can be used in \@ref(citation-how-you-want-your-data-to-be-cited).
+As discussed in \@ref(cite),archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes are the research data repositories **zenodo**, **dryad**, or **Open Science Framework** (OSF). In addition to minting DOIs, they also provide citation templates that can be used in \@ref(cite).
 
-Zenodo can be contacted to arrange special cases for storage of large data. Special hosting can be arranged via specially contacting zenodo or your research institute. If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited.
+Zenodo can be contacted to arrange special cases for storage of large data. Special hosting can be arranged via specially contacting Zenodo or your research institute. If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited.
 
 There are many alternatives to these three, for example, an astronomy project may host its data at the Sloan Digital Sky Survey (SDSS), and genetic data can be hosted at GenBank [@GenBank]. Importantly, these all provide some form of accession number. Adhere to community standards when deciding where to publish data, as this will likely improve data reuse. Large data may also be shared via domain specific venues (e.g., in genomics or astronomy), where appropriate.
 
-Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@50Hectares] was hosted on a university server and only accessible via a FTP server since 1982. It was not possible to easily access or cite the data without an explicit authorship agreement among other conditions. Only recently were the complete dataset deposited in Dryad without such conditions [@condit-2019].
+Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@Hubbell1999] was hosted on a university server and only accessible via a FTP server since 1982. It was not possible to easily access or cite the data without an explicit authorship agreement among other conditions. Only recently were the complete dataset deposited in Dryad without such conditions [@condit-2019].
 
-Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc). Just archive the data.
+Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc.). Just archive the data.
 
 Journals provide data papers, where they provide a formal publication explaining data that is archived. This is a familiar avenue for researchers to receive credit and citation. Writing a data paper can be very useful for researchers, however, data papers lack guidelines on how to structure data for effective reuse and sharing. Partner with Dryad [@dryad] to link archived data with research papers. Dryad will also provide a person to help curate your data, improving usability.
 
 # Data as part of open source packages {#pkgs}
 
-Data can be distributed alongside code using a format such as a package in R, Python, and Julia [@nycflights; @horst-penguins; @data-python-pkg; @r-data-julia]. A package or module structure provides an advantage as it can be "installed" and loaded just like code. Despite the advantages of sharing data as a software package, there are a few major disadvantages. Firstly, packaging data inside a software package makes the data availability language centric. Users who work in other languages are unlikely to download and export data out of a package. Secondly, data size can be a limitation depending on the repository (CRAN, the R repository, for example, limits package sizes to 5mb although there are workarounds [@Brooke_Anderson2017]). Other fields, such as bioinformatics have a process of sharing data through repositories like Bioconductor, with larger data size. Thirdly, there is the cost of authors and data curators/custodians understanding intricacies of package development in order to share data.
+Data can be distributed alongside code using a format such as a package in R, Python, and Julia [@nycflights; @horst-penguins; @data-python-pkg; @r-data-julia]. A package or module structure provides an advantage as it can be "installed" and loaded just like code. Despite the advantages of sharing data as a software package, there are a few major disadvantages. Firstly, packaging data inside a software package makes the data availability language centric. Users who work in other languages are unlikely to download and export data out of a package. Secondly, data size can be a limitation depending on the repository (CRAN, the R repository, for example, limits package sizes to 5Mb although there are workarounds [@Brooke_Anderson2017]). Other fields, such as bioinformatics have a process of sharing data through repositories like Bioconductor, with larger data size. Thirdly, there is the cost of authors and data curators/custodians understanding intricacies of package development in order to share data.
 
 Packaged data and archival on venues like Zenodo are not mutually exclusive. First, archive data in a long-term data repository (Section \@ref(avenues)), before including it in a package. This makes the data easily citable wherever data is referenced.
 
@@ -153,7 +166,7 @@ Packaged data and archival on venues like Zenodo are not mutually exclusive. Fir
 
 How data is shared can change depending on its size. Defining data size will always be somewhat ill-defined, since storage capacity and norms constantly change. We consider data sizes in reference to a moderately priced laptop, where small data fits on computer memory (RAM), medium data does not fit on RAM, and big data does not fit on the hard disk. No matter the size, the data should be archived with an accession number or DOI.
 
-Small data has more options in how it is shared - you can bundle it with your analysis code (as in \@ref(rawdata)), or in software \@ref(data-as-part-of-open-source-packages). For medium data, consider a venue like zenodo for archiving. Sharing medium data might require it to be broken into separate chunks for reading (e.g., `teaching-1.csv`, `teaching-2.csv`, etc.), and scripts provided to read it. Large data will require liaising with services from \@ref(avenues), or local research institute library to make special arrangements, to ensure there is some way to gain access, and also maintain a DOI.
+Small data has more options in how it is shared - you can bundle it with your analysis code (as in \@ref(rawdata)), or in software \@ref(data-as-part-of-open-source-packages). For medium data, consider a venue like Zenodo for archiving. Sharing medium data might require it to be broken into separate chunks for reading (e.g., `teaching-1.csv`, `teaching-2.csv`, etc.), and scripts provided to read it. Large data will require liaising with services from \@ref(avenues), or local research institute library to make special arrangements, to ensure there is some way to gain access, and also maintain a DOI.
 
 # Conclusion
 
