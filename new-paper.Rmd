@@ -1,5 +1,5 @@
 ---
-title: Meaningful data sharing.
+title: Meaningful data sharing
 author: Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)
 output:
   bookdown::pdf_document2:
