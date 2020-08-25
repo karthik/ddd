@@ -8,6 +8,7 @@ output:
     includes:
       in_header: preamble.tex
 bibliography: references.bib
+csl: nature-communications.csl
 header-includes: 
   - \setstretch{1.45}
   - \usepackage[utf8]{inputenc}
@@ -116,7 +117,7 @@ knitr::include_graphics("figures/carbon-dir-layout.png")
 
 Use metadata with your data. There are three benefits to a dataset having metadata: (1) They provide context by describing variables to humans; (2) They avoid errors by describing and preserving variable types for machine readability; (3) They make data easier to find online by facilitating indexing [@google-data-search]. Three pieces of metadata should be considered: (1) **variable names**, (2) **variable descriptions**, and (3) **unit text**. These should be curated by a person. Metadata created should be clearly labelled in a folder or in files named METADATA.
 
-**Variable names** are short, descriptive names with no spaces or special characters, such as "job\_position" or "date". **Variable description** describes the measured variables, e.g., "University Job Position" or "Date Started", and should also define *variable codes* and *missing data*. **Unit text** defines the type of variable recorded (e.g., string, date, numeric, integer), and avoids serious errors of misrepresented data (e.g., a column of a gene sequence being interpreted as a date). For more details, see [@Broman2017; @Ellis2017; @Arslan2019].
+**Variable names** are short, descriptive names with no spaces or special characters, such as "job_position" or "date". **Variable description** describes the measured variables, e.g., "University Job Position" or "Date Started", and should also define *variable codes* and *missing data*. **Unit text** defines the type of variable recorded (e.g., string, date, numeric, integer), and avoids serious errors of misrepresented data (e.g., a column of a gene sequence being interpreted as a date). For more details, see [@Broman2017; @Ellis2017; @Arslan2019].
 
 Metadata should provided in plain text files following a standard format. Such formats include the Ecological Metadata Language [@EML-about] (EML), which uses XML (The eXtensible Markup Language), and Table Schema, which uses JSON-LD (Java Script Object Notation - Linked Data) \@ref(fig:json-ld). One implementation of this is Frictionless Data [@Fowler2017], which provides a language agnostic way to document data - to learn more see <https://frictionlessdata.io/guide/>.
 
@@ -202,3 +203,4 @@ Nicholas Tierney has an honours degree in Psychological Science, and a PhD in St
 **Karthik Ram**
 
 Karthik is a senior data scientist at the Berkeley Institute of Data Science and a co-founder of the rOpenSci project. Karthik is also a senior PI at the Berkeley Initiative for Global Change Biology. Prior to joining Berkeley, he earned his PhD in Ecology & Evolution from the University of California, Davis. Karthik's interests are focused on reproducible research, especially as it applies to global change. Much of his recent work focuses on building tools and services around open data and growing diverse data science communities.
+
