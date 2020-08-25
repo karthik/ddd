@@ -65,33 +65,7 @@ knitr::include_graphics("figures/pyramid.png")
 ```
 
 ```{r incentable-table, fig.cap = "Table of the mechanism for behavior change, the incentive, and our assessment of where the elements of Data, Code, and Computational Environment rank in terms of completing these aspects. We note that Data is often required, but the preceding steps are not required. This is in contrast to Code having no policy"}
-library(gt)
-incentive_table <- tibble(
-  Mechanism = c("Policy", "Incentives", "Communities", "UI/UX", "Infrastructure"),
-  Incentive = c("Required", "Rewarding", "Normative", "Easy", "Possible"),
-  Data = c(100, 0, 0, 0, 100),
-  Code = c(0, rep(100, 4)),
-  `Computational Environment` = c(0, 0, 0, 50, 100)
-  )
-
-incentive_table %>%
-  gt() %>%
-  data_color(
-    columns = vars(Data, Code, `Computational Environment`),
-    colors = scales::col_numeric(
-      # Using a function from paletteer to generate a vector of colors
-      # Note that you need to wrap paletteer_d outputs in as.character()
-      palette = colorspace::sequential_hcl(n = 3, palette = "Greens2", rev = TRUE),
-      # Domain is from scales::col_numeric
-      # Domain = The possible values that can be mapped
-      # We don't HAVE to set a range for this since
-      # we're using it inside data_color()
-      domain = NULL
-    )
-  ) %>%
-  gtsave("figures/gt-incentive-table.png")
-
-# knitr::include_graphics("figures/gt-incentive-table.png")
+knitr::include_graphics("figures/gt-incentive-table.png")
 ```
 
 Nosek [-@Nosek2019] describes the strategies for culture change, especially when the status quo is too entrenched. Beyond motivation, skills, tools, and incentives are critical to enable such change. In a five step process, Nosek describes how achieving lasting culture change requires us to show proof of concept that an activity is possible, then improve the infrastructure to make it easy, then increase awareness to make it normative. Once there is a critical mass, find ways to reward those who put it into practice. After these steps, it would then be possible to require this of everyone Figure 1, table 1). This framework provides a useful lens through which to examine adoption of code, computational environments and data for reproducibility. With code, we have slowly progressed through these stages. While no journals require that authors share code, the venues to share, along with the necessary training have paved the way for incentives and credit. All of the necessary foundation to make code sharing required are in place. For computational environments, Docker makes it possible to share them in most common use cases [@Boettiger2015]. But running them still requires expertise and time on the part of reviewers. More recent open services like Binder [@Jupyter2018] make it possible to run notebooks atop Docker images, but the technology is still new and slowly gaining adoption. There is still a long way to go before sharing computational environments in academia becomes mainstream. Finally, for data, we have implemented these steps out of order. The FAIR data principles were introduced in 2016 with good intentions [@Wilkinson2016] and describe the desired attributes for research data. That they be findable (good metadata), accessible (deposited somewhere persistent), interoperable (easily combined with other datasets), and be reusable. We as a community started out by making data required before demonstrating how this would directly benefit those who share data. Researchers are asked to deposit their data in one of many institutional or commercial repositories. Many journals even require it as a condition for publication via policy. However, the cost of preparing data for reuse remains high, and the career incentives to do so are almost non-existent. Until we make data reuse easier and more rewarding, no level of policy is going to improve the state of data sharing.
