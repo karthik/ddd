@@ -137,7 +137,7 @@ Zenodo can be contacted to arrange special cases for storage of large data. Spec
 
 There are many alternatives to these three, for example, an astronomy project may host its data at the Sloan Digital Sky Survey (SDSS), and genetic data can be hosted at GenBank [@GenBank]. Importantly, these all provide some form of accession number. Adhere to community standards when deciding where to publish data, as this will likely improve data reuse. Large data may also be shared via domain specific venues (e.g., in genomics or astronomy), where appropriate.
 
-Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@50Hectares] was hosted on a university server and accessed via FTP for over a decade. It was not possible to effectively provide effective provenance and credit. Only recently was the data deposited in Dryad [@condit-2019].
+Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@50Hectares] was hosted on a university server and only accessible via a FTP server since 1982. It was not possible to easily access or cite the data without an explicit authorship agreement among other conditions. Only recently were the complete dataset deposited in Dryad without such conditions [@condit-2019].
 
 Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc). Just archive the data.
 
