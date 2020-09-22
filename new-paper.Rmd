@@ -78,7 +78,7 @@ Notebooks however, are an incomplete solution for computational reproducibility.
 knitr::include_graphics("figures/pyramid.png")
 ```
 
-```{r incentable-table, fig.cap = "Table of the mechanism for behavior change, the incentive, and our assessment of where the elements of Data, Code, and Computational Environment rank in terms of completing these aspects. We note that Data is often required, but the preceding steps are not required. This is in contrast to Code having no policy"}
+```{r incentable-table, fig.cap = "Table of the mechanism for behavior change, the incentive, and our assessment of where the elements of Data, Code, and Computational Environment rank in terms of completing these aspects. We note that Data is often required, but the preceding steps are not required. This is in contrast to Code having no policy."}
 knitr::include_graphics("figures/gt-incentive-table.png")
 ```
 
@@ -106,10 +106,10 @@ Use a README file with your data project to communicate its purpose and contents
 
 # Licences {#licenses}
 
-Provide a license with your data. A license for data clearly establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard license, these rules are unclear, and lead to issues with use, attribution and citation. Use the CC0 license, as it is commonly used, and provide simple rules for attribution, warranty, and use. The CC0 is a "public domain" license, meaning data owners waive all rights, and the work is now "owned" by the public. CC0 data can be freely shared, copied, modified, and distributed, even for commercial purposes **without asking permission**. When using data with CC0, it is good practice to cite the original work, but is not required. For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/.
+Provide a license with your data. A license for data clearly establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard license, these rules are unclear, and lead to issues with use, attribution and citation. Use the CC0 license, as it provides simple rules for attribution, warranty, and use, and is very common. The CC0 is a "public domain" license, meaning data owners waive all rights, and the work is now "owned" by the public. CC0 data can be freely shared, copied, modified, and distributed, even for commercial purposes **without asking permission**. When using data with CC0, it is good practice to cite the original work, but is not required. For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/.
 Short and full overviews of CCBY and CC0 can be found at [@cc0-short; @cc0-long].
 
-Do not use non-standard licenses, such as those custom written by the authors, as some terms can render them unusable. Once a license is chosen, a LICENSE file should be provided, containing the entire license in the top level of the directory (Figure \@ref(fig:dir-layout)). The license type should be mentioned in the README, if used.
+Avoid using non-standard licenses, such as those custom written by the authors, as some terms can render them unusable. Once a license is chosen, a LICENSE file should be provided, containing the entire license in the top level of the directory (Figure \@ref(fig:dir-layout)). The license type should be mentioned in the README, if used.
 
 ```{r dir-layout, fig.cap = "Example directory layout and structure for sharing data. Note ..."}
 # insert carbon.sh figure showing file structure layout
@@ -118,10 +118,9 @@ knitr::include_graphics("figures/carbon-dir-layout.png")
 
 # Metadata {#metadata}
 
-Use metadata with your data. There are three benefits to a dataset having metadata: (1) They provide context by describing variables to humans; (2) They avoid errors by describing and preserving variable types for machine readability; (3) They make data easier to find online by facilitating indexing [@google-data-search]. Three pieces of metadata should be considered: (1) **variable names**, (2) **variable descriptions**, and (3) **unit text**. These should be curated by a person. Metadata created should be clearly labelled in a folder or in files named METADATA.
+Use metadata with your data. There are three benefits to a dataset having metadata: (1) Provide context by describing variables to humans; (2) Avoid errors by describing and preserving variable types for machine readability; (3) Make data easier to find online by facilitating indexing [@google-data-search]. Three pieces of metadata should be considered: (1) **variable names**, (2) **variable descriptions**, and (3) **unit text**. These should be curated by a person. Metadata created should be clearly labelled in a folder or in files named METADATA.
 
-**Variable names** are short, descriptive names with no spaces or special characters, such as "job_position" or "date". **Variable description** describes the measured variables, e.g., "University Job Position" or "Date Started", and should also define *variable codes* and *missing data*. **Unit text** defines the type of variable recorded (e.g., string, date, numeric, integer), and avoids serious errors of misrepresented data (e.g., a column of a gene sequence being interpreted as a date). For more details, see [@Broman2017; @Ellis2017; @Arslan2019]. Metadata can be encoded into plain text formats that follow a set standard, such as EML or SCHEMA-LD. A deep understanding of these formats isn't required to use them, for more details, and guidance on generating them see @dataspice and [@Arslan2019].
-
+**Variable names** are short, descriptive names with no spaces or special characters, such as "job_position" or "date". **Variable description** describes the measured variables, e.g., "University Job Position" or "Date Started", and should also define *variable codes* and *missing data*. **Unit text** defines the type of variable recorded (e.g., string, date, numeric, integer), this avoids serious errors of misrepresented data (e.g., a column of a gene sequence being interpreted as a date). For more details, see [@Broman2017; @Ellis2017; @Arslan2019]. Metadata can be encoded into plain text formats that follow a set standard, such as EML or SCHEMA-LD. A deep understanding of these formats isn't required to use them, for more details, and guidance on generating them see @dataspice and @Arslan2019.
 
 # Raw data vs analysis ready data {#rawdata}
 
@@ -135,17 +134,16 @@ Share code used to transform data from its raw format into analysis ready form. 
 
 # Citation: How you want your data to be cited {#cite}
 
-Describe how you want your data to be cited. Citation is important for provenance, and credit. Citing data clarifies the data version used (provenance), and provides authors a citation (credit). To ensure these are provided, data needs to have an accession number, such as a Digital Object Identifier (DOI). A DOI is a permanent, unique identifier for a digital object such as a paper, poster, or software, and is a prerequisite for citation. If a DOI or accession number is unavailable, a citation will be meaningless, as it cannot be tracked by any means. A file named CITATION should be placed in the directory at the top level. It should contain a DOI, and could be in `.bibtex` format (Figure \@ref(fig:dir-layout)). Avenues that provide DOIs are discussed in Section \@ref(avenues).
+Describe how you want your data to be cited in a CITATION file. Citation is important for provenance, and credit. Citing data clarifies the data version used (provenance), and provides authors a citation (credit). To ensure these are provided, data needs to have an accession number, such as a Digital Object Identifier (DOI). A DOI is a permanent, unique identifier for a digital object such as a paper, poster, or software. Access numbers are a prerequisite for citation - if they are unavailable, a citation will be meaningless, as it cannot be tracked by any means. A file named CITATION should be placed in the directory at the top level (Figure \@ref(fig:dir-layout)). It should contain an accession number, and could be in `.bibtex` format. Avenues that provide DOIs are discussed in Section \@ref(avenues).
 
-(**note: this bit needs some work**)
-A trusted repository (such as Dryad) will manage citation for you. However, a CITATION file allows you to mention specifically how you want your data to be cited - this could point to the paper that used or described the data and collection methods, for example.
+Repositories such as Dryad will manage citation. However it is worth noting that a CITATION file allows you to customise how you want your data to be cited. For example, to cite the paper that used or described the data and collection methods.
 
 # Avenues to share data {#avenues}
 
 (**note: on what to say**)
 1. Data should go into Domain area - e.g., gbif for species data, or genbif or genbank for genetics data @GenBank. More information can be found at https://www.nature.com/sdata/policies/repositories. Importantly, domain areas should provide some form of accession number. 
 
-As discussed in \@ref(cite),archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes for general data are the research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates that can be used in \@ref(cite).
+As discussed in \@ref(cite), archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes for general data are the research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates that can be used in \@ref(cite).
 
 If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited.
 
