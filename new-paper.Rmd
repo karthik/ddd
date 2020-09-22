@@ -140,10 +140,11 @@ Repositories such as Dryad will manage citation. However it is worth noting that
 
 # Avenues to share data {#avenues}
 
-(**note: on what to say**)
-1. Data should go into Domain area - e.g., gbif for species data, or genbif or genbank for genetics data @GenBank. More information can be found at https://www.nature.com/sdata/policies/repositories. Importantly, domain areas should provide some form of accession number. 
+(**note: still need to work on this**)
 
-As discussed in \@ref(cite), archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes for general data are the research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates that can be used in \@ref(cite).
+Data should be deposited into a relevant domain repository. For example, gbif [@gbif] for species data, or genbif or genbank for genetics data @GenBank. Information on other domain specific repositories can be found at https://www.nature.com/sdata/policies/repositories. 
+
+As discussed in \@ref(cite), archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes for general data are the research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates.
 
 If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited.
 
