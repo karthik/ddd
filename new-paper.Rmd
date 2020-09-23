@@ -114,12 +114,7 @@ Use a README file with your data project to communicate its purpose and contents
 Provide a license with your data. A license for data clearly establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard license, these rules are unclear, and lead to issues with use, attribution and citation. Use the CC0 license, as it provides simple rules for attribution, warranty, and use, and is very common. The CC0 is a "public domain" license, meaning data owners waive all rights, and the work is now "owned" by the public. CC0 data can be freely shared, copied, modified, and distributed, even for commercial purposes **without asking permission**. When using data with CC0, it is good practice to cite the original work, but is not required. For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/.
 Short and full overviews of CCBY and CC0 can be found at [@cc0-short; @cc0-long].
 
-Avoid using non-standard licenses, such as those custom written by the authors, as some terms can render them unusable. Once a license is chosen, a LICENSE file should be provided, containing the entire license in the top level of the directory (Figure \@ref(fig:dir-layout)). The license type should be mentioned in the README, if used.
-
-```{r dir-layout, fig.cap = "Example directory layout and structure for sharing data. Note ..."}
-# insert carbon.sh figure showing file structure layout
-knitr::include_graphics("figures/carbon-dir-layout.png")
-```
+Avoid using non-standard licenses, such as those custom written by the authors, as some terms can render them unusable. Once a license is chosen, a LICENSE file should be provided, containing the entire license in the top level of the directory. The license type should be mentioned in the README, if used.
 
 # Metadata {#metadata}
 
@@ -137,11 +132,11 @@ We don't have particular recommendations for non tabular of data, like binary im
 
 # Data cleaning scripts {#scripts}
 
-Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data (Section \@ref(fig:dir-layout)). Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to make sure everything runs and that the code doesn’t rely on other local artifacts. 
+Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data. Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to make sure everything runs and that the code doesn’t rely on other local artifacts. 
 
 # Citation: How you want your data to be cited {#cite}
 
-Describe how you want your data to be cited in a CITATION file. Citation is important for provenance, and credit. Citing data clarifies the data version used (provenance), and provides authors a citation (credit). To ensure these are provided, data needs to have an accession number, such as a Digital Object Identifier (DOI). A DOI is a permanent, unique identifier for a digital object such as a paper, poster, or software. Access numbers are a prerequisite for citation - if they are unavailable, a citation will be meaningless, as it cannot be tracked by any means. A file named CITATION should be placed in the directory at the top level (Figure \@ref(fig:dir-layout)). It should contain an accession number, and could be in `.bibtex` format. Avenues that provide DOIs are discussed in Section \@ref(avenues).
+Describe how you want your data to be cited in a CITATION file. Citation is important for provenance, and credit. Citing data clarifies the data version used (provenance), and provides authors a citation (credit). To ensure these are provided, data needs to have an accession number, such as a Digital Object Identifier (DOI). A DOI is a permanent, unique identifier for a digital object such as a paper, poster, or software. Access numbers are a prerequisite for citation - if they are unavailable, a citation will be meaningless, as it cannot be tracked by any means. A file named CITATION should be placed in the directory at the top level. It should contain an accession number, and could be in `.bibtex` format. Avenues that provide DOIs are discussed in Section \@ref(avenues).
 
 Repositories such as Dryad will manage citation. However it is worth noting that a CITATION file allows you to customise how you want your data to be cited. For example, to cite the paper that used or described the data and collection methods.
 
