@@ -154,7 +154,7 @@ Packaged data and archival on venues like Zenodo are not mutually exclusive. Fir
 
 How data is shared can change depending on its size. Defining data size will always be somewhat ill-defined, since storage capacity and norms constantly change. We consider data sizes in reference to a moderately priced laptop, where small data fits on computer memory (RAM), medium data does not fit on RAM, and big data does not fit on the hard disk. No matter the size, the data should be archived with an accession number or DOI.
 
-Small data has more options in how it is shared - you can bundle it with your analysis code (as in \@ref(rawdata)), or in software \@ref(data-as-part-of-open-source-packages). For medium data, consider a venue like Zenodo for archiving. Sharing medium data might require it to be broken into separate chunks for reading (e.g., `teaching-1.csv`, `teaching-2.csv`, etc.), and scripts provided to read it. Large data will require liaising with services from \@ref(avenues), or local research institute library to make special arrangements, to ensure there is some way to gain access, and also maintain a DOI.
+Small data has more options in how it is shared - you can bundle it with your analysis code (as in \@ref(rawdata)), or in software \@ref(pkgs). For medium data, consider a venue like Zenodo for archiving. Sharing medium data might require it to be broken into separate chunks for reading (e.g., `teaching-1.csv`, `teaching-2.csv`, etc.), and scripts provided to read it. Large data will require liaising with services from \@ref(avenues), or local research institute library to make special arrangements, to ensure there is some way to gain access, and also maintain a DOI.
 
 # Conclusion
 
