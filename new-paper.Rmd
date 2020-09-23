@@ -104,6 +104,11 @@ To make data more reusable, we need to make it easier to generate metadata, stan
 
 Use a README file with your data project to communicate its purpose and contents. A README is often the first place users will look to learn more about a project [@Prana2019]. The README is a concise text file containing guidance on how to read and interpret the directory - the who, what, when, where, and how (<https://betta.io/blog/2017/02/07/developer-experience-github-readmes/> and [@Prana2019]. For example, a README in a data repository might explain which directories contain data, tidying scripts, and also why data was collected. The README should be placed in the top level of the project, and there can be multiple README files in a project. In the context of datasets, READMEs are particularly useful when there are no reliable standards. For example, the data from Dryad, https://datadryad.org/stash/dataset/doi:10.5061/dryad.rn6k1 could be greatly enhanced by providing a README file that explains what the variables in the data collected are, and what the different sheets of the excel worksheet contain.
 
+> Someone can mention links to a Dockerfile fro the README, or a text file that describes versions of software used, date when things last ran successfully etc.
+> Also include the equivalent of a requirements.txt
+> The date of use, and versions of software should be recorded in these scripts, so users can in the future can replicate similar computing environment or computing conditions. A more ideal approach would be to clearly describe the computing environment (e.g., a Dockerfile).
+
+
 # Licences {#licenses}
 
 Provide a license with your data. A license for data clearly establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard license, these rules are unclear, and lead to issues with use, attribution and citation. Use the CC0 license, as it provides simple rules for attribution, warranty, and use, and is very common. The CC0 is a "public domain" license, meaning data owners waive all rights, and the work is now "owned" by the public. CC0 data can be freely shared, copied, modified, and distributed, even for commercial purposes **without asking permission**. When using data with CC0, it is good practice to cite the original work, but is not required. For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/.
@@ -124,13 +129,15 @@ Use metadata with your data. There are three benefits to a dataset having metada
 
 # Raw data vs analysis ready data {#rawdata}
 
-Make raw and analysis ready data available. Raw data is the first format of data provided before any cleaning has taken place (e.g., data in some binary or proprietary format). It should be placed in its own folder. Data used in analysis should be provided, especially if computationally intense to derive. It should be in its own folder, and to maximise interoperability, recorded in a plain text (e.g., csv, tsv), not a binary format (e.g., .rds, .sav, .xlsx). Ideally data should be in "Tidy Data" form, where variables are in columns, observations in rows, and each cell has only one value [@Wickham2014].
+Make raw and analysis ready data available. Raw data is the first format of data provided before any cleaning has taken place (e.g., data in some binary or proprietary format). It should be placed in its own folder. Data used in analysis should be provided, especially if computationally intense to derive. It should be in its own folder, and to maximise interoperability, recorded in a plain text (e.g., csv, tsv) and if possible a binary format (e.g., .rds, .sav, .xlsx, Apache Parquet). The binary format allows for immediate reuse in the intended state, while the interopability of plain text versions remain stable over time. 
+
+Ideally data should be in "Tidy Data" form, where variables are in columns, observations in rows, and each cell has only one value [@Wickham2014].
 
 We don't have particular recommendations for non tabular of data, like binary images, but given the ubiquity of tables in papers, these recommendations will be broadly useful. For other data formats use a copy of the most robust common format and avoid the latest tools that may be more brittle and likely to change in the future. For example, for an image, a TIFF image in addition to a custom photoshop file.
 
 # Data cleaning scripts {#scripts}
 
-Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data (Section \@ref(fig:dir-layout)). Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file.
+Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data (Section \@ref(fig:dir-layout)). Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to make sure everything runs and that the code doesn’t rely on other local artifacts. 
 
 # Citation: How you want your data to be cited {#cite}
 
@@ -140,28 +147,13 @@ Repositories such as Dryad will manage citation. However it is worth noting that
 
 # Avenues to share data {#avenues}
 
-(**note: still need to work on this**)
+Data should be deposited into a relevant domain repository that generates an accession number such as a DOI. For example, gbif [@gbif] for species data, or genbank for genetics data [@GenBank]. Information on other domain specific repositories can be found at https://www.nature.com/sdata/policies/repositories. Data not falling into domain repositories can be submitted to research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates. 
 
-Data should be deposited into a relevant domain repository. For example, gbif [@gbif] for species data, or genbif or genbank for genetics data @GenBank. Information on other domain specific repositories can be found at https://www.nature.com/sdata/policies/repositories. 
+If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited. Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@Hubbell1999] was hosted on a university server and only accessible via a FTP server since 1982. It was not possible to easily access or cite the data without an explicit authorship agreement among other conditions. Only recently were the complete dataset deposited in Dryad without such conditions [@condit-2019].
 
-As discussed in \@ref(cite), archive data using a platform generating an accession number such as a DOI. For sharing data collected for research, the most relevant homes for general data are the research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates.
-
-If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited.
-
-Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@Hubbell1999] was hosted on a university server and only accessible via a FTP server since 1982. It was not possible to easily access or cite the data without an explicit authorship agreement among other conditions. Only recently were the complete dataset deposited in Dryad without such conditions [@condit-2019].
-
-Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc.). Just archive the data.
-
-**mention bit about**
-
-- https://www.the-scientist.com/news-opinion/top-spider-biologists-research-under-fire-67083
-- https://www.nature.com/articles/d41586-020-00287-y 
+Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc.). Just archive the data. Providing back up data is particularly relevant in light of the case in [@Schleunes2020; @Viglione2020], where data was suspected of being tampered. The use of raw data allowed for issues to be identified, the absence of raw data not being available in other publications created difficulty in verifying the validity of the data.
 
 Journals provide data papers, where they provide a formal publication explaining data that is archived. This is a familiar avenue for researchers to receive credit and citation. Writing a data paper can be very useful for researchers, however, data papers lack guidelines on how to structure data for effective reuse and sharing. Partner with Dryad [@dryad] to link archived data with research papers. Dryad will also provide a person to help curate your data, improving usability.
-
-**bit removed from this section**
-
-There are different avenues to share data, and although the terms are sometimes used interchangeably, they are, in fact, different. These include: (1) Data sharing: Making data publicly available; (2) Data archiving: Depositing data somewhere permanent; (3) Data publishing: writing a paper to explain the archived data.
 
 # Data as part of open source packages {#pkgs}
 
