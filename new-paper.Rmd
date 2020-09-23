@@ -16,19 +16,15 @@ header-includes:
 
 ```{=tex}
 \begin{singlespace}
-Other titles under consideration: 
 
-- Data sharing practices to realign incentives and enable positive/meaningful culture change
+Other titles under consideration:
 
-- Enabling culture change for meaningful data sharing
-
-- Enabling culture change for meaningful data sharing: Aligning incentives and minimally acceptable practices
-
-- Principles of sharing data
-
-- Elements of meaningful data sharing
-
-- Better practices in data sharing to enable culture change
+- Data sharing practices to realign incentives and enable positive/meaningful culture change\\
+- Enabling culture change for meaningful data sharing\\
+- Enabling culture change for meaningful data sharing: Aligning incentives and minimally acceptable practices\\
+- Principles of sharing data\\
+- Elements of meaningful data sharing\\
+- Minimally acceptable practices in data sharing to enable culture change\\
 
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
@@ -91,10 +87,6 @@ As academic data scientists, we spend considerable time cleaning messy data and 
 
 To make data more reusable, we need to make it easier to generate metadata, standardise good practices within and across communities, and make reusable data sharing a recognized, normalised, part of research. Here we present a set of minimally acceptable practices to enable this change. These include documentation (Section \@ref(readme)), licensing (Section \@ref(licenses)), citation (Section \@ref(cite)), raw and analysis ready data (Section \@ref(rawdata)), code (Section \@ref(scripts)), and sharing in packages (Section \@ref(pkgs)). We also discuss considerations for sharing of data of various sizes (Section \@ref(size)).
 
-**note: other little bit to say**
-
-- "Here are some high level ideas on how to share data, that might obvious but are not often considered"
-
 # Documentation (READMEs) {#readme}
 
 Use a README file with your data project to communicate its purpose and contents. A README is often the first place users will look to learn more about a project [@Prana2019]. The README is a concise text file containing guidance on how to read and interpret the directory - the who, what, when, where, and how (<https://betta.io/blog/2017/02/07/developer-experience-github-readmes/> and [@Prana2019]. For example, a README in a data repository might explain which directories contain data, tidying scripts, and also why data was collected. The README should be placed in the top level of the project, and there can be multiple README files in a project. In the context of datasets, READMEs are particularly useful when there are no reliable standards. Although data repositories contain a large number of datasets associated with peer reviewed papers, not all are usable (example: https://datadryad.org/stash/dataset/doi:10.5061/dryad.rn6k1).  Some of the more recent submissions contain usage notes and a README, which considerably improve reuse potential (e.g. https://datadryad.org/stash/dataset/doi:10.5061/dryad.3xsj3txbz). \
@@ -103,7 +95,7 @@ The date of use, and versions of software should be recorded in the README, so u
 
 # Licences {#licenses}
 
-Provide a license with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data [@data_world_inc_common_2019], we recommend the CC0 license, as it provides simple rules for attribution, warranty, and use, and is very common. The CC0 allows data owners to waive all rights and data licensed as such can be freely shared, copied, modified, and distributed, even for commercial purposes without permission.  For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/. Short and full overviews of CCBY and CC0 can be found at [@cc0-short; @cc0-long].
+Provide a license file with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data [@data_world_inc_common_2019], we recommend the CC0 license, as it provides simple rules for attribution, warranty, and use, and is very common. The CC0 means data owners waive all rights and data licensed as such can be freely shared, copied, modified, and distributed, without permission or attribution, even for commercial purposes.  For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/. Short and full overviews of CC0 can be found at @cc0-short and @cc0-long.
 
 # Metadata {#metadata}
 
@@ -181,4 +173,3 @@ Nicholas Tierney has an honours degree in Psychological Science, and a PhD in St
 **Karthik Ram**
 
 Karthik is a senior data scientist at the Berkeley Institute of Data Science and a co-founder of the rOpenSci project. Karthik is also a senior PI at the Berkeley Initiative for Global Change Biology. Prior to joining Berkeley, he earned his PhD in Ecology & Evolution from the University of California, Davis. Karthik's interests are focused on reproducible research, as it applies to global change. Much of his recent work focuses on building tools and services around open data and growing diverse data science communities.
-
