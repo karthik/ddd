@@ -95,7 +95,11 @@ The date of use, and versions of software should be recorded in the README, so u
 
 # Licences {#licenses}
 
-Provide a license file with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data [@data_world_inc_common_2019], we recommend the CC0 license, as it provides simple rules for attribution, warranty, and use, and is very common. The CC0 means data owners waive all rights and data licensed as such can be freely shared, copied, modified, and distributed, without permission or attribution, even for commercial purposes.  For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/. Short and full overviews of CC0 can be found at @cc0-short and @cc0-long.
+Provide a license file with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data [@data_world_inc_common_2019], we recommend using the CC0 license, which means data owners waive all rights to the data, so it can be freely shared, copied, modified, and distributed, without permission or attribution, even for commercial purposes. 
+
+We recommend the CC0 as it provides simple rules for attribution, warranty, and use, and is very common. If data that is CC0 is used in scientific publications, you need to cite where you got the data from. There might be some concern that it is possible to conduct fraud, but it will be found out eventually if the original data is archived properly.
+
+For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/. Short and full overviews of CC0 can be found at @cc0-short and @cc0-long.
 
 # Metadata {#metadata}
 
@@ -115,7 +119,7 @@ Share code used to transform data from its raw format into analysis ready form. 
 
 # Citation: How you want your data to be cited {#cite}
 
-One critical advantage of depositing data in a trusted repository \@ref(avenues) is that it comes with many benefits such as preservation, indexing,  discoverability and most importantly, citation with persistent identifier. Authors can take an extra step by including their own CITATION file to give credit to a paper where the data and associated methods are described in detail.
+One critical advantage of depositing data in a trusted repository \@ref(avenues) is that it comes with many benefits such as preservation, indexing,  discoverability and most importantly, citation with persistent identifier. Authors can take an extra step by including their own CITATION file to give credit to a paper where the data and associated methods are described in detail. When citing data, you should cite the preferred CITATION file in the first instance, else, if there is a data publication, (for example in _Scientific Data_), cite this, and if none of those apply, cite the repository where the data is deposited (e.g., a Zenodo repository).
 
 # Avenues to share data {#avenues}
 
