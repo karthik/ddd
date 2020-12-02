@@ -113,6 +113,8 @@ We don't have particular recommendations for non tabular of data, like binary im
 
 Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data. Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to ensure everything runs and that the code doesn't rely on other local artifacts, such as their own folder layout not available to others. 
 
+For more complex analyses that involve workflow management systems (see https://github.com/pditommaso/awesome-pipeline for a comprehensive list), a description of how to run the workflow should be included in the documentation, preferably in the README file.  Depending on whether the workflow is GUI driven (e.g. Galaxy) or text driven (e.g. Nextflow, Snakemake), the workflow itself can be checked into the version control repository. As these communities work closely and use Common Workflow Language as a shared representation, these files can be widely used to recreate the steps involved in producing the final results.
+
 # Citation: How you want your data to be cited {#cite}
 
 One critical advantage of depositing data in a trusted repository \@ref(avenues) is that it comes with many benefits such as preservation, indexing,  discoverability and most importantly, citation with persistent identifier. Authors can take an extra step by including their own CITATION file to give credit to a paper where the data and associated methods are described in detail.
