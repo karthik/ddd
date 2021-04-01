@@ -1,6 +1,6 @@
 ---
 title: Barriers to meaningful data sharing
-author: Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)
+author: Nicholas J Tierney\* (1,2,3) & Karthik Ram\* (4)
 output:
   bookdown::pdf_document2:
     keep_tex: true
@@ -29,7 +29,8 @@ Other titles under consideration:
 
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
-3 = Berkeley Institute for Data Science, University of California, Berkeley, USA\\
+3 = Telethon Kids Institute, Perth, Australia\\
+4 = Berkeley Institute for Data Science, University of California, Berkeley, USA\\
 * = Both authors contributed equally to the work\\
 Correspondence to:\\
 Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (karthik.ram@berkeley.edu)
