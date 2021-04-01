@@ -1,15 +1,15 @@
-# A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility.
+# Incentives are the biggest barriers to widespread data sharing.
 
 
-_Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)_
+1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
+2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
+3 = Telethon Kids Institute, Perth Children's Hospital, Perth, Australia\\
+4 = Berkeley Institute for Data Science, University of California, Berkeley, USA\\
+* = Both authors contributed equally to the work\\
 
-1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia
 
-2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)
-
-3 = Berkeley Institute for Data Science, University of California, Berkeley, USA
-
-\* = Both authors contributed equally to the work
+Correspondence to:\\
+Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (karthik.ram@berkeley.edu)
 
 **Abstract**
 

@@ -1,5 +1,5 @@
 ---
-title: Barriers to meaningful data sharing
+title: Incentives are the biggest barriers to widespread data sharing.
 author: Nicholas J Tierney\* (1,2,3) & Karthik Ram\* (4)
 output:
   bookdown::pdf_document2:
@@ -17,18 +17,6 @@ header-includes:
 
 ```{=tex}
 \begin{singlespace}
-
-Other titles under consideration:
-
-- Meaningful data sharing
-- Data sharing practices to realign incentives and enable positive/meaningful culture change\\
-- Enabling culture change for meaningful data sharing\\
-- Principles of sharing data\\
-- Elements of meaningful data sharing\\
-- The biggest barrier to widespread data sharing are incentives and infrastructure.\\
-- Some practical guidance on improving data reuse.\\
-
-
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
 3 = Telethon Kids Institute, Perth Children's Hospital, Perth, Australia\\
@@ -39,6 +27,19 @@ Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (karthik.ram@berke
 
 \end{singlespace}
 ```
+
+
+<!-- Other titles under consideration: -->
+<!-- Barriers to meaningful data sharing -->
+<!-- - Meaningful data sharing -->
+<!-- - Data sharing practices to realign incentives and enable positive/meaningful culture change\\ -->
+<!-- - Enabling culture change for meaningful data sharing\\ -->
+<!-- - Principles of sharing data\\ -->
+<!-- - Elements of meaningful data sharing\\ -->
+<!-- - The biggest barrier to widespread data sharing are incentives and infrastructure.\\ -->
+<!-- - Some practical guidance on improving data reuse.\\ -->
+
+
 # Abstract {.unnumbered}
 
 ```{=tex}
