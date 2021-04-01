@@ -14,6 +14,7 @@ header-includes:
   - \usepackage[utf8]{inputenc}
 ---
 
+
 ```{=tex}
 \begin{singlespace}
 
@@ -22,10 +23,11 @@ Other titles under consideration:
 - Meaningful data sharing
 - Data sharing practices to realign incentives and enable positive/meaningful culture change\\
 - Enabling culture change for meaningful data sharing\\
-- Enabling culture change for meaningful data sharing: Aligning incentives and minimally acceptable practices\\
 - Principles of sharing data\\
 - Elements of meaningful data sharing\\
-- Minimally acceptable practices in data sharing to enable culture change\\
+- The biggest barrier to widespread data sharing are incentives and infrastructure.\\
+- Some practical guidance on improving data reuse.\\
+
 
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
@@ -41,9 +43,7 @@ Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (karthik.ram@berke
 
 ```{=tex}
 \begin{singlespace}
-New abstract: There are numerous arguments that strongly support practice of open science, with societal and individual benefits. For individual researchers, sharing research artifacts such as data can improve trust and transparency, reproducibility of one's own work, and catalyze new collaborations. Despite the general appreciation of the benefits of data sharing, research data are available only to the original investigators. For data that are shared, lack of useful metadata and documentation make them challenging to reuse. In this commentary we argue that incentives and infrastructure for making data useful are the biggest barrier to creating a culture of widespread data sharing. We compare data to code, and computational environments in the context of reproducible research and provide some practical guidance on how one can improve the chances of their data being reusable and partially bridge the incentive gap.
-
-Old abstract: Data makes science possible. Sharing data improves visibility, and makes the research process transparent. This increases trust in the work, and allows for independent reproduction of results. However, a large proportion of data from published research is often only available to the original authors. Despite the obvious benefits of make data widely available, and scientists' advocating for the importance of sharing data, most advice on sharing data discusses its broader benefits, rather than the practical considerations of sharing. This paper provides practical, actionable advice on how to actually share data alongside research with minimal barriers.
+There are numerous arguments that strongly support practice of open science, with societal and individual benefits. For individual researchers, sharing research artifacts such as data can improve trust and transparency, reproducibility of one's own work, and catalyze new collaborations. Despite the general appreciation of the benefits of data sharing, research data are available only to the original investigators. For data that are shared, lack of useful metadata and documentation make them challenging to reuse. In this commentary we argue that incentives and infrastructure for making data useful are the biggest barrier to creating a culture of widespread data sharing. We compare data to code, and computational environments in the context of reproducible research and provide some practical guidance on how one can improve the chances of their data being reusable and partially bridge the incentive gap.
 
 \end{singlespace}
 ```
