@@ -1,6 +1,6 @@
 ---
 title: Barriers to meaningful data sharing
-author: Nicholas J Tierney\* (1,2) & Karthik Ram\* (3)
+author: Nicholas J Tierney\* (1,2,3) & Karthik Ram\* (4)
 output:
   bookdown::pdf_document2:
     keep_tex: true
@@ -29,7 +29,8 @@ Other titles under consideration:
 
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
 2 = Australian Centre of Excellence for Mathematical and Statistical Frontiers (ACEMS)\\
-3 = Berkeley Institute for Data Science, University of California, Berkeley, USA\\
+3 = Telethon Kids Institute, Perth Children's Hospital, Perth, Australia\\
+4 = Berkeley Institute for Data Science, University of California, Berkeley, USA\\
 * = Both authors contributed equally to the work\\
 Correspondence to:\\
 Nicholas Tierney (nicholas.tierney@gmail.com) and Karthik Ram (karthik.ram@berkeley.edu)
@@ -163,7 +164,7 @@ To make data sharing truly useful, we need to make the process easier, improve t
 
 # Acknowledgements {.unnumbered}
 
-We'd like to thank the following people for helpful discussions and contributions to the paper as we were preparing it for publication: Anna Krystalli, Daniella Lowenberg, and Miles McBain. We'd also like to thank those who provided feedback on the paper when it went up for presubmission: Adrian Barnett, Raymond B Huey, Christian Thurn, Christina Maimone, and GitHub user, 'dschief001'. Finally, we thank the following organizations for their support ACEMS International Mobility Programme, the Helmsley Charitable Trust, the Gordon and Betty Moore Foundation, and the Alfred P. Sloan Foundation.
+We'd like to thank the following people for helpful discussions and contributions to the paper as we were preparing it for publication: Rich FitzJohn, Anna Krystalli, Daniella Lowenberg, and Miles McBain. We'd also like to thank those who provided feedback on the paper when it went up for presubmission: Adrian Barnett, Raymond B Huey, Christian Thurn, Christina Maimone, and GitHub user, 'dschief001'. Finally, we thank the following organizations for their support ACEMS International Mobility Programme, the Helmsley Charitable Trust, the Gordon and Betty Moore Foundation, and the Alfred P. Sloan Foundation.
 
 # Literature Cited {.unnumbered}
 
@@ -182,7 +183,7 @@ In the future, we hope that the culture around data sharing will change, and sha
 
 **Nicholas Tierney**
 
-Nicholas Tierney has an honours degree in Psychological Science, and a PhD in Statistics. He is a Lecturer at Monash University, teaching introduction to data analysis. His ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. Nick is a keen outdoorsman, and loves hiking, trail running, rock climbing, photography, and making coffee.
+Nicholas Tierney has an honours degree in Psychological Science, and a PhD in Statistics. He is a research software engineer at Telethon Kids Institute in Perth, Australia, working on maintaining and extending statistical software and establishing research software pipelines. His research ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. Nick is a keen outdoorsman and photographer.
 
 **Karthik Ram**
 
