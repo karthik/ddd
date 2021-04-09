@@ -15,6 +15,7 @@ header-includes:
 ---
 
 
+
 ```{=tex}
 \begin{singlespace}
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
@@ -166,6 +167,16 @@ To make data sharing truly useful, we need to make the process easier, improve t
 # Acknowledgements {.unnumbered}
 
 We'd like to thank the following people for helpful discussions and contributions to the paper as we were preparing it for publication: Rich FitzJohn, Anna Krystalli, Daniella Lowenberg, and Miles McBain. We'd also like to thank those who provided feedback on the paper when it went up for presubmission: Adrian Barnett, Raymond B Huey, Christian Thurn, Christina Maimone, and GitHub user, 'dschief001'. Finally, we thank the following organizations for their support ACEMS International Mobility Programme, the Helmsley Charitable Trust, the Gordon and Betty Moore Foundation, and the Alfred P. Sloan Foundation.
+
+
+# Author Contributions
+
+Both authors contributed equally to the work, making substantial contributions to the conception, design, drafting and revision of the work. The authors have approved the submitted version, and have agreed both to be personally accountable for the author's own contributions and to ensure that questions related to the accuracy or integrity of any part of the work, even ones in which the author was not personally involved, are appropriately investigated, resolved, and the resolution documented in the literature.
+
+
+# Competing Interests
+
+The authors declare no competing interests.
 
 # Literature Cited {.unnumbered}
 
