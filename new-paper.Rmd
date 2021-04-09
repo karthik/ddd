@@ -1,5 +1,5 @@
 ---
-title: Incentives are the biggest barriers to widespread data sharing.
+title: Incentives are the biggest barriers to widespread data sharing
 author: Nicholas J Tierney\* (1,2,3) & Karthik Ram\* (4)
 output:
   bookdown::pdf_document2:
@@ -138,7 +138,7 @@ One critical advantage of depositing data in a trusted repository \@ref(avenues)
 
 Data should be deposited into a relevant domain repository that generates an accession number such as a DOI. For example, gbif for species data, or genbank for genetics data. Information on other domain specific repositories can be found at https://www.nature.com/sdata/policies/repositories. Data not falling into domain repositories can be submitted to research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates. 
 
-If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited. Do not deposit data in local file storage that does not provide DOI or accession numbers. For example, [@Hubbell1999] was hosted on a university server and only accessible via a FTP server since 1982. It was not possible to easily access or cite the data without an explicit authorship agreement among other conditions. Only recently were the complete dataset deposited in Dryad without such conditions.
+If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited. Do not deposit data in local file storage that does not provide DOI or accession numbers. 
 
 Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc.). Just archive the data. Providing back up data is particularly relevant in light of the case in [@Schleunes2020; @Viglione2020], where data was suspected of being tampered. The use of raw data allowed for issues to be identified, the absence of raw data not being available in other publications created difficulty in verifying the validity of the data.
 
@@ -169,16 +169,15 @@ To make data sharing truly useful, we need to make the process easier, improve t
 We'd like to thank the following people for helpful discussions and contributions to the paper as we were preparing it for publication: Rich FitzJohn, Anna Krystalli, Daniella Lowenberg, and Miles McBain. We'd also like to thank those who provided feedback on the paper when it went up for presubmission: Adrian Barnett, Raymond B Huey, Christian Thurn, Christina Maimone, and GitHub user, 'dschief001'. Finally, we thank the following organizations for their support ACEMS International Mobility Programme, the Helmsley Charitable Trust, the Gordon and Betty Moore Foundation, and the Alfred P. Sloan Foundation.
 
 
-# Author Contributions
+# Author Contributions {.unnumbered}
 
 Both authors contributed equally to the work, making substantial contributions to the conception, design, drafting and revision of the work. The authors have approved the submitted version, and have agreed both to be personally accountable for the author's own contributions and to ensure that questions related to the accuracy or integrity of any part of the work, even ones in which the author was not personally involved, are appropriately investigated, resolved, and the resolution documented in the literature.
 
 
-# Competing Interests
+# Competing Interests {.unnumbered}
 
 The authors declare no competing interests.
 
 # References {.unnumbered}
 
-::: {#refs}
-:::
+\singlespacing
