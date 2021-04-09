@@ -178,25 +178,7 @@ Both authors contributed equally to the work, making substantial contributions t
 
 The authors declare no competing interests.
 
-# Literature Cited {.unnumbered}
+# References {.unnumbered}
 
 ::: {#refs}
 :::
-
-\newpage
-
-# Bigger Picture Statement {.unnumbered}
-
-Without data, there is no science. Science needs to be reproducible so we can trust the results, and progress as a field. But without data, we do not have true reproducibility. Currently, the role of data in reproducibility is not adequately discussed. We believe this is in part because discussions around data are centered on both data quality and data sharing. However, these are in fact two separate (but related) topics. We provide immediately usable guidelines to sharing data alongside your research, with minimal barriers, that a researcher could pick up and use today.
-
-In the future, we hope that the culture around data sharing will change, and sharing data will be rewarded in science. We want the new normal to be an expectation of data to be submitted with every research publication, and for these datasets to be easily discovered, shared, and extended in other analysis.
-
-# Bio {.unnumbered}
-
-**Nicholas Tierney**
-
-Nicholas Tierney has an honours degree in Psychological Science, and a PhD in Statistics. He is a research software engineer at Telethon Kids Institute in Perth, Australia, working on maintaining and extending statistical software and establishing research software pipelines. His research ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. Nick is a keen outdoorsman and photographer.
-
-**Karthik Ram**
-
-Karthik is a senior data scientist at the Berkeley Institute of Data Science and a co-founder of the rOpenSci project. Karthik is also a senior PI at the Berkeley Initiative for Global Change Biology. Prior to joining Berkeley, he earned his PhD in Ecology & Evolution from the University of California, Davis. Karthik's interests are focused on reproducible research, as it applies to global change. Much of his recent work focuses on building tools and services around open data and growing diverse data science communities.
