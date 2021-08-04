@@ -87,7 +87,7 @@ Tools to prepare datasets and metadata (*the infrastructure*) and minimal set of
 
 Depositing data with rich metadata is laborious making it a pro forma activity outside of speciality repositories like Dryad that employ curators. Lastly, the infrastructure to track and get credit for data is non-existent. Datasets currently do not accrue citation credit since they are not tracked.
 
-## Improving the state of reusable data sharing
+# Improving the state of reusable data sharing
 
 As academic data scientists, we spend considerable time cleaning messy data and believe that preparing data for easy reuse can be a catalyst to improve the quality of data and pave the way for other incentives such as community adoptions, which will then create the culture change needed to credit data similar to publications. In this note, we describe a set of practices that researchers can adopt to make data more useful in the context of reproducibility. It should not be a huge burden to share data in a format that is readily usable by others. And similarly, this burden should be reduced by those who want to use another's data.
 
@@ -99,13 +99,13 @@ Assuming that the data have no privacy concerns (e.g., human participants, locat
 
 Our advice here is not meant to be exhaustive by any means and are insufficient to fully bridge the gap, but provide a starting point.
 
-# Documentation (READMEs) {#readme}
+## Documentation (READMEs) {#readme}
 
 Use a README file with your data project to communicate its purpose and contents. A README is often the first place users will look to learn more about a project. The README is a concise text file containing guidance on how to read and interpret the directory - the who, what, when, where, and how (<https://betta.io/blog/2017/02/07/developer-experience-github-readmes/> and. For example, a README in a data repository might explain which directories contain data, tidying scripts, and also why data was collected. The README should be placed in the top level of the project, and there can be multiple README files in a project. In the context of datasets, READMEs are particularly useful when there are no reliable standards. Although data repositories contain a large number of datasets associated with peer reviewed papers, not all are usable (example: https://datadryad.org/stash/dataset/doi:10.5061/dryad.rn6k1).  Some of the more recent submissions contain usage notes and a README, which considerably improve reuse potential (e.g. https://datadryad.org/stash/dataset/doi:10.5061/dryad.3xsj3txbz). \
 
 The date of use, and versions of software should be recorded in the README, so users can in the future can replicate similar computing environment or computing conditions. A more ideal approach would be to clearly describe the computing environment (e.g., a Dockerfile) and packages used (e.g., requirements.txt).
 
-# Licences {#licenses}
+## Licences {#licenses}
 
 Provide a license file with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data, we recommend using the CC0 license, which means data owners waive all rights to the data, so it can be freely shared, copied, modified, and distributed, without permission or attribution, even for commercial purposes. 
 
@@ -113,29 +113,29 @@ We recommend the CC0 as it provides simple rules for attribution, warranty, and 
 
 For more information on the benefit of using CC0, and why CCBY is not always appropriate, see https://osc.universityofcalifornia.edu/2016/09/cc-by-and-data-not-always-a-good-fit/. Short and full overviews of CC0 can be found at https://creativecommons.org/.
 
-# Metadata {#metadata}
+## Metadata {#metadata}
 
 Use metadata with your data. As stated at the start of the paper, we refer to tabular data. There are three benefits to a dataset having metadata: (1) Provide context by describing variables to humans; (2) Avoid errors by describing and preserving variable types for machine readability; (3) Make data easier to find online by facilitating indexing [@google-data-search]. Three pieces of metadata should be considered: (1) **variable names**, (2) **variable descriptions**, and (3) **unit text**. These should be curated by a person. Metadata created should be clearly labelled in a folder or in files named METADATA.
 
 **Variable names** are short, descriptive names with no spaces or special characters, such as "job_position" or "date". **Variable description** describes the measured variables, e.g., "University Job Position" or "Date Started", and should also define *variable codes* and *missing data*. **Unit text** defines the type of variable recorded (e.g., string, date, numeric, integer), this avoids serious errors of misrepresented data (e.g., a column of a gene sequence being interpreted as a date). For more details, see [@Broman2017; @Ellis2017; @Arslan2019]. Metadata can be encoded into plain text formats that follow a set standard, such as EML or SCHEMA-LD. A deep understanding of these formats isn't required to use them, for more details, and guidance on generating them see @Arslan2019.
 
-# Raw data vs analysis ready data {#rawdata}
+## Raw data vs analysis ready data {#rawdata}
 
 Make raw and analysis ready data available. Raw data is the first format of data provided before any cleaning has taken place (e.g., data in some binary or proprietary format). It should be placed in its own folder. Data used in analysis should be provided, especially if computationally intense to derive. It should be in its own folder, and to maximize interoperability, recorded in a plain text (e.g., csv, tsv) and if possible a binary format (e.g., .rds, .sav, .xlsx, Apache Parquet). The binary format allows for immediate reuse in the intended state, while the interoperability of plain text versions remain stable over time. Ideally data should be in "Tidy Data" form, where variables are in columns, observations in rows, and each cell has only one value [@Wickham2014].
 
 We don't have particular recommendations for non tabular of data, like binary images, but given the ubiquity of tables in papers, these recommendations will be broadly useful. For other data formats use a copy of the most robust common format and avoid the latest tools that may be more brittle and likely to change in the future. For example, for an image, a TIFF image in addition to a custom photoshop file.
 
-# Data cleaning scripts {#scripts}
+## Data cleaning scripts {#scripts}
 
 Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data. Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to ensure everything runs and that the code doesn't rely on other local artifacts, such as their own folder layout not available to others. 
 
 For more complex analyses that involve workflow management systems (see https://github.com/pditommaso/awesome-pipeline for a comprehensive list), a description of how to run the workflow should be included in the documentation, preferably in the README file.  Depending on whether the workflow is GUI driven (e.g. Galaxy) or text driven (e.g. Nextflow, Snakemake), the workflow itself can be checked into the version control repository. As these communities work closely and use Common Workflow Language as a shared representation, these files can be widely used to recreate the steps involved in producing the final results.
 
-# Citation: How you want your data to be cited {#cite}
+## Citation: How you want your data to be cited {#cite}
 
 One critical advantage of depositing data in a trusted repository \@ref(avenues) is that it comes with many benefits such as preservation, indexing,  discoverability and most importantly, citation with persistent identifier. Authors can take an extra step by including their own CITATION file to give credit to a paper where the data and associated methods are described in detail. When citing data, you should cite the preferred CITATION file in the first instance, else, if there is a data publication, (for example in _Scientific Data_), cite this, and if none of those apply, cite the repository where the data is deposited (e.g., a Zenodo repository).
 
-# Avenues to share data {#avenues}
+## Avenues to share data {#avenues}
 
 Data should be deposited into a relevant domain repository that generates an accession number such as a DOI. For example, gbif for species data, or genbank for genetics data. Information on other domain specific repositories can be found at https://www.nature.com/sdata/policies/repositories. Data not falling into domain repositories can be submitted to research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates. 
 
@@ -145,13 +145,13 @@ Although it is fine to share data among collaborators using temporary cloud stor
 
 Journals provide data papers, where they provide a formal publication explaining data that is archived. This is a familiar avenue for researchers to receive credit and citation. Writing a data paper can be very useful for researchers, however, data papers lack guidelines on how to structure data for effective reuse and sharing. Partner with Dryad to link archived data with research papers. Dryad will also provide professionals to curate your data, thereby improving usability.
 
-# Data as part of open source packages {#pkgs}
+## Data as part of open source packages {#pkgs}
 
 Data can be distributed alongside code using a format such as a package in R, Python, and Julia. A package or module structure provides an advantage as it can be "installed" and loaded just like code. Despite the advantages of sharing data as a software package, there are a few major disadvantages. Firstly, packaging data inside a software package makes the data availability language centric. Users who work in other languages are unlikely to download and export data out of a package. Secondly, data size can be a limitation depending on the repository (CRAN, the R repository, for example, limits package sizes to 5Mb although there are workarounds). Other fields, such as bioinformatics have a process of sharing data through repositories like Bioconductor, with larger data size. Thirdly, there is the cost of authors and data curators/custodians understanding intricacies of package development in order to share data.
 
 Packaged data and archival on venues like Zenodo are not mutually exclusive. First, archive data in a long-term data repository (Section \@ref(avenues)), before including it in a package. The act of packaging data in software can shave off hours required to prepare it for use. The canocical citation can be baked into the package's citation file.
 
-# Considerations for data size {#size}
+## Considerations for data size {#size}
 
 How data is shared can change depending on its size. Defining data size will always be somewhat ill-defined, since storage capacity and norms constantly change. We consider data sizes in reference to a moderately priced laptop, where small data fits on computer memory (RAM), medium data does not fit on RAM, and big data does not fit on the hard disk. No matter the size, the data should be archived with an accession number or DOI.
 
