@@ -10,7 +10,7 @@ output:
 bibliography: references.bib
 citation_package: 'natbib'
 csl: nature-communications.csl
-header-includes: 
+header-includes:
   - \setstretch{1.45}
   - \usepackage[utf8]{inputenc}
 ---
@@ -94,7 +94,7 @@ Many papers provide rules and guidelines for sharing data, such as providing met
 
 As academic data scientists, we spend considerable time cleaning messy data and believe that preparing data for easy reuse can be a catalyst to improve the quality of data and pave the way for other incentives such as community adoptions, which will then create the culture change needed to credit data similar to publications. In this paper, we describe a set of common sense practices that researchers can adopt to make data more useful in the context of reproducibility. It should not be a huge burden to share data in a format that is readily usable by others. And similarly, this burden should be reduced by those who want to use another's data.
 
-To make data more reusable, we need to make it easier to generate metadata, standardise good practices within and across communities, and make reusable data sharing a recognized, normalised, part of research. Here we present a set of minimal set of practices to facilitate this change. These include documentation (Section \@ref(readme)), licensing (Section \@ref(licenses)), citation (Section \@ref(cite)), raw and analysis ready data (Section \@ref(rawdata)), code (Section \@ref(scripts)), and sharing in packages (Section \@ref(pkgs)). We also discuss considerations for sharing of data of various sizes (Section \@ref(size)). 
+To make data more reusable, we need to make it easier to generate metadata, standardise good practices within and across communities, and make reusable data sharing a recognized, normalised, part of research. Here we present a set of minimal set of practices to facilitate this change. These include documentation (Section \@ref(readme)), licensing (Section \@ref(licenses)), citation (Section \@ref(cite)), raw and analysis ready data (Section \@ref(rawdata)), code (Section \@ref(scripts)), and sharing in packages (Section \@ref(pkgs)). We also discuss considerations for sharing of data of various sizes (Section \@ref(size)).
 
 We limit the scope of this paper to small to medium sized tabular data as it covers a vast majority of use cases that researchers encounter day to day. For larger datasets that involve complex workflows (e.g., bioinformatics and medical imaging), the kinds of challenges they face are different and accordingly deserve to be written up separately.
 
@@ -110,7 +110,7 @@ The date of use, and versions of software should be recorded in the README, so u
 
 ## Licences {#licenses}
 
-Provide a license file with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data, we recommend using the CC0 license, which means data owners waive all rights to the data, so it can be freely shared, copied, modified, and distributed, without permission or attribution, even for commercial purposes. 
+Provide a license file with your data. A license for data establishes the rules for its use, and whether it can be modified or shared. Without a license, or with a non-standard one, these rules are unclear, and can lead to issues with use, attribution and citation. While there are a handful of licenses for data, we recommend using the CC0 license, which means data owners waive all rights to the data, so it can be freely shared, copied, modified, and distributed, without permission or attribution, even for commercial purposes.
 
 We recommend the CC0 as it provides simple rules for attribution, warranty, and use, and is very common. If data that is CC0 is used in scientific publications, you need to cite where you got the data from. There might be some concern that it is possible to conduct fraud, but it will be found out eventually if the original data is archived properly.
 
@@ -131,7 +131,7 @@ We don't have particular recommendations for non tabular of data, like binary im
 
 ## Data cleaning scripts {#scripts}
 
-Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data. Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to ensure everything runs and that the code doesn't rely on other local artifacts, such as their own folder layout not available to others. 
+Share code used to transform data from its raw format into analysis ready form. This should be kept in the same place as raw data. Ideally, this transformation should involve only scripted languages (e.g, R, Python, Matlab, etc), but any non-scripted data preparation steps should be recorded in a plain text file. Authors should run the scripts in a clean environment to ensure everything runs and that the code doesn't rely on other local artifacts, such as their own folder layout not available to others.
 
 For more complex analyses that involve workflow management systems (see https://github.com/pditommaso/awesome-pipeline for a comprehensive list), a description of how to run the workflow should be included in the documentation, preferably in the README file.  Depending on whether the workflow is GUI driven (e.g. Galaxy) or text driven (e.g. Nextflow, Snakemake), the workflow itself can be checked into the version control repository. As these communities work closely and use Common Workflow Language as a shared representation, these files can be widely used to recreate the steps involved in producing the final results.
 
@@ -141,9 +141,9 @@ One critical advantage of depositing data in a trusted repository \@ref(avenues)
 
 ## Avenues to share data {#avenues}
 
-Data should be deposited into a relevant domain repository that generates an accession number such as a DOI. For example, gbif for species data, or genbank for genetics data. Information on other domain specific repositories can be found at https://www.nature.com/sdata/policies/repositories. Data not falling into domain repositories can be submitted to research data repositories **zenodo** and **dryad**. In addition to minting DOIs, they also provide citation templates. 
+Data should be deposited into a relevant domain repository that generates an accession number such as a DOI. For example, gbif for species data, or genbank for genetics data. A exhaustive searchable list is available at re3data (https://www.re3data.org/) but provides no guidance to researchers. Data that do not fit appropriate domain repositories can be submitted to research data repositories **Zenodo** and **Dryad** which are currently leading the way in best practices for software and data. In addition to minting DOIs, they also provide citation templates.
 
-If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited. Do not deposit data in local file storage that does not provide DOI or accession numbers. 
+If using a research institute's library service to share data, ensure a DOI is provided so it can be accurately identified and cited. Do not deposit data in local file storage that does not provide DOI or accession numbers.
 
 Although it is fine to share data among collaborators using temporary cloud storage (like Dropbox, Google Drive), once the paper is public, the data needs to be hosted somewhere persistent. While this approach is useful while iterating on the paper, it does not scale to a larger readership and is highly prone to disappearing (lack of permissions, etc.). Providing back up data is particularly relevant in light of the case in [@Schleunes2020; @Viglione2020], where data was suspected of being tampered. The use of raw data allowed for issues to be identified, the absence of raw data not being available in other publications created difficulty in verifying the validity of the data.
 
