@@ -9,12 +9,18 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r libs, include = FALSE}
-library(tidyverse)
+library(dplyr)
 library(googlesheets4)
 library(knitr)
 library(kableExtra)
 ```
 
+
+```{r fix-long-url}
+
+new_comment_line <- "The authors need to further clarify how their recommendations align with - and differ from - the slew of other recommendations for data management which exist (in articles - e.g https://doi.org/10.1371/journal.pcbi.1003542, and at the level of institutional/regional data stewardship - e.g. from the Research Data Alliance, or from libraries: https://www.monash.edu/library/researchers /n/researchdata/guidelines/sharing.) I think the key to differentiating this work is again making the community/audience explicit from the very beginning"
+
+```
 
 ```{r read-sheet, include = FALSE}
 our_table_id <- gs4_get(
@@ -25,44 +31,35 @@ our_table <- read_sheet(ss = our_table_id,
                         .name_repair = janitor::make_clean_names) %>% 
   select(ID = id, 
          comment = reviewer_comment, 
-         response)
+         response) %>% 
+  mutate(comment = 
+           case_when(
+             ID == "R1-2" ~ new_comment_line,
+             TRUE ~ comment
+           )) 
 ```
 
 Dear Editor in chief of Patterns,
 
 Thank you for considering our commentary article “Incentives are the biggest barriers to widespread data sharing” for publication in Patterns.
 
-We thank the reviewers for their have addressed comments from the reviewers, these are presented in the table below. The "ID" column value "R1-1" refers to reviewer 1 comment 1, and so on.
+We thank the reviewers for time and comments. We have addressed comments from the reviewers and believe the paper is clearer and better as a result. Our response to reviewer comments are presented in the table below. The "ID" column value "R1-1" refers to reviewer 1 comment 1, and so on.
 
 Regards,
 
-Nicholas Tierney
-Karthik Ram
-
-## Response to Reviewers
-
-```{r fix-long-url}
-
-new_comment_line <- "The authors need to further clarify how their recommendations align with - and differ from - the slew of other recommendations for data management which exist (in articles - e.g https://doi.org/10.1371/journal.pcbi.1003542, and at the level of institutional/regional data stewardship - e.g. from the Research Data Alliance, or from libraries: https://www.monash.edu/library/researchers /n/researchdata/guidelines/sharing.) I think the key to differentiating this work is again making the community/audience explicit from the very beginning"
-
-```
+Nicholas Tierney & Karthik Ram
 
 
 ```{r show-table}
 our_table %>% 
-  mutate(comment = 
-           case_when(
-             ID == "R1-2" ~ new_comment_line,
-             TRUE ~ comment
-           )) %>% 
   kbl(booktabs = TRUE,
       longtable = TRUE) %>% 
-  kable_styling(latex_options = c("hold_position", 
+  kable_styling(latex_options = c("striped",
+                                  "hold_position", 
                                   "repeat_header"),
                 full_width = TRUE) %>% 
+  column_spec(1) %>% 
   column_spec(2, width = "20em") %>% 
   column_spec(3, width = "20em")
 ```
-
-
 
