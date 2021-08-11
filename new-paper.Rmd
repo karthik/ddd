@@ -85,7 +85,7 @@ Despite the increase in data being shared alongside publications, the status quo
 
 Tools to prepare datasets and metadata (*the infrastructure*) and minimal set of practices (*guidelines*) for reuse are sparse [@Arslan2019; @Roche2015]. Unlike code, datasets are far more diverse in terms of heterogeneity, size, and formats. This makes them particularly challenging to standardize or easily "install" where the code is running. There are some efforts working towards improving this process, such as gogetdata , the 'dat' project, and a private company, Quilt.
 
-Depositing data with rich metadata is laborious making it a pro forma activity outside of speciality repositories like Dryad that employ curators. Lastly, the infrastructure to track and get credit for data is non-existent. Datasets currently do not accrue citation credit since they are not tracked.
+Depositing data with rich metadata is laborious making it a pro forma activity outside of speciality repositories like Dryad that employ curators. Lastly, the infrastructure to track and get credit for data is non-existent. Datasets currently do not accrue citation credit since they are not tracked [@lowenberg_2019].
 
 # Improving the state of reusable data sharing
 
