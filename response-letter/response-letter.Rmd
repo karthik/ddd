@@ -39,16 +39,17 @@ our_table <- read_sheet(ss = our_table_id,
            )) 
 ```
 
-Dear Editor in chief of Patterns,
+Dear Dr. Callaghan,
 
 Thank you for considering our commentary article “Incentives are the biggest barriers to widespread data sharing” for publication in Patterns.
 
-We thank the reviewers for time and comments. We have addressed comments from the reviewers and believe the paper is clearer and better as a result. Our response to reviewer comments are presented in the table below. The "ID" column value "R1-1" refers to reviewer 1 comment 1, and so on.
+We thank the reviewers for time and detailed comments. We have addressed comments from the reviewers and believe the paper is clearer and better as a result. Our response to individual reviewer comments are presented in the table on page 2 of this letter. 
 
 Regards,
 
 Nicholas Tierney & Karthik Ram
 
+\newpage
 
 ```{r show-table}
 our_table %>% 
