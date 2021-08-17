@@ -1,5 +1,5 @@
 ---
-title: Incentives are the biggest barriers to widespread data sharing
+title: "Common sense approaches to sharing tabular data alongside publication"
 author: Nicholas J. Tierney\* (1, 2, 3) & Karthik Ram\* (4)
 output:
   bookdown::pdf_document2:

@@ -1,4 +1,4 @@
-# Incentives are the biggest barriers to widespread data sharing.
+# Common sense approaches to sharing tabular data alongside publication
 
 
 1 = Monash University, Department of Econometrics and Business Statistics, Melbourne, Australia\\
