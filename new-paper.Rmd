@@ -2,6 +2,7 @@
 title: "Common sense approaches to sharing tabular data alongside publication"
 author: Nicholas J. Tierney\* (1, 2, 3) & Karthik Ram\* (4)
 output:
+  bookdown::word_document2:
   bookdown::pdf_document2:
     keep_tex: true
     toc: no

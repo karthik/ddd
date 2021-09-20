@@ -1,0 +1,30 @@
+---
+title: "companion files"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# eTOC blurb
+
+> The eTOC blurb is a short summary that describes the context and significance of the findings for the broader readership. Please see the "In Brief" links in the table of contents for examples. The blurb should be 80 words or fewer.
+
+Despite a general appreciation of the benefits of data sharing, research data are often only available to the original investigators. We argue the lack of incentives and infrastructure for making data useful are the biggest barriers to widespread data sharing. We compare data sharing to code sharing, in the context of facilitating reproducible research. We provide a common sense guide for sharing tabular data alongside research. Our target audience is academics in data science adjacent fields who are about to submit for publication.
+
+# Bigger Picture Statement {-}
+
+> https://www.cell.com/patterns/authors
+
+Without data, there is no science. Science needs to be reproducible so we can trust the results, and progress as a field. Although academia generally appreciates the benefits of data sharing, research data are usually only available to the original researchers. If data is shared, it often lacks the documentation to make it easy to re-use. There is not a strong culture of data sharing, and we believe this is due to a lack of incentives and infrastructure for making data useful. While past papers focus on general practices for sharing data and code, we focus on a specific audience: academics working in data science adjacent fields who are about to submit for publication. We provide immediately usable guidelines to share tabular data alongside research that a researcher could pick up and use today. In the future, we hope the culture around data sharing will change, and be rewarded in science. A new normal where data is submitted with every research publication, and datasets are easily discovered, shared, and extended in other analysis.
+
+# Bio {-}
+
+**Nicholas Tierney**
+
+Nicholas Tierney has an honours degree in Psychological Science, and a PhD in Statistics. He is a research software engineer at the Telethon Kids Institute, creating scientific software for statistical modelling, focussing on infectious disease. Prior to this, Nick was a lecturer at Monash University, teaching introduction to data analysis. Nick is a keen outdoorsman, and loves hiking, trail running, rock climbing, photography, and making coffee.
+
+**Karthik Ram**
+
+Karthik is a senior data scientist at the Berkeley Institute of Data Science and a co-founder of the rOpenSci project. Karthik is also a senior PI at the Berkeley Initiative for Global Change Biology. Prior to joining Berkeley, he earned his PhD in Ecology &amp; Evolution from the University of California, Davis. Karthik's interests are focused on reproducible research, especially as it applies to global change. Much of his recent work focuses on building tools and services around open data and growing diverse data science communities.
