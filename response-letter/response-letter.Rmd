@@ -16,15 +16,9 @@ library(kableExtra)
 ```
 
 
-```{r fix-long-url}
-
-new_comment_line <- "The authors need to further clarify how their recommendations align with - and differ from - the slew of other recommendations for data management which exist (in articles - e.g https://doi.org/10.1371/journal.pcbi.1003542, and at the level of institutional/regional data stewardship - e.g. from the Research Data Alliance, or from libraries: https://www.monash.edu/library/researchers /n/researchdata/guidelines/sharing.) I think the key to differentiating this work is again making the community/audience explicit from the very beginning"
-
-```
-
 ```{r read-sheet, include = FALSE}
 our_table_id <- gs4_get(
-  "1fIl8jy72XWD4liFZVlx6WvsnXp7ld8fs7eZvwVJpSy0"
+  "14-qpuM3DaeaeWt4D6E7dLuvkT3L4QTe2gDr3ObxveOI"
   )
 
 our_table <- read_sheet(ss = our_table_id,
@@ -32,18 +26,14 @@ our_table <- read_sheet(ss = our_table_id,
   select(ID = id, 
          comment = reviewer_comment, 
          response) %>% 
-  mutate(comment = 
-           case_when(
-             ID == "R1-2" ~ new_comment_line,
-             TRUE ~ comment
-           )) 
+  tidyr::drop_na()
 ```
 
 Dear Dr. Callaghan,
 
-Thank you for considering our commentary article, "Common sense approaches to sharing tabular data alongside publication" (previously titled "Incentives are the biggest barriers to widespread data sharing"), for publication in Patterns.
+Thank you for accepting our commentary article, "Common sense approaches to sharing tabular data alongside publication", for publication in Patterns.
 
-We thank the reviewers for time and detailed comments. We have addressed comments from the reviewers and believe the paper is clearer and better as a result. Our response to individual reviewer comments are presented in the table on page 2 of this letter. 
+We thank the reviewers for time and detailed comments. We have addressed the final comments from the reviewers, our response to individual reviewer comments are presented in the table on page 2 of this letter. 
 
 Regards,
 
