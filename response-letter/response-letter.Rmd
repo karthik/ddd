@@ -41,10 +41,12 @@ Nicholas Tierney & Karthik Ram
 
 \newpage
 
+\renewcommand{\arraystretch}{2}
 ```{r show-table}
 our_table %>% 
   kbl(booktabs = TRUE,
-      longtable = TRUE) %>% 
+      longtable = TRUE,
+        linesep = "\\addlinespace") %>% 
   kable_styling(latex_options = c("striped",
                                   "hold_position", 
                                   "repeat_header"),
