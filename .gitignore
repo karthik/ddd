@@ -10,3 +10,8 @@ cover-letter/*.pdf
 *.log
 new-paper.tex
 new-paper.pdf
+*sharing.pdf
+completed-di-form.pdf
+cover-letter.pdf
+merged-full.pdf
+*.docx
